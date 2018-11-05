@@ -124,8 +124,8 @@
         </div>
         <nav class="menu">
             <ul class="sidebar-menu metismenu" id="sidebar-menu">
-                <li class="{{Request::is('home') ? 'active' : ''}}">
-                    <a href="{{url('/home')}}">
+                <li class="{{Request::is('home') ? 'active' : ''  || Request::is('/') ? 'active' : ''}}">
+                    <a href="{{url('/')}}">
                         <i class="fa fa-home"></i> Dashboard </a>
                 </li>
                 <li class="{{Request::is('master/*') ? 'active open' : ''}}">
