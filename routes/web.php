@@ -11,14 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
 
 Auth::routes();
 
 Route::group(['middleware' => 'guest'], function(){
 
+Route::get('/', function () {
+    return view('home');
+});
 	Route::get('/home', 'HomeController@index')->name('home');
 
 	// Master
