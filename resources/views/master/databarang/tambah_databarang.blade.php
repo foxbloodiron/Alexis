@@ -1,92 +1,212 @@
-<!-- Modal -->
-<div id="tambah" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+@extends('main')
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header bg-gradient-info">
-        <h4 class="modal-title">Form Data Barang</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          
-          
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <label>Nama Barang</label>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <div class="form-group">
-                <input type="text" class="form-control form-control-sm" name="">
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <label>Gambar Barang</label>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <div class="form-group">
-                <input type="file" class="form-control form-control-sm" name="">
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <label>Kategori Barang</label>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <div class="form-group">
-                <select class="form-control form-control-sm">
-                  <option>--Pilih Kategori--</option>
-                </select>
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <label>Satuan</label>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <div class="form-group">
-                <input type="text" class="form-control form-control-sm" name="">
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <label>Harga</label>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <div class="form-group">
-                <input type="text" class="form-control form-control-sm" name="">
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <label>Berat</label>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <div class="form-group">
-                <input type="text" class="form-control form-control-sm" name="">
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <label>Min Stok</label>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <div class="form-group">
-                <input type="text" class="form-control form-control-sm" name="">
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <label>Keterangan</label>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <div class="form-group">
-                <textarea class="form-control form-control-sm"></textarea>
-              </div>
-            </div>
-          
+@section('content')
 
-         </div> <!-- End div row -->
+
+<article class="content">
+
+  <div class="title-block text-primary">
+      <h1 class="title"> Data Barang </h1>
+      <p class="title-description">
+        <i class="fa fa-home"></i>&nbsp;<a href="{{url('/home')}}">Home</a>
+         / <span>Master Data</span>
+         / <span>Data Barang</span>
+         / <span class="text-primary" style="font-weight: bold;">Tambah Data Barang</span>
+       </p>
+  </div>
+
+  <section class="section">
+
+    <div class="row">
+
+      <div class="col-12">
+        
+        <div class="card">
+                    <div class="card-block">
+                        <div class="card-title-block">
+                            <h3 class="title">Tambah Data Barang </h3>
+                        </div>
+                        <section>
+
+                          <div class="row">
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <label>Nama Barang</label>
+                            </div>
+
+                            <div class="col-md-9 col-sm-6 col-xs-12">
+                              <div class="form-group">
+                                <input type="text" class="form-control form-control-sm" name="">
+                              </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <label>Type Barang</label>
+                            </div>
+
+                            <div class="col-md-9 col-sm-6 col-xs-12">
+                              <div class="form-group">
+                                <select class="form-control form-control-sm">
+                                  <option value="">--Pilih Type Barang--</option>
+                                  <option value="1">Bahan Baku</option>
+                                  <option value="2">Spare Part</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <label>Kelompok Barang</label>
+                            </div>
+
+                            <div class="col-md-9 col-sm-6 col-xs-12">
+                              <div class="form-group">
+                                <select class="form-control form-control-sm">
+                                  <option value="">--Pilih Kelompok Barang--</option>
+                                </select>
+                              </div>
+                            </div>
+                            
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <label>Kode Barang</label>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <div class="form-group">
+                                <input type="text" class="form-control form-control-sm" readonly="" name="">
+                              </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <label>Min Stock</label>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <div class="form-group">
+                                <input type="number" class="form-control form-control-sm" name="">
+                              </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <label>Satuan Utama</label>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <div class="form-group">
+                                <select class="form-control form-control-sm">
+                                  <option value="">--Pilih--</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <label>Isi Satuan Utama</label>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <div class="form-group">
+                               <input type="number" class="form-control-sm form-control" min="0" readonly="" value="1" name="">
+                              </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <label>Satuan Alternatif 1</label>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <div class="form-group">
+                                <select class="form-control form-control-sm">
+                                  <option value="">--Pilih--</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <label>Isi Satuan Alternatif 1</label>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <div class="form-group">
+                               <input type="number" class="form-control-sm form-control" min="0" name="">
+                              </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <label>Satuan Alternatif 2</label>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <div class="form-group">
+                                <select class="form-control form-control-sm">
+                                  <option value="">--Pilih--</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <label>Isi Satuan Alternatif 2</label>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <div class="form-group">
+                               <input type="number" class="form-control-sm form-control" min="0" name="">
+                              </div>
+                            </div>
+
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <label>Harga Persatuan</label>
+                            </div>
+                            
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <label>Harga Satuan Utama</label>
+                              <div class="form-group">
+                               <input type="number" class="form-control-sm form-control" name="">
+                              </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <label>Harga Satuan Alternatif 1</label>
+                              <div class="form-group">
+                               <input type="number" class="form-control-sm form-control" name="">
+                              </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <label>Harga Satuan Alternatif 2</label>
+                              <div class="form-group">
+                               <input type="number" class="form-control-sm form-control" name="">
+                              </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <label>Detail</label>
+                            </div>
+
+                            <div class="col-md-9 col-sm-6 col-xs-12">
+                              <div class="form-group">
+                                <textarea class="form-control"></textarea>
+                              </div>
+                            </div>
+
+
+
+                          </div>
+
+                        </section>
+                    </div>
+
+                    <div class="card-footer text-right">
+                      <button class="btn btn-primary" type="button">Simpan</button>
+                      <a href="{{route('databarang')}}" class="btn btn-secondary">Kembali</a>
+                    </div>
+                </div>
+
       </div>
-      <div class="modal-footer">
-        <button class="btn btn-primary" type="button">Process</button>
-        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-      </div>
+
     </div>
 
-  </div>
-</div>
+  </section>
+
+</article>
+
+@endsection

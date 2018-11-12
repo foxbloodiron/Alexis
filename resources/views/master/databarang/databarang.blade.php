@@ -2,14 +2,16 @@
 
 @section('content')
 
-@include('master.databarang.tambah_databarang')
+
 
 <article class="content">
 
 	<div class="title-block text-primary">
 	    <h1 class="title"> Data Barang </h1>
 	    <p class="title-description">
-	    	<i class="fa fa-home"></i>&nbsp;<a href="{{url('/home')}}">Home</a> / <span>Master Data</span> / <span class="text-primary" style="font-weight: bold;">Data Barang</span>
+	    	<i class="fa fa-home"></i>&nbsp;<a href="{{url('/home')}}">Home</a>
+	    	 / <span>Master Data</span>
+	    	 / <span class="text-primary" style="font-weight: bold;">Data Barang</span>
 	     </p>
 	</div>
 
@@ -27,7 +29,7 @@
                         <section>
                         	
                     		<div class="col-12" align="right" style="margin-bottom: 15px;">
-                    			<button class="btn btn-primary" data-toggle="modal" data-target="#tambah"><i class="fa fa-plus"></i>&nbsp;Tambah Data</button>
+                    			<a class="btn btn-primary" href="{{route('tambah_databarang')}}"><i class="fa fa-plus"></i>&nbsp;Tambah Data</a>
                     		</div>
                         	
                         	<div class="table-responsive">
@@ -37,8 +39,9 @@
 	                                    	<th>No</th>
 	                                		<th>Kode Barang</th>
 	                                		<th>Nama Barang</th>
-	                                		<th>Unit</th>
-	                                		<th>Kategori Barang</th>
+	                                		<th>Satuan</th>
+	                                		<th>Kelompok Barang</th>
+	                                		<th>Harga Beli</th>
 	                                		<th>Aksi</th>
 	                                	</tr>
 	                                </thead>
@@ -48,6 +51,7 @@
 	                                		<td>BRG/001</td>
 	                                		<td>Semen</td>
 	                                		<td>Karung</td>
+	                                		<td>Bahan Baku</td>
 	                                		<td></td>
 	                                		<td>
 	                                			<div class="btn-group">
@@ -61,6 +65,7 @@
 	                                		<td>BRG/002</td>
 	                                		<td>Pasir</td>
 	                                		<td>Butir</td>
+	                                		<td>Bahan Baku</td>
 	                                		<td></td>
 	                                		<td>
 	                                			<div class="btn-group">
@@ -74,6 +79,7 @@
 	                                		<td>BRG/003</td>
 	                                		<td>Cat</td>
 	                                		<td>Kaleng</td>
+	                                		<td>Bahan Baku</td>
 	                                		<td></td>
 	                                		<td>
 	                                			<div class="btn-group">

@@ -22,10 +22,12 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/home', 'HomeController@index')->name('home');
 
 	// Master
-	Route::get('/master/databarang/databarang', 'MasterController@databarang');
+	Route::get('/master/databarang/databarang', 'MasterController@databarang')->name('databarang');
+	Route::get('/master/databarang/tambah_databarang', 'MasterController@tambah_databarang')->name('tambah_databarang');
 	Route::get('/master/datasuplier/datasuplier', 'MasterController@datasuplier');
 	Route::get('/master/datacustomerkontraktor/datacustomerkontraktor', 'MasterController@datacustomerkontraktor');
-	Route::get('/master/dataarmada/dataarmada', 'MasterController@dataarmada');
+	Route::get('/master/dataarmada/dataarmada', 'MasterController@dataarmada')->name('dataarmada');
+	Route::get('/master/dataarmada/tambah_dataarmada', 'MasterController@tambah_dataarmada')->name('tambah_dataarmada');
 	Route::get('/master/datacustomerharian/datacustomerharian', 'MasterController@datacustomerharian');
 	Route::get('/master/datapegawai/datapegawai', 'MasterController@datapegawai');
 

@@ -7,8 +7,10 @@
         <link rel="shortcut icon" href="{{asset('assets/alexis.png')}}">
         <!-- Place favicon.ico in the root directory -->
         <link rel="stylesheet" href="{{asset('assets/css/vendor.css')}}">
+        {{-- <link rel="stylesheet" type="text/css" href="{{asset('assets/jquery-ui/jquery-ui.css')}}"> --}}
         <link rel="stylesheet" href="{{asset('assets/datatables/datatables.min.css')}}">
         <link rel="stylesheet" href="{{asset('assets/datepicker/css/bootstrap-datepicker.min.css')}}">
+
         <!-- Theme initialization -->
         <script>
             var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
@@ -39,4 +41,5 @@
 
             }
         </style>
+        <link rel="stylesheet" type="text/css" href="{{asset('assets/css/alamraya-style.css')}}">
 </head>

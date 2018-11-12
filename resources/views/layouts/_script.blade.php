@@ -11,10 +11,13 @@
 </div>
 <script src="{{asset('assets/js/vendor.js')}}"></script>
 <script src="{{asset('assets/js/app.js')}}"></script>
+{{-- <script type="text/javascript" src="{{asset('assets/jquery-ui/jquery-ui.js')}}"></script> --}}
 <script src="{{asset('assets/datatables/datatables.min.js')}}"></script>
 <script src="{{asset('assets/datepicker/js/bootstrap-datepicker.min.js')}}"></script>
 
 <script type="text/javascript">
+    var baseUrl = "{{url('/')}}";
+
 	$(document).ready(function(){
 		$("input[type='number']").keydown(function (e) {
 	        // Allow: backspace, delete, tab, escape, enter and .
