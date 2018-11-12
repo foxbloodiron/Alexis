@@ -9,7 +9,7 @@
       <p class="title-description">
         <i class="fa fa-home"></i>&nbsp;<a href="{{url('/home')}}">Home</a>
          / <span>Master Data</span>
-         / <span>Data Armada</span>
+         / <a href="{{route('dataarmada')}}"><span>Data Armada</span></a>
          / <span class="text-primary" style="font-weight: bold;">Tambah Data Armada</span>
        </p>
   </div>

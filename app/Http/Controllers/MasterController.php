@@ -18,9 +18,13 @@ class MasterController extends Controller
     {
     	return view('master/datasuplier/datasuplier');
     }
-    public function datacustomerharian()
+    public function datacustomer()
     {
-    	return view('master/datacustomerharian/datacustomerharian');
+    	return view('master/datacustomer/datacustomer');
+    }
+    public function tambah_datacustomer()
+    {
+        return view('master/datacustomer/tambah_datacustomer');
     }
     public function datacustomerkontraktor()
     {

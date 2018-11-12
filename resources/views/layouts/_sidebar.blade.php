@@ -135,22 +135,19 @@
                     </a>
                     <ul class="sidebar-nav">
                         <li class="{{Request::is('master/databarang/*') ? 'active' : ''}}">
-                            <a href="{{url('master/databarang/databarang')}}">Data Barang</a>
+                            <a href="{{route('databarang')}}">Data Barang</a>
                         </li>
                         <li class="{{Request::is('master/datasuplier/*') ? 'active' : ''}}">
-                            <a href="{{url('master/datasuplier/datasuplier')}}">Data Suplier</a>
+                            <a href="{{route('datasuplier')}}">Data Suplier</a>
                         </li>
-                        <li class="{{Request::is('master/datacustomerkontraktor/*') ? 'active' : ''}}">
-                            <a href="{{url('master/datacustomerkontraktor/datacustomerkontraktor')}}">Data Customer Kontraktor</a>
-                        </li>
-                        <li class="{{Request::is('master/datacustomerharian/*') ? 'active' : ''}}">
-                            <a href="{{url('master/datacustomerharian/datacustomerharian')}}"> Data Customer Harian</a>
+                        <li class="{{Request::is('master/datacustomer/*') ? 'active' : ''}}">
+                            <a href="{{route('datacustomer')}}">Data Customer</a>
                         </li>
                         <li class="{{Request::is('master/datapegawai/*') ? 'active' : ''}}">
-                            <a href="{{url('master/datapegawai/datapegawai')}}">Data Pegawai</a>
+                            <a href="{{route('datapegawai')}}">Data Pegawai</a>
                         </li>
                         <li class="{{Request::is('master/dataarmada/*') ? 'active' : ''}}">
-                            <a href="{{url('master/dataarmada/dataarmada')}}">Data Armada</a>
+                            <a href="{{route('dataarmada')}}">Data Armada</a>
                         </li>
                     </ul>
                 </li>

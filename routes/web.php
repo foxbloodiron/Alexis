@@ -24,12 +24,12 @@ Route::group(['middleware' => 'guest'], function(){
 	// Master
 	Route::get('/master/databarang/databarang', 'MasterController@databarang')->name('databarang');
 	Route::get('/master/databarang/tambah_databarang', 'MasterController@tambah_databarang')->name('tambah_databarang');
-	Route::get('/master/datasuplier/datasuplier', 'MasterController@datasuplier');
-	Route::get('/master/datacustomerkontraktor/datacustomerkontraktor', 'MasterController@datacustomerkontraktor');
+	Route::get('/master/datasuplier/datasuplier', 'MasterController@datasuplier')->name('datasuplier');
 	Route::get('/master/dataarmada/dataarmada', 'MasterController@dataarmada')->name('dataarmada');
 	Route::get('/master/dataarmada/tambah_dataarmada', 'MasterController@tambah_dataarmada')->name('tambah_dataarmada');
-	Route::get('/master/datacustomerharian/datacustomerharian', 'MasterController@datacustomerharian');
-	Route::get('/master/datapegawai/datapegawai', 'MasterController@datapegawai');
+	Route::get('/master/datacustomer/datacustomer', 'MasterController@datacustomer')->name('datacustomer');
+	Route::get('/master/datacustomer/tambah_datacustomer', 'MasterController@tambah_datacustomer')->name('tambah_datacustomer');
+	Route::get('/master/datapegawai/datapegawai', 'MasterController@datapegawai')->name('datapegawai');
 
 	// Aset
 	Route::get('/aset/pengadaan/pengadaan', 'AsetController@pengadaan');	
