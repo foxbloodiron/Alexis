@@ -65,8 +65,6 @@
 			format:"dd-mm-yyyy",
 		});
 
-        $('.select2').select2({
-            width:'100%'
-        });
+        $('.select2').select2();
 	});
 </script>
