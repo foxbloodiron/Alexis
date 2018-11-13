@@ -1,6 +1,6 @@
 <div class="tab-pane fade" id="list_suplier">
 	<div class="d-block text-right mb-3">
-		<a class="btn btn-primary" href="javascript:void(0);"><i class="fa fa-plus"></i> Tambah Data</a>
+		<a class="btn btn-primary" href="{{route('tambah_suplier')}}"><i class="fa fa-plus"></i> Tambah Data</a>
 	</div>
 	<div class="table-responsive">
 		<table class="table table-hover table-striped data-table" cellspacing="0">

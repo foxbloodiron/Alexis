@@ -101,7 +101,9 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/stok/tipemenghitunghpp/tipemenghitunghpp', 'StokController@tipemenghitunghpp');
 
 	// Suplier
-	Route::get('/suplier/barangsuplier/barangsuplier', 'SuplierController@barangsuplier');
+	Route::get('/suplier/barangsuplier/barangsuplier', 'SuplierController@barangsuplier')->name('barangsuplier');
+	Route::get('/suplier/barangsuplier/tambah_barang', 'SuplierController@tambah_barang')->name('tambah_barang');
+	Route::get('/suplier/barangsuplier/tambah_suplier', 'SuplierController@tambah_suplier')->name('tambah_suplier');
 	Route::get('/suplier/dataarmada/dataarmada', 'SuplierController@dataarmada');
 
 	// Admin System
@@ -109,4 +111,5 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/system/manajemenuser/manajemenuser', 'SystemController@manajemenuser');
 	Route::get('/system/profilperusahaan/profilperusahaan', 'SystemController@profilperusahaan');
 	Route::get('/system/tahunfinansial/tahunfinansial', 'SystemController@tahunfinansial');
-});
+
+}); // End Route Group

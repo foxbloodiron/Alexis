@@ -10,6 +10,14 @@ class SuplierController extends Controller
     {
     	return view('suplier/barangsuplier/barangsuplier');
     }
+    public function tambah_barang()
+    {
+    	return view('suplier/barangsuplier/tambah_barang');
+    }
+    public function tambah_suplier()
+    {
+    	return view('suplier/barangsuplier/tambah_suplier');
+    }
     public function dataarmada()
     {
     	return view('suplier/dataarmada/dataarmada');
