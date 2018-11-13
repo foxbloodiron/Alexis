@@ -92,8 +92,8 @@
             stack: 8, // false if there should be only one toast at a time or a number representing the maximum number of toasts to be shown at a time
             position: 'top-right', // bottom-left or bottom-right or bottom-center or top-left or top-right or top-center or mid-center or an object representing the left, right, top, bottom values
             
-            bgColor: '#444444',  // Background color of the toast
-            textColor: '#eeeeee',  // Text color of the toast
+            // bgColor: '#444444',  // Background color of the toast
+            // textColor: '#eeeeee',  // Text color of the toast
             textAlign: 'left',  // Text alignment i.e. left, right or center
             loader: true,  // Whether to show loader or not. True by default
             loaderBg: '#9EC600',  // Background color of the toast loader
@@ -106,7 +106,7 @@
         $.toast({
             text: "Good Day!", // Text that is to be shown in the toast
             heading: 'Note', // Optional heading to be shown on the toast
-            icon: 'info'
+            icon: 'warning'// if dont set bgColor or textColor background color same as icon type (warning, info, success, error)
             
             
         });
