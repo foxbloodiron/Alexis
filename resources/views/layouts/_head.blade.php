@@ -10,6 +10,9 @@
         {{-- <link rel="stylesheet" type="text/css" href="{{asset('assets/jquery-ui/jquery-ui.css')}}"> --}}
         <link rel="stylesheet" href="{{asset('assets/datatables/datatables.min.css')}}">
         <link rel="stylesheet" href="{{asset('assets/datepicker/css/bootstrap-datepicker.min.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/select2/select2.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/select2/select2-bootstrap.css')}}">
+
 
         <!-- Theme initialization -->
         <script>

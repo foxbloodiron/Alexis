@@ -36,12 +36,43 @@
 
                             <div class="col-md-9 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" name="">
+                                <select class="form-control-sm form-control select2">
+                                  <option value="">-Pilih-</option>
+                                  <option value="1">Semen</option>
+                                  <option value="2">Cat</option>
+                                  <option value="3">Pasir</option>
+                                </select>
                               </div>
                             </div>
 
-                           
+                            <div class="col-md-6 col-sm-12">
+                              <label class="font-weight-bold">Daftar Supplier (Ceklist pada supplier terpilih)</label>
+                            </div>
 
+                            <div class="col-md-6 col-sm-12 text-right mb-3">
+                              <button class="btn btn-primary btn-checkall btn-sm" type="button">Check all</button>
+                              <button class="btn btn-secondary btn-uncheckall btn-sm" type="button">Uncheck all</button>
+                            </div>
+
+                          </div>
+
+                          <div class="row" id="daftar_suplier">
+
+                            <div class="col-md-6 col-xs-12">
+                              <label><input type="checkbox" class="checkbox" name="suplier[]" value=""><span>Alpha</span></label>
+                            </div>
+
+                            <div class="col-md-6 col-xs-12">
+                              <label><input type="checkbox" class="checkbox" name="suplier[]" value=""><span>Bravo</span></label>
+                            </div>
+
+                            <div class="col-md-6 col-xs-12">
+                              <label><input type="checkbox" class="checkbox" name="suplier[]" value=""><span>Charlie</span></label>
+                            </div>
+
+                            <div class="col-md-6 col-xs-12">
+                              <label><input type="checkbox" class="checkbox" name="suplier[]" value=""><span>Delta</span></label>
+                            </div>
 
                           </div>
 
@@ -62,4 +93,17 @@
 
 </article>
 
+@endsection
+
+@section('extra_script')
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.btn-checkall').click(function(){
+      $('#daftar_suplier').find('input[type="checkbox"]').prop('checked', true);
+    });
+    $('.btn-uncheckall').click(function(){
+      $('#daftar_suplier').find('input[type="checkbox"]').prop('checked', false);
+    });
+  });
+</script>
 @endsection

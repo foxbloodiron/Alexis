@@ -11,3 +11,22 @@
     background-color: #fafafa;
     border-bottom: 1px solid #dbdbdb !important;
 }
+.input-group-append > .btn-sm{
+	height: 31px;
+}
+.input-group-append > .btn-md{
+	height: 38px;
+}
+.input-group-append > .btn-lg{
+	height: 48px;
+}
+.select2-container--default .select2-selection--single{
+	border: 1px solid #ced4da;
+}
+.form-control-sm ~ .select2-container .select2-selection--single{
+	height: 31px;
+}
+
+.form-control-lg ~ .select2-container .select2-selection--single{
+	height: 48px;
+}

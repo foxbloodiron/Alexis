@@ -47,11 +47,14 @@
                             <div class="col-md-12">
                               <div class="form-group">
                                 <div class="input-group">
-                                  <select class="form-control form-control-sm" name="">
+                                  <select class="form-control form-control-sm select2" name="" id="barang">
                                     <option value="">-Pilih-</option>
+                                    <option value="1">Semen</option>
+                                    <option value="2">Cat</option>
+                                    <option value="3">Pasir</option>
                                   </select>
                                   <div class="input-group-append">
-                                    <button class="btn btn-primary btn-md" title="Tambah" type="button"><i class="fa fa-plus"></i></button>
+                                    <button class="btn btn-primary btn-tambah btn-sm" title="Tambah" type="button"><i class="fa fa-plus"></i></button>
                                   </div>
                                 </div>
                               </div>
@@ -61,15 +64,19 @@
 
                           </div>
 
-                          <div class="table-responsive">
-                            <table class="table table-hover data-table table-striped" cellspacing="0">
-                              <thead class="bg-primary">
-                                <tr>
-                                  <th>Nama Barang</th>
-                                  <th>Aksi</th>
-                                </tr>
-                              </thead>
-                            </table>
+                          <div class="row">
+
+                            <div class="table-responsive">
+                              <table class="table table-hover data-table table-striped" cellspacing="0" id="tabel_barang">
+                                <thead class="bg-primary">
+                                  <tr>
+                                    <th>Nama Barang</th>
+                                    <th width="15%">Aksi</th>
+                                  </tr>
+                                </thead>
+                              </table>
+                            </div>
+
                           </div>
 
                         </section>
@@ -89,4 +96,36 @@
 
 </article>
 
+@endsection
+
+@section('extra_script')
+<script type="text/javascript">
+  $(document).ready(function(){
+    var tabel = $('#tabel_barang').DataTable();
+
+    function tabel_barang(){
+
+      tabel.row.add([
+          $('#barang option:selected').text() +
+          '<input type="hidden" class=".barang" name="barang[]" value="'+ $('#barang').val() +'">',
+          '<button class="btn btn-danger btn-hapus" type="button" title="Delete"><i class="fa fa-trash-o"></i></button>'
+        ]).draw(false).node();
+
+      $('#barang').prop('selectedIndex', 0).trigger('change');
+
+    }
+
+    $('.btn-tambah').click(function(){
+      tabel_barang();
+    });
+
+    $('#tabel_barang tbody').on( 'click', '.btn-hapus', function () {
+          tabel
+              .row($(this).parents('tr'))
+              .remove()
+              .draw();
+
+      });
+  });
+</script>
 @endsection

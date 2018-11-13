@@ -14,6 +14,8 @@
 {{-- <script type="text/javascript" src="{{asset('assets/jquery-ui/jquery-ui.js')}}"></script> --}}
 <script src="{{asset('assets/datatables/datatables.min.js')}}"></script>
 <script src="{{asset('assets/datepicker/js/bootstrap-datepicker.min.js')}}"></script>
+<script src="{{asset('assets/select2/select2.js')}}"></script>
+<script src="{{asset('assets/js/jquery.maskMoney.min.js')}}"></script>
 
 <script type="text/javascript">
     var baseUrl = "{{url('/')}}";
@@ -62,5 +64,9 @@
 		$('.datepicker').datepicker({
 			format:"dd-mm-yyyy",
 		});
+
+        $('.select2').select2({
+            width:'100%'
+        });
 	});
 </script>
