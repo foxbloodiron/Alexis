@@ -78,7 +78,7 @@
 	                                		<td>1113</td>
 	                                		<td>Charlie</td>
 	                                		<td>Jl. Charlie</td>
-	                                		<td>Lajang</td>
+	                                		<td>Belum Menikah</td>
 	                                		<td>
 	                                			<div class="btn-group">
 	                                				<button class="btn btn-primary btn-sm" title="Edit" type="button"><i class="fa fa-pencil"></i></button>
@@ -101,4 +101,12 @@
 
 </article>
 
+@endsection
+
+@section('extra_script')
+<script type="text/javascript">
+	$('#calendar_date').click(function(){
+		$('.datepicker').datepicker('show');
+	});
+</script>
 @endsection

@@ -23,13 +23,18 @@
 .select2-container--default .select2-selection--single{
 	border: 1px solid #ced4da;
 }
+.form-control ~ .select2-container .select2-selection--single{
+	height: 38px;
+}
 .form-control-sm ~ .select2-container .select2-selection--single{
 	height: 31px;
 }
-
 .form-control-lg ~ .select2-container .select2-selection--single{
 	height: 48px;
 }
 .input-group-addon {
-    padding: 3px 7px 0 7px;
+    padding: 0 7px 0 7px;
+}
+.modal-open .main-wrapper{
+	overflow: hidden;
 }

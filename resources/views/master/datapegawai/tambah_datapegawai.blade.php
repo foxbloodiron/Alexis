@@ -59,7 +59,7 @@
               <div class="form-group">
                 <div class="input-group">
                   <input type="text" class="form-control form-control-sm datepicker" name="" readonly="" style="cursor: pointer;">
-                  <span class="input-group-addon"><i class="fa fa-calendar"></i></span>  
+                  <span class="input-group-addon" id="calendar_date"><i class="fa fa-calendar"></i></span>  
                 </div>
               </div>
             </div>
@@ -93,9 +93,9 @@
             <div class="col-md-6 col-sm-6 col-xs-12">
               <div class="form-group">
                 <select class="form-control form-control-sm">
-                  <option>--Pilih Status--</option>
-                  <option>Lajang</option>
-                  <option>Sudah Menikah</option>
+                  <option value="">--Pilih Status--</option>
+                  <option value="1">Belum Menikah</option>
+                  <option value="2">Sudah Menikah</option>
                 </select>
               </div>
             </div>
