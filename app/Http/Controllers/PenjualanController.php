@@ -26,4 +26,8 @@ class PenjualanController extends Controller
     {
     	return view('penjualan/returnpenjualan/returnpenjualan');
     }
+    public function tambah_returnpenjualan()
+    {
+        return view('penjualan/returnpenjualan/tambah_returnpenjualan');
+    }
 }

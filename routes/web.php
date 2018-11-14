@@ -80,7 +80,8 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/penjualan/penjualanorder/penjualanorder', 'PenjualanController@penjualanorder');
 	Route::get('/penjualan/penjualanproject/penjualanproject', 'PenjualanController@penjualanproject');
 	Route::get('/penjualan/penjualantanpaorder/penjualantanpaorder', 'PenjualanController@penjualantanpaorder');
-	Route::get('/penjualan/returnpenjualan/returnpenjualan', 'PenjualanController@returnpenjualan');
+	Route::get('/penjualan/returnpenjualan/returnpenjualan', 'PenjualanController@returnpenjualan')->name('returnpenjualan');
+	Route::get('/penjualan/returnpenjualan/tambah_returnpenjualan', 'PenjualanController@tambah_returnpenjualan')->name('tambah_returnpenjualan');
 
 	// Produksi
 	Route::get('/produksi/pencatatanhasil/pencatatanhasil', 'ProduksiController@pencatatanhasil');

@@ -42,3 +42,6 @@ fieldset{
 	border:1px solid #dbdbdb;
 	padding: 15px;
 }
+.btn{
+	margin-bottom: 0;
+}
