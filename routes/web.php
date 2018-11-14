@@ -90,8 +90,12 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/produksi/upahboronganproduksi/upahboronganproduksi', 'ProduksiController@upahboronganproduksi');
 
 	// Purchasing
-	Route::get('/purchasing/kebutuhanbahanbaku/kebutuhanbahanbaku', 'PurchaseController@kebutuhanbahanbaku');
-	Route::get('/purchasing/kebutuhansparepart/kebutuhansparepart', 'PurchaseController@kebutuhansparepart');
+	Route::get('/purchasing/rencanapembelian/rencanapembelian', 'PurchaseController@rencanapembelian')->name('rencanapembelian');
+	Route::get('/purchasing/rencanapembelian/tambah_rencanapembelian', 'PurchaseController@tambah_rencanapembelian')->name('tambah_rencanapembelian');
+	Route::get('/purchasing/orderpembelian/orderpembelian', 'PurchaseController@orderpembelian')->name('orderpembelian');
+	Route::get('/purchasing/orderpembelian/tambah_orderpembelian', 'PurchaseController@tambah_orderpembelian')->name('tambah_orderpembelian');
+	Route::get('/purchasing/returnpembelian/returnpembelian', 'PurchaseController@returnpembelian')->name('returnpembelian');
+	Route::get('/purchasing/returnpembelian/tambah_returnpembelian', 'PurchaseController@tambah_returnpembelian')->name('tambah_returnpembelian');
 
 	// Stok
 	Route::get('/stok/dataadonan/dataadonan', 'StokController@dataadonan');

@@ -1,0 +1,122 @@
+@extends('main')
+
+@section('content')
+
+
+
+<article class="content">
+
+  <div class="title-block text-primary">
+      <h1 class="title"> Tambah Rencana Pembelian </h1>
+      <p class="title-description">
+        <i class="fa fa-home"></i>&nbsp;<a href="{{url('/home')}}">Home</a> 
+        / <span>Purchasing</span> 
+        / <a href="{{route('rencanapembelian')}}"><span>Rencana Pembelian</span> </a>
+        / <span class="text-primary" style="font-weight: bold;">Tambah Rencana Pembelian</span>
+       </p>
+  </div>
+
+  <section class="section">
+
+    <div class="row">
+
+      <div class="col-12">
+        
+        <div class="card">
+                    <div class="card-block">
+                        <div class="card-title-block">
+                            <h3 class="title"> Tambah Rencana Pembelian </h3>
+                        </div>
+                        <section>
+
+                          <fieldset>
+                            <div class="row">
+                              
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <label>Kode Rencana Pembelian</label>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                  <input type="text" class="form-control form-control-sm" readonly="" name="">
+                                </div>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <label>Tanggal Rencana Pembelian</label>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                  <input type="text" class="form-control form-control-sm datepicker" readonly="" name="">
+                                </div>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <label>Staff</label>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                  <input type="text" class="form-control form-control-sm" readonly="" name="">
+                                </div>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <label>Suplier</label>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                  <select class="form-control form-control-sm select2">
+                                    <option value="">--Pilih--</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                          </fieldset>
+
+                          <div class="table-responsive mt-3">
+                            <table class="table table-hover table-striped table-bordered">
+                              <thead class="bg-primary">
+                                <tr>
+                                  <th width="1%">No</th>
+                                  <th width="35%">Kode | Barang</th>
+                                  <th width="10%">Qty</th>
+                                  <th width="10%">Satuan</th>
+                                  <th>Harga Prev / Satuan Utama</th>
+                                  <th width="10%">Stok Gudang</th>
+                                  <th width="10%">Aksi</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td align="center">#</td>
+                                  <td><input type="text" class="form-control form-control-sm" name=""></td>
+                                  <td><input type="number" min="1" class="form-control form-control-sm" name=""></td>
+                                  <td><select class="form-control-sm form-control"></select></td>
+                                  <td><input type="text" class="form-control form-control-sm" readonly="" name=""></td>
+                                  <td><input type="text" class="form-control form-control-sm" readonly="" name=""></td>
+                                  <td align="center"><button class="btn btn-primary" type="button"><i class="fa fa-plus"></i></button></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+
+                        </section>
+                    </div>
+                    <div class="card-footer text-right">
+                      <button class="btn btn-primary" type="button">Simpan</button>
+                      <a href="{{route('rencanapembelian')}}" class="btn btn-secondary">Kembali</a>
+                    </div>
+                </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</article>
+
+@endsection

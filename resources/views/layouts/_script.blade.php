@@ -67,6 +67,10 @@
 			format:"dd-mm-yyyy",
 		});
 
+        $('.input-daterange').datepicker({
+            format:'dd-mm-yyyy'
+        });
+        
         // $('.modal.fade').on('scroll', function(){
         //     if($(this).hasClass('show')=== true){
         //         $('.datepicker').datepicker('hide');

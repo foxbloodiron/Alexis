@@ -38,3 +38,7 @@
 .modal-open .main-wrapper{
 	overflow: hidden;
 }
+fieldset{
+	border:1px solid #dbdbdb;
+	padding: 15px;
+}

@@ -171,11 +171,14 @@
                         <i class="fa arrow"></i>
                     </a>
                     <ul class="sidebar-nav">
-                        <li class="{{Request::is('purchasing/kebutuhanbahanbaku/*') ? 'active' : ''}}">
-                            <a href="{{url('purchasing/kebutuhanbahanbaku/kebutuhanbahanbaku')}}"> Kebutuhan Bahan Baku</a>
+                        <li class="{{Request::is('purchasing/rencanapembelian/*') ? 'active' : ''}}">
+                            <a href="{{route('rencanapembelian')}}"> Rencana Pembelian</a>
                         </li>
-                        <li class="{{Request::is('purchasing/kebutuhansparepart/*') ? 'active' : ''}}">
-                            <a href="{{url('purchasing/kebutuhansparepart/kebutuhansparepart')}}">Kebutuhan Sparepart</a>
+                        <li class="{{Request::is('purchasing/orderpembelian/*') ? 'active' : ''}}">
+                            <a href="{{route('orderpembelian')}}">Order Pembelian</a>
+                        </li>
+                        <li class="{{Request::is('purchasing/returnpembelian/*') ? 'active' : ''}}">
+                            <a href="{{route('returnpembelian')}}">Return Pembelian</a>
                         </li>
                     </ul>
                 </li>
