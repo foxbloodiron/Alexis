@@ -30,4 +30,9 @@ class PenjualanController extends Controller
     {
         return view('penjualan/returnpenjualan/tambah_returnpenjualan');
     }
+    public function pos()
+    {
+        return view('penjualan/pos/pos');
+    }
+
 }

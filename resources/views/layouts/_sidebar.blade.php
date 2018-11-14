@@ -246,6 +246,9 @@
                         <i class="fa arrow"></i>
                     </a>
                     <ul class="sidebar-nav">
+                        <li class="{{Request::is('penjualan/pos/*') ? 'active' : '' }}">
+                            <a href="{{route('pos')}}">Point of Sales</a>
+                        </li>
                         <li  class="{{Request::is('penjualan/penjualanorder/*') ? 'active' : ''}}">
                             <a href="{{url('penjualan/penjualanorder/penjualanorder')}}"> Pencatatan Penjualan Dengan Order</a>
                         </li>

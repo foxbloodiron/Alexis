@@ -77,6 +77,7 @@ Route::group(['middleware' => 'guest'], function(){
 
 	// Penjualan
 	Route::get('/penjualan/diskonpenjualan/diskonpenjualan', 'PenjualanController@diskonpenjualan');
+	Route::get('/penjualan/pos/pos', 'PenjualanController@pos')->name('pos');
 	Route::get('/penjualan/penjualanorder/penjualanorder', 'PenjualanController@penjualanorder');
 	Route::get('/penjualan/penjualanproject/penjualanproject', 'PenjualanController@penjualanproject');
 	Route::get('/penjualan/penjualantanpaorder/penjualantanpaorder', 'PenjualanController@penjualantanpaorder');

@@ -36,16 +36,14 @@
                               <div class="form-group">
                                 <select class="form-control form-control-sm">
                                   <option value=""> - Pilih Metode Return</option>
-                                  <option value="PN"> Potong Nota </option>
-                                  <option value="TB"> Tukar Barang </option>
-                                  <option value="SB"> Salah Barang </option>
-                                  <option value="SA"> Salah Alamat </option>
+                                  <option value="BR"> Barang Rusak </option>
+                                  <option value="JS"> Jumlah Salah </option>
                                 </select>
                               </div>
                             </div>
                           </div>
 
-                          <div id="salah_barang">
+                          <div id="jumlah_salah">
                             <fieldset>
                               <div class="row">
 
@@ -166,54 +164,6 @@
                               </table>
                             </div>
 
-                            <h4>Masukkan Item Salah Kirim :</h4>
-
-                            <fieldset class="mt-3">
-                              <div class="row">
-
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                  <label>Masukan Kode / Nama</label>
-                                  <div class="form-group">
-                                    <select class="form-control form-control-sm select2">
-                                      <option>--Pilih--</option>
-                                    </select>
-                                  </div>
-                                </div>
-
-                                <div class="col-md-3 col-sm-3 col-xs-12">
-                                  <label>Masukan Jumlah</label>
-                                  <div class="form-group">
-                                    <div class="input-group">
-                                      <input type="number" class="form-control form-control-sm" name="">
-                                      <div class="input-group-append">
-                                        <button class="btn btn-sm btn-primary" type="button"><i class="fa fa-plus"></i></button>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                <div class="col-md-3 col-sm-3 col-xs-12">
-                                  <label>Kuantitas Stok</label>
-                                  <div class="form-group">
-                                    <input type="text" class="form-control form-control-sm" readonly="" name="">
-                                  </div>
-                                </div>
-
-                              </div>
-                            </fieldset>
-
-                            <div class="table-responsive mt-3">
-                              <table class="table table-hover table-striped data-table" cellspacing="0">
-                                <thead class="bg-primary">
-                                  <tr>
-                                    <th>Nama</th>
-                                    <th width="15%">Jumlah</th>
-                                    <th width="15%">Satuan</th> 
-                                    <th width="10%"></th>
-                                  </tr>
-                                </thead>
-                              </table>
-                            </div>
                           </div>
 
                         </section>
