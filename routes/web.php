@@ -76,20 +76,21 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/pengiriman/upahboronganpengiriman/upahboronganpengiriman', 'PengirimanController@upahboronganpengiriman');
 
 	// Penjualan
-	Route::get('/penjualan/diskonpenjualan/diskonpenjualan', 'PenjualanController@diskonpenjualan');
-	Route::get('/penjualan/pos/pos', 'PenjualanController@pos')->name('pos');
-	Route::get('/penjualan/penjualanorder/penjualanorder', 'PenjualanController@penjualanorder');
-	Route::get('/penjualan/penjualanproject/penjualanproject', 'PenjualanController@penjualanproject');
-	Route::get('/penjualan/penjualantanpaorder/penjualantanpaorder', 'PenjualanController@penjualantanpaorder');
+	Route::get('/penjualan/diskonpenjualan/diskonpenjualan', 'PenjualanController@diskonpenjualan')->name('diskonpenjualan');
+	Route::get('/penjualan/penjualanorder/penjualanorder', 'PenjualanController@penjualanorder')->name('penjualanorder');
+	Route::get('/penjualan/penjualanproject/penjualanproject', 'PenjualanController@penjualanproject')->name('penjualanproject');
+	Route::get('/penjualan/penjualantanpaorder/penjualantanpaorder', 'PenjualanController@penjualantanpaorder')->name('penjualantanpaorder');
 	Route::get('/penjualan/returnpenjualan/returnpenjualan', 'PenjualanController@returnpenjualan')->name('returnpenjualan');
 	Route::get('/penjualan/returnpenjualan/tambah_returnpenjualan', 'PenjualanController@tambah_returnpenjualan')->name('tambah_returnpenjualan');
 
 	// Produksi
-	Route::get('/produksi/pencatatanhasil/pencatatanhasil', 'ProduksiController@pencatatanhasil');
-	Route::get('/produksi/perencanaanproduksi/perencanaanproduksi', 'ProduksiController@perencanaanproduksi');
-	Route::get('/produksi/produksirencana/produksirencana', 'ProduksiController@produksirencana');
-	Route::get('/produksi/produksitanparencana/produksitanparencana', 'ProduksiController@produksitanparencana');
-	Route::get('/produksi/upahboronganproduksi/upahboronganproduksi', 'ProduksiController@upahboronganproduksi');
+	Route::get('/produksi/pencatatanhasil/pencatatanhasil', 'ProduksiController@pencatatanhasil')->name('pencatatanhasil');
+	Route::get('/produksi/pencatatanhasil/proses_pencatatanhasil', 'ProduksiController@proses_pencatatanhasil')->name('proses_pencatatanhasil');
+	Route::get('/produksi/perencanaanproduksi/perencanaanproduksi', 'ProduksiController@perencanaanproduksi')->name('perencanaanproduksi');
+	Route::get('/produksi/produksirencana/produksirencana', 'ProduksiController@produksirencana')->name('produksirencana');
+	Route::get('/produksi/produksitanparencana/produksitanparencana', 'ProduksiController@produksitanparencana')->name('produksitanparencana');
+	Route::get('/produksi/upahboronganproduksi/upahboronganproduksi', 'ProduksiController@upahboronganproduksi')->name('upahboronganproduksi');
+	Route::get('/produksi/upahboronganproduksi/proses_upahboronganproduksi', 'ProduksiController@proses_upahboronganproduksi')->name('proses_upahboronganproduksi');
 
 	// Purchasing
 	Route::get('/purchasing/rencanapembelian/rencanapembelian', 'PurchaseController@rencanapembelian')->name('rencanapembelian');

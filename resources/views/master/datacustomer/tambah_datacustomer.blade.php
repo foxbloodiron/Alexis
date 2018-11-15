@@ -94,6 +94,28 @@
                               </div>
                             </div>
 
+                            <div class="col-md-offset-9 col-md-3 col-sm-6 col-xs-12 d-none 122mm">
+                              <label>Pagu</label>
+                            </div> 
+
+                            <div class="col-md-3 col-sm-6 col-xs-12 d-none 122mm">
+                              <div class="form-group">
+                                <input type="text" class="form-control form-control-sm" id="pagu" name="pagu">
+                              </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12 d-none 125mm">
+                              <label>Armada</label>
+                            </div> 
+
+                            <div class="col-md-3 col-sm-6 col-xs-12 d-none 125mm">
+                              <div class="form-group">
+                                <select class="form-control form-control-sm select2" id="armada">
+                                  <option value="">--Pilih--</option>
+                                </select>
+                              </div>
+                            </div>
+
                           </div>
                         
                         </section>
@@ -121,14 +143,26 @@
       if($(this).val() === 'kontrak'){
         $('#label_type_cus').text('Jumlah Bulan');
         $('#jumlah_hari_bulan').val('');
+        $('#pagu').val('');
+        $('#armada').prop('selectedIndex', 0).trigger('change');
         $('.120mm').removeClass('d-none');
+        $('.125mm').addClass('d-none');
+        $('.122mm').removeClass('d-none');
       } else if($(this).val() === 'harian'){
         $('#label_type_cus').text('Jumlah Hari');
+        $('#armada').prop('selectedIndex', 0).trigger('change');
+        $('#pagu').val('');
         $('#jumlah_hari_bulan').val('');
+        $('.122mm').addClass('d-none');
         $('.120mm').removeClass('d-none');
+        $('.125mm').removeClass('d-none');
       } else {
         $('#jumlah_hari_bulan').val('');
+        $('#armada').prop('selectedIndex', 0).trigger('change');
+        $('#pagu').val('');
+        $('.122mm').addClass('d-none');
         $('.120mm').addClass('d-none');
+        $('.125mm').addClass('d-none');
       }
     });
   });

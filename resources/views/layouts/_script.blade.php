@@ -55,6 +55,7 @@
             "sSearch": '<i class="fa fa-search"></i>',
             "sLengthMenu": "Menampilkan &nbsp; _MENU_ &nbsp; Data",
             "infoEmpty": "",
+            "zeroRecords":    "Tidak Dapat Menemukan Data",
             "paginate": {
                     "previous": "Sebelumnya",
                     "next": "Selanjutnya",
@@ -79,6 +80,12 @@
         // });
 
         $('.select2').select2();
+
+        $('.input-rupiah').maskMoney({
+            thousands:".",
+            decimal:",",
+            prefix:"Rp. "
+        });
 	});
 </script>
 <script type="text/javascript">
@@ -107,12 +114,18 @@
             afterHidden: function () {}  // will be triggered after the toast has been hidden
         };
 
-        $.toast({
-            text: "Good Day!", // Text that is to be shown in the toast
-            heading: 'Note', // Optional heading to be shown on the toast
-            icon: 'warning'// if dont set bgColor or textColor background color same as icon type (warning, info, success, error)
-            
-            
-        });
+        var coeg = ['Good Day, Sir', 'Haii', 'Welcome Back', 'Aye', 'Bash Besh Bosh', 'Boooom!! did I surprise you?', '...', 'High Five'];
+
+        var random = Math.floor(Math.random() * coeg.length);
+
+        @if(!(Request::is('login') || Request::is('register')))
+            $.toast({
+                text: coeg[random], // Text that is to be shown in the toast
+                heading: 'Note', // Optional heading to be shown on the toast
+                icon: 'info'// if dont set bgColor or textColor background color same as icon type (warning, info, success, error)
+                
+                
+            });
+        @endif
     });
 </script>

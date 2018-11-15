@@ -5,7 +5,7 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header bg-gradient-info">
-        <h4 class="modal-title">Form Pencatatan Produksi Tanpa Rencana</h4>
+        <h4 class="modal-title">Form Perencanaan Produksi</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
@@ -13,55 +13,32 @@
           
           
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <label>Name</label>
+              <label>Nama Barang</label>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12">
               <div class="form-group">
-                <input type="text" class="form-control form-control-sm" name="">
+                <select class="form-control form-control-sm select2">
+                  <option value="">--Pilih--</option>
+                </select>
               </div>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <label>Position</label>
+              <label>Tanggal</label>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12">
               <div class="form-group">
-                <input type="text" class="form-control form-control-sm" name="">
+                <input type="text" class="form-control form-control-sm" readonly="" value="{{date('d-m-Y')}}" name="">
               </div>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <label>Office</label>
+              <label>Jumlah Produksi</label>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12">
               <div class="form-group">
-                <input type="text" class="form-control form-control-sm" name="">
+                <input type="number" min="1" class="form-control form-control-sm" name="">
               </div>
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <label>Age</label>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <div class="form-group">
-                <input type="number" class="form-control form-control-sm" name="">
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <label>Start Date</label>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <div class="form-group">
-                <input type="text" class="form-control form-control-sm" name="">
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <label>Salary</label>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <div class="form-group">
-                <input type="text" class="form-control form-control-sm" name="">
-              </div>
-            </div>
-
-          
+            
           
 
          </div> <!-- End div row -->
