@@ -79,7 +79,10 @@
         //     }
         // });
 
-        $('.select2').select2();
+        $('.select2').select2({
+            theme:"bootstrap",
+            dropdownAutoWidth: true
+        });
 
         $('.input-rupiah').maskMoney({
             thousands:".",
