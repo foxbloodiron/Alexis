@@ -34,16 +34,17 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <select class="form-control form-control-sm">
+                                <select class="form-control form-control-sm" id="metode_rusak">
                                   <option value=""> - Pilih Metode Return</option>
                                   <option value="BR"> Barang Rusak </option>
                                   <option value="JS"> Jumlah Salah </option>
+                                  <option value="KU"> Kembali Uang </option>
                                 </select>
                               </div>
                             </div>
                           </div>
 
-                          <div id="jumlah_salah">
+                          <div id="jumlah_salah" class="d-none">
                             <fieldset>
                               <div class="row">
 
@@ -166,6 +167,253 @@
 
                           </div>
 
+                          <div id="barang_rusak" class="d-none">
+                            <fieldset>
+                              <div class="row">
+
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                  <label>Nota Penjualan</label>
+                                </div>
+
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                  <div class="form-group">
+                                    <select class="form-control form-control-sm select2">
+                                      <option>--Pilih--</option>
+                                    </select>
+                                  </div>
+                                </div>
+
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                  <label>No Resi dari Cus</label>
+                                </div>
+
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                  <div class="form-group">
+                                    <input type="text" class="form-control form-control-sm" name="">
+                                  </div>
+                                </div>
+
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                  <label>Tanggal Return</label>
+                                </div>
+
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                  <div class="form-group">
+                                    <input type="text" class="form-control form-control-sm datepicker" value="{{date('d-m-Y')}}" name="">
+                                  </div>
+                                </div>
+
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                  <label>Metode Pembayaran</label>
+                                </div>
+
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                  <div class="form-group">
+                                    <input type="text" class="form-control form-control-sm" readonly="" name="">
+                                  </div>
+                                </div>
+
+                              </div>
+                            </fieldset>
+
+                            <div class="row mt-3">
+
+                              <div class="col-md-3 col-sm-12">
+                                <label>Detail Pelanggan</label>
+                              </div>
+
+                              <div class="col-md-9 col-sm-12">
+                                <div class="form-group">
+                                  <input type="text" class="form-control form-control-sm" readonly="" name="">
+                                </div>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <label>Kirim</label>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                  <input type="text" class="form-control-sm form-control" readonly="" name="">
+                                </div>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <label>S Gross</label>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                  <input type="text" class="form-control-sm form-control" readonly="" name="">
+                                </div>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <label>Total Diskon</label>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                  <input type="text" class="form-control-sm form-control" readonly="" name="">
+                                </div>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <label>Total Penjualan (NETT)</label>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                  <input type="text" class="form-control-sm form-control" readonly="" name="">
+                                </div>
+                              </div>
+
+                            </div>
+
+                            <div class="table-responsive mt-3">
+                              <table class="table table-hover table-striped" cellspacing="0">
+                                <thead class="bg-primary">
+                                  <tr>
+                                    <th>Nama</th>
+                                    <th>Jumlah</th>
+                                    <th>Rusak</th>
+                                    <th>Satuan</th>
+                                    <th>Harga</th>
+                                    <th>Disc Percent</th>
+                                    <th>Disc Value</th>
+                                    <th>Jumlah Kirim</th>
+                                    <th>Total Barang Sesuai</th>
+                                  </tr>
+                                </thead>
+                              </table>
+                            </div>
+
+                          </div>
+
+
+                          <div id="kembali_uang" class="d-none">
+                            <fieldset>
+                              <div class="row">
+
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                  <label>Nota Penjualan</label>
+                                </div>
+
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                  <div class="form-group">
+                                    <select class="form-control form-control-sm select2">
+                                      <option>--Pilih--</option>
+                                    </select>
+                                  </div>
+                                </div>
+
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                  <label>No Resi dari Cus</label>
+                                </div>
+
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                  <div class="form-group">
+                                    <input type="text" class="form-control form-control-sm" name="">
+                                  </div>
+                                </div>
+
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                  <label>Tanggal Return</label>
+                                </div>
+
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                  <div class="form-group">
+                                    <input type="text" class="form-control form-control-sm datepicker" value="{{date('d-m-Y')}}" name="">
+                                  </div>
+                                </div>
+
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                  <label>Metode Pembayaran</label>
+                                </div>
+
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                  <div class="form-group">
+                                    <input type="text" class="form-control form-control-sm" readonly="" name="">
+                                  </div>
+                                </div>
+
+                              </div>
+                            </fieldset>
+
+                            <div class="row mt-3">
+
+                              <div class="col-md-3 col-sm-12">
+                                <label>Detail Pelanggan</label>
+                              </div>
+
+                              <div class="col-md-9 col-sm-12">
+                                <div class="form-group">
+                                  <input type="text" class="form-control form-control-sm" readonly="" name="">
+                                </div>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <label>Kirim</label>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                  <input type="text" class="form-control-sm form-control" readonly="" name="">
+                                </div>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <label>S Gross</label>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                  <input type="text" class="form-control-sm form-control" readonly="" name="">
+                                </div>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <label>Total Diskon</label>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                  <input type="text" class="form-control-sm form-control" readonly="" name="">
+                                </div>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <label>Total Penjualan (NETT)</label>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                  <input type="text" class="form-control-sm form-control" readonly="" name="">
+                                </div>
+                              </div>
+
+                            </div>
+
+                            <div class="table-responsive mt-3">
+                              <table class="table table-hover table-striped" cellspacing="0">
+                                <thead class="bg-primary">
+                                  <tr>
+                                    <th>Nama</th>
+                                    <th>Jumlah</th>
+                                    <th>Rusak / Salah Kirim</th>
+                                    <th>Satuan</th>
+                                    <th>Harga</th>
+                                    <th>Disc Percent</th>
+                                    <th>Disc Value</th>
+                                    <th>Jumlah Kirim</th>
+                                    <th>Total Barang Sesuai</th>
+                                  </tr>
+                                </thead>
+                              </table>
+                            </div>
+
+                          </div>
+
                         </section>
                     </div>
                     <div class="card-footer text-right">
@@ -182,4 +430,30 @@
 
 </article>
 
+@endsection
+
+@section('extra_script')
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#metode_rusak').on('change', function(){
+      if ($(this).val() === 'BR') {
+        $('#barang_rusak').removeClass('d-none');
+        $('#jumlah_salah').addClass('d-none');
+        $('#kembali_uang').addClass('d-none');
+      } else if($(this).val() === 'JS'){
+        $('#barang_rusak').addClass('d-none');
+        $('#jumlah_salah').removeClass('d-none');
+        $('#kembali_uang').addClass('d-none');
+      } else if($(this).val() === 'KU'){
+        $('#barang_rusak').addClass('d-none');
+        $('#jumlah_salah').addClass('d-none');
+        $('#kembali_uang').removeClass('d-none');
+      } else {
+        $('#barang_rusak').addClass('d-none');
+        $('#jumlah_salah').addClass('d-none');
+        $('#kembali_uang').addClass('d-none');
+      }
+    });
+  });
+</script>
 @endsection

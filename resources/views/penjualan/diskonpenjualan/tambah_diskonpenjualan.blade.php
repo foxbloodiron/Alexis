@@ -104,7 +104,7 @@
                                     <div class="col-md-6 col-sm-12">
                                       <div class="form-group">
                                         <div class="input-group">
-                                          <input type="number" min="0" max="100" class="form-control form-control-sm" name="">
+                                          <input type="number" min="0" max="100" class="form-control form-control-sm" onkeyup="this.value = minmax(this.value, 0, 100)" onblur="this.value = minmax(this.value, 0, 100)"  name="disc_percent" id="disc_percent">
                                           <span class="input-group-addon">
                                             %
                                           </span>
@@ -119,7 +119,7 @@
 
                                     <div class="col-md-6 col-sm-12">
                                       <div class="form-group">
-                                        <input type="text" class="form-control form-control-sm input-rupiah" name="">
+                                        <input type="text" class="form-control form-control-sm input-rupiah" id="disc_value" name="disc_value">
                                       </div>
                                     </div>
 
@@ -189,9 +189,24 @@
 
 @section('extra_script')
 <script type="text/javascript">
+  function minmax(value, min, max) 
+  {
+      if(parseInt(value) < min || isNaN(parseInt(value))) 
+          return min; 
+      else if(parseInt(value) > max) 
+          return max; 
+      else return value;
+  }
   $(document).ready(function(){
 
+      $('#disc_value').on('keypress',function(){
+          $('#disc_percent').val('');
+      });
 
+      $('#disc_percent').on('keypress',function(){
+          $('#disc_value').val('');
+      });
+      
 
     $('#tipe_dis').on('change', function(){
       if ($(this).val() === 'BRG') {

@@ -98,7 +98,9 @@
                                 <label>Upah</label>
                                 <div class="form-group">
                                   <div class="input-group">
-                                    <input type="text" class="form-control form-control-sm input-rupiah" name="">
+                                    <select class="form-control-sm form-control select2" name="">
+                                      <option value="">--Pilih---</option>
+                                    </select>
                                     <div class="input-group-append">
                                       <button class="btn btn-sm btn-primary" title="Tambah" type="button"><i class="fa fa-plus"></i></button>
                                     </div>

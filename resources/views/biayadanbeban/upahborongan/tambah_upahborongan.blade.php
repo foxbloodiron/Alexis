@@ -13,61 +13,44 @@
           
           
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <label>Name</label>
+              <label>Tipe Upah Borongan</label>
             </div>
+
             <div class="col-md-6 col-sm-6 col-xs-12">
               <div class="form-group">
-                <input type="text" class="form-control form-control-sm" name="">
+                <select class="form-control form-control-sm">
+                  <option value="">--Pilih--</option>
+                  <option value="1">Produksi</option>
+                  <option value="2">Pengiriman</option>
+                </select>
               </div>
             </div>
+
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <label>Position</label>
+              <label>Nama</label>
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <div class="form-group">
-                <input type="text" class="form-control form-control-sm" name="">
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <label>Office</label>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <div class="form-group">
-                <input type="text" class="form-control form-control-sm" name="">
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <label>Age</label>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <div class="form-group">
-                <input type="number" class="form-control form-control-sm" name="">
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <label>Start Date</label>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <div class="form-group">
-                <input type="text" class="form-control form-control-sm" name="">
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <label>Salary</label>
-            </div>
+
             <div class="col-md-6 col-sm-6 col-xs-12">
               <div class="form-group">
                 <input type="text" class="form-control form-control-sm" name="">
               </div>
             </div>
 
-          
-          
+
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <label>Jumlah Upah</label>
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="form-group">
+                <input type="text" class="form-control form-control-sm input-rupiah" name="">
+              </div>
+            </div>
 
          </div> <!-- End div row -->
       </div>
       <div class="modal-footer">
-        <button class="btn btn-primary" type="button">Process</button>
+        <button class="btn btn-primary" type="button">Simpan</button>
         <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
       </div>
     </div>
