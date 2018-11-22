@@ -48,7 +48,7 @@
 
                               <div class="col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
-                                  <input type="text" class="form-control form-control-sm datepicker" readonly="" name="">
+                                  <input type="text" class="form-control form-control-sm datepicker" value="{{date('d-m-Y')}}" name="">
                                 </div>
                               </div>
 
@@ -77,7 +77,7 @@
                           </fieldset>
 
                           <div class="table-responsive mt-3">
-                            <table class="table table-hover table-striped table-bordered">
+                            <table class="table table-hover table-striped table-bordered" id="table_rencana">
                               <thead class="bg-primary">
                                 <tr>
                                   <th width="1%">No</th>
@@ -97,7 +97,7 @@
                                   <td><select class="form-control-sm form-control"></select></td>
                                   <td><input type="text" class="form-control form-control-sm" readonly="" name=""></td>
                                   <td><input type="text" class="form-control form-control-sm" readonly="" name=""></td>
-                                  <td align="center"><button class="btn btn-primary" type="button"><i class="fa fa-plus"></i></button></td>
+                                  <td align="center"><button class="btn btn-primary btn-tambah" type="button"><i class="fa fa-plus"></i></button></td>
                                 </tr>
                               </tbody>
                             </table>
@@ -119,4 +119,32 @@
 
 </article>
 
+@endsection
+
+@section('extra_script')
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    $(document).on('click', '.btn-hapus', function(){
+      $(this).parents('tr').remove();
+    });
+
+    $('.btn-tambah').on('click',function(){
+      $('#table_rencana tbody')
+      .append(
+        '<tr>'+
+          '<td align="center">#</td>'+
+          '<td><input type="text" class="form-control form-control-sm" name=""></td>'+
+          '<td><input type="number" min="1" class="form-control form-control-sm" name=""></td>'+
+          '<td><select class="form-control-sm form-control"></select></td>'+
+          '<td><input type="text" class="form-control form-control-sm" readonly="" name=""></td>'+
+          '<td><input type="text" class="form-control form-control-sm" readonly="" name=""></td>'+
+          '<td align="center"><button class="btn btn-danger btn-hapus" type="button"><i class="fa fa-trash-o"></i></button></td>'+
+        '</tr>'
+        );
+    });
+
+
+  });
+</script>
 @endsection

@@ -37,7 +37,7 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <select class="form-control form-control-sm">
+                                <select class="form-control form-control-sm" id="metode_return">
                                   <option value="">--Pilih--</option>
                                   <option value="1">Tukar Barang</option>
                                   <option value="2">Potong Nota</option>
@@ -47,7 +47,7 @@
 
                           </div>
 
-                          <div id="div_return">
+                          <div id="div_return" class="d-none">
                             <fieldset>
                               <div class="row">
 
@@ -174,11 +174,11 @@
                                   </div>
                                 </div>
 
-                                <div class="col-md-3 col-sm-6 col-xs-12 120mm">
+                                <div class="col-md-3 col-sm-6 col-xs-12 120mm d-none">
                                   <label>Nilai Total Return</label>
                                 </div>
 
-                                <div class="col-md-3 col-sm-6 col-xs-12 120mm">
+                                <div class="col-md-3 col-sm-6 col-xs-12 120mm d-none">
                                   <div class="form-group">
                                     <input type="text" class="form-control form-control-sm" readonly="" name="">
                                   </div>
@@ -223,4 +223,21 @@
 
 </article>
 
+@endsection
+
+@section('extra_script')
+<script type="text/javascript">
+  $('#metode_return').on('change', function(){
+    if($(this).val() === '1'){
+      $('#div_return').removeClass('d-none');
+      $('.120mm').addClass('d-none');
+    } else if($(this).val() === '2'){
+      $('#div_return').removeClass('d-none');
+      $('.120mm').removeClass('d-none');
+    } else {
+      $('#div_return').addClass('d-none');
+      $('.120mm').addClass('d-none');
+    }
+  });
+</script>
 @endsection

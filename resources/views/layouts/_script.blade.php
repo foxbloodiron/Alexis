@@ -121,14 +121,6 @@
 
         var random = Math.floor(Math.random() * coeg.length);
 
-        @if(!(Request::is('login') || Request::is('register')))
-            $.toast({
-                text: coeg[random], // Text that is to be shown in the toast
-                heading: 'Note', // Optional heading to be shown on the toast
-                icon: 'info'// if dont set bgColor or textColor background color same as icon type (warning, info, success, error)
-                
-                
-            });
-        @endif
+        
     });
 </script>

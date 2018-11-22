@@ -86,7 +86,7 @@
                           </fieldset>
 
                           <div class="table-responsive mt-3">
-                            <table class="table table-bordered table-hover table-striped" cellspacing="0">
+                            <table class="table table-bordered table-hover table-striped" cellspacing="0" id="table_penggunaan">
                               <thead class="bg-primary">
                                 <tr>
                                   <th width="1%">No</th>
@@ -123,7 +123,7 @@
                                     
                                   </td>
                                   <td>
-                                    <button class="btn btn-primary btn-sm" type=""></button>
+                                    <button class="btn btn-primary btn-sm btn-tambah" type="button" title="Tambah"><i class="fa fa-plus"></i></button>
                                   </td>
                                 </tr>
                               </tbody>
@@ -146,4 +146,47 @@
 
 </article>
 
+@endsection
+
+@section('extra_script')
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    $('.btn-tambah').on('click', function(){
+      $('#table_penggunaan tbody').append(
+        '<tr>'+
+          '<td>#</td>'+
+          '<td>'+
+            '<select class="form-control form-control-sm select2">'+
+              '<option value="">--Pilih--</option>'+
+            '</select>'+
+          '</td>'+
+          '<td>'+
+            '<input type="number" min="0" class="form-control-sm form-control" name="">'+
+          '</td>'+
+          '<td>'+
+            '<select class="form-control-sm form-control">'+
+              '<option value="">--Pilih--</option>'+
+            '</select>'+
+          '</td>'+
+          '<td>'+
+            '<input type="number" min="0" class="form-control-sm form-control" name="">'+            
+          '</td>'+
+          '<td>'+
+            '<input type="number" min="0" class="form-control-sm form-control" name="">'+           
+          '</td>'+
+          '<td>'+
+            '<button class="btn btn-danger btn-hapus btn-sm" type="button" title="Hapus"><i class="fa fa-trash-o"></i></button>'+
+          '</td>'+
+        '</tr>'
+        );
+        $('.select2').select2();
+    });
+
+    $(document).on('click', '.btn-hapus', function(){
+      $(this).parents('tr').remove();
+    });
+
+  });
+</script>
 @endsection

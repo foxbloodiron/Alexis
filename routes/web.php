@@ -77,6 +77,7 @@ Route::group(['middleware' => 'guest'], function(){
 
 	// Penjualan
 	Route::get('/penjualan/diskonpenjualan/diskonpenjualan', 'PenjualanController@diskonpenjualan')->name('diskonpenjualan');
+	Route::get('/penjualan/diskonpenjualan/tambah_diskonpenjualan', 'PenjualanController@tambah_diskonpenjualan')->name('tambah_diskonpenjualan');
 	Route::get('/penjualan/penjualanorder/penjualanorder', 'PenjualanController@penjualanorder')->name('penjualanorder');
 	Route::get('/penjualan/penjualanproject/penjualanproject', 'PenjualanController@penjualanproject')->name('penjualanproject');
 	Route::get('/penjualan/penjualantanpaorder/penjualantanpaorder', 'PenjualanController@penjualantanpaorder')->name('penjualantanpaorder');
