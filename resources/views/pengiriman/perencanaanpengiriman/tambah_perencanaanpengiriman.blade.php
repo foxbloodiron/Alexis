@@ -45,7 +45,7 @@
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12">
               <div class="form-group">
-                <input type="text" class="datepicker form-control form-control-sm" name="">
+                <input type="text" class="datetimepicker form-control form-control-sm" name="">
               </div>
             </div>
 

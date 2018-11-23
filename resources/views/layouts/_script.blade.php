@@ -18,6 +18,8 @@
 <script src="{{asset('assets/js/jquery.maskMoney.min.js')}}"></script>
 <script src="{{asset('assets/jquery-confirm/jquery-confirm.js')}}"></script>
 <script src="{{asset('assets/jquery-toast/jquery.toast.js')}}"></script>
+<script src="{{asset('assets/bootstrap-datetimepicker/js/moment.js')}}"></script>
+<script src="{{asset('assets/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js')}}"></script>
 
 <script type="text/javascript">
     var baseUrl = "{{url('/')}}";
@@ -72,6 +74,10 @@
             format:'dd-mm-yyyy'
         });
         
+        $('.datetimepicker').datetimepicker({
+            format:"D-M-Y HH:mm:ss",
+            disabledTimeIntervals: false
+        });
         // $('.modal.fade').on('scroll', function(){
         //     if($(this).hasClass('show')=== true){
         //         $('.datepicker').datepicker('hide');

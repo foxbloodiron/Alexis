@@ -73,13 +73,13 @@
 			                        		<div class="col-md-6 col-sm-12">
 			                        			<label>Pilih Barang / Jasa</label>
 			                        			<div class="form-group">
-			                        				<select class="select2 form-control-sm form-control">
+			                        				<select class="select2 form-control-sm form-control" id="barang">
 			                        					<option value="">--Pilih--</option>
 			                        					<optgroup label="Barang">
-			                        						<option>Semen</option>
+			                        						<option value="1">Semen</option>
 			                        					</optgroup>
 			                        					<optgroup label="Jasa">
-			                        						<option>Pasang</option>
+			                        						<option value="2">Pasang</option>
 			                        					</optgroup>
 			                        				</select>
 			                        			</div>
@@ -89,9 +89,9 @@
 			                        			<label>Qty</label>
 			                        			<div class="form-group">
 			                        				<div class="input-group">
-				                        				<input type="number" min="0" class="form-control form-control-sm" name="">
+				                        				<input type="number" min="0" id="qty" class="form-control form-control-sm" name="">
 				                        				<div class="input-group-append">
-				                        					<button class="btn btn-primary btn-sm" type="button" title="Tambah"><i class="fa fa-plus"></i></button>
+				                        					<button class="btn btn-primary btn-sm btn-tambah" type="button" title="Tambah"><i class="fa fa-plus"></i></button>
 				                        				</div>
 				                        			</div>
 			                        			</div>
@@ -108,17 +108,17 @@
 			                        </fieldset>
 
 			                        <div class="table-responsive mb-3">
-			                        	<table class="table table-hover table-striped table-bordered data-table" cellspacing="0">
+			                        	<table class="table table-hover table-striped table-bordered" id="table_penjualan" cellspacing="0">
 			                        		<thead class="bg-primary">
 			                        			<tr>
 			                        				<th>Nama</th>
-			                        				<th>Jumlah</th>
-			                        				<th>Satuan</th>
+			                        				<th width="5%">Jumlah</th>
+			                        				<th width="5%">Satuan</th>
 			                        				<th>Harga</th>
-			                        				<th>Disc Percent</th>
+			                        				<th width="5%">Disc Percent</th>
 			                        				<th>Disc Value</th>
 			                        				<th>Total</th>
-			                        				<th></th>
+			                        				<th width="1%"></th>
 			                        			</tr>
 			                        		</thead>
 			                        	</table>

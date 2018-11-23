@@ -3,6 +3,7 @@
 @section('content')
 
 @include('pengiriman.perencanaanpengiriman.tambah_perencanaanpengiriman')
+@include('pengiriman.perencanaanpengiriman.status_perencanaanpengiriman')
 
 <article class="content">
 
@@ -43,7 +44,46 @@
 							            </tr>
 	                                </thead>
 	                                <tbody>
-
+	                                	<tr>
+	                                		<td>PP/20181123/1</td>
+	                                		<td>Alpha</td>
+	                                		<td>Bravo-09</td>
+	                                		<td>24-11-2018 22:22:22</td>
+	                                		<td><span class="badge badge-secondary badge-pill">Packing</span></td>
+	                                		<td>
+	                                			<div class="btn-group btn-group-sm">
+		                                			<button class="btn btn-info" data-toggle="modal" data-target="#status" type="button" title="Status"><i class="fa fa-gear"></i></button>
+		                                			<button class="btn btn-warning" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
+		                                			<button class="btn btn-danger" type="button" title="Hapus"><i class="fa fa-trash-o"></i></button>
+		                                		</div>
+	                                		</td>
+	                                	</tr>
+	                                	<tr>
+	                                		<td>PP/20181123/2</td>
+	                                		<td>Bravo</td>
+	                                		<td>Charlie-09</td>
+	                                		<td>24-11-2018 22:22:22</td>
+	                                		<td><span class="badge badge-info badge-pill">Proses Pengiriman</span></td>
+	                                		<td>
+	                                			<div class="btn-group btn-group-sm">
+		                                			<button class="btn btn-info" data-toggle="modal" data-target="#status" type="button" title="Status"><i class="fa fa-gear"></i></button>
+		                                			<button class="btn btn-warning" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
+		                                			<button class="btn btn-danger" type="button" title="Hapus"><i class="fa fa-trash-o"></i></button>
+		                                		</div>
+	                                		</td>
+	                                	</tr>
+	                                	<tr>
+	                                		<td>PP/20181123/3</td>
+	                                		<td>Charlie</td>
+	                                		<td>Delta-09</td>
+	                                		<td>24-11-2018 22:22:22</td>
+	                                		<td><span class="badge badge-success badge-pill">Sudah diterima</span></td>
+	                                		<td>
+	                                			<div class="btn-group btn-group-sm">
+		                                			<button class="btn btn-danger" disabled="" type="button" title="Hapus"><i class="fa fa-trash-o"></i></button>
+		                                		</div>
+	                                		</td>
+	                                	</tr>
 							        </tbody>
 	                            </table>
 	                        </div>
@@ -59,4 +99,35 @@
 
 </article>
 
+@endsection
+
+@section('extra_script')
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#status_pilih').on('change', function(){
+			if($(this).val() != ''){
+				console.log('a');
+				$('#example_badge').text($('#status_pilih option:selected').text());
+				$('#example_badge').removeClass('d-none');
+				if ($(this).val() === '1') {
+					$('#example_badge').addClass('badge-secondary');
+					$('#example_badge').removeClass('badge-info');
+					$('#example_badge').removeClass('badge-success');
+				} else if($(this).val() === '2'){
+					$('#example_badge').removeClass('badge-secondary');
+					$('#example_badge').addClass('badge-info');
+					$('#example_badge').removeClass('badge-success');
+				} else if($(this).val() === '3'){
+					$('#example_badge').removeClass('badge-secondary');
+					$('#example_badge').removeClass('badge-info');
+					$('#example_badge').addClass('badge-success');
+				}
+			} else {
+				console.log('b');
+				$('#example_badge').addClass('d-none');
+				$('#example_badge').text('');
+			}
+		});
+	});
+</script>
 @endsection

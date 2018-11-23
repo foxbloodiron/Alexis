@@ -46,3 +46,48 @@
 </article>
 
 @endsection
+
+@section('extra_script')
+<script type="text/javascript">
+	var table = $('#table_penjualan').DataTable();
+	var counter = 0;
+	function table_tambah(){
+		table.row.add([
+			'<input type="text" readonly="" class="form-control form-control-sm" value="'+$('#barang option:selected').text()+'">'+
+			'<input type="hidden" value="'+$('#barang').val()+'" class="barang">',
+			'<input type="number" min="0" class="form-control form-control-sm" value="'+$('#qty').val()+'">',
+			'<input type="text" readonly="" class="form-control form-control-sm">',
+			'<input type="text" readonly="" class="form-control form-control-sm">',
+			'<input type="text" readonly="" class="form-control form-control-sm">',
+			'<input type="text" readonly="" class="form-control form-control-sm">',
+			'<input type="text" readonly="" class="form-control form-control-sm">',
+			'<button class="btn btn-danger btn-hapus" type="button" title="Delete"><i class="fa fa-trash-o"></i></button>'
+			]).draw(false);
+
+		counter++;
+
+		$('#qty').val('');
+		$('#barang').prop('selectedIndex', 0).trigger('change');
+	}
+
+	function hapus_row(a){
+		table.row($(a).parents('tr')).remove().draw();
+	}
+
+	$(document).ready(function(){
+		$('#qty').on('keypress', function(e){
+			if(e.keypress === 13 || e.keyCode === 13){
+				table_tambah();
+			}
+		});
+
+		$('.btn-tambah').on('click', function(){
+			table_tambah();
+		});
+
+		$('#table_penjualan tbody').on('click', '.btn-hapus', function(){
+			hapus_row($(this));
+		});
+	});
+</script>
+@endsection

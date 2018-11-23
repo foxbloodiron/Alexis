@@ -18,4 +18,8 @@ class PengirimanController extends Controller
     {
     	return view('pengiriman/upahboronganpengiriman/upahboronganpengiriman');
     }
+    public function proses_upahboronganpengiriman()
+    {
+        return view('pengiriman/upahboronganpengiriman/proses_upahboronganpengiriman');
+    }
 }

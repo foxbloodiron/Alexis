@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="{{asset('assets/select2/select2-bootstrap.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('assets/jquery-confirm/jquery-confirm.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('assets/jquery-toast/jquery.toast.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('assets/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css')}}">
 
 
         <!-- Theme initialization -->
