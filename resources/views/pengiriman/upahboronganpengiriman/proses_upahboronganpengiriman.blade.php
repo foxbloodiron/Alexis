@@ -27,7 +27,67 @@
                         </div>
                         <section>
 
+                        	<div class="row">
+                        		
+                        		<div class="col-md-3 col-sm-6 col-xs-12">
+                        			<label>Nota</label>
+                        		</div>
 
+                        		<div class="col-md-3 col-sm-6 col-xs-12">
+                        			<div class="form-group">
+                        				<input type="text" readonly="" class="form-control form-control-sm" name="">
+                        			</div>
+                        		</div>
+
+                        		<div class="col-md-3 col-sm-6 col-xs-12">
+                        			<label>Sopir</label>
+                        		</div>
+
+                        		<div class="col-md-3 col-sm-6 col-xs-12">
+                        			<div class="form-group">
+                        				<input type="text" readonly="" class="form-control form-control-sm" name="">
+                        			</div>
+                        		</div>
+
+                        		<div class="col-md-3 col-sm-6 col-xs-12">
+                        			<label>Armada</label>
+                        		</div>
+
+                        		<div class="col-md-3 col-sm-6 col-xs-12">
+                        			<div class="form-group">
+                        				<input type="text" readonly="" class="form-control form-control-sm" name="">
+                        			</div>
+                        		</div>
+
+                        		<div class="col-md-3 col-sm-6 col-xs-12">
+                        			<label>Jadwal</label>
+                        		</div>
+
+                        		<div class="col-md-3 col-sm-6 col-xs-12">
+                        			<div class="form-group">
+                        				<input type="text" readonly="" class="form-control form-control-sm" name="">
+                        			</div>
+                        		</div>
+
+                        	</div>
+
+                        	<fieldset>
+	                        	<div class="row">
+	                        		
+	                        		<div class="col-md-3 col-sm-6 col-xs-12">
+	                        			<label>Upah Borongan Pengiriman</label>
+	                        		</div>
+
+	                        		<div class="col-md-9 col-sm-6 col-xs-12">
+	                        			<div class="form-group">
+	                        				<select class="form-control form-control-sm">
+	                        					<option value="">--Pilih--</option>
+	                        				</select>
+	                        			</div>
+	                        		</div>
+
+	                        	</div>
+	                        </fieldset>
 
                         </section>
                     </div>

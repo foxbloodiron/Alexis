@@ -87,7 +87,8 @@
 
         $('.select2').select2({
             theme:"bootstrap",
-            dropdownAutoWidth: true
+            dropdownAutoWidth: true,
+            width:'100%'
         });
 
         $('.input-rupiah').maskMoney({

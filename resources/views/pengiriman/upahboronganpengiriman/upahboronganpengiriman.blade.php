@@ -2,6 +2,8 @@
 
 @section('content')
 
+@include('pengiriman.upahboronganpengiriman.status_upahboronganpengiriman')
+
 <article class="content">
 
 	<div class="title-block text-primary">
