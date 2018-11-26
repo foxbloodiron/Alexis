@@ -146,3 +146,33 @@
 </article>
 
 @endsection
+@section('extra_script')
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#status_pilih').on('change', function(){
+			if($(this).val() != ''){
+				console.log('a');
+				$('#example_badge').text($('#status_pilih option:selected').text());
+				$('#example_badge').removeClass('d-none');
+				if ($(this).val() === '1') {
+					$('#example_badge').addClass('badge-secondary');
+					$('#example_badge').removeClass('badge-info');
+					$('#example_badge').removeClass('badge-success');
+				} else if($(this).val() === '2'){
+					$('#example_badge').removeClass('badge-secondary');
+					$('#example_badge').addClass('badge-info');
+					$('#example_badge').removeClass('badge-success');
+				} else if($(this).val() === '3'){
+					$('#example_badge').removeClass('badge-secondary');
+					$('#example_badge').removeClass('badge-info');
+					$('#example_badge').addClass('badge-success');
+				}
+			} else {
+				console.log('b');
+				$('#example_badge').addClass('d-none');
+				$('#example_badge').text('');
+			}
+		});
+	});
+</script>
+@endsection
