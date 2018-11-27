@@ -5,7 +5,7 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header bg-gradient-info">
-        <h4 class="modal-title">Form Manajemen User</h4>
+        <h4 class="modal-title">Form Data Satuan</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
@@ -13,35 +13,19 @@
           
           
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <label>Nama User</label>
+              <label>Kode Satuan</label>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="form-group">
+                <input type="text" class="form-control form-control-sm" readonly="" name="">
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <label>Nama Satuan</label>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12">
               <div class="form-group">
                 <input type="text" class="form-control form-control-sm" name="">
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <label>Username</label>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <div class="form-group">
-                <input type="text" class="form-control form-control-sm" name="">
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <label>Password</label>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <div class="form-group">
-                <input type="password" class="form-control form-control-sm" name="">
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <label>E-mail</label>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <div class="form-group">
-                <input type="email" class="form-control form-control-sm" name="">
               </div>
             </div>
           

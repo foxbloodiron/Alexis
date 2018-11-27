@@ -149,6 +149,9 @@
                         <li class="{{Request::is('master/dataarmada/*') ? 'active' : ''}}">
                             <a href="{{route('dataarmada')}}">Data Armada</a>
                         </li>
+                        <li class="{{Request::is('master/datasatuan/*') ? 'active' : ''}}">
+                            <a href="{{route('datasatuan')}}">Data Satuan</a>
+                        </li>
                     </ul>
                 </li>
                 <li class="{{Request::is('suplier/*') ? 'active open' : ''}}">

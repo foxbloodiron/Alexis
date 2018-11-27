@@ -42,5 +42,9 @@ class MasterController extends Controller
     {
         return view('master/dataarmada/tambah_dataarmada');
     }
+    public function datasatuan()
+    {
+        return view('master/datasatuan/datasatuan');
+    }
 }
 

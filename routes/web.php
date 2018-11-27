@@ -30,6 +30,7 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/master/datacustomer/datacustomer', 'MasterController@datacustomer')->name('datacustomer');
 	Route::get('/master/datacustomer/tambah_datacustomer', 'MasterController@tambah_datacustomer')->name('tambah_datacustomer');
 	Route::get('/master/datapegawai/datapegawai', 'MasterController@datapegawai')->name('datapegawai');
+	Route::get('/master/datasatuan/datasatuan', 'MasterController@datasatuan')->name('datasatuan');
 
 	// Aset
 	Route::get('/aset/pengadaan/pengadaan', 'AsetController@pengadaan');	
