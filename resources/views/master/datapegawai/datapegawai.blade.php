@@ -32,7 +32,7 @@
                         <section>
                         	
                         	<div class="table-responsive">
-	                            <table class="table data-table table-hover" cellspacing="0">
+	                            <table class="table table-striped table-hover" cellspacing="0" id="table_pegawai">
 	                                <thead class="bg-primary">
 	                                    <tr>
 							                <th>No</th>
@@ -54,8 +54,8 @@
 	                                		<td>Sudah Menikah</td>
 	                                		<td>
 	                                			<div class="btn-group">
-	                                				<button class="btn btn-primary btn-sm" title="Edit" type="button"><i class="fa fa-pencil"></i></button>
-	                                				<button class="btn btn-danger btn-sm" title="Delete" type="button"><i class="fa fa-trash"></i></button>
+	                                				<button class="btn btn-primary btn-sm btn-edit" title="Edit" type="button"><i class="fa fa-pencil"></i></button>
+	                                				<button class="btn btn-danger btn-sm btn-hapus" title="Delete" type="button"><i class="fa fa-trash"></i></button>
 	                                			</div>
 	                                		</td>
 	                                	</tr>
@@ -68,8 +68,8 @@
 	                                		<td>Sudah Menikah</td>
 	                                		<td>
 	                                			<div class="btn-group">
-	                                				<button class="btn btn-primary btn-sm" title="Edit" type="button"><i class="fa fa-pencil"></i></button>
-	                                				<button class="btn btn-danger btn-sm" title="Delete" type="button"><i class="fa fa-trash"></i></button>
+	                                				<button class="btn btn-primary btn-sm btn-edit" title="Edit" type="button"><i class="fa fa-pencil"></i></button>
+	                                				<button class="btn btn-danger btn-sm btn-hapus" title="Delete" type="button"><i class="fa fa-trash"></i></button>
 	                                			</div>
 	                                		</td>
 	                                	</tr>
@@ -82,8 +82,8 @@
 	                                		<td>Belum Menikah</td>
 	                                		<td>
 	                                			<div class="btn-group">
-	                                				<button class="btn btn-primary btn-sm" title="Edit" type="button"><i class="fa fa-pencil"></i></button>
-	                                				<button class="btn btn-danger btn-sm" title="Delete" type="button"><i class="fa fa-trash"></i></button>
+	                                				<button class="btn btn-primary btn-sm btn-edit" title="Edit" type="button"><i class="fa fa-pencil"></i></button>
+	                                				<button class="btn btn-danger btn-sm btn-hapus" title="Delete" type="button"><i class="fa fa-trash"></i></button>
 	                                			</div>
 	                                		</td>
 	                                	</tr>
@@ -108,6 +108,43 @@
 <script type="text/javascript">
 	$('#calendar_date').click(function(){
 		$('.datepicker').datepicker('show');
+	});
+</script>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		var table = $('#table_pegawai').DataTable();
+
+
+		$(document).on('click','.btn-edit',function(){
+			$('#tambah').modal('show');	
+		});
+
+		$(document).on('click', '.btn-hapus', function(){
+			var ini = $(this);
+			$.confirm({
+			    title: 'Hapus!',
+			    content: 'Apa anda yakin mau menghapus data ini?',
+			    buttons: {
+			        confirm: {
+			        	text:'Ya',
+			        	action : function(){
+					        table_hapus(ini);
+				        }
+			        },
+			        cancel:{
+			        	text: 'Tidak',
+					    action: function () {
+    			            // tutup confirm
+    			        }
+    			    }
+			    }
+			});
+		});
+
+		function table_hapus(a){
+			table.row($(a).parents('tr')).remove().draw();
+		}
 	});
 </script>
 @endsection

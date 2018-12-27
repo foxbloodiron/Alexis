@@ -6,12 +6,12 @@
 <article class="content">
 
   <div class="title-block text-primary">
-      <h1 class="title"> Tambah Data Barang </h1>
+      <h1 class="title"> Edit Data Barang </h1>
       <p class="title-description">
         <i class="fa fa-home"></i>&nbsp;<a href="{{url('/home')}}">Home</a>
          / <span>Master Data</span>
          / <a href="{{route('databarang')}}"><span>Data Barang</span></a>
-         / <span class="text-primary" style="font-weight: bold;">Tambah Data Barang</span>
+         / <span class="text-primary" style="font-weight: bold;">Edit Data Barang</span>
        </p>
   </div>
 
@@ -24,7 +24,7 @@
         <div class="card">
                     <div class="card-header bordered p-2">
                       <div class="header-block">
-                        <h3 class="title">Tambah Data Barang </h3>
+                        <h3 class="title">Edit Data Barang </h3>
                       </div>
                       <div class="header-block pull-right">
                         <a href="{{route('databarang')}}" class="btn btn-secondary"><i class="fa fa-arrow-left"></i></a>

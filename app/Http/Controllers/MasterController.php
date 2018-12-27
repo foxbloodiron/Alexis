@@ -14,6 +14,10 @@ class MasterController extends Controller
     {
         return view('master/databarang/tambah_databarang');
     }
+    public function edit_databarang()
+    {
+        return view('master/databarang/edit_databarang');
+    }
     public function datasuplier()
     {
     	return view('master/datasuplier/datasuplier');
@@ -26,6 +30,10 @@ class MasterController extends Controller
     {
         return view('master/datacustomer/tambah_datacustomer');
     }
+    public function edit_datacustomer()
+    {
+        return view('master/datacustomer/edit_datacustomer');
+    }    
     public function datacustomerkontraktor()
     {
     	return view('master/datacustomerkontraktor/datacustomerkontraktor');
@@ -41,6 +49,10 @@ class MasterController extends Controller
     public function tambah_dataarmada()
     {
         return view('master/dataarmada/tambah_dataarmada');
+    }
+    public function edit_dataarmada()
+    {
+        return view('master/dataarmada/edit_dataarmada');
     }
     public function datasatuan()
     {

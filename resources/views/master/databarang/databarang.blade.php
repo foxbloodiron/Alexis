@@ -35,7 +35,7 @@
                         <section>
                         	
                         	<div class="table-responsive">
-	                            <table class="table data-table table-hover" cellspacing="0">
+	                            <table class="table table-striped table-hover" cellspacing="0" id="table_barang">
 	                                <thead class="bg-primary">
 	                                    <tr>
 	                                    	<th>No</th>
@@ -57,8 +57,8 @@
 	                                		<td></td>
 	                                		<td>
 	                                			<div class="btn-group">
-	                                				<button class="btn btn-primary btn-sm" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
-	                                				<button class="btn btn-danger btn-sm" type="button" title="Delete"><i class="fa fa-trash"></i></button>
+	                                				<button class="btn btn-primary btn-sm btn-edit" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
+	                                				<button class="btn btn-danger btn-sm btn-hapus" type="button" title="Delete"><i class="fa fa-trash"></i></button>
 	                                			</div>
 	                                		</td>
 	                                	</tr>
@@ -71,8 +71,8 @@
 	                                		<td></td>
 	                                		<td>
 	                                			<div class="btn-group">
-	                                				<button class="btn btn-primary btn-sm" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
-	                                				<button class="btn btn-danger btn-sm" type="button" title="Delete"><i class="fa fa-trash"></i></button>
+	                                				<button class="btn btn-primary btn-sm btn-edit" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
+	                                				<button class="btn btn-danger btn-sm btn-hapus" type="button" title="Delete"><i class="fa fa-trash"></i></button>
 	                                			</div>
 	                                		</td>
 	                                	</tr>
@@ -85,8 +85,8 @@
 	                                		<td></td>
 	                                		<td>
 	                                			<div class="btn-group">
-	                                				<button class="btn btn-primary btn-sm" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
-	                                				<button class="btn btn-danger btn-sm" type="button" title="Delete"><i class="fa fa-trash"></i></button>
+	                                				<button class="btn btn-primary btn-sm btn-edit" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
+	                                				<button class="btn btn-danger btn-sm btn-hapus" type="button" title="Delete"><i class="fa fa-trash"></i></button>
 	                                			</div>
 	                                		</td>
 	                                	</tr>
@@ -105,4 +105,44 @@
 
 </article>
 
+@endsection
+
+@section('extra_script')
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		var table = $('#table_barang').DataTable();
+
+
+		$(document).on('click','.btn-edit',function(){
+			window.location.href = baseUrl + '/master/databarang/edit_databarang';
+		});
+
+		$(document).on('click', '.btn-hapus', function(){
+			var ini = $(this);
+			$.confirm({
+			    title: 'Hapus!',
+			    content: 'Apa anda yakin mau menghapus data ini?',
+			    buttons: {
+			        confirm: {
+			        	text:'Ya',
+			        	action : function(){
+					        table_hapus(ini);
+				        }
+			        },
+			        cancel:{
+			        	text: 'Tidak',
+					    action: function () {
+    			            // tutup confirm
+    			        }
+    			    }
+			    }
+			});
+		});
+
+		function table_hapus(a){
+			table.row($(a).parents('tr')).remove().draw();
+		}
+	});
+</script>
 @endsection

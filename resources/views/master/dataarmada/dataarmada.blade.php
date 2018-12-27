@@ -31,7 +31,7 @@
                         <section>
                         	
                         	<div class="table-responsive">
-	                            <table class="table data-table table-hover" cellspacing="0">
+	                            <table class="table table-striped table-hover" cellspacing="0" id="table_armada">
 	                                <thead class="bg-primary">
 	                                    <tr>
 	                                    	<th width="1%">No</th>
@@ -49,8 +49,8 @@
 	                                		<td>SEWA</td>
 	                                		<td>
 	                                			<div class="btn-group btn-group-sm">
-	                                				<button class="btn btn-warning" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
-	                                				<button class="btn btn-danger" type="button" title="Delete"><i class="fa fa-trash-o"></i></button>
+	                                				<button class="btn btn-warning btn-edit" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
+	                                				<button class="btn btn-danger btn-hapus" type="button" title="Delete"><i class="fa fa-trash-o"></i></button>
 	                                			</div>
 	                                		</td>
 	                                	</tr>
@@ -61,8 +61,8 @@
 	                                		<td>SEWA</td>
 	                                		<td>
 	                                			<div class="btn-group btn-group-sm">
-	                                				<button class="btn btn-warning" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
-	                                				<button class="btn btn-danger" type="button" title="Delete"><i class="fa fa-trash-o"></i></button>
+	                                				<button class="btn btn-warning btn-edit" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
+	                                				<button class="btn btn-danger btn-hapus" type="button" title="Delete"><i class="fa fa-trash-o"></i></button>
 	                                			</div>
 	                                		</td>
 	                                	</tr>
@@ -73,8 +73,8 @@
 	                                		<td>OWN</td>
 	                                		<td>
 	                                			<div class="btn-group btn-group-sm">
-	                                				<button class="btn btn-warning" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
-	                                				<button class="btn btn-danger" type="button" title="Delete"><i class="fa fa-trash-o"></i></button>
+	                                				<button class="btn btn-warning btn-edit" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
+	                                				<button class="btn btn-danger btn-hapus" type="button" title="Delete"><i class="fa fa-trash-o"></i></button>
 	                                			</div>
 	                                		</td>
 	                                	</tr>
@@ -93,4 +93,43 @@
 
 </article>
 
+@endsection
+@section('extra_script')
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		var table = $('#table_armada').DataTable();
+
+
+		$(document).on('click','.btn-edit',function(){
+			window.location.href = baseUrl + '/master/dataarmada/edit_dataarmada';
+		});
+
+		$(document).on('click', '.btn-hapus', function(){
+			var ini = $(this);
+			$.confirm({
+			    title: 'Hapus!',
+			    content: 'Apa anda yakin mau menghapus data ini?',
+			    buttons: {
+			        confirm: {
+			        	text:'Ya',
+			        	action : function(){
+					        table_hapus(ini);
+				        }
+			        },
+			        cancel:{
+			        	text: 'Tidak',
+					    action: function () {
+    			            // tutup confirm
+    			        }
+    			    }
+			    }
+			});
+		});
+
+		function table_hapus(a){
+			table.row($(a).parents('tr')).remove().draw();
+		}
+	});
+</script>
 @endsection

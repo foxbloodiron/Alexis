@@ -44,8 +44,7 @@
 	            e.preventDefault();
 	        }
     	});
-
-		$('.data-table').dataTable({
+        $.extend( $.fn.dataTable.defaults, {
           "responsive":true,
 
           "pageLength": 10,
@@ -64,7 +63,8 @@
                  }
           }
 
-        });
+        } );
+		$('.data-table').dataTable();
 
 		$('.datepicker').datepicker({
 			format:"dd-mm-yyyy",
