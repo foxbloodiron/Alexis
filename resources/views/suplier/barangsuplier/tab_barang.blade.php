@@ -1,14 +1,17 @@
                 	<div class="tab-pane fade in active show" id="list_barang">
 		                <div class="card">
-		                	<div class="card-block">
-		                		<div class="card-title-block">
+	                		<div class="card-header bordered p-2">
+	                			<div class="header-block">
 		                			<h3>Data Barang</h3>
 		                		</div>
+		                		<div class="header-block pull-right">
+										<a class="btn btn-primary" href="{{route('tambah_barang')}}"><i class="fa fa-plus"></i> Tambah Data</a>
+		                			
+		                		</div>
+	                		</div>
+		                	<div class="card-block">
 		                		<section>
 
-									<div class="d-block text-right mb-3">
-										<a class="btn btn-primary" href="{{route('tambah_barang')}}"><i class="fa fa-plus"></i> Tambah Data</a>
-									</div>
 									<div class="table-responsive">
 										<table class="table table-hover table-striped data-table" cellspacing="0">
 											<thead class="bg-primary">

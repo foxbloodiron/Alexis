@@ -20,15 +20,16 @@
 			<div class="col-12">
 				
 				<div class="card">
+                    <div class="card-header bordered p-2">
+                    	<div class="header-block">
+	                        <h3 class="title"> Data Suplier </h3>
+	                    </div>
+	                    <div class="header-block pull-right">
+                			<button class="btn btn-primary" data-toggle="modal" data-target="#tambah"><i class="fa fa-plus"></i>&nbsp;Tambah Data</button>
+	                    </div>
+                    </div>
                     <div class="card-block">
-                        <div class="card-title-block">
-                            <h3 class="title"> Data Suplier </h3>
-                        </div>
                         <section>
-                        	
-                    		<div class="col-12" align="right" style="margin-bottom: 15px;">
-                    			<button class="btn btn-primary" data-toggle="modal" data-target="#tambah"><i class="fa fa-plus"></i>&nbsp;Tambah Data</button>
-                    		</div>
                         	
                         	<div class="table-responsive">
 	                            <table class="table data-table table-hover" cellspacing="0">

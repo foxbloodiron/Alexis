@@ -21,10 +21,12 @@
 			<div class="col-12">
 				
 				<div class="card">
+                    <div class="card-header bordered p-2">
+                    	<div class="header-block">
+	                        <h3 class="title"> Upah Borongan Produksi </h3>
+	                    </div>
+                    </div>
                     <div class="card-block">
-                        <div class="card-title-block">
-                            <h3 class="title"> Upah Borongan Produksi </h3>
-                        </div>
                         <section>
                         	
                         	<div class="table-responsive">

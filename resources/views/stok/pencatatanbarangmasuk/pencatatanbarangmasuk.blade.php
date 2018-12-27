@@ -22,10 +22,16 @@
 			<div class="col-12">
 				
 				<div class="card">
+                    <div class="card-header bordered p-2">
+                    	<div class="header-block">
+	                        <h3 class="title"> Pencatatan Barang Masuk </h3>
+	                    </div>
+	                    <div class="header-block pull-right">
+	                    	
+                			<a class="btn btn-primary" href="{{route('tambah_pencatatanbarangmasuk')}}"><i class="fa fa-plus"></i>&nbsp;Tambah Data</a>
+	                    </div>
+                    </div>
                     <div class="card-block">
-                        <div class="card-title-block">
-                            <h3 class="title"> Pencatatan Barang Masuk </h3>
-                        </div>
                         <section>
                         	
                         	<div class="row">
@@ -40,14 +46,13 @@
 	                                  <input type="text" class="form-control" name="">
 	                                  <span class="input-group-addon">-</span>
 	                                  <input type="text" class="form-control" name="">
+	                                  <div class="input-group-append">
+	                                  	<button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
+	                                  	<button class="btn btn-secondary" type="button"><i class="fa fa-refresh"></i></button>
+	                                  </div>
 	                                </div>
 	                              </div>
 	                            </div>
-	                        	
-	                    		<div class="col-md-3 col-sm-12 mb-3" align="right">
-	                    			<a class="btn btn-primary" href="{{route('tambah_pencatatanbarangmasuk')}}"><i class="fa fa-plus"></i>&nbsp;Tambah Data</a>
-	                    		</div>
-
 	                    	</div>
 
                         	<div class="table-responsive">

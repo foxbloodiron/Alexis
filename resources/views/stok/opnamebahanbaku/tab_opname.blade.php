@@ -1,9 +1,11 @@
 					<div class="tab-pane fade in active show" id="opname">
 						<div class="card">
-		                    <div class="card-block">
-		                        <div class="card-title-block">
+	                        <div class="card-header bordered p-2">
+	                        	<div class="header-block">
 		                            <h3 class="title"> Opname Bahan Baku </h3>
 		                        </div>
+	                        </div>
+		                    <div class="card-block">
 		                        <section>
 		                        	
 		                        	<fieldset class="mb-3">

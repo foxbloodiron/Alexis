@@ -22,15 +22,17 @@
 			<div class="col-12">
 				
 				<div class="card">
-                    <div class="card-block">
-                        <div class="card-title-block">
+                    <div class="card-header bordered p-2">
+                    	<div class="header-block">
                             <h3 class="title"> Data Barang </h3>
                         </div>
-                        <section>
+                        <div class="header-block pull-right">
                         	
-                    		<div class="col-12" align="right" style="margin-bottom: 15px;">
-                    			<a class="btn btn-primary" href="{{route('tambah_databarang')}}"><i class="fa fa-plus"></i>&nbsp;Tambah Data</a>
-                    		</div>
+                			<a class="btn btn-primary" href="{{route('tambah_databarang')}}"><i class="fa fa-plus"></i>&nbsp;Tambah Data</a>
+                        </div>
+                    </div>
+                    <div class="card-block">
+                        <section>
                         	
                         	<div class="table-responsive">
 	                            <table class="table data-table table-hover" cellspacing="0">

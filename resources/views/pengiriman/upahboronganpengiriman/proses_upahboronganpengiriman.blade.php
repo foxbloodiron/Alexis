@@ -21,10 +21,15 @@
 			<div class="col-12">
 				
 				<div class="card">
-                    <div class="card-block">
-                        <div class="card-title-block">
+                    <div class="card-header bordered p-2">
+                        <div class="header-block">
                             <h3 class="title"> Proses Upah Borongan Pengiriman </h3>
                         </div>
+                        <div class="header-block pull-right">
+                            <a href="{{route('upahboronganpengiriman')}}" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-block">
                         <section>
 
                         	<div class="row">
