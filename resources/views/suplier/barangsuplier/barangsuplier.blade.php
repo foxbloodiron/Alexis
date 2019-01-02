@@ -45,3 +45,69 @@
 </article>
 
 @endsection
+@section('extra_script')
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		var table_sup = $('#table_suplier').DataTable();
+		var table_bar= $('#table_barang').DataTable();
+
+
+		$(document).on('click','.btn-edit-barang',function(){
+			window.location.href = baseUrl + '/suplier/barangsuplier/edit_barang';
+		});
+
+		$(document).on('click', '.btn-hapus-barang', function(){
+			var ini = $(this);
+			$.confirm({
+			    title: 'Hapus!',
+			    content: 'Apa anda yakin mau menghapus data ini?',
+			    buttons: {
+			        confirm: {
+			        	text:'Ya',
+			        	action : function(){
+					        table_hapus(ini, table_bar);
+				        }
+			        },
+			        cancel:{
+			        	text: 'Tidak',
+					    action: function () {
+    			            // tutup confirm
+    			        }
+    			    }
+			    }
+			});
+		});
+
+		$(document).on('click','.btn-edit-suplier',function(){
+			window.location.href = baseUrl + '/suplier/barangsuplier/edit_suplier';
+		});
+
+		$(document).on('click', '.btn-hapus-suplier', function(){
+			var ini = $(this);
+			$.confirm({
+			    title: 'Hapus!',
+			    content: 'Apa anda yakin mau menghapus data ini?',
+			    buttons: {
+			        confirm: {
+			        	text:'Ya',
+			        	action : function(){
+					        table_hapus(ini, table_sup);
+				        }
+			        },
+			        cancel:{
+			        	text: 'Tidak',
+					    action: function () {
+    			            // tutup confirm
+    			        }
+    			    }
+			    }
+			});
+		});
+
+		function table_hapus(a,b){
+			b.row($(a).parents('tr')).remove().draw();
+		}
+	});
+</script>
+@endsection

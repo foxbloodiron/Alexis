@@ -6,12 +6,12 @@
 <article class="content">
 
   <div class="title-block text-primary">
-      <h1 class="title"> Tambah Barang untuk Suplier </h1>
+      <h1 class="title"> Edit Barang untuk Suplier </h1>
       <p class="title-description">
         <i class="fa fa-home"></i>&nbsp;<a href="{{url('/home')}}">Home</a>
          / <span>Suplier</span>
          / <a href="{{route('barangsuplier')}}"><span>Item Barang Suplier</span></a>
-         / <span class="text-primary" style="font-weight: bold;">Tambah Barang untuk Suplier</span>
+         / <span class="text-primary" style="font-weight: bold;">Edit Barang untuk Suplier</span>
        </p>
   </div>
 
@@ -24,7 +24,7 @@
         <div class="card">
                     <div class="card-header bordered p-2">
                       <div class="header-block">
-                        <h3 class="title">Tambah Barang untuk Suplier </h3>
+                        <h3 class="title">Edit Barang untuk Suplier </h3>
                       </div>
                       <div class="header-block pull-right">
                         <a href="{{route('barangsuplier')}}" class="btn btn-secondary"><i class="fa fa-arrow-left"></i></a>
@@ -93,7 +93,7 @@
                     </div>
 
                     <div class="card-footer text-right">
-                      <button class="btn btn-primary" type="button">Simpan</button>
+                      <button class="btn btn-primary" type="button">Update</button>
                       <a href="{{route('barangsuplier')}}" class="btn btn-secondary">Kembali</a>
                     </div>
                 </div>

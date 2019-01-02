@@ -18,6 +18,14 @@ class SuplierController extends Controller
     {
     	return view('suplier/barangsuplier/tambah_suplier');
     }
+    public function edit_barang()
+    {
+        return view('suplier/barangsuplier/edit_barang');
+    }
+    public function edit_suplier()
+    {
+        return view('suplier/barangsuplier/edit_suplier');
+    }
     public function dataarmada()
     {
     	return view('suplier/dataarmada/dataarmada');
