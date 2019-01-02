@@ -106,7 +106,7 @@
                           </fieldset>
 
                           <div class="table-responsive mt-3">
-                            <table class="table table-bordered table-hover table-striped">
+                            <table class="table table-bordered table-hover table-striped" id="table_order">
                               <thead class="bg-primary">
                                 <tr>
                                   <th width="1%">No</th>
@@ -196,4 +196,11 @@
 
 </article>
 
+@endsection
+@section('extra_script')
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#table_order').dataTable();
+  });
+</script>
 @endsection
