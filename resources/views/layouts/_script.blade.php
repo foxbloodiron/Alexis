@@ -131,3 +131,71 @@
         
     });
 </script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        // custom function .ignore()
+        $.fn.ignore = function(sel){
+          return this.clone().find(sel||">*").remove().end();
+        };
+        // end custom function
+
+        $cancel_search = $('#btn-reset');
+        $btn_search_menu = $('#btn-search-menu');
+        $search_fld = $('#filterInput');
+        $filter = $search_fld.val().toUpperCase();
+        $ul = $('#sidebar-menu');
+        $li = $ul.children('li');
+
+        // $('#wid-id-0 .widget-body').html($('#sidebar ul > li').parents('li').text() + '<br>')
+        $('#sidebar ul > li > a').each(function(){
+          $(this).prepend('<span class="d-none"> '+ $(this).parents('li').ignore('span').ignore('ul').text() +'</span>');
+        });
+        $('#sidebar ul > li:has(ul) > a').each(function(){
+          $(this).prepend('<span class="d-none d-sm-none"> '+ $(this).parent('li').children().ignore('span').text() +'</span>');
+        });
+        $('#sidebar ul > li > ul > li > a').each(function(){
+          $(this).prepend('<span class="d-none d-xs-none"> '+ $(this).parent().parent().parent().ignore('span').ignore('ul').text() +'</span>');
+        });
+
+        $search_fld.on('keyup focus blur resize', function(){
+
+          if($(this).val().length != 0){
+            // alert('a');
+            $('#btn-reset').removeClass('d-none');
+          } else {
+            $('#btn-reset').addClass('d-none');
+          }
+
+          var input, filter, ul, li, a, i;
+              input = document.getElementById("filterInput");
+              filter = input.value.toUpperCase();
+              ul = document.getElementById("sidebar-menu");
+              li = ul.getElementsByTagName("li");
+              for (i = 0; i < li.length; i++) {
+                  a = li[i].getElementsByTagName("a")[0];
+                  if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                      li[i].style.display = "";
+                  } else {
+                      li[i].style.display = "none";
+
+                  }
+              
+              }
+        });
+
+        $cancel_search.on('click', function(){
+          $search_fld.val(null);
+          $search_fld.focus();
+        });
+
+
+        $btn_search_menu.on('click', function(){
+          $search_fld.focus();
+        });
+
+
+
+
+    });
+</script>

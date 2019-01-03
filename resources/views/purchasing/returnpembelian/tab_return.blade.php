@@ -53,7 +53,58 @@
 					            </tr>
                             </thead>
                             <tbody>
-
+                            	<tr>
+                            		<td>1</td>
+                            		<td>02 Jan 2019</td>
+                            		<td>RTR/201901/1</td>
+                            		<td>Administrator</td>
+                            		<td>Potong Nota</td>
+                            		<td>Alpha</td>
+                            		<td>
+                            			<div class="pull-left">
+                            				Rp.
+                            			</div>
+                            			<div class="pull-right">
+		                            		100.000,00
+		                            	</div>
+	                            	</td>
+	                            	<td>
+	                            		<span class="badge badge-secondary badge-pill">Waiting</span>
+	                            	</td>
+	                            	<td>
+	                            		<div class="btn-group btn-group-sm">
+		                            		<button class="btn btn-info" type="button" title="Detail"><i class="fa fa-list"></i></button>
+		                            		<button class="btn btn-warning" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
+		                            		<button class="btn btn-danger" type="button" title="Delete"><i class="fa fa-trash-o"></i></button>
+		                            	</div>
+	                            	</td>
+                            	</tr>
+                            	<tr>
+                            		<td>2</td>
+                            		<td>02 Jan 2019</td>
+                            		<td>RTR/201901/1</td>
+                            		<td>Administrator</td>
+                            		<td>Tukar Barang</td>
+                            		<td>Bravo</td>
+                            		<td>
+                            			<div class="pull-left">
+                            				Rp.
+                            			</div>
+                            			<div class="pull-right">
+		                            		100.000,00
+		                            	</div>
+	                            	</td>
+	                            	<td>
+	                            		<span class="badge badge-success badge-pill">Diterima</span>
+	                            	</td>
+	                            	<td>
+	                            		<div class="btn-group btn-group-sm">
+		                            		<button class="btn btn-info" type="button" title="Detail"><i class="fa fa-list"></i></button>
+		                            		<button class="btn btn-warning" type="button" title="Edit" disabled=""><i class="fa fa-pencil"></i></button>
+		                            		<button class="btn btn-danger" type="button" title="Delete" disabled=""><i class="fa fa-trash-o"></i></button>
+		                            	</div>
+	                            	</td>
+                            	</tr>
 					        </tbody>
                         </table>
                     </div>

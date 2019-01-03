@@ -64,9 +64,9 @@
                 					</td>
                 					<td>
                 						<div class="btn-group btn-group-sm">
-                							<button type="button" class="btn btn-info" title="Detail"><i class="fa fa-list"></i></button>
-                							<button type="button" class="btn btn-warning" title="Edit"><i class="fa fa-pencil"></i></button>
-                							<button type="button" class="btn btn-danger" title="Delete"><i class="fa fa-trash-o"></i></button>
+                							<button type="button" class="btn btn-info rencana_detail" title="Detail"><i class="fa fa-list"></i></button>
+                							<button type="button" class="btn btn-warning rencana_edit" title="Edit"><i class="fa fa-pencil"></i></button>
+                							<button type="button" class="btn btn-danger rencana_hapus" title="Delete"><i class="fa fa-trash-o"></i></button>
                 						</div>
                 					</td>
                 				</tr>

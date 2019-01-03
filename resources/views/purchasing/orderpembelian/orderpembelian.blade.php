@@ -2,6 +2,8 @@
 
 @section('content')
 
+@include('purchasing.orderpembelian.modal_detail')
+
 <article class="content">
 
 	<div class="title-block text-primary">
@@ -45,4 +47,11 @@
 
 </article>
 
+@endsection
+@section('extra_script')
+<script type="text/javascript">
+	$('.btn_order_detail').click(function(){
+		$('#modal_detail_order').modal('show');
+	});
+</script>
 @endsection

@@ -2,7 +2,8 @@
 
 @section('content')
 
-
+@include('purchasing.rencanapembelian.modal_detail')
+@include('purchasing.rencanapembelian.modal_edit')
 
 <article class="content">
 
@@ -47,4 +48,14 @@
 
 </article>
 
+@endsection
+@section('extra_script')
+<script type="text/javascript">
+	$('.rencana_detail').click(function(){
+		$('#detail_rencana').modal('show');
+	});
+	$('.rencana_edit').click(function(){
+		$('#detail_rencana_edit').modal('show');
+	});
+</script>
 @endsection

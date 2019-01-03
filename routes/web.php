@@ -109,6 +109,7 @@ Route::group(['middleware' => 'guest'], function(){
 	// Stok
 	Route::get('/stok/dataadonan/dataadonan', 'StokController@dataadonan')->name('dataadonan');
 	Route::get('/stok/dataadonan/tambah_dataadonan', 'StokController@tambah_dataadonan')->name('tambah_dataadonan');
+	Route::get('/stok/dataadonan/edit_dataadonan', 'StokController@edit_dataadonan')->name('edit_dataadonan');
 	Route::get('/stok/opnamebahanbaku/opnamebahanbaku', 'StokController@opnamebahanbaku')->name('opnamebahanbaku');
 	Route::get('/stok/pencatatanbarangmasuk/pencatatanbarangmasuk', 'StokController@pencatatanbarangmasuk')->name('pencatatanbarangmasuk');
 	Route::get('/stok/pencatatanbarangmasuk/tambah_pencatatanbarangmasuk', 'StokController@tambah_pencatatanbarangmasuk')->name('tambah_pencatatanbarangmasuk');

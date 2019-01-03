@@ -50,7 +50,27 @@
 					            </tr>
                             </thead>
                             <tbody>
-
+                            	<tr>
+                            		<td>1</td>
+                            		<td>31 Des 2018</td>
+                            		<td>PO/201812/1</td>
+                            		<td>Administrator</td>
+                            		<td>Charlie</td>
+                            		<td>TUNAI</td>
+                            		<td>
+                            			<div class="pull-left">
+                            				Rp.
+                            			</div>
+                            			<div class="pull-right">
+                            				100.000,00
+                            			</div>
+                        			</td>
+                        			<td>1 Jan 2019</td>
+                        			<td><span class="badge badge-pill badge-warning">Revisi</span></td>
+                        			<td>
+                        				<button class="btn btn-info btn-sm" type="button" title="Detail"><i class="fa fa-list"></i></button>
+                        			</td>
+                            	</tr>
 					        </tbody>
                         </table>
                     </div>

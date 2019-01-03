@@ -45,3 +45,14 @@ fieldset{
 .btn{
 	margin-bottom: 0;
 }
+.header .header-block-search .input-container > button{
+	left: 0;
+}
+.header .header-block-search .input-container > button > i{
+	position: initial;
+	pointer-events: none;
+	display: block;
+	height: 17px;
+	line-height: 17px;
+	left: 0;
+}

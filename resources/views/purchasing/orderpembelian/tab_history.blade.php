@@ -65,7 +65,21 @@
                 			</thead>
 
                 			<tbody>
-                				
+                				<tr>
+                					<td>1</td>
+                					<td>PO/201901/1</td>
+                					<td>Pasir</td>
+                					<td>Truk/Colt</td>
+                					<td>Delta</td>
+                					<td>03 Jan 2019</td>
+                					<td>1</td>
+                					<td>04 Jan 2019</td>
+                					<td>1</td>
+                					<td><span class="badge badge-pill badge-success">Diterima</span></td>
+                					<td>
+                						<button class="btn btn-info btn-sm" type="button" title="Detail"><i class="fa fa-list"></i></button>
+                					</td>
+                				</tr>
                 			</tbody>
                 		</table>
 

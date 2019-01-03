@@ -14,6 +14,10 @@ class StokController extends Controller
     {
         return view('stok/dataadonan/tambah_dataadonan');
     }
+    public function edit_dataadonan()
+    {
+        return view('stok/dataadonan/edit_dataadonan');
+    }
     public function opnamebahanbaku()
     {
     	return view('stok/opnamebahanbaku/opnamebahanbaku');

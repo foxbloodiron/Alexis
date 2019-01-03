@@ -8,7 +8,10 @@
         <form role="search">
             <div class="input-container">
                 <i class="fa fa-search"></i>
-                <input type="search" placeholder="Search">|
+                <input type="search" placeholder="Search" id="filterInput">
+                <button type="button" class="btn btn-secondary btn-sm d-none" id="btn-reset">
+                    <i class="fa fa-times"></i>
+                </button>
                 <div class="underline"></div>
             </div>
         </form>
@@ -125,7 +128,7 @@
                 Alexis 
             </div>
         </div>
-        <nav class="menu">
+        <nav class="menu" id="sidebar">
             <ul class="sidebar-menu metismenu" id="sidebar-menu">
                 <li class="{{Request::is('home') ? 'active' : ''  || Request::is('/') ? 'active' : ''}}">
                     <a href="{{url('/')}}">

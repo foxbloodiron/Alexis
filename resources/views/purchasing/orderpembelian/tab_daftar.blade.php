@@ -70,7 +70,7 @@
                 					</td>
                 					<td>
                 						<div class="btn-group btn-group-sm">
-                							<button class="btn btn-info" type="button" title="Detail"><i class="fa fa-list"></i></button>
+                							<button class="btn btn-info btn_order_detail" type="button" title="Detail"><i class="fa fa-list"></i></button>
                 							<button class="btn btn-warning" disabled="" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
                 							<button class="btn btn-danger" disabled="" type="button" title="Delete"><i class="fa fa-trash-o"></i></button>
                 						</div>
