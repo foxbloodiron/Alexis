@@ -2,6 +2,8 @@
 
 @section('content')
 
+@include('master.dataarmada.modal_dataarmada')
+
 <article class="content">
 
 	<div class="title-block text-primary">
@@ -35,18 +37,16 @@
 	                                <thead class="bg-primary">
 	                                    <tr>
 	                                    	<th width="1%">No</th>
+							                <th>Suplier</th>
 							                <th>Nopol</th>
-							                <th>Tipe</th>
-							                <th>Status</th>
 							                <th>Aksi</th>
 							            </tr>
 	                                </thead>
 	                                <tbody>
 	                                	<tr>
 	                                		<td>1</td>
-	                                		<td>DK 8006 MD</td>
-	                                		<td>TRAILER</td>
-	                                		<td>SEWA</td>
+	                                		<td>CV Charlie</td>
+	                                		<td><button class="btn btn-primary btn-modal" data-toggle="modal" data-target="#detail" type="button">Detail</button></td>
 	                                		<td>
 	                                			<div class="btn-group btn-group-sm">
 	                                				<button class="btn btn-warning btn-edit" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
@@ -56,9 +56,8 @@
 	                                	</tr>
 	                                	<tr>
 	                                		<td>2</td>
-	                                		<td>DK 8004 MD</td>
-	                                		<td>TRAILER</td>
-	                                		<td>SEWA</td>
+	                                		<td>UD Dorang</td>
+	                                		<td><button class="btn btn-primary" data-toggle="modal" data-target="#tambah" type="button">Detail</button></td>
 	                                		<td>
 	                                			<div class="btn-group btn-group-sm">
 	                                				<button class="btn btn-warning btn-edit" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
@@ -68,9 +67,8 @@
 	                                	</tr>
 	                                	<tr>
 	                                		<td>3</td>
-	                                		<td>DK 8005 MD</td>
-	                                		<td>MAIN BATTLE TANK</td>
-	                                		<td>OWN</td>
+	                                		<td>CV Hehe</td>
+	                                		<td><button class="btn btn-primary" data-toggle="modal" data-target="#tambah" type="button">Detail</button></td>
 	                                		<td>
 	                                			<div class="btn-group btn-group-sm">
 	                                				<button class="btn btn-warning btn-edit" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
@@ -103,6 +101,10 @@
 
 		$(document).on('click','.btn-edit',function(){
 			window.location.href = baseUrl + '/master/dataarmada/edit_dataarmada';
+		});
+
+		$(document).on('click','.btn-edit',function(){
+			$('#tambah').modal('show');	
 		});
 
 		$(document).on('click', '.btn-hapus', function(){
