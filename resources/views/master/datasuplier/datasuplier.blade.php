@@ -2,8 +2,6 @@
 
 @section('content')
 
-@include('master.datasuplier.tambah_datasuplier')
-
 <article class="content">
 
 	<div class="title-block text-primary">
@@ -25,7 +23,7 @@
 	                        <h3 class="title"> Data Suplier </h3>
 	                    </div>
 	                    <div class="header-block pull-right">
-                			<button class="btn btn-primary" data-toggle="modal" data-target="#tambah"><i class="fa fa-plus"></i>&nbsp;Tambah Data</button>
+                			<button class="btn btn-primary" data-toggle="modal" data-target="#tambah" onclick="window.location.href='{{route('tambah_datasuplier')}}'"><i class="fa fa-plus"></i>&nbsp;Tambah Data</button>
 	                    </div>
                     </div>
                     <div class="card-block">
@@ -34,15 +32,16 @@
                         	<div class="table-responsive">
 	                            <table class="table table-striped table-hover" cellspacing="0" id="table_suplier">
 	                                <thead class="bg-primary">
-	                                    <tr>
-							                <th>No</th>
-							                <th>Perusahaan</th>
-							                <th>Nama Suplier</th>
-							                <th>Alamat</th>
-							                <th>No Hp</th>
-							                <th>Fax</th>
-							                <th>Keterangan</th>
-							                <th>Aksi</th>
+	                                    <tr align="center">
+							                <th width="1%">No</th>
+							                <th width="10%">Perusahaan</th>
+							                <th width="30%">Nama Suplier</th>
+							                <th width="1%">Alamat</th>
+							                <th width="17%">No Hp</th>
+							                <th width="1%">Fax</th>
+											<th width="1%">Keterangan</th>
+											<th width="21%">Plat Nomer</th>
+							                <th width="5%">Aksi</th>
 							            </tr>
 	                                </thead>
 	                                <tbody>
@@ -53,7 +52,8 @@
 	                                		<td>Jl. Alpha</td>
 	                                		<td></td>
 	                                		<td></td>
-	                                		<td></td>
+											<td></td>
+											<td></td>
 	                                		<td>
 	                                			<div class="btn-group">
 	                                				<button class="btn btn-primary btn-sm btn-edit" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
@@ -68,7 +68,8 @@
 	                                		<td>Jl. Bravo</td>
 	                                		<td></td>
 	                                		<td></td>
-	                                		<td></td>
+											<td></td>
+											<td></td>
 	                                		<td>
 	                                			<div class="btn-group">
 	                                				<button class="btn btn-primary btn-sm btn-edit" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
@@ -83,7 +84,8 @@
 	                                		<td>Jl. Charlie</td>
 	                                		<td></td>
 	                                		<td></td>
-	                                		<td></td>
+											<td></td>
+											<td></td>
 	                                		<td>
 	                                			<div class="btn-group">
 	                                				<button class="btn btn-primary btn-sm btn-edit" type="button" title="Edit"><i class="fa fa-pencil"></i></button>

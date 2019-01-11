@@ -26,9 +26,11 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/master/databarang/tambah_databarang', 'MasterController@tambah_databarang')->name('tambah_databarang');
 	Route::get('/master/databarang/edit_databarang', 'MasterController@edit_databarang')->name('edit_databarang');
 	Route::get('/master/datasuplier/datasuplier', 'MasterController@datasuplier')->name('datasuplier');
+	Route::get('/master/datasuplier/tambah_datasuplier', 'MasterController@tambah_datasuplier')->name('tambah_datasuplier');
 	Route::get('/master/dataarmada/dataarmada', 'MasterController@dataarmada')->name('dataarmada');
 	Route::get('/master/dataarmada/tambah_dataarmada', 'MasterController@tambah_dataarmada')->name('tambah_dataarmada');
 	Route::get('/master/dataarmada/edit_dataarmada', 'MasterController@edit_dataarmada')->name('edit_dataarmada');
+	Route::get('/master/dataarmada/modal_dataarmada', 'MasterController@modal_dataarmada')->name('modal_dataarmada');
 	Route::get('/master/datacustomer/datacustomer', 'MasterController@datacustomer')->name('datacustomer');
 	Route::get('/master/datacustomer/tambah_datacustomer', 'MasterController@tambah_datacustomer')->name('tambah_datacustomer');
 	Route::get('/master/datacustomer/edit_datacustomer', 'MasterController@edit_datacustomer')->name('edit_datacustomer');
