@@ -14,6 +14,10 @@ class PurchaseController extends Controller
     {
     	return view('purchasing/orderpembelian/tambah_orderpembelian');
     }
+    public function tambah_orderpembelian_tanparencana()
+    {
+        return view('purchasing/orderpembelian/tambah_orderpembelian_tanparencana');
+    }    
     public function rencanapembelian()
     {
     	return view('purchasing/rencanapembelian/rencanapembelian');
