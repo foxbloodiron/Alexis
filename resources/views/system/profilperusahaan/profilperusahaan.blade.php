@@ -173,6 +173,7 @@
 	                        			<div class="form-group">
 	                        				<input type="file" class="" readonly="" name="">
 	                        			</div>
+	                        			<small class="text-danger">Rekomendasi ukuran 50px x 50px</small>
 	                        		</div>
 	                        	</div>
                         	</form>
