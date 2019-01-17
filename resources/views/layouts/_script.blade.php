@@ -79,16 +79,17 @@
     });
 
     $(document).click(function(eve){
-      if (!$(eve.target).closest('header').length && $(document).width() <= 768) {
+      if (!$(eve.target).closest('header').length && $(window).width() <= 768) {
         $('#search-container').hide('slow');
       }
     });
 
-    $(document).on('resize', function(){
+    $(window).on('resize', function(){
 
-      if ($(document).width() > 768) {
-        $('#search-container').css('display', '');
-      }
+      if ($(window).width() > 768) {
+        $('#search-container').css('display', 'block');
+      } 
+      
 
     });
 
