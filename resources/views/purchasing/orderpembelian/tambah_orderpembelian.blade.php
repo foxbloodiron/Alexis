@@ -106,7 +106,7 @@
                           </fieldset>
 
                           <div class="table-responsive mt-3">
-                            <table class="table table-bordered table-hover table-striped" id="table_order">
+                            <table class="table table-bordered table-hover table-striped" id="table_order" cellspacing="0">
                               <thead class="bg-primary">
                                 <tr>
                                   <th width="1%">No</th>
