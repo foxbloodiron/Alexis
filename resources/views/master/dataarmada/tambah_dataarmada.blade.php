@@ -49,7 +49,7 @@
                             </div>
 
                             <div>
-                              <td align="center"><button class="btn btn-primary" type="button">Submit</button></td>
+                              <td align="center"><button class="btn btn-primary btn-submit" type="button">Submit</button></td>
                             </div>
 
                           </div>
@@ -69,16 +69,6 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr>
-                                  <td>Isqy Jaya, UD</td>
-                                  <td>N 9626 UT</td>
-                                  <td><input type="text" class="form-control form-control-sm" name=""></td>
-                                  <td><input type="text" class="form-control form-control-sm" name=""></td>
-                                  <td><input type="text" class="form-control form-control-sm" name=""></td>
-                                  <td><input type="text" class="form-control form-control-sm" name=""></td>
-                                  <td><input type="text" class="form-control form-control-sm" name=""></td>
-                                  <td><input type="text" class="form-control form-control-sm" name=""></td>
-                                </tr>
                               </tbody>
                             </table>
                         </section>
@@ -104,6 +94,22 @@
     $(".js-example-placeholder-single").select2({
     placeholder: "Search",
     allowClear: true
+    });
+
+    $('.btn-submit').on('click',function(){
+      $('#table_rencana tbody')
+      .append(
+        '<tr>'+
+          '<td>Isqy Jaya, UD</td>'+
+          '<td>N 9626 UT</td>'+
+          '<td><input type="text" class="form-control form-control-sm" name=""></td>'+
+          '<td><input type="text" class="form-control form-control-sm" name=""></td>'+
+          '<td><input type="text" class="form-control form-control-sm" name=""></td>'+
+          '<td><input type="text" class="form-control form-control-sm" name=""></td>'+
+          '<td><input type="text" class="form-control form-control-sm" name=""></td>'+
+          '<td><input type="text" class="form-control form-control-sm" name=""></td>'+
+        '</tr>'
+        );
     });
   });
 </script>
