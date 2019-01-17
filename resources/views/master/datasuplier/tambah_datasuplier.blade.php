@@ -109,15 +109,22 @@
                             <table class="table table-hover table-striped table-bordered" id="table_rencana">
                               <thead class="bg-primary">
                                 <tr align="center">
-                                  <th width="1%">No</th>
-                                  <th width="70%">Plat Nomer Kendaraan</th>
-                                  <th width="10%">Aksi</th>
+                                  <th width="2%" rowspan="2">No</th>
+                                  <th width="68%" colspan="3">Plat Nomer Kendaraan</th>
+                                  <th width="10%" rowspan="2">Aksi</th>
+                                </tr>
+                                <tr>
+                                  <th>Kode Wilayah</th>
+                                  <th>Nomer Polisi</th>
+                                  <th>Huruf Belakang</th>
                                 </tr>
                               </thead>
                               <tbody>
                                 <tr>
                                   <td align="center">#</td>
-                                  <td><input type="text" class="form-control form-control-sm" name=""></td>
+                                  <td><input type="text" class="form-control form-control-sm" name="" value="L"></td>
+                                  <td><input type="text" class="form-control form-control-sm" name="" value="3680"></td>
+                                  <td><input type="text" class="form-control form-control-sm" name="" value="NOB"></td>
                                   <td align="center"><button class="btn btn-primary btn-tambah" type="button"><i class="fa fa-plus"></i></button></td>
                                 </tr>
                               </tbody>
@@ -182,6 +189,8 @@
       .append(
         '<tr>'+
           '<td align="center">#</td>'+
+          '<td><input type="text" class="form-control form-control-sm" name=""></td>'+
+          '<td><input type="text" class="form-control form-control-sm" name=""></td>'+
           '<td><input type="text" class="form-control form-control-sm" name=""></td>'+
           '<td align="center"><button class="btn btn-danger btn-hapus" type="button"><i class="fa fa-trash-o"></i></button></td>'+
         '</tr>'
