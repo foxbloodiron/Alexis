@@ -72,6 +72,26 @@
 
 		});
 
+    $('#search-mobile').click(function(){
+
+      $('#search-container').toggle('display');
+
+    });
+
+    $(document).click(function(eve){
+      if (!$(eve.target).closest('header').length && $(document).width() <= 768) {
+        $('#search-container').hide('slow');
+      }
+    });
+
+    $(document).on('resize', function(){
+
+      if ($(document).width() > 768) {
+        $('#search-container').css('display', '');
+      }
+
+    });
+
         $('.input-daterange').datepicker({
             format:'dd-mm-yyyy',
             enableOnReadonly:false

@@ -4,7 +4,7 @@
             <i class="fa fa-bars"></i>
         </button>
     </div>
-    <div class="header-block header-block-search">
+    <div id="search-container" class="header-block header-block-search">
         <form role="search">
             <div class="input-container">
                 <i class="fa fa-search"></i>
@@ -32,6 +32,9 @@
     </div> -->
     <div class="header-block header-block-nav">
         <ul class="nav-profile">
+            <li class="d-block d-sm-block d-md-none">
+                <a id="search-mobile" href="javascript:void(0);"><i class="fa fa-search"></i></a>
+            </li>
             <li class="notifications new">
                 <a href="" data-toggle="dropdown">
                     <i class="fa fa-bell-o"></i>

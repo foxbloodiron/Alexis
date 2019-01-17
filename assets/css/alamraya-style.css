@@ -61,3 +61,28 @@ fieldset{
 .table-condensed > tbody > tr > td{
 	padding: 5px;
 }
+@media (max-width:768px){
+	#search-container{
+		display: none;
+		position: absolute;
+		background: white;
+		left: 0;
+		width: 100%;
+		text-align: left;
+		z-index: 1;
+	}
+	#search-container form{
+		width: 100%;
+	}
+	#filterInput{
+		width: 100%;
+		max-width: 100%;
+	}
+	#btn-reset{
+		right: 0;
+		position: absolute;
+		left: unset;
+		margin: 6px;
+		top: 0;
+	}
+}
