@@ -23,7 +23,10 @@
 
 				<ul class="nav nav-pills mb-3">
                     <li class="nav-item">
-                        <a href="" class="nav-link active" data-target="#list_barang" aria-controls="list_barang" data-toggle="tab" role="tab">Daftar Order Pembelian</a>
+                        <a href="" class="nav-link active" data-target="#list_barang" aria-controls="list_barang" data-toggle="tab" role="tab">Order Pembelian Dengan Rencana</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link" data-target="#po_tanpa" aria-controls="po_tanpa" data-toggle="tab" role="tab">Order Pembelian Tanpa Rencana</a>
                     </li>
                     <li class="nav-item">
                         <a href="" class="nav-link" data-target="#list_suplier" aria-controls="list_suplier" data-toggle="tab" role="tab">History Order Pembelian</a>
@@ -34,6 +37,8 @@
 				<div class="tab-content">
 
 					@include('purchasing.orderpembelian.tab_daftar')
+
+					@include('purchasing.orderpembelian.tab_po_tanpa_rencana')
 
 		            @include('purchasing.orderpembelian.tab_history')
 
