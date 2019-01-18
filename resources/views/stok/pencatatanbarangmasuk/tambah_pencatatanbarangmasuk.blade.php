@@ -152,15 +152,16 @@
     var counter = 1;
 
     $('.btn-proses').click(function(){
-      if ($('#plat_no').val().length != 0) {
+      if ($('#plat_no').val().length != 0 && counter === 1) {
         datatable_append();
-      } else {
+      } else if($('#plat_no').val() === '' || $('#plat_no').val() === null){
         datatable_clear();
       }
     });
 
     function datatable_clear(){
       table.clear().draw();
+      counter--;
     }
 
     function datatable_append(){
