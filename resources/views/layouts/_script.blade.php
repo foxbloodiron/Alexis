@@ -20,7 +20,7 @@
 <script src="{{asset('assets/jquery-toast/jquery.toast.js')}}"></script>
 <script src="{{asset('assets/bootstrap-datetimepicker/js/moment.js')}}"></script>
 <script src="{{asset('assets/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js')}}"></script>
-
+<script src="{{asset('assets/js/vue.js')}}"></script>
 <script type="text/javascript">
     var baseUrl = "{{url('/')}}";
 

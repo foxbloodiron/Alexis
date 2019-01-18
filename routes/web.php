@@ -42,16 +42,17 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/aset/penyusutan/penyusutan', 'AsetController@penyusutan');	
 
 	// Biaya dan Beban
-	Route::get('/biayadanbeban/alattuliskantor/alattuliskantor', 'BiayaController@alattuliskantor');
-	Route::get('/biayadanbeban/biayabahanbakar/biayabahanbakar', 'BiayaController@biayabahanbakar');
-	Route::get('/biayadanbeban/biayakesehatan/biayakesehatan', 'BiayaController@biayakesehatan');
-	Route::get('/biayadanbeban/biayakonsumsi/biayakonsumsi', 'BiayaController@biayakonsumsi');
-	Route::get('/biayadanbeban/biayaoperasional/biayaoperasional', 'BiayaController@biayaoperasional');
-	Route::get('/biayadanbeban/maintenance/maintenance', 'BiayaController@maintenance');
-	Route::get('/biayadanbeban/sewalahan/sewalahan', 'BiayaController@sewalahan');
-	Route::get('/biayadanbeban/upahborongan/upahborongan', 'BiayaController@upahborongan');
-	Route::get('/biayadanbeban/upahbulanan/upahbulanan', 'BiayaController@upahbulanan');
-	Route::get('/biayadanbeban/upahharian/upahharian', 'BiayaController@upahharian');
+	Route::get('/biayadanbeban/alattuliskantor/alattuliskantor', 'BiayaController@alattuliskantor')->name('alattuliskantor');
+	Route::get('/biayadanbeban/biayabahanbakar/biayabahanbakar', 'BiayaController@biayabahanbakar')->name('biayabahanbakar');
+	Route::get('/biayadanbeban/biayakesehatan/biayakesehatan', 'BiayaController@biayakesehatan')->name('biayakesehatan');
+	Route::get('/biayadanbeban/biayakonsumsi/biayakonsumsi', 'BiayaController@biayakonsumsi')->name('biayakonsumsi');
+	Route::get('/biayadanbeban/biayaoperasional/biayaoperasional', 'BiayaController@biayaoperasional')->name('biayaoperasional');
+	Route::get('/biayadanbeban/maintenance/maintenance', 'BiayaController@maintenance')->name('maintenance');
+	Route::get('/biayadanbeban/sewalahan/sewalahan', 'BiayaController@sewalahan')->name('sewalahan');
+	Route::get('/biayadanbeban/upahborongan/upahborongan', 'BiayaController@upahborongan')->name('upahborongan');
+	Route::get('/biayadanbeban/upahborongan/tambah_upahborongan', 'BiayaController@tambah_upahborongan')->name('tambah_upahborongan');
+	Route::get('/biayadanbeban/upahbulanan/upahbulanan', 'BiayaController@upahbulanan')->name('upahbulanan');
+	Route::get('/biayadanbeban/upahharian/upahharian', 'BiayaController@upahharian')->name('upahharian');
 
 	// Customer
 	Route::get('/customer/historitransaksi/historitransaksi', 'CustomerController@historitransaksi');

@@ -38,6 +38,10 @@ class BiayaController extends Controller
     {
     	return view('biayadanbeban/upahborongan/upahborongan');
     }
+    public function tambah_upahborongan()
+    {
+        return view('biayadanbeban/upahborongan/tambah_upahborongan');
+    }    
     public function upahbulanan()
     {
     	return view('biayadanbeban/upahbulanan/upahbulanan');
