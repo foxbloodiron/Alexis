@@ -96,7 +96,7 @@
                           <fieldset class="mt-3">
                             <div class="row">
                               
-                              <div class="col-md-8 col-sm-8 col-12">
+                              <div class="col-md-4 col-sm-4 col-12">
                                 <label>Barang</label>
                                 <div class="form-group">
                                   <select class="select2 form-control form-control-sm" id="barang" name="">
@@ -104,6 +104,14 @@
                                     <option>Semen</option>
                                     <option>Pasir</option>
                                     <option>Cat</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="col-md-4 col-sm-4 col-12">
+                                <label for="">Satuan</label>
+                                <div class="form-group">
+                                  <select class="form-control form-control-sm">
+                                    <option value="" selected="" disabled="">-Pilih-</option>
                                   </select>
                                 </div>
                               </div>
@@ -126,13 +134,10 @@
                           <div class="table-responsive mt-3">
                             <table class="table table-bordered table-hover table-striped" cellspacing="0" id="table_order">
                               <thead class="bg-primary">
-                                <tr>
-                                  <th>Kode | Barang</th>
-                                  <th width="10%">Qty</th>
+                                <tr align="center">
+                                  <th width="20%">Kode | Barang</th>
                                   <th width="10%">Satuan</th>
-                                  <th>Harga Prev</th>
-                                  <th>Harga Satuan</th>
-                                  <th>Total</th>
+                                  <th width="10%">Qty</th>
                                   <th width="10%">Stok Gudang</th>
                                   <th width="1%">Aksi</th>
                                 </tr>
@@ -231,15 +236,9 @@
 
     function datatable_append(){
       table.row.add([
-        '<input type="text" class="form-control form-control-sm" value="'+ $('#barang').val() +'">',
-        '<input type="number" min="0" class="form-control form-control-sm" value="'+ $('#qty').val() +'">',
-        '<select class="form-control form-control-sm">'+
-          '<option value="" selected="" disabled="">-Pilih-</option>'+
-        '</select>'
-        ,
+        '<input type="text" class="form-control form-control-sm" readonly="" value="'+ $('#barang').val() +'">',
         '<input type="text" class="form-control form-control-sm" readonly="">',
-        '<input type="text" class="form-control form-control-sm" readonly="">',
-        '<input type="text" class="form-control form-control-sm" readonly="">',
+        '<input type="number" min="0" readonly="" class="form-control form-control-sm" value="'+ $('#qty').val() +'">',
         '<input type="text" class="form-control form-control-sm" readonly="">',
         '<button type="button" class="btn btn-danger btn-hapus"><i class="fa fa-trash-o"></i></button>'
         ]).draw(false);
