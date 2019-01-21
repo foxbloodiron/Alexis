@@ -128,7 +128,7 @@
                         </section>
                     </div>
                     <div class="card-footer text-right">
-                      <button class="btn btn-primary" type="button">Simpan</button>
+                      <button class="btn btn-primary btn-submit" type="button">Simpan</button>
                       <a href="{{route('datacustomer')}}" class="btn btn-secondary">Kembali</a>
                     </div>
                 </div>
@@ -172,6 +172,17 @@
         $('.125mm').addClass('d-none');
       }
     });
+
+    $(document).on('click', '.btn-submit', function(){
+			$.toast({
+				heading: 'Success',
+				text: 'Data Berhasil di Edit',
+				bgColor: '#00b894',
+				textColor: 'white',
+				loaderBg: '#55efc4',
+				icon: 'success'
+			})
+		})
   });
 </script>
 @endsection

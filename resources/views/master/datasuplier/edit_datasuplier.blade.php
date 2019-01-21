@@ -5,12 +5,12 @@
 <article class="content">
 
   <div class="title-block text-primary">
-      <h1 class="title"> Tambah Data Customer </h1>
+      <h1 class="title"> Edit Data Suplier </h1>
       <p class="title-description">
         <i class="fa fa-home"></i>&nbsp;<a href="{{url('/home')}}">Home</a>
          / <span>Master Data</span>
-         / <a href="{{route('datacustomer')}}"><span>Data Customer</span></a>
-         / <span class="text-primary" style="font-weight: bold;"> Tambah Data Customer</span>
+         / <a href="{{route('datacustomer')}}"><span>Data Suplier</span></a>
+         / <span class="text-primary" style="font-weight: bold;"> Edit Data Suplier</span>
        </p>
   </div>
 
@@ -24,20 +24,20 @@
 
                     <div class="card-header bordered p-2">
                       <div class="header-block">
-                        <h3 class="title"> Tambah Data Customer </h3>
+                        <h3 class="title"> Edit Data Suplier </h3>
                       </div>
                       <div class="header-block pull-right">
-                        <a href="{{route('datacustomer')}}" class="btn btn-secondary"><i class="fa fa-arrow-left"></i></a>
+                        <a href="{{route('datasuplier')}}" class="btn btn-secondary"><i class="fa fa-arrow-left"></i></a>
                       </div>
                     </div>
 
                     <div class="card-block">
                         <section>
                           
-                          <div class="row">
+                          <div id="sectionsuplier" class="row">
                             
                             <div class="col-md-3 col-sm-6 col-xs-12">
-                              <label>ID Customer</label>
+                              <label>Nama Perusahaan</label>
                             </div> 
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
@@ -47,7 +47,28 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
-                              <label>Nama Customer</label>
+                              <label>Nama Suplier</label>
+                            </div> 
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <input type="text" class="form-control form-control-sm" name="">
+                                  <div class="form-group">
+                              </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <label>Nomer Hp</label>
+                            </div> 
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <div class="form-group">
+                                <input type="text" class="form-control form-control-sm" name="">
+                              </div>
+                            </div>
+
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <label>Fax</label>
                             </div> 
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
@@ -57,18 +78,7 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
-                              <label>E-mail</label>
-                            </div> 
-
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                              <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" name="">
-                              </div>
-                            </div>
-
-
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                              <label>No HP</label>
+                              <label>Email</label>
                             </div> 
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
@@ -78,50 +88,47 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
-                              <label>Type Customer</label>
-                            </div> 
-
+                              <label>Alamat</label>
+                            </div>
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <select class="form-control form-control-sm" id="type_cus">
-                                  <option value="">-Pilih-</option>
-                                  <option value="kontrak">Kontraktor</option>
-                                  <option value="harian">Harian</option>
-                                </select>
+                                <textarea class="form-control form-control-sm"></textarea>
                               </div>
                             </div>
-
-                            <div class="col-md-offset-9 col-md-3 col-sm-6 col-xs-12 d-none 120mm">
-                              <label id="label_type_cus"></label>
-                            </div> 
-
-                            <div class="col-md-3 col-sm-6 col-xs-12 d-none 120mm">
+                            
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <label>Keterangan</label>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <input type="number" class="form-control form-control-sm" min="1" id="jumlah_hari_bulan" name="jumlah_hari_bulan">
+                                <textarea class="form-control form-control-sm"></textarea>
                               </div>
                             </div>
 
-                            <div class="col-md-offset-9 col-md-3 col-sm-6 col-xs-12 d-none 122mm">
-                              <label>Pagu</label>
-                            </div> 
-
-                            <div class="col-md-3 col-sm-6 col-xs-12 d-none 122mm">
-                              <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" id="pagu" name="pagu">
-                              </div>
-                            </div>
-
-                            <div class="col-md-3 col-sm-6 col-xs-12 d-none 125mm">
-                              <label>Armada</label>
-                            </div> 
-
-                            <div class="col-md-3 col-sm-6 col-xs-12 d-none 125mm">
-                              <div class="form-group">
-                                <select class="form-control form-control-sm select2" id="armada">
-                                  <option value="">--Pilih--</option>
-                                </select>
-                              </div>
-                            </div>
+                            <div class="table-responsive mt-3">
+                            <table class="table table-hover table-striped table-bordered" id="table_rencana">
+                              <thead class="bg-primary">
+                                <tr align="center">
+                                  <th width="2%" rowspan="2">No</th>
+                                  <th width="68%" colspan="3">Plat Nomer Kendaraan</th>
+                                  <th width="10%" rowspan="2">Aksi</th>
+                                </tr>
+                                <tr>
+                                  <th>Kode Wilayah</th>
+                                  <th>Nomer Polisi</th>
+                                  <th>Huruf Belakang</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td align="center">#</td>
+                                  <td><input type="text" class="form-control form-control-sm" name="" value="L"></td>
+                                  <td><input type="text" class="form-control form-control-sm" name="" value="3680"></td>
+                                  <td><input type="text" class="form-control form-control-sm" name="" value="NOB"></td>
+                                  <td align="center"><button class="btn btn-primary btn-tambah" type="button"><i class="fa fa-plus"></i></button></td>
+                                </tr>
+                              </tbody>
+                            </table>
 
                           </div>
                         
@@ -129,7 +136,7 @@
                     </div>
                     <div class="card-footer text-right">
                       <button class="btn btn-primary btn-submit" type="button">Simpan</button>
-                      <a href="{{route('datacustomer')}}" class="btn btn-secondary">Kembali</a>
+                      <a href="{{route('datasuplier')}}" class="btn btn-secondary">Kembali</a>
                     </div>
                 </div>
 
@@ -172,10 +179,27 @@
         $('.125mm').addClass('d-none');
       }
     });
+
+    $(document).on('click', '.btn-hapus', function(){
+      $(this).parents('tr').remove();
+    });
+
+    $('.btn-tambah').on('click',function(){
+      $('#table_rencana tbody')
+      .append(
+        '<tr>'+
+          '<td align="center">#</td>'+
+          '<td><input type="text" class="form-control form-control-sm" name=""></td>'+
+          '<td><input type="text" class="form-control form-control-sm" name=""></td>'+
+          '<td><input type="text" class="form-control form-control-sm" name=""></td>'+
+          '<td align="center"><button class="btn btn-danger btn-hapus" type="button"><i class="fa fa-trash-o"></i></button></td>'+
+        '</tr>'
+        );
+    });
     $(document).on('click', '.btn-submit', function(){
 			$.toast({
 				heading: 'Success',
-				text: 'Data Berhasil di Simpan',
+				text: 'Data Berhasil di Edit',
 				bgColor: '#00b894',
 				textColor: 'white',
 				loaderBg: '#55efc4',

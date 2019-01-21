@@ -5,12 +5,12 @@
 <article class="content">
 
   <div class="title-block text-primary">
-      <h1 class="title"> Tambah Data Pegawai </h1>
+      <h1 class="title"> Edit Data Pegawai </h1>
       <p class="title-description">
         <i class="fa fa-home"></i>&nbsp;<a href="{{url('/home')}}">Home</a>
          / <span>Master Data</span>
          / <a href="{{route('datapegawai')}}"><span>Data Pegawai</span></a>
-         / <span class="text-primary" style="font-weight: bold;">Tambah Data Pegawai</span>
+         / <span class="text-primary" style="font-weight: bold;">Edit Data Pegawai</span>
        </p>
   </div>
 
@@ -170,7 +170,7 @@
     $(document).on('click', '.btn-submit', function(){
 			$.toast({
 				heading: 'Success',
-				text: 'Data Berhasil di Simpan',
+				text: 'Data Berhasil di Edit',
 				bgColor: '#00b894',
 				textColor: 'white',
 				loaderBg: '#55efc4',
