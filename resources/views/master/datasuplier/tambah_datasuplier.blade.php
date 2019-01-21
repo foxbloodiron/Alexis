@@ -135,7 +135,7 @@
                         </section>
                     </div>
                     <div class="card-footer text-right">
-                      <button class="btn btn-primary" type="button">Simpan</button>
+                      <button class="btn btn-primary btn-submit" type="button">Simpan</button>
                       <a href="{{route('datasuplier')}}" class="btn btn-secondary">Kembali</a>
                     </div>
                 </div>
@@ -196,6 +196,17 @@
         '</tr>'
         );
     });
+
+    $(document).on('click', '.btn-submit', function(){
+			$.toast({
+				heading: 'Success',
+				text: 'Data Berhasil di Simpan',
+				bgColor: '#00b894',
+				textColor: 'white',
+				loaderBg: '#55efc4',
+				icon: 'success'
+			})
+		})
   });
 </script>
 @endsection

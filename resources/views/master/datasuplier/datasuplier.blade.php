@@ -55,9 +55,9 @@
 											<td></td>
 											<td></td>
 	                                		<td>
-	                                			<div class="btn-group">
-	                                				<button class="btn btn-primary btn-sm btn-edit" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
-	                                				<button class="btn btn-danger btn-sm btn-hapus" type="button" title="Delete"><i class="fa fa-trash"></i></button>
+	                                			<div class="btn-group btn-group-sm">
+	                                				<button class="btn btn-warning btn-edit" onclick="window.location.href='{{route('edit_datasuplier')}}'" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
+	                                				<button class="btn btn-danger btn-disable" type="button" title="Delete"><i class="fa fa-eye-slash"></i></button>
 	                                			</div>
 	                                		</td>
 	                                	</tr>
@@ -71,9 +71,9 @@
 											<td></td>
 											<td></td>
 	                                		<td>
-	                                			<div class="btn-group">
-	                                				<button class="btn btn-primary btn-sm btn-edit" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
-	                                				<button class="btn btn-danger btn-sm btn-hapus" type="button" title="Delete"><i class="fa fa-trash"></i></button>
+	                                			<div class="btn-group btn-group-sm">
+	                                				<button class="btn btn-warning btn-edit" onclick="window.location.href='{{route('edit_datasuplier')}}'" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
+	                                				<button class="btn btn-danger btn-disable" type="button" title="Delete"><i class="fa fa-eye-slash"></i></button>
 	                                			</div>
 	                                		</td>
 	                                	</tr>
@@ -87,9 +87,9 @@
 											<td></td>
 											<td></td>
 	                                		<td>
-	                                			<div class="btn-group">
-	                                				<button class="btn btn-primary btn-sm btn-edit" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
-	                                				<button class="btn btn-danger btn-sm btn-hapus" type="button" title="Delete"><i class="fa fa-trash"></i></button>
+	                                			<div class="btn-group btn-group-sm">
+	                                				<button class="btn btn-warning btn-edit" onclick="window.location.href='{{route('edit_datasuplier')}}'" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
+	                                				<button class="btn btn-danger btn-disable" type="button" title="Delete"><i class="fa fa-eye-slash"></i></button>
 	                                			</div>
 	                                		</td>
 	                                	</tr>
@@ -113,23 +113,32 @@
 <script type="text/javascript">
 
 	$(document).ready(function(){
-		var table = $('#table_suplier').DataTable();
+		var table = $('#table_satuan').DataTable();
 
-
-		$(document).on('click','.btn-edit',function(){
-			$('#tambah').modal('show');	
-		});
-
-		$(document).on('click', '.btn-hapus', function(){
+		$(document).on('click', '.btn-disable', function(){
 			var ini = $(this);
 			$.confirm({
-			    title: 'Hapus!',
-			    content: 'Apa anda yakin mau menghapus data ini?',
+				animation: 'RotateY',
+				closeAnimation: 'scale',
+				animationBounce: 1.5,
+				icon: 'fa fa-exclamation-triangle',
+			    title: 'Disable',
+				content: 'Apa anda yakin mau disable data ini?',
+				theme: 'disable',
 			    buttons: {
-			        confirm: {
+			        info: {
+						btnClass: 'btn-blue',
 			        	text:'Ya',
 			        	action : function(){
-					        table_hapus(ini);
+							$.toast({
+								heading: 'Information',
+								text: 'Data Berhasil di Disable.',
+								bgColor: '#0984e3',
+								textColor: 'white',
+								loaderBg: '#fdcb6e',
+								icon: 'info'
+							})
+					        ini.parents('.btn-group').html('<button class="btn btn-danger btn-enable" type="button" title="enable"><i class="fa fa-eye"></i></button>');
 				        }
 			        },
 			        cancel:{
@@ -142,9 +151,22 @@
 			});
 		});
 
-		function table_hapus(a){
-			table.row($(a).parents('tr')).remove().draw();
-		}
+		$(document).on('click', '.btn-enable', function(){
+			$.toast({
+				heading: 'Information',
+				text: 'Data Berhasil di Enable.',
+				bgColor: '#0984e3',
+				textColor: 'white',
+				loaderBg: '#fdcb6e',
+				icon: 'info'
+			})
+			$(this).parents('.btn-group').html('<button class="btn btn-warning btn-edit" type="button" title="Edit"><i class="fa fa-pencil"></i></button>'+
+	                                		'<button class="btn btn-danger btn-disable" type="button" title="Delete"><i class="fa fa-eye-slash"></i></button>')
+		})
+
+		// function table_hapus(a){
+		// 	table.row($(a).parents('tr')).remove().draw();
+		// }
 	});
 </script>
 @endsection
