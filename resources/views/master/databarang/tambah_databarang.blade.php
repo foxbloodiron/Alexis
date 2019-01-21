@@ -52,9 +52,11 @@
                             <div class="col-md-9 col-sm-6 col-xs-12">
                               <div class="form-group">
                                 <select class="form-control form-control-sm">
-                                  <option value="">--Pilih Type Barang--</option>
-                                  <option value="1">Bahan Baku</option>
-                                  <option value="2">Spare Part</option>
+                                  <option value="" selected="" disabled="">--Pilih Type Barang--</option>
+                                  <option value="BB">Bahan Baku</option>
+                                  <option value="SP">Spare Part</option>
+                                  <option value="BJ">Barang Jual</option>
+                                  <option value="LL">Lain-lain</option>
                                 </select>
                               </div>
                             </div>
@@ -66,7 +68,10 @@
                             <div class="col-md-9 col-sm-6 col-xs-12">
                               <div class="form-group">
                                 <select class="form-control form-control-sm">
-                                  <option value="">--Pilih Kelompok Barang--</option>
+                                  <option value="" selected="" disabled="">--Pilih Kelompok Barang--</option>
+                                  <option value="BB">Bahan Baku Produksi</option>
+                                  <option value="BSJ">Barang Setengah Jadi</option>
+                                  <option value="BJD">Barang Jadi</option>
                                 </select>
                               </div>
                             </div>

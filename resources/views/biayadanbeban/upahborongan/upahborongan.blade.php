@@ -2,8 +2,6 @@
 
 @section('content')
 
-@include('biayadanbeban.upahborongan.tambah_upahborongan')
-
 <article class="content">
 
 	<div class="title-block text-primary">
@@ -25,7 +23,7 @@
 	                        <h3 class="title"> Upah Borongan </h3>
 	                    </div>
 	                    <div class="header-block pull-right">
-                			<button class="btn btn-primary" data-toggle="modal" data-target="#tambah"><i class="fa fa-plus"></i>&nbsp;Tambah Data</button>
+                			<a class="btn btn-primary" href="{{route('tambah_upahborongan')}}"><i class="fa fa-plus"></i>&nbsp;Tambah Data</a>
 	                    	
 	                    </div>
                     </div>
@@ -40,7 +38,6 @@
 							                <th>Tanggal Input</th>
 							                <th>Tipe Upah Borongan</th>
 							                <th width="25%">Nama</th>
-							                <th width="20%">Jumlah</th>
 							                <th width="15%">Aksi</th>
 							            </tr>
 	                                </thead>
@@ -50,14 +47,6 @@
 	                                		<td>12-12-2012 12:12:12</td>
 	                                		<td>Produksi</td>
 	                                		<td>Upah Kerja Rodi 1</td>
-	                                		<td>
-	                                			<div class="float-left">
-	                                				Rp.
-	                                			</div>
-	                                			<div class="float-right">
-	                                				2.000,00
-	                                			</div>
-	                                		</td>
 	                                		<td align="center">
 	                                			<div class="btn-group">
 	                                				<button class="btn btn-warning" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
