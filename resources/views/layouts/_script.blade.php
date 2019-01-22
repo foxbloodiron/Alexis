@@ -153,7 +153,7 @@
 
         var random = Math.floor(Math.random() * coeg.length);
 
-        
+        // $.toast(coeg[random]);
     });
 </script>
 
