@@ -52,7 +52,7 @@
 	                                		<td>
 	                                			<div class="btn-group btn-group-sm">
 	                                				<button class="btn btn-warning btn-edit" title="Edit" onclick="window.location.href='{{ route('edit_datapegawai')}}'"type="button"><i class="fa fa-pencil"></i></button>
-	                                				<button class="btn btn-danger btn-disable" type="button" title="Delete"><i class="fa fa-eye-slash"></i></button>
+	                                				<button class="btn btn-danger btn-disable" type="button" title="Disable"><i class="fa fa-eye-slash"></i></button>
 	                                			</div>
 	                                		</td>
 	                                	</tr>
@@ -66,7 +66,7 @@
 	                                		<td>
 	                                			<div class="btn-group btn-group-sm">
 													<button class="btn btn-warning btn-edit" title="Edit" onclick="window.location.href='{{ route('edit_datapegawai')}}'"type="button"><i class="fa fa-pencil"></i></button>
-	                                				<button class="btn btn-danger btn-disable" type="button" title="Delete"><i class="fa fa-eye-slash"></i></button>
+	                                				<button class="btn btn-danger btn-disable" type="button" title="Disable"><i class="fa fa-eye-slash"></i></button>
 	                                			</div>
 	                                		</td>
 	                                	</tr>
@@ -80,7 +80,7 @@
 	                                		<td>
 	                                			<div class="btn-group btn-group-sm">
 													<button class="btn btn-warning btn-edit" title="Edit" onclick="window.location.href='{{ route('edit_datapegawai')}}'"type="button"><i class="fa fa-pencil"></i></button>
-	                                				<button class="btn btn-danger btn-disable" type="button" title="Delete"><i class="fa fa-eye-slash"></i></button>
+	                                				<button class="btn btn-danger btn-disable" type="button" title="Disable"><i class="fa fa-eye-slash"></i></button>
 	                                			</div>
 	                                		</td>
 	                                	</tr>
@@ -135,7 +135,7 @@ $(document).ready(function(){
 							loaderBg: '#fdcb6e',
 							icon: 'info'
 						})
-						ini.parents('.btn-group').html('<button class="btn btn-danger btn-enable" type="button" title="enable"><i class="fa fa-eye"></i></button>');
+						ini.parents('.btn-group').html('<button class="btn btn-danger btn-enable" type="button" title="Enable"><i class="fa fa-eye"></i></button>');
 					}
 				},
 				cancel:{
@@ -158,7 +158,7 @@ $(document).ready(function(){
 			icon: 'info'
 		})
 		$(this).parents('.btn-group').html('<button class="btn btn-warning btn-edit" type="button" title="Edit"><i class="fa fa-pencil"></i></button>'+
-										'<button class="btn btn-danger btn-disable" type="button" title="Delete"><i class="fa fa-eye-slash"></i></button>')
+										'<button class="btn btn-danger btn-disable" type="button" title="Disable"><i class="fa fa-eye-slash"></i></button>')
 	})
 
 	// function table_hapus(a){
