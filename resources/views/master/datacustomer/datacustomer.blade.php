@@ -40,6 +40,7 @@
 							                <th width="1%">No</th>
 							                <th>ID</th>
 							                <th>Nama</th>
+											<th>Alamat</th>
 							                <th>E-mail</th>
 							                <th>No HP</th>
 							                <th>Tipe Customer</th>
@@ -51,6 +52,7 @@
 	                                		<td>1</td>
 	                                		<td>CUS/0001</td>
 	                                		<td>Alpha</td>
+											<td>Rungkut</td>
 	                                		<td>alpha@alpha.com</td>
 	                                		<td>0843123123123</td>
 	                                		<td>Kontraktor</td>
@@ -65,6 +67,7 @@
 	                                		<td>2</td>
 	                                		<td>CUS/0001</td>
 	                                		<td>Bravo</td>
+											<td>Rungkut</td>
 	                                		<td>Bravo@Bravo.com</td>
 	                                		<td>0843123123123</td>
 	                                		<td>Harian</td>
@@ -79,6 +82,7 @@
 	                                		<td>3</td>
 	                                		<td>CUS/0001</td>
 	                                		<td>Charlie</td>
+											<td>Rungkut</td>
 	                                		<td>Charlie@Charlie.com</td>
 	                                		<td>0843123123123</td>
 	                                		<td>Kontraktor</td>

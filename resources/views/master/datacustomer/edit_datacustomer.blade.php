@@ -89,7 +89,7 @@
                                   <option value="harian">Harian</option>
                                 </select>
                               </div>
-                            </div>
+                            </div>                            
 
                             <div class="col-md-offset-9 col-md-3 col-sm-6 col-xs-12 d-none 120mm">
                               <label id="label_type_cus"></label>
@@ -97,7 +97,7 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-12 d-none 120mm">
                               <div class="form-group">
-                                <input type="number" class="form-control form-control-sm" min="1" id="jumlah_hari_bulan" name="jumlah_hari_bulan">
+                                <input type="text" class="form-control form-control-sm" min="1" id="jumlah_hari_bulan" name="jumlah_hari_bulan">
                               </div>
                             </div>
 
@@ -107,7 +107,7 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-12 d-none 122mm">
                               <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" id="pagu" name="pagu">
+                              <input type="text" style="text-align: right;"class="form-control form-control-sm  input-rupiah" id="pagu" name="pagu">
                               </div>
                             </div>
 
@@ -120,6 +120,16 @@
                                 <select class="form-control form-control-sm select2" id="armada">
                                   <option value="">--Pilih--</option>
                                 </select>
+                              </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <label>Alamat</label>
+                            </div> 
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <div class="form-group">
+                                <textarea class="form-control" name="" id="" cols="30" rows="3"></textarea>
                               </div>
                             </div>
 
@@ -148,7 +158,7 @@
   $(document).ready(function(){
     $('#type_cus').change(function(){
       if($(this).val() === 'kontrak'){
-        $('#label_type_cus').text('Jumlah Bulan');
+        $('#label_type_cus').text('Jatuh tempo');
         $('#jumlah_hari_bulan').val('');
         $('#pagu').val('');
         $('#armada').prop('selectedIndex', 0).trigger('change');
