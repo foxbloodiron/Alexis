@@ -22,6 +22,36 @@
 
 			<div class="col-12">
 				
+				<div class="row">
+					
+					<div class="col-md-6 col-sm-6 col-12">
+						
+						<div class="alert alert-success alert-dismissible fade show" role="alert">
+							<span class="badge badge-pill badge-light">1</span> Rencana Pembelian <strong>Disetujui</strong>
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+
+					</div>
+
+					<div class="col-md-6 col-sm-6 col-12">
+						
+						<div class="alert alert-info alert-dismissible fade show" role="alert">
+							<span class="badge badge-pill badge-light">1</span> Rencana Pembelian <strong>Waiting</strong>
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+
+					</div>					
+
+				</div>
+
+			</div>
+
+			<div class="col-12">
+				
 				<ul class="nav nav-pills mb-3">
                     <li class="nav-item">
                         <a href="" class="nav-link active" data-target="#daftar_rencana" aria-controls="daftar_rencana" data-toggle="tab" role="tab">Daftar Rencana Pembelian</a>

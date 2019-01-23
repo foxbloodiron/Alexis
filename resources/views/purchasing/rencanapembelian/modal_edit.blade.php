@@ -55,8 +55,8 @@
               <tr>
                 <th>Kode Barang</th>
                 <th>Nama Barang</th>
-                <th>Satuan</th>
                 <th width="35%">Qty</th>
+                <th>Satuan</th>
                 <th width="10%">Qty Confirm</th>
                 <th width="10%">Stock Gudang</th>
               </tr>
@@ -66,24 +66,24 @@
                <tr>
                 <td>Semen</td>
                 <td>BRG/0001</td>
-                <td>Karung</td>
                 <td><input type="number" min="0" class="form-control form-control-sm" name=""></td>
+                <td>Karung</td>
                 <td>10</td>
                 <td>50</td>
               </tr>
               <tr>
                 <td>Pasir</td>
                 <td>BRG/0002</td>
-                <td>Butir</td>
                 <td><input type="number" min="0" class="form-control form-control-sm" name=""></td>
+                <td>Butir</td>
                 <td>10</td>
                 <td>50</td>
               </tr>
               <tr>
                 <td>Cat</td>
                 <td>BRG/0003</td>
-                <td>Kaleng</td>
                 <td><input type="number" min="0" class="form-control form-control-sm" name=""></td>
+                <td>Kaleng</td>
                 <td>10</td>
                 <td>50</td>
               </tr>
