@@ -103,6 +103,11 @@
             format:"D-M-Y HH:mm:ss",
             disabledTimeIntervals: false
         });
+        $('.timepicker').datetimepicker({
+            format:"HH:mm:ss",
+            disabledTimeIntervals: false,
+            pickDate:false
+        });        
         // $('.modal.fade').on('scroll', function(){
         //     if($(this).hasClass('show')=== true){
         //         $('.datepicker').datepicker('hide');

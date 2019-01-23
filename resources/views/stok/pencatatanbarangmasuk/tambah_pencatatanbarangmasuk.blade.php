@@ -2,6 +2,8 @@
 
 @section('content')
 
+@include('stok.pencatatanbarangmasuk.modal_muatan')
+
 <article class="content">
 
   <div class="title-block text-primary">
@@ -41,8 +43,10 @@
 
                               <div class="col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
-                                  <select class="form-control form-control-sm select2">
+                                  <select class="form-control form-control-sm select2" id="nota_order" name="nota_order">
                                     <option value="">--Pilih--</option>
+                                    <option value="1">PO/20190123/1</option>
+
                                   </select>
                                 </div>
                               </div>
@@ -86,43 +90,73 @@
                                   <input type="text" class="form-control form-control-sm" readonly="">
                                 </div>
                               </div>
-                              
-                              
-                              <div class="col-md-3 col-sm-6 col-xs-12">
-                                <label>Plat No</label>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                  <select class="form-control form-control-sm select2" id="plat_no">
-                                    <option value="">--Pilih--</option>
-                                    <option value="1">N 9626 UT</option>
-                                  </select>
-                                </div>
-                              </div>
 
                               <div class="col-12">
-                                <button class="btn btn-primary btn-block btn-proses" type="button">Proses</button>
+                                <button class="btn btn-primary btn-block btn-proses" type="button">Tampilkan</button>
                               </div>
                             </div>
                           </fieldset>
 
-                          <div class="table-responsive mt-3">
-                            
-                            <table class="table table-bordered table-striped table-hover" id="table_barangmasuk" cellspacing="0">
-                              <thead class="bg-primary">
-                                <tr>
-                                  <th>Kode | Barang</th>
-                                  <th>Satuan</th>
-                                  <th>Panjang Bak (cm<sup>3</sup>)</th>
-                                  <th>Lebar Bak (cm<sup>3</sup>)</th>
-                                  <th>Tinggi Bak (cm<sup>3</sup>)</th>
-                                  <th>Kubikasi Bak (m<sup>3</sup>)</th>
-                                  <th>Kubikasi Muatan Bak (m<sup>3</sup>)</th>
-                                </tr>
-                              </thead>
-                              <tbody></tbody>
-                            </table>
+                          <div id="table-for">
+
+                            <fieldset class="mt-3 d-none" id="front-end-show">
+
+                              <h4><b>Pasir</b></h4> 
+                              <span class="badge badge-pill badge-secondary">2 Rit</span>
+                              <hr>
+
+                              <div class="table-responsive mt-3">
+                                
+                                <table class="table table-bordered table-striped table-hover" id="table_barangmasuk" cellspacing="0">
+                                  <thead class="bg-primary">
+                                    <tr>
+                                      <th>Kode | Barang</th>
+                                      <th>Tanggal Datang</th>
+                                      <th>Jam Datang</th>
+                                      <th>Surat Jalan</th>
+                                      <th>Plat Nomor</th>
+                                      <th>Detail Kendaraan</th>
+                                      <th>Kubikasi Muatan Bak (m<sup>3</sup>)</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>BRG/1</td>
+                                      <td><input type="text" class="form-control-sm form-control datepicker" name=""></td>
+                                      <td><input type="text" class="form-control-sm form-control datetimepicker" name=""></td>
+                                      <td><input type="text" class="form-control-sm form-control" name=""></td>
+                                      <td>
+                                        <select class="select2 form-control form-control-sm">
+                                          <option value="" selected="" disabled="">--Pilih--</option>
+                                        </select>
+                                      </td>
+                                      <td align="center">
+                                        <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#detail_muatan">Detail</button>
+                                      </td>
+                                      <td><input type="text" class="form-control-sm form-control" name=""></td>
+
+                                    </tr>
+                                    <tr>
+                                      <td>BRG/1</td>
+                                      <td><input type="text" class="form-control-sm form-control datepicker" name=""></td>
+                                      <td><input type="text" class="form-control-sm form-control datetimepicker" name=""></td>
+                                      <td><input type="text" class="form-control-sm form-control" name=""></td>
+                                      <td>
+                                        <select class="select2 form-control form-control-sm">
+                                          <option value="" selected="" disabled="">--Pilih--</option>
+                                        </select>
+                                      </td>
+                                      <td align="center">
+                                        <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#detail_muatan">Detail</button>
+                                      </td>
+                                      <td><input type="text" class="form-control-sm form-control" name=""></td>
+
+                                    </tr>
+                                  </tbody>
+                                </table>
+
+                              </div>
+                            </fieldset>
 
                           </div>
 
@@ -149,36 +183,25 @@
   $(document).ready(function(){
 
     var table = $('#table_barangmasuk').DataTable();
-    var counter = 1;
+    var tabel_muatan = $('#tabel_muatan').DataTable({
+                                          searching:false,
+                                          paging:false
+                                        });
 
     $('.btn-proses').click(function(){
-      if ($('#plat_no').val().length != 0 && counter === 1) {
-        datatable_append();
-      } else if($('#plat_no').val() === '' || $('#plat_no').val() === null){
-        datatable_clear();
+      if($('#nota_order').val() === ''){
+        $.toast({
+          text:'Pilih Nota Terlebih Dahulu!',
+          icon:'error'
+
+        });
+        $('#front-end-show').addClass('d-none');
+      } else {
+        $('#front-end-show').removeClass('d-none');
       }
     });
 
-    function datatable_clear(){
-      table.clear().draw();
-      counter--;
-    }
 
-    function datatable_append(){
-
-      table.row.add([
-          'BRG/1 Semen',
-          'SAK',
-          '551',
-          '241',
-          '200',
-          '26.56',
-          '<input type="text" class="form-control form-control-sm" name="" id="">'
-
-        ]).draw(false);
-
-      counter++;
-    }
 
   });
 
