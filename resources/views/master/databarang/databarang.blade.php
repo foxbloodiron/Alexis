@@ -116,9 +116,8 @@
 		$(document).on('click', '.btn-disable', function(){
 			var ini = $(this);
 			$.confirm({
-				animation: 'RotateY',
+                animation: 'RotateY',
 				closeAnimation: 'scale',
-				animationBounce: 1.5,
 				icon: 'fa fa-exclamation-triangle',
 			    title: 'Disable',
 				content: 'Apa anda yakin mau disable data ini?',

@@ -161,9 +161,12 @@
                         <li class="{{Request::is('master/datasatuan/*') ? 'active' : ''}}">
                             <a href="{{route('datasatuan')}}">Data Satuan</a>
                         </li>
+                        <li class="{{Request::is('master/barangsuplier/*') ? 'active' : ''}}">
+                            <a href="{{url('master/barangsuplier/barangsuplier')}}">Item Barang Suplier</a>
+                        </li>
                     </ul>
                 </li>
-                <li class="{{Request::is('suplier/*') ? 'active open' : ''}}">
+                <!-- <li class="{{Request::is('suplier/*') ? 'active open' : ''}}">
                     <a href="#">
                         <i class="fa fa-user"></i> Suplier
                         <i class="fa arrow"></i>
@@ -176,7 +179,7 @@
                             <a href="{{url('suplier/dataarmada/dataarmada')}}">Data Armada</a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
                 <li class="{{Request::is('purchasing/*') ? 'active open' : ''}}">
                     <a href="#">
                         <i class="fa fa-credit-card"></i> Purchasing
