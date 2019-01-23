@@ -86,5 +86,25 @@ class MasterController extends Controller
     {
         return view('master/datasatuan/edit_datasatuan');
     }
+    public function barangsuplier()
+    {
+    	return view('master/barangsuplier/barangsuplier');
+    }
+    public function tambah_barang()
+    {
+    	return view('master/barangsuplier/tambah_barang');
+    }
+    public function tambah_suplier()
+    {
+    	return view('master/barangsuplier/tambah_suplier');
+    }
+    public function edit_barang()
+    {
+        return view('master/barangsuplier/edit_barang');
+    }
+    public function edit_suplier()
+    {
+        return view('master/barangsuplier/edit_suplier');
+    }
 }
 
