@@ -91,7 +91,7 @@
 	                                		<td>12 Jan 2019</td>
 	                                		<td align="center"><label class="badge badge-success">Close</label></td>
 	                                		<td align="center">
-	                                			<button class="btn btn-warning btn-sm" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
+	                                			-
 	                                		</td>
 	                                	</tr>
 							        </tbody>
