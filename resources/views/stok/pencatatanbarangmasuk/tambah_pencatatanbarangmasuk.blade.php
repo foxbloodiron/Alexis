@@ -38,6 +38,16 @@
                             <div class="row">
 
                               <div class="col-md-3 col-sm-6 col-xs-12">
+                                <label>Kode Penerimaan</label>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                  <input type="text" class="form-control form-control-sm" readonly="">
+                                </div>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-12">
                                 <label>Nota Order Pembelian</label>
                               </div>
 
@@ -197,6 +207,7 @@
                         </section>
                     </div>
                     <div class="card-footer text-right">
+                      <button class="btn btn-warning mr-5" type="button">Close</button>
                       <button class="btn btn-primary" type="button">Simpan</button>
                       <a href="{{route('pencatatanbarangmasuk')}}" class="btn btn-secondary">Kembali</a>
                     </div>

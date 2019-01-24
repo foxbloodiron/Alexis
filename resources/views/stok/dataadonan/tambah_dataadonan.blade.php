@@ -53,6 +53,18 @@
                         			</div>
 
                                     <div class="col-md-4 col-sm-5 col-12">
+                                        <label>Komposisi</label>
+                                    </div>
+
+                                    <div class="col-md-8 col-sm-7 col-12">
+                                        <div class="form-group">
+                                        
+                                           <input type="text" min="" class="form-control form-control-sm" name=""> 
+                                                
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 col-sm-5 col-12">
                                         <label>Jumlah Hasil Produksi</label>
                                     </div>
 
@@ -71,7 +83,7 @@
                                     <div class="col-md-8 col-sm-7 col-12">
                                         <div class="form-group">
                                         
-                                           <select class="form-control form-control-sm select2">
+                                           <select class="form-control form-control-sm">
                                                 <option value="">--Pilih--</option>
                                             </select>   
                                                 
