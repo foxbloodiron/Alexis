@@ -97,17 +97,17 @@
                             </div>
                           </fieldset>
 
-                          <div id="table-for">
+                          <div class="d-none" id="front-end-show">
 
-                            <fieldset class="mt-3 d-none" id="front-end-show">
+                            <fieldset class="mt-3">
 
                               <h4><b>Pasir</b></h4> 
-                              <span class="badge badge-pill badge-secondary">2 Rit</span>
+                              <span class="badge badge-pill badge-secondary">3 Rit</span>
                               <hr>
 
                               <div class="table-responsive mt-3">
                                 
-                                <table class="table table-bordered table-striped table-hover" id="table_barangmasuk" cellspacing="0">
+                                <table class="table table-bordered table-striped table-hover data-table" id="table_barangmasuk" cellspacing="0">
                                   <thead class="bg-primary">
                                     <tr>
                                       <th>Kode | Barang</th>
@@ -120,44 +120,78 @@
                                     </tr>
                                   </thead>
                                   <tbody>
-                                    <tr>
-                                      <td>BRG/1</td>
-                                      <td><input type="text" class="form-control-sm form-control datepicker" name=""></td>
-                                      <td><input type="text" class="form-control-sm form-control datetimepicker" name=""></td>
-                                      <td><input type="text" class="form-control-sm form-control" name=""></td>
-                                      <td>
-                                        <select class="select2 form-control form-control-sm">
-                                          <option value="" selected="" disabled="">--Pilih--</option>
-                                        </select>
-                                      </td>
-                                      <td align="center">
-                                        <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#detail_muatan">Detail</button>
-                                      </td>
-                                      <td><input type="text" class="form-control-sm form-control" name=""></td>
+                                    @for($j=0;$j<3;$j++)
+                                      <tr>
+                                        <td>BRG/1</td>
+                                        <td><input type="text" class="form-control-sm form-control datepicker" name=""></td>
+                                        <td><input type="text" class="form-control-sm form-control input-jam" name=""></td>
+                                        <td><input type="text" class="form-control-sm form-control" name=""></td>
+                                        <td>
+                                          <select class="select2 form-control form-control-sm plat_no">
+                                            <option value="" selected="" disabled="">--Pilih--</option>
+                                            <option value="1">N 9626 UT</option>
+                                          </select>
+                                        </td>
+                                        <td align="center">
+                                          <button type="button" class="btn btn-info btn-xs btn-detail-muatan" disabled="" data-toggle="modal" data-target="#detail_muatan">Detail</button>
+                                        </td>
+                                        <td><input type="text" class="form-control-sm form-control muatan_bak" readonly="" name=""></td>
 
-                                    </tr>
-                                    <tr>
-                                      <td>BRG/1</td>
-                                      <td><input type="text" class="form-control-sm form-control datepicker" name=""></td>
-                                      <td><input type="text" class="form-control-sm form-control datetimepicker" name=""></td>
-                                      <td><input type="text" class="form-control-sm form-control" name=""></td>
-                                      <td>
-                                        <select class="select2 form-control form-control-sm">
-                                          <option value="" selected="" disabled="">--Pilih--</option>
-                                        </select>
-                                      </td>
-                                      <td align="center">
-                                        <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#detail_muatan">Detail</button>
-                                      </td>
-                                      <td><input type="text" class="form-control-sm form-control" name=""></td>
-
-                                    </tr>
+                                      </tr>
+                                    @endfor
                                   </tbody>
                                 </table>
 
                               </div>
                             </fieldset>
 
+
+                            <fieldset class="mt-3">
+
+                              <h4><b>Koral</b></h4> 
+                              <span class="badge badge-pill badge-secondary">5 Rit</span>
+                              <hr>
+
+                              <div class="table-responsive mt-3">
+                                
+                                <table class="table table-bordered table-striped table-hover data-table" id="table_barangmasuk" cellspacing="0">
+                                  <thead class="bg-primary">
+                                    <tr>
+                                      <th>Kode | Barang</th>
+                                      <th>Tanggal Datang</th>
+                                      <th>Jam Datang</th>
+                                      <th>Surat Jalan</th>
+                                      <th>Plat Nomor</th>
+                                      <th>Detail Kendaraan</th>
+                                      <th>Kubikasi Muatan Bak (m<sup>3</sup>)</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    @for($i=0;$i<5;$i++)
+                                      <tr>
+                                        <td>BRG/2</td>
+                                        <td><input type="text" class="form-control-sm form-control datepicker" name=""></td>
+                                        <td><input type="text" class="form-control-sm form-control input-jam" name=""></td>
+                                        <td><input type="text" class="form-control-sm form-control" name=""></td>
+                                        <td>
+                                          <select class="select2 form-control form-control-sm plat_no">
+                                            <option value="" selected="" disabled="">--Pilih--</option>
+                                            <option value="1">N 9626 UT</option>
+                                          </select>
+                                        </td>
+                                        <td align="center">
+                                          <button type="button" class="btn btn-info btn-xs btn-detail-muatan" disabled="" data-toggle="modal" data-target="#detail_muatan">Detail</button>
+                                        </td>
+                                        <td><input type="text" class="form-control-sm form-control muatan_bak" readonly="" name=""></td>
+
+                                      </tr>
+
+                                    @endfor
+                                  </tbody>
+                                </table>
+
+                              </div>
+                            </fieldset>
                           </div>
 
                         </section>
@@ -182,7 +216,7 @@
   
   $(document).ready(function(){
 
-    var table = $('#table_barangmasuk').DataTable();
+    // var table = $('#table_barangmasuk').DataTable();
     var tabel_muatan = $('#tabel_muatan').DataTable({
                                           searching:false,
                                           paging:false
@@ -201,7 +235,24 @@
       }
     });
 
+    $('.data-table tbody').on('change', '.plat_no', function(){
 
+      var plat_no = $(this).val();
+
+      var btn_modal = $(this).parents('tr').find('.btn-detail-muatan');
+
+      if(plat_no != ''){
+        btn_modal.attr('disabled', false);
+        $(this).parents('tr').find('.muatan_bak').attr('readonly', false);
+      } else {
+        btn_modal.attr('disabled', true);
+        $(this).parents('tr').find('.muatan_bak').val('').attr('readonly', true);
+      }
+
+
+
+
+    });
 
   });
 
