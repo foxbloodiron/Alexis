@@ -37,8 +37,8 @@
 	                                    <tr>
 	                                    	<th>Kode Produksi</th>
 							                <th>Tanggal</th>
-							                <th>Kode Item</th>
-							                <th>Nama Item</th>
+							                <th>Kode Barang</th>
+							                <th>Nama Barang</th>
 							                <th>Rencana Produksi</th>
 							                <th>Aksi</th>
 							            </tr>

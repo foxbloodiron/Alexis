@@ -17,7 +17,7 @@
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12">
               <div class="form-group">
-                <select class="form-control form-control-sm select2">
+                <select class="form-control form-control-sm select2" id="tambah_barang">
                   <option value="">--Pilih--</option>
                 </select>
               </div>
