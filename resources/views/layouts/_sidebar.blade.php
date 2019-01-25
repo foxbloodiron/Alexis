@@ -195,6 +195,9 @@
                         <li class="{{Request::is('purchasing/returnpembelian/*') ? 'active' : ''}}">
                             <a href="{{route('returnpembelian')}}">Return Pembelian</a>
                         </li>
+                        <li class="{{Request::is('purchasing/rencanabahanbaku/*') ? 'active' : ''}}">
+                            <a href="{{route('rencanabahanbaku')}}" title="Rencana Bahan Baku Produksi">Bahan Baku Produksi</a>
+                        </li>
                     </ul>
                 </li>
                 <li class="{{Request::is('stok/*') ? 'active open' : ''}}">
@@ -240,6 +243,9 @@
                         </li>
                         <li  class="{{Request::is('produksi/upahboronganproduksi/*') ? 'active' : ''}}">
                             <a href="{{url('produksi/upahboronganproduksi/upahboronganproduksi')}}"> Upah Borongan Produksi</a>
+                        </li>
+                        <li class="{{Request::is('produksi/spk/*') ? 'active' : ''}}">
+                            <a href="{{route('spk_produksi')}}">Manajemen SPK</a>
                         </li>
                     </ul>
                 </li>

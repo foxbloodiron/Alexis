@@ -49,7 +49,7 @@
 	                                		<td><button class="btn btn-primary btn-modal" data-toggle="modal" data-target="#detail" type="button">Detail</button></td>
 	                                		<td>
 	                                			<div class="btn-group btn-group-sm">
-	                                				<button class="btn btn-warning btn-edit" onclick="window.location.href='edit_dataarmada'" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
+	                                				<button class="btn btn-warning btn-edit" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
 	                                				<button class="btn btn-danger btn-disable" type="button" title="Disable"><i class="fa fa-eye-slash"></i></button>
 	                                			</div>
 	                                		</td>
@@ -60,7 +60,7 @@
 	                                		<td><button class="btn btn-primary" data-toggle="modal" data-target="#tambah" type="button">Detail</button></td>
 	                                		<td>
 	                                			<div class="btn-group btn-group-sm">
-	                                				<button class="btn btn-warning btn-edit" onclick="window.location.href='edit_dataarmada'" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
+	                                				<button class="btn btn-warning btn-edit" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
 	                                				<button class="btn btn-danger btn-disable" type="button" title="Disable"><i class="fa fa-eye-slash"></i></button>
 	                                			</div>
 	                                		</td>
@@ -71,7 +71,7 @@
 	                                		<td><button class="btn btn-primary" data-toggle="modal" data-target="#tambah" type="button">Detail</button></td>
 	                                		<td>
 	                                			<div class="btn-group btn-group-sm">
-	                                				<button class="btn btn-warning btn-edit" onclick="window.location.href='edit_dataarmada'" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
+	                                				<button class="btn btn-warning btn-edit" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
 	                                				<button class="btn btn-danger btn-disable" type="button" title="Disable"><i class="fa fa-eye-slash"></i></button>
 	                                			</div>
 	                                		</td>
@@ -96,7 +96,7 @@
 <script type="text/javascript">
 
 	$(document).ready(function(){
-		var table = $('#table_satuan').DataTable();
+		var table = $('#table_armada').DataTable();
 
 		$(document).on('click', '.btn-disable', function(){
 			var ini = $(this);
@@ -146,6 +146,12 @@
 			$(this).parents('.btn-group').html('<button class="btn btn-warning btn-edit" type="button" title="Edit"><i class="fa fa-pencil"></i></button>'+
 	                                		'<button class="btn btn-danger btn-disable" type="button" title="Delete"><i class="fa fa-eye-slash"></i></button>')
 		})
+
+		$('#table_armada tbody').on('click', '.btn-edit', function(){
+
+			window.location.href = 'edit_dataarmada';
+
+		});
 
 		// function table_hapus(a){
 		// 	table.row($(a).parents('tr')).remove().draw();

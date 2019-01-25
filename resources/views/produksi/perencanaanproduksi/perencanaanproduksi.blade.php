@@ -3,6 +3,7 @@
 @section('content')
 
 @include('produksi.perencanaanproduksi.tambah_perencanaanproduksi')
+@include('produksi.perencanaanproduksi.modal_spk')
 
 <article class="content">
 
@@ -32,7 +33,7 @@
                         <section>
                         	
                         	<div class="table-responsive">
-	                            <table class="table data-table table-hover table-striped table-bordered" cellspacing="0">
+	                            <table class="table table-hover table-striped table-bordered" cellspacing="0" id="tabel_rencana">
 	                                <thead class="bg-primary">
 	                                    <tr>
 	                                    	<th>Kode Produksi</th>
@@ -44,7 +45,20 @@
 							            </tr>
 	                                </thead>
 	                                <tbody>
-
+	                                	<tr>
+	                                		<td>PTR/20190124/1</td>
+	                                		<td>24 Jan 2019</td>
+	                                		<td>BRG/1</td>
+	                                		<td>Paving</td>
+	                                		<td align="right">200</td>
+	                                		<td>
+	                                			<div class="btn-group btn-group-sm">
+		                                			<button class="btn btn-warning btn-tambah-modal" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
+		                                			<button class="btn btn-primary btn-buat-spk" type="button" title="Buat SPK"><i class="fa fa-plus-square"></i></button>
+		                                			<button class="btn btn-danger" type="button" title="Hapus"><i class="fa fa-trash-o"></i></button>
+		                                		</div>
+	                                		</td>
+	                                	</tr>
 							        </tbody>
 	                            </table>
 	                        </div>
@@ -60,4 +74,79 @@
 
 </article>
 
+@endsection
+@section('extra_script')
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+
+		var table = $('#tabel_rencana').DataTable();
+
+		var table_modal = $('#tabel_modal_spk').DataTable({
+
+			searching:false,
+			paging:false
+		});
+
+		$('.btn-tambah-modal').click(function(){
+
+			$('#tambah').modal('show');
+
+			setTimeout("$('#tambah_barang').select2('open');",500);
+				
+		});
+
+		$('.btn-buat-spk').click(function(){
+
+			$('#buat_spk').modal('show');
+
+			$('#btn-final').attr('disabled', true);
+
+		});
+
+		$('#hitung-stok').click(function(){
+
+			$('#tabel_modal_spk tbody > tr').each(function(){
+
+				var stok =parseInt( $(this).find('.stok').val());
+				var kebutuhan = parseInt($(this).find('.kebutuhan').val());
+				
+				var sisa = stok - kebutuhan;
+
+				$(this).find('.sisa').val(sisa);
+
+				// console.log(stok);
+
+
+
+
+
+
+			});
+
+			$('#tabel_modal_spk tbody > tr').each(function(){
+
+				var sisa = $(this).find('.sisa').val();
+
+				if(sisa < 0){
+					$('#btn-final').attr('disabled', true);
+					$('#btn-rencanabahanbaku').attr('disabled', false);
+					// $('#btn-rencanabahanbaku').removeClass('d-none');
+					return false;
+				} else {
+					$('#btn-final').attr('disabled', false);
+					$('#btn-rencanabahanbaku').attr('disabled', true);
+					// $('#btn-rencanabahanbaku').addClass('d-none');
+
+				}
+
+			});
+
+
+		});
+
+
+	});
+
+</script>
 @endsection

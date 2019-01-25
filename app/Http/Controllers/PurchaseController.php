@@ -34,4 +34,8 @@ class PurchaseController extends Controller
     {
     	return view('purchasing/returnpembelian/tambah_returnpembelian');
     }
+    public function rencanabahanbaku()
+    {
+        return view('purchasing/rencanabahanbakuproduksi/rencanabahanbakuproduksi');
+    }    
 }

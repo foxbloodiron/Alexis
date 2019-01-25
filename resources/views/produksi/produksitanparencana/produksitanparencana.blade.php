@@ -34,7 +34,7 @@
                         <section>
                         	
                         	<div class="table-responsive">
-	                            <table class="table data-table table-hover table-striped table-bordered" cellspacing="0">
+	                            <table class="table table-hover table-striped table-bordered" cellspacing="0" id="tabel_tanparencana">
 	                                <thead class="bg-primary">
 	                                    <tr>
 	                                    	<th>Kode Produksi Tanpa Rencana</th>
@@ -81,7 +81,9 @@
 	
 	$(document).ready(function(){
 
-		var table = $('#tabel_modal_spk').DataTable({
+		var table = $('#tabel_tanparencana').DataTable();
+
+		var table_modal = $('#tabel_modal_spk').DataTable({
 
 			searching:false,
 			paging:false

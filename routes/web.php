@@ -47,9 +47,56 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/master/barangsuplier/tambah_suplier', 'MasterController@tambah_suplier')->name('tambah_suplier');
 	Route::get('/master/barangsuplier/edit_suplier', 'MasterController@edit_suplier')->name('edit_suplier');
 
-	// Aset
-	Route::get('/aset/pengadaan/pengadaan', 'AsetController@pengadaan');	
-	Route::get('/aset/penyusutan/penyusutan', 'AsetController@penyusutan');	
+	// Purchasing
+	Route::get('/purchasing/rencanapembelian/rencanapembelian', 'PurchaseController@rencanapembelian')->name('rencanapembelian');
+	Route::get('/purchasing/rencanapembelian/tambah_rencanapembelian', 'PurchaseController@tambah_rencanapembelian')->name('tambah_rencanapembelian');
+	Route::get('/purchasing/orderpembelian/orderpembelian', 'PurchaseController@orderpembelian')->name('orderpembelian');
+	Route::get('/purchasing/orderpembelian/tambah_orderpembelian', 'PurchaseController@tambah_orderpembelian')->name('tambah_orderpembelian');
+	Route::get('/purchasing/orderpembelian/tambah_orderpembelian_tanparencana', 'PurchaseController@tambah_orderpembelian_tanparencana')->name('tambah_orderpembelian_tanparencana');
+	Route::get('/purchasing/returnpembelian/returnpembelian', 'PurchaseController@returnpembelian')->name('returnpembelian');
+	Route::get('/purchasing/returnpembelian/tambah_returnpembelian', 'PurchaseController@tambah_returnpembelian')->name('tambah_returnpembelian');
+	Route::get('/purchasing/rencanabahanbaku/rencanabahanbaku', 'PurchaseController@rencanabahanbaku')->name('rencanabahanbaku');
+
+	// Stok
+	Route::get('/stok/dataadonan/dataadonan', 'StokController@dataadonan')->name('dataadonan');
+	Route::get('/stok/dataadonan/tambah_dataadonan', 'StokController@tambah_dataadonan')->name('tambah_dataadonan');
+	Route::get('/stok/dataadonan/edit_dataadonan', 'StokController@edit_dataadonan')->name('edit_dataadonan');
+	Route::get('/stok/opnamebahanbaku/opnamebahanbaku', 'StokController@opnamebahanbaku')->name('opnamebahanbaku');
+	Route::get('/stok/pencatatanbarangmasuk/pencatatanbarangmasuk', 'StokController@pencatatanbarangmasuk')->name('pencatatanbarangmasuk');
+	Route::get('/stok/pencatatanbarangmasuk/tambah_pencatatanbarangmasuk', 'StokController@tambah_pencatatanbarangmasuk')->name('tambah_pencatatanbarangmasuk');
+	Route::get('/stok/penggunaanbahanbaku/penggunaanbahanbaku', 'StokController@penggunaanbahanbaku')->name('penggunaanbahanbaku');
+	Route::get('/stok/penggunaanbahanbaku/tambah_penggunaanbahanbaku', 'StokController@tambah_penggunaanbahanbaku')->name('tambah_penggunaanbahanbaku');
+	Route::get('/stok/tipemenghitunghpp/tipemenghitunghpp', 'StokController@tipemenghitunghpp')->name('tipemenghitunghpp');
+
+
+	// Produksi
+	Route::get('/produksi/pencatatanhasil/pencatatanhasil', 'ProduksiController@pencatatanhasil')->name('pencatatanhasil');
+	Route::get('/produksi/pencatatanhasil/proses_pencatatanhasil', 'ProduksiController@proses_pencatatanhasil')->name('proses_pencatatanhasil');
+	Route::get('/produksi/perencanaanproduksi/perencanaanproduksi', 'ProduksiController@perencanaanproduksi')->name('perencanaanproduksi');
+	Route::get('/produksi/produksirencana/produksirencana', 'ProduksiController@produksirencana')->name('produksirencana');
+	Route::get('/produksi/produksitanparencana/produksitanparencana', 'ProduksiController@produksitanparencana')->name('produksitanparencana');
+	Route::get('/produksi/upahboronganproduksi/upahboronganproduksi', 'ProduksiController@upahboronganproduksi')->name('upahboronganproduksi');
+	Route::get('/produksi/upahboronganproduksi/proses_upahboronganproduksi', 'ProduksiController@proses_upahboronganproduksi')->name('proses_upahboronganproduksi');
+	Route::get('/produksi/spk/spk', 'ProduksiController@spk')->name('spk_produksi');
+
+	// Customer
+	Route::get('/customer/historitransaksi/historitransaksi', 'CustomerController@historitransaksi');
+
+	// Penjualan
+	Route::get('/penjualan/diskonpenjualan/diskonpenjualan', 'PenjualanController@diskonpenjualan')->name('diskonpenjualan');
+	Route::get('/penjualan/diskonpenjualan/tambah_diskonpenjualan', 'PenjualanController@tambah_diskonpenjualan')->name('tambah_diskonpenjualan');
+	Route::get('/penjualan/penjualanorder/penjualanorder', 'PenjualanController@penjualanorder')->name('penjualanorder');
+	Route::get('/penjualan/penjualanproject/penjualanproject', 'PenjualanController@penjualanproject')->name('penjualanproject');
+	Route::get('/penjualan/penjualantanpaorder/penjualantanpaorder', 'PenjualanController@penjualantanpaorder')->name('penjualantanpaorder');
+	Route::get('/penjualan/returnpenjualan/returnpenjualan', 'PenjualanController@returnpenjualan')->name('returnpenjualan');
+	Route::get('/penjualan/returnpenjualan/tambah_returnpenjualan', 'PenjualanController@tambah_returnpenjualan')->name('tambah_returnpenjualan');
+
+
+	// Pengiriman
+	Route::get('/pengiriman/perencanaanpengiriman/perencanaanpengiriman', 'PengirimanController@perencanaanpengiriman')->name('perencanaanpengiriman');
+	Route::get('/pengiriman/suratjalan/suratjalan', 'PengirimanController@suratjalan')->name('suratjalan');
+	Route::get('/pengiriman/upahboronganpengiriman/upahboronganpengiriman', 'PengirimanController@upahboronganpengiriman')->name('upahboronganpengiriman');
+	Route::get('/pengiriman/upahboronganpengiriman/proses_upahboronganpengiriman', 'PengirimanController@proses_upahboronganpengiriman')->name('proses_upahboronganpengiriman');
 
 	// Biaya dan Beban
 	Route::get('/biayadanbeban/alattuliskantor/alattuliskantor', 'BiayaController@alattuliskantor')->name('alattuliskantor');
@@ -64,15 +111,16 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/biayadanbeban/upahbulanan/upahbulanan', 'BiayaController@upahbulanan')->name('upahbulanan');
 	Route::get('/biayadanbeban/upahharian/upahharian', 'BiayaController@upahharian')->name('upahharian');
 
-	// Customer
-	Route::get('/customer/historitransaksi/historitransaksi', 'CustomerController@historitransaksi');
-
 	// Dana Sosial
 	Route::get('/danasosial/kampung/kampung', 'DanaController@kampung');
 	Route::get('/danasosial/koramil/koramil', 'DanaController@koramil');
 	Route::get('/danasosial/masjid/masjid', 'DanaController@masjid');
 	Route::get('/danasosial/polsek/polsek', 'DanaController@polsek');
 	Route::get('/danasosial/sumbangan/sumbangan', 'DanaController@sumbangan');
+
+	// Aset
+	Route::get('/aset/pengadaan/pengadaan', 'AsetController@pengadaan');	
+	Route::get('/aset/penyusutan/penyusutan', 'AsetController@penyusutan');	
 
 	// Keuangan
 	Route::get('/keuangan/a_3bottomline/a_3bottomline', 'KeuanganController@a_3bottomline');
@@ -86,50 +134,6 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/keuangan/laporaninputtransaksi/laporaninputtransaksi', 'KeuanganController@laporaninputtransaksi');
 	Route::get('/keuangan/laporankeuangan/laporankeuangan', 'KeuanganController@laporankeuangan');
 	Route::get('/keuangan/prosesinputtransaksi/prosesinputtransaksi', 'KeuanganController@prosesinputtransaksi');
-
-	// Pengiriman
-	Route::get('/pengiriman/perencanaanpengiriman/perencanaanpengiriman', 'PengirimanController@perencanaanpengiriman')->name('perencanaanpengiriman');
-	Route::get('/pengiriman/suratjalan/suratjalan', 'PengirimanController@suratjalan')->name('suratjalan');
-	Route::get('/pengiriman/upahboronganpengiriman/upahboronganpengiriman', 'PengirimanController@upahboronganpengiriman')->name('upahboronganpengiriman');
-	Route::get('/pengiriman/upahboronganpengiriman/proses_upahboronganpengiriman', 'PengirimanController@proses_upahboronganpengiriman')->name('proses_upahboronganpengiriman');
-
-	// Penjualan
-	Route::get('/penjualan/diskonpenjualan/diskonpenjualan', 'PenjualanController@diskonpenjualan')->name('diskonpenjualan');
-	Route::get('/penjualan/diskonpenjualan/tambah_diskonpenjualan', 'PenjualanController@tambah_diskonpenjualan')->name('tambah_diskonpenjualan');
-	Route::get('/penjualan/penjualanorder/penjualanorder', 'PenjualanController@penjualanorder')->name('penjualanorder');
-	Route::get('/penjualan/penjualanproject/penjualanproject', 'PenjualanController@penjualanproject')->name('penjualanproject');
-	Route::get('/penjualan/penjualantanpaorder/penjualantanpaorder', 'PenjualanController@penjualantanpaorder')->name('penjualantanpaorder');
-	Route::get('/penjualan/returnpenjualan/returnpenjualan', 'PenjualanController@returnpenjualan')->name('returnpenjualan');
-	Route::get('/penjualan/returnpenjualan/tambah_returnpenjualan', 'PenjualanController@tambah_returnpenjualan')->name('tambah_returnpenjualan');
-
-	// Produksi
-	Route::get('/produksi/pencatatanhasil/pencatatanhasil', 'ProduksiController@pencatatanhasil')->name('pencatatanhasil');
-	Route::get('/produksi/pencatatanhasil/proses_pencatatanhasil', 'ProduksiController@proses_pencatatanhasil')->name('proses_pencatatanhasil');
-	Route::get('/produksi/perencanaanproduksi/perencanaanproduksi', 'ProduksiController@perencanaanproduksi')->name('perencanaanproduksi');
-	Route::get('/produksi/produksirencana/produksirencana', 'ProduksiController@produksirencana')->name('produksirencana');
-	Route::get('/produksi/produksitanparencana/produksitanparencana', 'ProduksiController@produksitanparencana')->name('produksitanparencana');
-	Route::get('/produksi/upahboronganproduksi/upahboronganproduksi', 'ProduksiController@upahboronganproduksi')->name('upahboronganproduksi');
-	Route::get('/produksi/upahboronganproduksi/proses_upahboronganproduksi', 'ProduksiController@proses_upahboronganproduksi')->name('proses_upahboronganproduksi');
-
-	// Purchasing
-	Route::get('/purchasing/rencanapembelian/rencanapembelian', 'PurchaseController@rencanapembelian')->name('rencanapembelian');
-	Route::get('/purchasing/rencanapembelian/tambah_rencanapembelian', 'PurchaseController@tambah_rencanapembelian')->name('tambah_rencanapembelian');
-	Route::get('/purchasing/orderpembelian/orderpembelian', 'PurchaseController@orderpembelian')->name('orderpembelian');
-	Route::get('/purchasing/orderpembelian/tambah_orderpembelian', 'PurchaseController@tambah_orderpembelian')->name('tambah_orderpembelian');
-	Route::get('/purchasing/orderpembelian/tambah_orderpembelian_tanparencana', 'PurchaseController@tambah_orderpembelian_tanparencana')->name('tambah_orderpembelian_tanparencana');
-	Route::get('/purchasing/returnpembelian/returnpembelian', 'PurchaseController@returnpembelian')->name('returnpembelian');
-	Route::get('/purchasing/returnpembelian/tambah_returnpembelian', 'PurchaseController@tambah_returnpembelian')->name('tambah_returnpembelian');
-
-	// Stok
-	Route::get('/stok/dataadonan/dataadonan', 'StokController@dataadonan')->name('dataadonan');
-	Route::get('/stok/dataadonan/tambah_dataadonan', 'StokController@tambah_dataadonan')->name('tambah_dataadonan');
-	Route::get('/stok/dataadonan/edit_dataadonan', 'StokController@edit_dataadonan')->name('edit_dataadonan');
-	Route::get('/stok/opnamebahanbaku/opnamebahanbaku', 'StokController@opnamebahanbaku')->name('opnamebahanbaku');
-	Route::get('/stok/pencatatanbarangmasuk/pencatatanbarangmasuk', 'StokController@pencatatanbarangmasuk')->name('pencatatanbarangmasuk');
-	Route::get('/stok/pencatatanbarangmasuk/tambah_pencatatanbarangmasuk', 'StokController@tambah_pencatatanbarangmasuk')->name('tambah_pencatatanbarangmasuk');
-	Route::get('/stok/penggunaanbahanbaku/penggunaanbahanbaku', 'StokController@penggunaanbahanbaku')->name('penggunaanbahanbaku');
-	Route::get('/stok/penggunaanbahanbaku/tambah_penggunaanbahanbaku', 'StokController@tambah_penggunaanbahanbaku')->name('tambah_penggunaanbahanbaku');
-	Route::get('/stok/tipemenghitunghpp/tipemenghitunghpp', 'StokController@tipemenghitunghpp')->name('tipemenghitunghpp');
 
 	// Suplier
 	// Route::get('/suplier/barangsuplier/barangsuplier', 'SuplierController@barangsuplier')->name('barangsuplier');

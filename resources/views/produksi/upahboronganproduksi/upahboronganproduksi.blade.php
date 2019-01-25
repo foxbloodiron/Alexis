@@ -44,16 +44,16 @@
 	                                <tbody>
 	                                	<tr>
 	                                		<td>PTR/2018-11-15/1</td>
-	                                		<td>Pintu</td>
-	                                		<td>15</td>
+	                                		<td>Paving</td>
+	                                		<td>150</td>
 	                                		<td>15 Nov 2018</td>
 	                                		<td><span class="badge badge-info badge-pill">Menunggu diproses</span></td>
 	                                		<td align="center"><a class="btn btn-primary btn-sm" href="{{route('proses_upahboronganproduksi')}}">Proses</a></td>
 	                                	</tr>
 	                                	<tr>
 	                                		<td>PTR/2018-11-15/2</td>
-	                                		<td>Jendela</td>
-	                                		<td>10</td>
+	                                		<td>Paving Abu</td>
+	                                		<td>100</td>
 	                                		<td>13 Nov 2018</td>
 	                                		<td><span class="badge badge-success badge-pill">Sudah diproses</span></td>
 	                                		<td align="center">-</td>

@@ -95,6 +95,7 @@
         </div>
       </div>
       <div class="modal-footer">
+        {{-- <button class="btn btn-secondary d-none" id="btn-rencanabahanbaku">Buat Rencana Bahan Baku</button> --}}
         <button class="btn btn-primary" id="btn-final" type="button">Final</button>
         <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
       </div>
