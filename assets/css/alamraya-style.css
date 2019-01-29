@@ -96,3 +96,6 @@ fieldset{
 	display: block;
 
 }
+.sidebar .sidebar-menu > li:has(ul > li.open > a){
+	color: white;
+}

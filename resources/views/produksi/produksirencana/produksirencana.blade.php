@@ -39,8 +39,8 @@
 	                                    <tr>
 	                                    	<th>Kode Produksi Dengan Rencana</th>
 							                <th>Tanggal</th>
-							                <th>Kode Item</th>
-							                <th>Nama Item</th>
+							                <th>Kode Barang</th>
+							                <th>Nama Barang</th>
 							                <th>Jumlah Produksi</th>
 							                <th>Aksi</th>
 							            </tr>

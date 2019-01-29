@@ -23,7 +23,7 @@
               </div>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <label>Item</label>
+              <label>Nama Barang</label>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12">
               <div class="form-group">
