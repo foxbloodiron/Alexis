@@ -149,7 +149,7 @@
 
 		$('#table_armada tbody').on('click', '.btn-edit', function(){
 
-			window.location.href = 'edit_dataarmada';
+			window.location.href = '{{route('edit_dataarmada')}}';
 
 		});
 
