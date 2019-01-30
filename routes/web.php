@@ -90,6 +90,7 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/penjualan/penjualanorder/index', 'PenjualanController@penjualanorder')->name('penjualanorder');
 	Route::get('/penjualan/penjualanproject/index', 'PenjualanController@penjualanproject')->name('penjualanproject');
 	Route::get('/penjualan/penjualantanpaorder/index', 'PenjualanController@penjualantanpaorder')->name('penjualantanpaorder');
+	Route::get('/penjualan/penjualantanpaorder/create', 'PenjualanController@tambah_penjualantanpaorder')->name('tambah_penjualantanpaorder');
 	Route::get('/penjualan/returnpenjualan/index', 'PenjualanController@returnpenjualan')->name('returnpenjualan');
 	Route::get('/penjualan/returnpenjualan/create', 'PenjualanController@tambah_returnpenjualan')->name('tambah_returnpenjualan');
 
