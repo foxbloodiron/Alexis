@@ -126,7 +126,7 @@
                         </section>
                     </div>
                     <div class="card-footer text-right">
-                      <button class="btn btn-primary" type="button">Proses</button>
+                      <button class="btn btn-primary" id="btn-simpan-rencana"{{--masa depanku dengannya--}} type="button">Proses</button>
                       <a class="btn btn-secondary" href="{{route('produksirencana')}}">Kembali</a>
                     </div>
                 </div>

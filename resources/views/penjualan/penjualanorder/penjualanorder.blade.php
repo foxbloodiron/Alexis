@@ -2,7 +2,7 @@
 
 @section('content')
 
-
+@include('penjualan.penjualanorder.modal_cust')
 
 <article class="content">
 
@@ -60,7 +60,7 @@
 			'<input type="text" readonly="" class="form-control form-control-sm">',
 			'<input type="text" readonly="" class="form-control form-control-sm">',
 			'<input type="text" readonly="" class="form-control form-control-sm">',
-			'<button class="btn btn-danger btn-hapus" type="button" title="Delete"><i class="fa fa-trash-o"></i></button>'
+			'<button class="btn btn-danger btn-hapus-kenangan" type="button" title="Delete"><i class="fa fa-trash-o"></i></button>'
 			]).draw(false);
 
 		counter++;
@@ -84,9 +84,15 @@
 			table_tambah();
 		});
 
-		$('#table_penjualan tbody').on('click', '.btn-hapus', function(){
+		$('#table_penjualan tbody').on('click', '.btn-hapus-kenangan', function(){
 			hapus_row($(this));
 		});
+	});
+
+	$('#btn-modal-customer').click(function(){
+
+		$('#tambah_cust').modal('show');
+
 	});
 </script>
 @endsection

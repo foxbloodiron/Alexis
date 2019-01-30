@@ -33,7 +33,7 @@
                         	
                         	
                         	<div class="table-responsive">
-	                            <table class="table data-table table-hover table-bordered table-striped" cellspacing="0">
+	                            <table class="table table-hover table-bordered table-striped" id="table-rencana"{{--masadepan yang indah--}} cellspacing="0">
 	                                <thead class="bg-primary">
 	                                    <tr>
 	                                    	<th>Kode Produksi Dengan Rencana</th>
@@ -65,7 +65,8 @@
 @section('extra_script')
 <script type="text/javascript">
 	$(document).ready(function(){
-
+		var table = $('#table-rencana').DataTable();
+		
 		$('#btn-tambah-kenangan').click(function(){
 			window.location.href = '{{route('tambah_produksirencana')}}';
 		});

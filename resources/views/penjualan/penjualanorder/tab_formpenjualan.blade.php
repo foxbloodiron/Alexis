@@ -7,6 +7,17 @@
         </div>
         <div class="card-block">
             <section>
+
+            	<div class="row">
+
+            		<div class="offset-lg-5 col-lg-7 offset-md-4 col-md-8 offset-sm-3 col-sm-9 col-12">
+            			<div class="form-group top-totalprice">
+	            			<label>Total Amount</label>
+            				<input type="text" class="form-control form-control-lg text-right" value="0,00" readonly="" name="">
+            			</div>
+            		</div>
+            		
+            	</div>
             	
             	<fieldset class="mb-3">
                 	<div class="row">
@@ -20,7 +31,7 @@
 	                        					<option value="">--Pilih--</option>
 	                        				</select>
 	                        				<div class="input-group-append">
-	                        					<button class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></button>
+	                        					<button class="btn btn-primary btn-sm" id="btn-modal-customer"><i class="fa fa-plus-square"></i></button>
 	                        				</div>
 	                        			</div>
                         			</div>
@@ -30,13 +41,6 @@
                         			<label>Alamat</label>
                         			<div class="form-group">
                         				<input type="text" class="form-control form-control-sm" name="" readonly="">
-                        			</div>
-                        		</div>
-
-                        		<div class="col-lg-12">
-                        			<label>Nama Project</label>
-                        			<div class="form-group">
-                        				<input type="text" class="form-control form-control-sm" name="">
                         			</div>
                         		</div>
 
@@ -51,7 +55,7 @@
                     	<div class="col-md-3 col-sm-12">
                     		<div class="row">
                         		<div class="col-lg-12">
-                        			<label>Tanggal Project</label>
+                        			<label>Tanggal Order</label>
                         			<div class="form-group">
                         				<div class="input-group">
 	                        				<input type="text" class="form-control form-control-sm" value="{{date('d-m-Y')}}" name="">
@@ -122,8 +126,8 @@
                 				<th width="5%">Jumlah</th>
                 				<th width="5%">Satuan</th>
                 				<th>Harga</th>
-                				<th width="5%">Disc Percent</th>
-                				<th>Disc Value</th>
+                				<th width="5%">Disc Persen</th>
+                				<th>Disc Harga</th>
                 				<th>Total</th>
                 				<th width="1%"></th>
                 			</tr>
@@ -138,25 +142,25 @@
                 				<div class="col-md-12">
                 					<label>Total Penjualan</label>
                 					<div class="form-group">
-                						<input type="text" class="form-control form-control-sm" readonly="" name="">
+                						<input type="text" class="form-control form-control-sm text-right" readonly="" name="">
                 					</div>
                 				</div>
                 				<div class="col-md-12">
-                					<label>Total Discount</label>
+                					<label>Total Diskon</label>
                 					<div class="form-group">
-                						<input type="text" class="form-control form-control-sm" readonly="" name="">
+                						<input type="text" class="form-control form-control-sm text-right" readonly="" name="">
                 					</div>
                 				</div>
                 				<div class="col-md-12">
                 					<label>PPn</label>
                 					<div class="form-group">
-                						<input type="text" class="form-control form-control-sm" readonly="" name="">
+                						<input type="text" class="form-control form-control-sm text-right" readonly="" name="">
                 					</div>
                 				</div>
                 				<div class="col-md-12">
                 					<label>Total Amount</label>
                 					<div class="form-group">
-                						<input type="text" class="form-control form-control-sm" readonly="" name="">
+                						<input type="text" class="form-control form-control-sm text-right" readonly="" name="">
                 					</div>
                 				</div>
                 			</div>

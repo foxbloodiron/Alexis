@@ -107,3 +107,23 @@ fieldset{
 	width: 1%;
 	margin-bottom: 0;
 }
+.form-group.top-totalprice > label{
+	position: absolute;
+	top: 5px;
+	left: 25px;
+}
+.form-group.top-totalprice > input{
+	height: 90px;
+	font-size: 50px; 
+}
+@media (max-width: 576px){
+	.form-group.top-totalprice > label{
+		position: relative;
+		top: unset;
+		left: unset;
+	}
+	.form-group.top-totalprice > input{
+		height: unset;
+		font-size: unset; 
+	}	
+}
