@@ -2,7 +2,6 @@
 
 @section('content')
 
-@include('produksi.produksirencana.tambah_produksirencana')
 
 <article class="content">
 
@@ -25,7 +24,7 @@
 	                        <h3 class="title"> Pencatatan Produksi Dengan Rencana </h3>
 	                    </div>
 	                    <div class="header-block pull-right">
-                			<button class="btn btn-primary" data-toggle="modal" data-target="#tambah"><i class="fa fa-plus"></i>&nbsp;Tambah Data</button>
+                			<button class="btn btn-primary" id="btn-tambah-kenangan"><i class="fa fa-plus"></i>&nbsp;Tambah Data</button>
 	                    	
 	                    </div>
                     </div>
@@ -62,4 +61,15 @@
 
 </article>
 
+@endsection
+@section('extra_script')
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		$('#btn-tambah-kenangan').click(function(){
+			window.location.href = '{{route('tambah_produksirencana')}}';
+		});
+
+	});
+</script>
 @endsection

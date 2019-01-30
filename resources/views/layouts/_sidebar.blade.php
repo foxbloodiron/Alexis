@@ -229,20 +229,20 @@
                         <i class="fa arrow"></i>
                     </a>
                     <ul class="sidebar-nav">
-                        <li class="{{Request::is('produksi/perencanaanproduksi/*') ? 'active' : ''}}">
+                        {{-- <li class="{{Request::is('produksi/perencanaanproduksi/*') ? 'active' : ''}}">
                             <a href="{{url('produksi/perencanaanproduksi/perencanaanproduksi')}}"> Perencanaan Produksi </a>
-                        </li>
+                        </li> --}}
                         <li class="{{Request::is('produksi/produksitanparencana/*') ? 'active' : ''}}">
-                            <a href="{{url('produksi/produksitanparencana/produksitanparencana')}}"> Pencatatan Produksi Tanpa Rencana </a>
+                            <a href="{{route('produksitanparencana')}}"> Pencatatan Produksi Tanpa Rencana </a>
                         </li>
                         <li  class="{{Request::is('produksi/produksirencana/*') ? 'active' : ''}}">
-                            <a href="{{url('produksi/produksirencana/produksirencana')}}"> Pencatatan Produksi Dengan Rencana </a>
+                            <a href="{{route('produksirencana')}}"> Pencatatan Produksi Dengan Rencana </a>
                         </li>
                         <li  class="{{Request::is('produksi/pencatatanhasil/*') ? 'active' : ''}}">
-                            <a href="{{url('produksi/pencatatanhasil/pencatatanhasil')}}"> Pencatatan Hasil Produksi</a>
+                            <a href="{{route('pencatatanhasil')}}"> Pencatatan Hasil Produksi</a>
                         </li>
                         <li  class="{{Request::is('produksi/upahboronganproduksi/*') ? 'active' : ''}}">
-                            <a href="{{url('produksi/upahboronganproduksi/upahboronganproduksi')}}"> Upah Borongan Produksi</a>
+                            <a href="{{route('upahboronganproduksi')}}"> Upah Borongan Produksi</a>
                         </li>
                         <li class="{{Request::is('produksi/spk/*') ? 'active' : ''}}">
                             <a href="{{route('spk_produksi')}}">Manajemen SPK</a>

@@ -22,6 +22,10 @@ class ProduksiController extends Controller
     {
     	return view('produksi/produksirencana/produksirencana');
     }
+    public function tambah_produksirencana()
+    {
+        return view('produksi/produksirencana/tambah_produksirencana');
+    }    
     public function produksitanparencana()
     {
     	return view('produksi/produksitanparencana/produksitanparencana');
