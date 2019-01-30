@@ -17,18 +17,19 @@
 
 	<section class="section">
 
+        <ul class="nav nav-pills mb-3">
+            <li class="nav-item">
+                <a href="" class="nav-link active" data-target="#pos" aria-controls="pos" data-toggle="tab" role="tab">Form Penjualan Project</a>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link" data-target="#list_pos" aria-controls="list_pos" data-toggle="tab" role="tab">List Penjualan</a>
+            </li>
+        </ul>
+        
 		<div class="row">
 
 			<div class="col-12">
 				
-                <ul class="nav nav-pills mb-3">
-                    <li class="nav-item">
-                        <a href="" class="nav-link active" data-target="#pos" aria-controls="pos" data-toggle="tab" role="tab">Form Penjualan Project</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link" data-target="#list_pos" aria-controls="list_pos" data-toggle="tab" role="tab">List Penjualan</a>
-                    </li>
-                </ul>
 
                 <div class="tab-content">
 

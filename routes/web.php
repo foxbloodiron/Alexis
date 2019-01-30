@@ -75,22 +75,23 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/produksi/perencanaanproduksi/perencanaanproduksi', 'ProduksiController@perencanaanproduksi')->name('perencanaanproduksi');
 	Route::get('/produksi/produksirencana/index', 'ProduksiController@produksirencana')->name('produksirencana');
 	Route::get('/produksi/produksirencana/create', 'ProduksiController@tambah_produksirencana')->name('tambah_produksirencana');
-	Route::get('/produksi/produksitanparencana/produksitanparencana', 'ProduksiController@produksitanparencana')->name('produksitanparencana');
+	Route::get('/produksi/produksitanparencana/index', 'ProduksiController@produksitanparencana')->name('produksitanparencana');
+	Route::get('/produksi/produksitanparencana/create', 'ProduksiController@tambah_produksitanparencana')->name('tambah_produksitanparencana');
 	Route::get('/produksi/upahboronganproduksi/upahboronganproduksi', 'ProduksiController@upahboronganproduksi')->name('upahboronganproduksi');
 	Route::get('/produksi/upahboronganproduksi/proses_upahboronganproduksi', 'ProduksiController@proses_upahboronganproduksi')->name('proses_upahboronganproduksi');
 	Route::get('/produksi/spk/spk', 'ProduksiController@spk')->name('spk_produksi');
 
 	// Customer
-	Route::get('/customer/historitransaksi/historitransaksi', 'CustomerController@historitransaksi');
+	Route::get('/customer/historitransaksi/index', 'CustomerController@historitransaksi')->name('historitransaksi');
 
 	// Penjualan
-	Route::get('/penjualan/diskonpenjualan/diskonpenjualan', 'PenjualanController@diskonpenjualan')->name('diskonpenjualan');
-	Route::get('/penjualan/diskonpenjualan/tambah_diskonpenjualan', 'PenjualanController@tambah_diskonpenjualan')->name('tambah_diskonpenjualan');
-	Route::get('/penjualan/penjualanorder/penjualanorder', 'PenjualanController@penjualanorder')->name('penjualanorder');
-	Route::get('/penjualan/penjualanproject/penjualanproject', 'PenjualanController@penjualanproject')->name('penjualanproject');
-	Route::get('/penjualan/penjualantanpaorder/penjualantanpaorder', 'PenjualanController@penjualantanpaorder')->name('penjualantanpaorder');
-	Route::get('/penjualan/returnpenjualan/returnpenjualan', 'PenjualanController@returnpenjualan')->name('returnpenjualan');
-	Route::get('/penjualan/returnpenjualan/tambah_returnpenjualan', 'PenjualanController@tambah_returnpenjualan')->name('tambah_returnpenjualan');
+	Route::get('/penjualan/diskonpenjualan/index', 'PenjualanController@diskonpenjualan')->name('diskonpenjualan');
+	Route::get('/penjualan/diskonpenjualan/create', 'PenjualanController@tambah_diskonpenjualan')->name('tambah_diskonpenjualan');
+	Route::get('/penjualan/penjualanorder/index', 'PenjualanController@penjualanorder')->name('penjualanorder');
+	Route::get('/penjualan/penjualanproject/index', 'PenjualanController@penjualanproject')->name('penjualanproject');
+	Route::get('/penjualan/penjualantanpaorder/index', 'PenjualanController@penjualantanpaorder')->name('penjualantanpaorder');
+	Route::get('/penjualan/returnpenjualan/index', 'PenjualanController@returnpenjualan')->name('returnpenjualan');
+	Route::get('/penjualan/returnpenjualan/create', 'PenjualanController@tambah_returnpenjualan')->name('tambah_returnpenjualan');
 
 
 	// Pengiriman

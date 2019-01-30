@@ -256,7 +256,7 @@
                     </a>
                     <ul class="sidebar-nav">
                         <li  class="{{Request::is('customer/historitransaksi/*') ? 'active' : ''}}">
-                            <a href="{{url('customer/historitransaksi/historitransaksi')}}"> Histori Transaksi</a>
+                            <a href="{{route('historitransaksi')}}"> Histori Transaksi</a>
                         </li>
                         
                     </ul>
@@ -268,19 +268,19 @@
                     </a>
                     <ul class="sidebar-nav">
                         <li  class="{{Request::is('penjualan/penjualanorder/*') ? 'active' : ''}}">
-                            <a href="{{url('penjualan/penjualanorder/penjualanorder')}}"> Pencatatan Penjualan Dengan Order</a>
+                            <a href="{{route('penjualanorder')}}"> Penjualan Dengan Order</a>
                         </li>
                         <li class="{{Request::is('penjualan/penjualantanpaorder/*') ? 'active' : ''}}">
-                            <a href="{{url('penjualan/penjualantanpaorder/penjualantanpaorder')}}"> Pencatatan Penjualan Tanpa Order</a>
+                            <a href="{{route('penjualantanpaorder')}}"> Penjualan Tanpa Order</a>
                         </li>
                         <li class="{{Request::is('penjualan/diskonpenjualan/*') ? 'active' : ''}}">
-                            <a href="{{url('penjualan/diskonpenjualan/diskonpenjualan')}}"> Diskon Penjualan</a>
+                            <a href="{{route('diskonpenjualan')}}"> Diskon Penjualan</a>
                         </li>
-                        <li class="{{Request::is('penjualan/penjualanproject/*') ? 'active' : ''}}">
-                            <a href="{{url('penjualan/penjualanproject/penjualanproject')}}"> Penjualan Project</a>
-                        </li>
+                        {{-- <li class="{{Request::is('penjualan/penjualanproject/*') ? 'active' : ''}}">
+                            <a href="{{route('penjualanproject')}}"> Penjualan Project</a>
+                        </li> --}}
                         <li class="{{Request::is('penjualan/returnpenjualan/*') ? 'active' : ''}}">
-                            <a href="{{url('penjualan/returnpenjualan/returnpenjualan')}}"> Return Penjualan</a>
+                            <a href="{{route('returnpenjualan')}}"> Return Penjualan</a>
                         </li>
                         
                     </ul>

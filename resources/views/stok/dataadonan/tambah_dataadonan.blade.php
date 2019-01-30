@@ -35,7 +35,7 @@
                         	<fieldset>
                         		<div class="row">
                                     <div class="col-md-4 col-sm-5 col-12">                                    
-                        				<label>Nama Item</label>
+                        				<label>Nama Barang</label>
                                     </div>
 
                                     <div class="col-md-8 col-sm-7 col-12">
@@ -51,18 +51,6 @@
 	                        					
                         				</div>
                         			</div>
-
-                                    <div class="col-md-4 col-sm-5 col-12">
-                                        <label>Komposisi</label>
-                                    </div>
-
-                                    <div class="col-md-8 col-sm-7 col-12">
-                                        <div class="form-group">
-                                        
-                                           <input type="text" min="" class="form-control form-control-sm" name=""> 
-                                                
-                                        </div>
-                                    </div>
 
                                     <div class="col-md-4 col-sm-5 col-12">
                                         <label>Jumlah Hasil Produksi</label>

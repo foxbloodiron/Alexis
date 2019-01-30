@@ -179,7 +179,7 @@
       var ini             = parseInt($(this).val());
 
 
-      tanggal_rencana.setDate(ini);
+      tanggal_rencana.setDate(tanggal_rencana.getDate() + ini);
 
       $('#target_selesai').datepicker('setDate', tanggal_rencana);
     });

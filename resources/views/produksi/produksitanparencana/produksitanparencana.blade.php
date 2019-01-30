@@ -2,7 +2,6 @@
 
 @section('content')
 
-@include('produksi.produksitanparencana.tambah_produksitanparencana')
 @include('produksi.produksitanparencana.modal_spk')
 
 <article class="content">
@@ -10,7 +9,9 @@
 	<div class="title-block text-primary">
 	    <h1 class="title"> Pencatatan Produksi Tanpa Rencana </h1>
 	    <p class="title-description">
-	    	<i class="fa fa-home"></i>&nbsp;<a href="{{url('/home')}}">Home</a> / <span>Produksi</span> / <span class="text-primary" style="font-weight: bold;">Pencatatan Produksi Tanpa Rencana</span>
+	    	<i class="fa fa-home"></i>&nbsp;<a href="{{url('/home')}}">Home</a> 
+	    	/ <span>Produksi</span> 
+	    	/ <span class="text-primary font-weight-bold">Pencatatan Produksi Tanpa Rencana</span>
 	     </p>
 	</div>
 
@@ -26,7 +27,7 @@
 	                        <h3 class="title"> Pencatatan Produksi Tanpa Rencana </h3>
 	                    </div>
 	                    <div class="header-block pull-right">
-                			<button class="btn btn-primary btn-tambah-modal"><i class="fa fa-plus"></i>&nbsp;Tambah Data</button>
+                			<button class="btn btn-primary btn-tambah"><i class="fa fa-plus"></i>&nbsp;Tambah Data</button>
 	                    	
 	                    </div>
                     </div>
@@ -54,7 +55,7 @@
 	                                		<td align="right">200</td>
 	                                		<td>
 	                                			<div class="btn-group btn-group-sm">
-		                                			<button class="btn btn-warning btn-tambah-modal" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
+		                                			<button class="btn btn-warning btn-edit" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
 		                                			<button class="btn btn-primary btn-buat-spk" type="button" title="Buat SPK"><i class="fa fa-plus-square"></i></button>
 		                                			<button class="btn btn-danger" type="button" title="Hapus"><i class="fa fa-trash-o"></i></button>
 		                                		</div>
@@ -89,11 +90,9 @@
 			paging:false
 		});
 
-		$('.btn-tambah-modal').click(function(){
+		$('.btn-tambah').click(function(){
 
-			$('#tambah').modal('show');
-
-			setTimeout("$('#tambah_barang').select2('open');",500);
+			window.location.href = '{{route('tambah_produksitanparencana')}}';
 				
 		});
 
@@ -117,11 +116,6 @@
 				$(this).find('.sisa').val(sisa);
 
 				// console.log(stok);
-
-
-
-
-
 
 			});
 

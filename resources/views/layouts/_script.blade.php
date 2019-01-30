@@ -124,8 +124,7 @@
 
     $('.select2').select2({
         theme:"bootstrap",
-        dropdownAutoWidth: true,
-        width:'100%'
+        dropdownAutoWidth: true
     });
 
     $('.input-rupiah').maskMoney({
