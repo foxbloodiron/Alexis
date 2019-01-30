@@ -34,7 +34,18 @@
                     </div>
                     <div class="card-block">
                         <section>
+
+                          <div class="row">
+
+                            <div class="offset-lg-5 col-lg-7 offset-md-4 col-md-8 offset-sm-3 col-sm-9 col-12">
+                              <div class="form-group top-totalprice">
+                                <label>Total Amount</label>
+                                <input type="text" class="form-control form-control-lg text-right" value="0,00" readonly="" name="">
+                              </div>
+                            </div>
                             
+                          </div>
+                          
                           <fieldset class="mb-3">  
                             <div class="row">
 
