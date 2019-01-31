@@ -125,7 +125,11 @@
     $('.select2').select2({
         theme:"bootstrap",
         dropdownAutoWidth: true
-    });
+    })
+    on('select2:close',function(){
+      $(this).focus();
+    })
+    ;
 
     $('.input-rupiah').maskMoney({
         thousands:".",
