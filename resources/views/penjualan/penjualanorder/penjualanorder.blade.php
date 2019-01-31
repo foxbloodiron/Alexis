@@ -17,7 +17,7 @@
 
 	<section class="section">
 
-     	   <ul class="nav nav-pills mb-3">
+     	   <ul class="nav nav-pills">
             <li class="nav-item">
                 <a href="" class="nav-link active" data-target="#pos" aria-controls="pos" data-toggle="tab" role="tab">Penjualan Project</a>
             </li>

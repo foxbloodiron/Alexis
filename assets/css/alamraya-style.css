@@ -5,6 +5,11 @@
 ============================
 */
 
+@font-face{
+	font-family: 'Chakra Petch';
+	src: url('../../assets/fonts/Chakra_Petch/ChakraPetch-Regular.ttf');
+}
+
 .card-title-block {
     /*margin: -20px;*/
     padding: 20px !important;
@@ -67,6 +72,7 @@ fieldset{
 		position: absolute;
 		background: white;
 		left: 0;
+		height: 55px;
 		width: 100%;
 		text-align: left;
 		z-index: 1;
@@ -126,4 +132,87 @@ fieldset{
 		height: unset;
 		font-size: unset; 
 	}	
+}
+header.header{
+	height: 55px;
+	left: 0;
+}
+.sidebar{
+	top: 55px;
+}
+.app .content {
+    padding: 80px 30px 80px 30px;
+    min-height: 100vh; 
+}
+    @media (min-width: 1200px) {
+		.app .content {
+	        padding: 80px 30px 80px 30px; 
+        } 
+    }
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+		.app .content {
+	        padding: 70px 30px 70px 30px; 
+        } 
+    }
+    @media (min-width: 768px) and (max-width: 991.98px) {
+		.app .content {
+	        padding: 70px 20px 70px 20px; 
+        } 
+    }
+    @media (max-width: 767.98px) {
+		.app .content {
+	        padding: 70px 20px 70px 20px; 
+        } 
+    }
+
+.title-block{
+	margin-bottom: 25px;
+}
+.sidebar .sidebar-menu{
+	font-size: 10pt;
+}
+article.content{
+	font-size: 10pt;
+}
+footer.footer{
+	font-size: 11pt;
+}
+.nav.nav-pills .nav-item .nav-link{
+	border-bottom-left-radius: unset;
+	border-bottom-right-radius: unset;
+}
+.sidebar-header .brand{
+    height: 55px;
+    display: flex;
+    align-items: center;
+}
+@media (max-width: 768px){
+	.sidebar {
+	    top: 0;
+	}
+}
+header.header .brand{
+    width: 240px;
+    text-align: center;
+	display: flex; 
+    align-items: center;
+    background: rgb(37, 45, 52);
+    height: 55px;
+    color: white;
+    left: 50px;
+    padding-left: 35px;
+}
+.title-block > .title,
+.title-block > .title-description .text-primary,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+	/*font-family: 'Questrial', sans-serif;*/
+	/*font-family: 'Quantico', sans-serif;*/
+	/*font-family: 'Fredoka One', sans-serif;*/
+	font-family: 'Chakra Petch', sans-serif;
 }

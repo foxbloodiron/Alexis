@@ -16,7 +16,7 @@
 
 	<section class="section">
 
-		<ul class="nav nav-pills mb-3">
+		<ul class="nav nav-pills">
 			<li class="nav-item">
 				<a href="#tab-1" class="nav-link active" data-toggle="tab">Manajemen SPK</a>
 			</li>

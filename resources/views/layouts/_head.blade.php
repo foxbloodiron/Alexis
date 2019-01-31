@@ -16,7 +16,8 @@
         <link rel="stylesheet" type="text/css" href="{{asset('assets/jquery-toast/jquery.toast.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('assets/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css')}}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-
+        {{-- <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Chakra+Petch|Quantico|Russo+One" rel="stylesheet"> --}}
+        <link rel="stylesheet" href="{{asset('assets/fonts/Chakra_Petch/ChakraPetch-Regular.ttf')}}">
 
         <!-- Theme initialization -->
         <script>

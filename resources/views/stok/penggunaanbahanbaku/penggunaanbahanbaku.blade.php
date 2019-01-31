@@ -15,19 +15,21 @@
 
 	<section class="section">
 
+
+		<ul class="nav nav-pills">
+	        <li class="nav-item">
+	            <a href="" class="nav-link active" data-target="#list" aria-controls="list" data-toggle="tab" role="tab">Penggunaan Bahan Baku</a>
+	        </li>
+	        <li class="nav-item">
+	            <a href="" class="nav-link" data-target="#history" aria-controls="history" data-toggle="tab" role="tab">History Penggunaan Bahan Baku</a>
+	        </li>
+	    </ul>
+
 		<div class="row">
 
 
 			<div class="col-lg-12">
 
-				<ul class="nav nav-pills mb-3">
-	                <li class="nav-item">
-	                    <a href="" class="nav-link active" data-target="#list" aria-controls="list" data-toggle="tab" role="tab">Penggunaan Bahan Baku</a>
-	                </li>
-	                <li class="nav-item">
-	                    <a href="" class="nav-link" data-target="#history" aria-controls="history" data-toggle="tab" role="tab">History Penggunaan Bahan Baku</a>
-	                </li>
-	            </ul>
 				
 				<div class="tab-content">
 

@@ -17,17 +17,19 @@
 
 	<section class="section">
 
+		<ul class="nav nav-pills">
+            <li class="nav-item">
+                <a href="" class="nav-link active" data-target="#return_pembelian_tab" aria-controls="return_pembelian_tab" data-toggle="tab" role="tab">Return Pembelian</a>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link" data-target="#revisi_tab" aria-controls="revisi_tab" data-toggle="tab" role="tab">Revisi PO</a>
+            </li>
+        </ul>	
+
 		<div class="row">
 
 			<div class="col-12">
-				<ul class="nav nav-pills mb-3">
-                    <li class="nav-item">
-                        <a href="" class="nav-link active" data-target="#return_pembelian_tab" aria-controls="return_pembelian_tab" data-toggle="tab" role="tab">Return Pembelian</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link" data-target="#revisi_tab" aria-controls="revisi_tab" data-toggle="tab" role="tab">Revisi PO</a>
-                    </li>
-                </ul>				
+			
 		
 				<div class="tab-content">		
 

@@ -13,19 +13,21 @@
 	     </p>
 	</div>
 
-	<section class="section">
 
-		<ul class="nav nav-pills mb-3">
-			<li class="nav-item">
-				<a href="" class="nav-link active" data-toggle="tab" data-target="#tab-1">Pencatatan Produksi Dengan Rencana</a>
-			</li>
-			<li class="nav-item">
-				<a href="" class="nav-link" data-toggle="tab" data-target="#tab-2">Pencatatan Produksi Tanpa Rencana</a>
-			</li>
-			<li class="nav-item">
-				<a href="" class="nav-link" data-toggle="tab" data-target="#tab-3">History Produksi</a>
-			</li>
-		</ul>
+	<ul class="nav nav-pills">
+		<li class="nav-item">
+			<a href="" class="nav-link active" data-toggle="tab" data-target="#tab-1">Pencatatan Produksi Dengan Rencana</a>
+		</li>
+		<li class="nav-item">
+			<a href="" class="nav-link" data-toggle="tab" data-target="#tab-2">Pencatatan Produksi Tanpa Rencana</a>
+		</li>
+		<li class="nav-item">
+			<a href="" class="nav-link" data-toggle="tab" data-target="#tab-3">History Produksi</a>
+		</li>
+	</ul>
+
+
+	<section class="section">
 
 		<div class="row">
 
