@@ -1,17 +1,4 @@
 <header class="header">
-    <div class="d-lg-block d-sm-block d-none">
-        <div class="brand">
-            <img src="{{asset('assets/img/games.ico')}}" height="45px" width="45px" class="mr-2">
-            {{-- <div class="logo">
-                <span class="l l1"></span>
-                <span class="l l2"></span>
-                <span class="l l3"></span>
-                <span class="l l4"></span>
-                <span class="l l5"></span>
-            </div>  --}}
-            Alexis 
-        </div>
-    </div>
     <div class="header-block header-block-collapse d-lg-none d-xl-none">
         <button class="collapse-btn" id="sidebar-collapse-btn">
             <i class="fa fa-bars"></i>
@@ -132,7 +119,17 @@
 <aside class="sidebar">
     <div class="sidebar-container">
         <div class="sidebar-header">
-
+            <div class="brand">
+                <img src="{{asset('assets/img/games.ico')}}" height="45px" width="45px" class="mr-2">
+                {{-- <div class="logo">
+                    <span class="l l1"></span>
+                    <span class="l l2"></span>
+                    <span class="l l3"></span>
+                    <span class="l l4"></span>
+                    <span class="l l5"></span>
+                </div>  --}}
+                Alexis 
+            </div>
         </div>
         <nav class="menu" id="sidebar">
             <ul class="sidebar-menu metismenu" id="sidebar-menu">

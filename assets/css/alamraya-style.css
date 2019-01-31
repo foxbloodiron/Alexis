@@ -133,12 +133,13 @@ fieldset{
 		font-size: unset; 
 	}	
 }
-header.header{
-	height: 55px;
-	left: 0;
+header.header {
+    height: 55px;
+    border-bottom: 1px solid #b7b7b7;
+    box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1), inset 0 -1px 0 rgba(0, 0, 0, .07);
 }
 .sidebar{
-	top: 55px;
+	/*top: 55px;*/
 }
 .app .content {
     padding: 80px 30px 80px 30px;
@@ -166,7 +167,7 @@ header.header{
     }
 
 .title-block{
-	margin-bottom: 25px;
+	margin-bottom: 20px;
 }
 .sidebar .sidebar-menu{
 	font-size: 10pt;
@@ -182,15 +183,17 @@ footer.footer{
 	border-bottom-right-radius: unset;
 }
 .sidebar-header .brand{
-    height: 55px;
+    height: 100px;
     display: flex;
     align-items: center;
+    background: #262d34;
+    box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1), inset 0 -1px 0 rgba(0, 0, 0, .07);
 }
-@media (max-width: 768px){
+/*@media (max-width: 768px){
 	.sidebar {
 	    top: 0;
 	}
-}
+}*/
 header.header .brand{
     width: 240px;
     text-align: center;
