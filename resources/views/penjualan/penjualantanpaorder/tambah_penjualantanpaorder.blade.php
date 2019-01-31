@@ -125,8 +125,10 @@
                               <thead class="bg-primary">
                                 <tr>
                                   <th>Barang</th>
-                                  <th>Harga</th>
                                   <th>Qty</th>
+                                  <th>Harga</th>
+                                  <th>Disc Percent</th>
+                                  <th>Disc Value</th>
                                   <th width="1%"></th>
                                 </tr>
                               </thead>
@@ -159,6 +161,12 @@
   $(document).ready(function(){
     var table     = $('#table-listcalonistri').DataTable();
     var counter   = 0;
+    
+    $('#barang').on('select2:close',function(){
+
+      $(this).focus();
+
+    });
 
     function datatable_append(){
       var barang = $('#barang');
@@ -166,8 +174,10 @@
 
       table.row.add([
         barang.val(),
-        '0,00',
         '<input type="number" min="0" class="form-control form-control-sm" value="'+ qty.val() +'">',
+        '0,00',
+        '<input type="text" readonly class="form-control form-control-sm">',
+        '<input type="text" readonly class="form-control form-control-sm">',
         '<button type="button" class="btn btn-danger btn-hapuskenangan btn-sm"><i class="fa fa-trash-o"></i></button>'
         ]).draw();
 
@@ -175,6 +185,7 @@
 
       barang.prop('selectedIndex',0).trigger('change');
       qty.val('');
+      barang.select2('open');
     }
 
     $('#btn-tambahistri').on('click',function(){
@@ -199,6 +210,7 @@
 
       });
   });
+
 
 
 
