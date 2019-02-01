@@ -41,6 +41,9 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/master/datasatuan/datasatuan', 'MasterController@datasatuan')->name('datasatuan');
 	Route::get('/master/datasatuan/tambah_datasatuan', 'MasterController@tambah_datasatuan')->name('tambah_datasatuan');
 	Route::get('/master/datasatuan/edit_datasatuan', 'MasterController@edit_datasatuan')->name('edit_datasatuan');
+	Route::get('/master/datamesin/datamesin', 'MasterController@datamesin')->name('datamesin');
+	Route::get('/master/datamesin/tambah_datamesin', 'MasterController@tambah_datamesin')->name('tambah_datamesin');
+	Route::get('/master/datamesin/edit_datamesin', 'MasterController@edit_datamesin')->name('edit_datamesin');
 	Route::get('/master/barangsuplier/barangsuplier', 'MasterController@barangsuplier')->name('barangsuplier');
 	Route::get('/master/barangsuplier/tambah_barang', 'MasterController@tambah_barang')->name('tambah_barang');
 	Route::get('/master/barangsuplier/edit_barang', 'MasterController@edit_barang')->name('edit_barang');
