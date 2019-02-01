@@ -161,6 +161,9 @@
                         <li class="{{Request::is('master/datasatuan/*') ? 'active' : ''}}">
                             <a href="{{route('datasatuan')}}">Data Satuan</a>
                         </li>
+                        <li class="{{Request::is('master/datamesin/*') ? 'active' : ''}}">
+                            <a href="{{route('datamesin')}}">Data Mesin</a>
+                        </li>
                         <li class="{{Request::is('master/barangsuplier/*') ? 'active' : ''}}">
                             <a href="{{url('master/barangsuplier/barangsuplier')}}">Item Barang Suplier</a>
                         </li>

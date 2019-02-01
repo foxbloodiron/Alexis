@@ -32,6 +32,18 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/master/dataarmada/create', 'MasterController@tambah_dataarmada')->name('tambah_dataarmada');
 	Route::get('/master/dataarmada/edit', 'MasterController@edit_dataarmada')->name('edit_dataarmada');
 	Route::get('/master/dataarmada/modal_dataarmada', 'MasterController@modal_dataarmada')->name('modal_dataarmada');
+	Route::get('/master/datacustomer/datacustomer', 'MasterController@datacustomer')->name('datacustomer');
+	Route::get('/master/datacustomer/tambah_datacustomer', 'MasterController@tambah_datacustomer')->name('tambah_datacustomer');
+	Route::get('/master/datacustomer/edit_datacustomer', 'MasterController@edit_datacustomer')->name('edit_datacustomer');
+	Route::get('/master/datapegawai/datapegawai', 'MasterController@datapegawai')->name('datapegawai');
+	Route::get('/master/datapegawai/tambah_datapegawai', 'MasterController@tambah_datapegawai')->name('tambah_datapegawai');
+	Route::get('/master/datapegawai/edit_datapegawai', 'MasterController@edit_datapegawai')->name('edit_datapegawai');
+	Route::get('/master/datasatuan/datasatuan', 'MasterController@datasatuan')->name('datasatuan');
+	Route::get('/master/datasatuan/tambah_datasatuan', 'MasterController@tambah_datasatuan')->name('tambah_datasatuan');
+	Route::get('/master/datasatuan/edit_datasatuan', 'MasterController@edit_datasatuan')->name('edit_datasatuan');
+	Route::get('/master/datamesin/datamesin', 'MasterController@datamesin')->name('datamesin');
+	Route::get('/master/datamesin/tambah_datamesin', 'MasterController@tambah_datamesin')->name('tambah_datamesin');
+	Route::get('/master/datamesin/edit_datamesin', 'MasterController@edit_datamesin')->name('edit_datamesin');
 	Route::get('/master/datacustomer/index', 'MasterController@datacustomer')->name('datacustomer');
 	Route::get('/master/datacustomer/create', 'MasterController@tambah_datacustomer')->name('tambah_datacustomer');
 	Route::get('/master/datacustomer/edit', 'MasterController@edit_datacustomer')->name('edit_datacustomer');
