@@ -59,6 +59,17 @@
                         </div>
                       </div>
 
+                      <div class="col-md-3 col-sm-6 col-12">
+                        <label>Nama Mesin</label>
+                      </div>
+
+                      <div class="col-md-9 col-sm-6 col-12">
+                        <div class="form-group">
+                          <select class="form-control form-control-sm select2">
+                          </select>
+                        </div>
+                      </div>
+
                       <div class="col-md-3 col-sm-4 col-12">
                         <label>Satuan</label>
                       </div>
