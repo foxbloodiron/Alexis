@@ -40,14 +40,22 @@
 	                                <thead class="bg-primary">
 	                                    <tr>
 	                                    	<th width="1%">No</th>
-							                <th>Nama Adonan</th>
+	                                    	<th>Kode Barang</th>
+							                <th>Nama Barang</th>
+							                <th>Hasil</th>
+							                <th>Satuan</th>
+							                <th>Tipe Barang</th>
 							                <th width="15%">Aksi</th>
 							            </tr>
 	                                </thead>
 	                                <tbody>
 	                                	<tr>
 	                                		<td>1</td>
-	                                		<td>Adonan Semen</td>
+	                                		<td>BRG/1</td>
+	                                		<td>Paving</td>
+	                                		<td>8</td>
+	                                		<td>PCS</td>
+	                                		<td>Barang Jual</td>
 	                                		<td>
 	                                			<div class="btn-group">
 	                                				<button class="btn btn-primary" title="Detail" type="button" data-toggle="modal" data-target="#detail"><i class="fa fa-list"></i></button>

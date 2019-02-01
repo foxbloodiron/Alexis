@@ -17,21 +17,22 @@
 
 	<section class="section">
 
+		<ul class="nav nav-pills">
+            <li class="nav-item">
+                <a href="" class="nav-link active" data-target="#list_barang" aria-controls="list_barang" data-toggle="tab" role="tab">Order Pembelian Dengan Rencana</a>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link" data-target="#po_tanpa" aria-controls="po_tanpa" data-toggle="tab" role="tab">Order Pembelian Tanpa Rencana</a>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link" data-target="#list_suplier" aria-controls="list_suplier" data-toggle="tab" role="tab">History Order Pembelian</a>
+            </li>
+        </ul>
+
 		<div class="row">
 
 			<div class="col-12">
 
-				<ul class="nav nav-pills mb-3">
-                    <li class="nav-item">
-                        <a href="" class="nav-link active" data-target="#list_barang" aria-controls="list_barang" data-toggle="tab" role="tab">Order Pembelian Dengan Rencana</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link" data-target="#po_tanpa" aria-controls="po_tanpa" data-toggle="tab" role="tab">Order Pembelian Tanpa Rencana</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link" data-target="#list_suplier" aria-controls="list_suplier" data-toggle="tab" role="tab">History Order Pembelian</a>
-                    </li>
-                </ul>
 
 
 				<div class="tab-content">

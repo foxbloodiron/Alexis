@@ -5,6 +5,11 @@
 ============================
 */
 
+@font-face{
+	font-family: 'Chakra Petch';
+	src: url('../../assets/fonts/Chakra_Petch/ChakraPetch-Regular.ttf');
+}
+
 .card-title-block {
     /*margin: -20px;*/
     padding: 20px !important;
@@ -67,6 +72,7 @@ fieldset{
 		position: absolute;
 		background: white;
 		left: 0;
+		height: 55px;
 		width: 100%;
 		text-align: left;
 		z-index: 1;
@@ -85,4 +91,131 @@ fieldset{
 		margin: 6px;
 		top: 0;
 	}
+}
+.container-fluid{
+	padding-left: unset;
+	padding-right: unset;
+}
+.bootstrap-datetimepicker-widget{
+	z-index: 1000;
+	position: absolute;
+	display: block;
+
+}
+.sidebar .sidebar-menu > li:has(ul > li.open > a){
+	color: white;
+}
+.input-group > .select2.select2-container{
+	position: relative;
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+	width: 1%;
+	margin-bottom: 0;
+}
+.form-group.top-totalprice > label{
+	position: absolute;
+	top: 5px;
+	left: 25px;
+}
+.form-group.top-totalprice > input{
+	height: 90px;
+	font-size: 50px; 
+}
+@media (max-width: 576px){
+	.form-group.top-totalprice > label{
+		position: relative;
+		top: unset;
+		left: unset;
+	}
+	.form-group.top-totalprice > input{
+		height: unset;
+		font-size: unset; 
+	}	
+}
+header.header {
+    height: 55px;
+    border-bottom: 1px solid #b7b7b7;
+    box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1), inset 0 -1px 0 rgba(0, 0, 0, .07);
+}
+.sidebar{
+	/*top: 55px;*/
+}
+.app .content {
+    padding: 80px 30px 80px 30px;
+    min-height: 100vh; 
+}
+    @media (min-width: 1200px) {
+		.app .content {
+	        padding: 80px 30px 80px 30px; 
+        } 
+    }
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+		.app .content {
+	        padding: 70px 30px 70px 30px; 
+        } 
+    }
+    @media (min-width: 768px) and (max-width: 991.98px) {
+		.app .content {
+	        padding: 70px 20px 70px 20px; 
+        } 
+    }
+    @media (max-width: 767.98px) {
+		.app .content {
+	        padding: 70px 20px 70px 20px; 
+        } 
+    }
+
+.title-block{
+	margin-bottom: 20px;
+}
+.sidebar .sidebar-menu{
+	font-size: 10pt;
+}
+article.content{
+	font-size: 10pt;
+}
+footer.footer{
+	font-size: 11pt;
+}
+.nav.nav-pills .nav-item .nav-link{
+	border-bottom-left-radius: unset;
+	border-bottom-right-radius: unset;
+}
+.sidebar-header .brand{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    background: #262d34;
+    box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1), inset 0 -1px 0 rgba(0, 0, 0, .07);
+}
+/*@media (max-width: 768px){
+	.sidebar {
+	    top: 0;
+	}
+}*/
+header.header .brand{
+    width: 240px;
+    text-align: center;
+	display: flex; 
+    align-items: center;
+    background: rgb(37, 45, 52);
+    height: 55px;
+    color: white;
+    left: 50px;
+    padding-left: 35px;
+}
+.title-block > .title,
+.title-block > .title-description .text-primary,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+	/*font-family: 'Questrial', sans-serif;*/
+	/*font-family: 'Quantico', sans-serif;*/
+	/*font-family: 'Fredoka One', sans-serif;*/
+	font-family: 'Chakra Petch', sans-serif;
 }

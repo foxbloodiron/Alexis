@@ -26,6 +26,10 @@ class PenjualanController extends Controller
     {
     	return view('penjualan/penjualantanpaorder/penjualantanpaorder');
     }
+    public function tambah_penjualantanpaorder()
+    {
+        return view('penjualan/penjualantanpaorder/tambah_penjualantanpaorder');
+    }    
     public function returnpenjualan()
     {
     	return view('penjualan/returnpenjualan/returnpenjualan');

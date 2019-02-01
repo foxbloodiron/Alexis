@@ -22,10 +22,18 @@ class ProduksiController extends Controller
     {
     	return view('produksi/produksirencana/produksirencana');
     }
+    public function tambah_produksirencana()
+    {
+        return view('produksi/produksirencana/tambah_produksirencana');
+    }    
     public function produksitanparencana()
     {
     	return view('produksi/produksitanparencana/produksitanparencana');
     }
+    public function tambah_produksitanparencana()
+    {
+        return view('produksi/produksitanparencana/tambah_produksitanparencana');
+    }    
     public function upahboronganproduksi()
     {
     	return view('produksi/upahboronganproduksi/upahboronganproduksi');
@@ -33,5 +41,9 @@ class ProduksiController extends Controller
     public function proses_upahboronganproduksi()
     {
         return view('produksi/upahboronganproduksi/proses_upahboronganproduksi');
+    }
+    public function spk()
+    {
+        return view('produksi.spk.spk');
     }
 }

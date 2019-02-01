@@ -2,7 +2,6 @@
 
 @section('content')
 
-@include('produksi.produksirencana.tambah_produksirencana')
 
 <article class="content">
 
@@ -25,7 +24,7 @@
 	                        <h3 class="title"> Pencatatan Produksi Dengan Rencana </h3>
 	                    </div>
 	                    <div class="header-block pull-right">
-                			<button class="btn btn-primary" data-toggle="modal" data-target="#tambah"><i class="fa fa-plus"></i>&nbsp;Tambah Data</button>
+                			<button class="btn btn-primary" id="btn-tambah-kenangan"><i class="fa fa-plus"></i>&nbsp;Tambah Data</button>
 	                    	
 	                    </div>
                     </div>
@@ -34,13 +33,13 @@
                         	
                         	
                         	<div class="table-responsive">
-	                            <table class="table data-table table-hover table-bordered table-striped" cellspacing="0">
+	                            <table class="table table-hover table-bordered table-striped" id="table-rencana"{{--masadepan yang indah--}} cellspacing="0">
 	                                <thead class="bg-primary">
 	                                    <tr>
 	                                    	<th>Kode Produksi Dengan Rencana</th>
 							                <th>Tanggal</th>
-							                <th>Kode Item</th>
-							                <th>Nama Item</th>
+							                <th>Kode Barang</th>
+							                <th>Nama Barang</th>
 							                <th>Jumlah Produksi</th>
 							                <th>Aksi</th>
 							            </tr>
@@ -62,4 +61,16 @@
 
 </article>
 
+@endsection
+@section('extra_script')
+<script type="text/javascript">
+	$(document).ready(function(){
+		var table = $('#table-rencana').DataTable();
+		
+		$('#btn-tambah-kenangan').click(function(){
+			window.location.href = '{{route('tambah_produksirencana')}}';
+		});
+
+	});
+</script>
 @endsection

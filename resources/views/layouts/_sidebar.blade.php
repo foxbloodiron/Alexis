@@ -198,6 +198,9 @@
                         <li class="{{Request::is('purchasing/returnpembelian/*') ? 'active' : ''}}">
                             <a href="{{route('returnpembelian')}}">Return Pembelian</a>
                         </li>
+                        <li class="{{Request::is('purchasing/rencanabahanbaku/*') ? 'active' : ''}}">
+                            <a href="{{route('rencanabahanbaku')}}" title="Rencana Bahan Baku Produksi">Bahan Baku Produksi</a>
+                        </li>
                     </ul>
                 </li>
                 <li class="{{Request::is('stok/*') ? 'active open' : ''}}">
@@ -229,20 +232,23 @@
                         <i class="fa arrow"></i>
                     </a>
                     <ul class="sidebar-nav">
-                        <li class="{{Request::is('produksi/perencanaanproduksi/*') ? 'active' : ''}}">
+                        {{-- <li class="{{Request::is('produksi/perencanaanproduksi/*') ? 'active' : ''}}">
                             <a href="{{url('produksi/perencanaanproduksi/perencanaanproduksi')}}"> Perencanaan Produksi </a>
-                        </li>
+                        </li> --}}
                         <li class="{{Request::is('produksi/produksitanparencana/*') ? 'active' : ''}}">
-                            <a href="{{url('produksi/produksitanparencana/produksitanparencana')}}"> Pencatatan Produksi Tanpa Rencana </a>
+                            <a href="{{route('produksitanparencana')}}"> Pencatatan Produksi Tanpa Rencana </a>
                         </li>
                         <li  class="{{Request::is('produksi/produksirencana/*') ? 'active' : ''}}">
-                            <a href="{{url('produksi/produksirencana/produksirencana')}}"> Pencatatan Produksi Dengan Rencana </a>
+                            <a href="{{route('produksirencana')}}"> Pencatatan Produksi Dengan Rencana </a>
                         </li>
                         <li  class="{{Request::is('produksi/pencatatanhasil/*') ? 'active' : ''}}">
-                            <a href="{{url('produksi/pencatatanhasil/pencatatanhasil')}}"> Pencatatan Hasil Produksi</a>
+                            <a href="{{route('pencatatanhasil')}}"> Pencatatan Hasil Produksi</a>
                         </li>
                         <li  class="{{Request::is('produksi/upahboronganproduksi/*') ? 'active' : ''}}">
-                            <a href="{{url('produksi/upahboronganproduksi/upahboronganproduksi')}}"> Upah Borongan Produksi</a>
+                            <a href="{{route('upahboronganproduksi')}}"> Upah Borongan Produksi</a>
+                        </li>
+                        <li class="{{Request::is('produksi/spk/*') ? 'active' : ''}}">
+                            <a href="{{route('spk_produksi')}}">Manajemen SPK</a>
                         </li>
                     </ul>
                 </li>
@@ -253,7 +259,7 @@
                     </a>
                     <ul class="sidebar-nav">
                         <li  class="{{Request::is('customer/historitransaksi/*') ? 'active' : ''}}">
-                            <a href="{{url('customer/historitransaksi/historitransaksi')}}"> Histori Transaksi</a>
+                            <a href="{{route('historitransaksi')}}"> Histori Transaksi</a>
                         </li>
                         
                     </ul>
@@ -265,19 +271,19 @@
                     </a>
                     <ul class="sidebar-nav">
                         <li  class="{{Request::is('penjualan/penjualanorder/*') ? 'active' : ''}}">
-                            <a href="{{url('penjualan/penjualanorder/penjualanorder')}}"> Pencatatan Penjualan Dengan Order</a>
+                            <a href="{{route('penjualanorder')}}"> Penjualan Dengan Order</a>
                         </li>
                         <li class="{{Request::is('penjualan/penjualantanpaorder/*') ? 'active' : ''}}">
-                            <a href="{{url('penjualan/penjualantanpaorder/penjualantanpaorder')}}"> Pencatatan Penjualan Tanpa Order</a>
+                            <a href="{{route('penjualantanpaorder')}}"> Penjualan Tanpa Order</a>
                         </li>
                         <li class="{{Request::is('penjualan/diskonpenjualan/*') ? 'active' : ''}}">
-                            <a href="{{url('penjualan/diskonpenjualan/diskonpenjualan')}}"> Diskon Penjualan</a>
+                            <a href="{{route('diskonpenjualan')}}"> Diskon Penjualan</a>
                         </li>
-                        <li class="{{Request::is('penjualan/penjualanproject/*') ? 'active' : ''}}">
-                            <a href="{{url('penjualan/penjualanproject/penjualanproject')}}"> Penjualan Project</a>
-                        </li>
+                        {{-- <li class="{{Request::is('penjualan/penjualanproject/*') ? 'active' : ''}}">
+                            <a href="{{route('penjualanproject')}}"> Penjualan Project</a>
+                        </li> --}}
                         <li class="{{Request::is('penjualan/returnpenjualan/*') ? 'active' : ''}}">
-                            <a href="{{url('penjualan/returnpenjualan/returnpenjualan')}}"> Return Penjualan</a>
+                            <a href="{{route('returnpenjualan')}}"> Return Penjualan</a>
                         </li>
                         
                     </ul>

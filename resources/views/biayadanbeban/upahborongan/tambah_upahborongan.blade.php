@@ -39,6 +39,16 @@
                               <div class="col-lg-6 col-12">
                                 <div class="row">
 
+                                    <div class="col-md-6 col-sm-6 col-12">
+                                      <label>Nama Upah</label>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-6 col-12">
+                                      <div class="form-group">
+                                        <input type="number" class="form-control form-control-sm" id="nama_upah" name="nama_upah">
+                                      </div>
+                                    </div>
+
 
                                     <div class="col-md-6 col-sm-6 col-12">
                                       <label>PCS</label>

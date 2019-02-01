@@ -15,19 +15,19 @@
 
 	<section class="section">
 
+		<ul class="nav nav-pills">
+            <li class="nav-item">
+                <a href="" class="nav-link active" data-target="#pengiriman" aria-controls="pengiriman" data-toggle="tab" role="tab">Operasional Jalan</a>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link" data-target="#upah" aria-controls="upah" data-toggle="tab" role="tab">Upah Borongan Pengiriman</a>
+            </li>
+        </ul>
+		
 		<div class="row">
 
 			<div class="col-12">
 
-				<ul class="nav nav-pills mb-3">
-                    <li class="nav-item">
-                        <a href="" class="nav-link active" data-target="#pengiriman" aria-controls="pengiriman" data-toggle="tab" role="tab">Operasional Jalan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link" data-target="#upah" aria-controls="upah" data-toggle="tab" role="tab">Upah Borongan Pengiriman</a>
-                    </li>
-                </ul>
-				
 				<div class="tab-content">
 					<div class="tab-pane active fade in show" id="pengiriman">
 						<div class="card">

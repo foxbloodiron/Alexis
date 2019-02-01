@@ -2,6 +2,8 @@
 
 @section('content')
 
+@include('stok.pencatatanbarangmasuk.modal_muatan')
+
 <article class="content">
 
   <div class="title-block text-primary">
@@ -36,13 +38,25 @@
                             <div class="row">
 
                               <div class="col-md-3 col-sm-6 col-xs-12">
+                                <label>Kode Penerimaan</label>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                  <input type="text" class="form-control form-control-sm" readonly="">
+                                </div>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-12">
                                 <label>Nota Order Pembelian</label>
                               </div>
 
                               <div class="col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
-                                  <select class="form-control form-control-sm select2">
+                                  <select class="form-control form-control-sm select2" id="nota_order" name="nota_order">
                                     <option value="">--Pilih--</option>
+                                    <option value="1">PO/20190123/1</option>
+
                                   </select>
                                 </div>
                               </div>
@@ -86,49 +100,114 @@
                                   <input type="text" class="form-control form-control-sm" readonly="">
                                 </div>
                               </div>
-                              
-                              
-                              <div class="col-md-3 col-sm-6 col-xs-12">
-                                <label>Plat No</label>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                  <select class="form-control form-control-sm select2" id="plat_no">
-                                    <option value="">--Pilih--</option>
-                                    <option value="1">N 9626 UT</option>
-                                  </select>
-                                </div>
-                              </div>
 
                               <div class="col-12">
-                                <button class="btn btn-primary btn-block btn-proses" type="button">Proses</button>
+                                <button class="btn btn-primary btn-block btn-proses" type="button">Tampilkan</button>
                               </div>
                             </div>
                           </fieldset>
 
-                          <div class="table-responsive mt-3">
-                            
-                            <table class="table table-bordered table-striped table-hover" id="table_barangmasuk" cellspacing="0">
-                              <thead class="bg-primary">
-                                <tr>
-                                  <th>Kode | Barang</th>
-                                  <th>Satuan</th>
-                                  <th>Panjang Bak (cm<sup>3</sup>)</th>
-                                  <th>Lebar Bak (cm<sup>3</sup>)</th>
-                                  <th>Tinggi Bak (cm<sup>3</sup>)</th>
-                                  <th>Kubikasi Bak (m<sup>3</sup>)</th>
-                                  <th>Kubikasi Muatan Bak (m<sup>3</sup>)</th>
-                                </tr>
-                              </thead>
-                              <tbody></tbody>
-                            </table>
+                          <div class="d-none" id="front-end-show">
 
+                            <fieldset class="mt-3">
+
+                              <h4><b>Pasir</b></h4> 
+                              <span class="badge badge-pill badge-secondary">3 Rit</span>
+                              <hr>
+
+                              <div class="table-responsive mt-3">
+                                
+                                <table class="table table-bordered table-striped table-hover data-table" id="table_barangmasuk" cellspacing="0">
+                                  <thead class="bg-primary">
+                                    <tr>
+                                      <th>Kode | Barang</th>
+                                      <th>Tanggal Datang</th>
+                                      <th>Jam Datang</th>
+                                      <th>Surat Jalan</th>
+                                      <th>Plat Nomor</th>
+                                      <th>Detail Kendaraan</th>
+                                      <th>Kubikasi Muatan Bak (m<sup>3</sup>)</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    @for($j=0;$j<3;$j++)
+                                      <tr>
+                                        <td>BRG/1</td>
+                                        <td><input type="text" class="form-control-sm form-control datepicker" name=""></td>
+                                        <td><input type="text" class="form-control-sm form-control input-jam" name=""></td>
+                                        <td><input type="text" class="form-control-sm form-control" name=""></td>
+                                        <td>
+                                          <select class="select2 form-control form-control-sm plat_no">
+                                            <option value="" selected="" disabled="">--Pilih--</option>
+                                            <option value="1">N 9626 UT</option>
+                                          </select>
+                                        </td>
+                                        <td align="center">
+                                          <button type="button" class="btn btn-info btn-xs btn-detail-muatan" disabled="" data-toggle="modal" data-target="#detail_muatan">Detail</button>
+                                        </td>
+                                        <td><input type="text" class="form-control-sm form-control muatan_bak" readonly="" name=""></td>
+
+                                      </tr>
+                                    @endfor
+                                  </tbody>
+                                </table>
+
+                              </div>
+                            </fieldset>
+
+
+                            <fieldset class="mt-3">
+
+                              <h4><b>Koral</b></h4> 
+                              <span class="badge badge-pill badge-secondary">5 Rit</span>
+                              <hr>
+
+                              <div class="table-responsive mt-3">
+                                
+                                <table class="table table-bordered table-striped table-hover data-table" id="table_barangmasuk" cellspacing="0">
+                                  <thead class="bg-primary">
+                                    <tr>
+                                      <th>Kode | Barang</th>
+                                      <th>Tanggal Datang</th>
+                                      <th>Jam Datang</th>
+                                      <th>Surat Jalan</th>
+                                      <th>Plat Nomor</th>
+                                      <th>Detail Kendaraan</th>
+                                      <th>Kubikasi Muatan Bak (m<sup>3</sup>)</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    @for($i=0;$i<5;$i++)
+                                      <tr>
+                                        <td>BRG/2</td>
+                                        <td><input type="text" class="form-control-sm form-control datepicker" name=""></td>
+                                        <td><input type="text" class="form-control-sm form-control input-jam" name=""></td>
+                                        <td><input type="text" class="form-control-sm form-control" name=""></td>
+                                        <td>
+                                          <select class="select2 form-control form-control-sm plat_no">
+                                            <option value="" selected="" disabled="">--Pilih--</option>
+                                            <option value="1">N 9626 UT</option>
+                                          </select>
+                                        </td>
+                                        <td align="center">
+                                          <button type="button" class="btn btn-info btn-xs btn-detail-muatan" disabled="" data-toggle="modal" data-target="#detail_muatan">Detail</button>
+                                        </td>
+                                        <td><input type="text" class="form-control-sm form-control muatan_bak" readonly="" name=""></td>
+
+                                      </tr>
+
+                                    @endfor
+                                  </tbody>
+                                </table>
+
+                              </div>
+                            </fieldset>
                           </div>
 
                         </section>
                     </div>
                     <div class="card-footer text-right">
+                      <button class="btn btn-warning mr-5" type="button">Close</button>
                       <button class="btn btn-primary" type="button">Simpan</button>
                       <a href="{{route('pencatatanbarangmasuk')}}" class="btn btn-secondary">Kembali</a>
                     </div>
@@ -148,37 +227,43 @@
   
   $(document).ready(function(){
 
-    var table = $('#table_barangmasuk').DataTable();
-    var counter = 1;
+    // var table = $('#table_barangmasuk').DataTable();
+    var tabel_muatan = $('#tabel_muatan').DataTable({
+                                          searching:false,
+                                          paging:false
+                                        });
 
     $('.btn-proses').click(function(){
-      if ($('#plat_no').val().length != 0 && counter === 1) {
-        datatable_append();
-      } else if($('#plat_no').val() === '' || $('#plat_no').val() === null){
-        datatable_clear();
+      if($('#nota_order').val() === ''){
+        $.toast({
+          text:'Pilih Nota Terlebih Dahulu!',
+          icon:'error'
+
+        });
+        $('#front-end-show').addClass('d-none');
+      } else {
+        $('#front-end-show').removeClass('d-none');
       }
     });
 
-    function datatable_clear(){
-      table.clear().draw();
-      counter--;
-    }
+    $('.data-table tbody').on('change', '.plat_no', function(){
 
-    function datatable_append(){
+      var plat_no = $(this).val();
 
-      table.row.add([
-          'BRG/1 Semen',
-          'SAK',
-          '551',
-          '241',
-          '200',
-          '26.56',
-          '<input type="text" class="form-control form-control-sm" name="" id="">'
+      var btn_modal = $(this).parents('tr').find('.btn-detail-muatan');
 
-        ]).draw(false);
+      if(plat_no != ''){
+        btn_modal.attr('disabled', false);
+        $(this).parents('tr').find('.muatan_bak').attr('readonly', false);
+      } else {
+        btn_modal.attr('disabled', true);
+        $(this).parents('tr').find('.muatan_bak').val('').attr('readonly', true);
+      }
 
-      counter++;
-    }
+
+
+
+    });
 
   });
 
