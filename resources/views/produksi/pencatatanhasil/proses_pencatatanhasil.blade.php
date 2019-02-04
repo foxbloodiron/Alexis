@@ -18,7 +18,38 @@
 
     <div class="row">
 
-      <div class="col-12">
+      <div class="col-lg-4 col-md-5 col-sm-12 col-12">
+
+            <table class="table table-striped">
+
+              <tbody>
+                <tr>
+                  <td class="font-weight-bold">Kode SPK</td>
+                  <td>SPK/PR/20190402/1</td>
+                </tr>
+                <tr>
+                  <td class="font-weight-bold">Barang Produksi</td>
+                  <td>Paving Abu</td>
+                </tr>
+                <tr>
+                  <td class="font-weight-bold">Jumlah Rencana Produksi</td>
+                  <td>100</td>
+                </tr>
+                <tr>
+                  <td class="font-weight-bold">Satuan</td>
+                  <td>Biji</td>
+                </tr>
+                <tr>
+                  <td class="font-weight-bold">Jumlah Semen</td>
+                  <td>100</td>
+                </tr>
+              </tbody>
+
+            </table>
+
+      </div>
+
+      <div class="col-lg-8 col-md-7 col-sm-12 col-12">
         
         <div class="card">
                     <div class="card-header bordered p-2">
@@ -32,60 +63,79 @@
                     <div class="card-block">
                         <section>
                           
-                          <div class="row">
-
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                              <label>Kode Produksi</label>
-                            </div>
-
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                              <div class="form-group">
-                                <input type="text" readonly="" class="form-control form-control-sm" name="">
+                          <fieldset>
+                            <div class="row">
+                              
+                              <div class="col-md-4 col-sm-5 col-12">
+                                <label>Kode Hasil Produksi</label>
                               </div>
-                            </div>
 
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                              <label>Tanggal Produksi</label>
-                            </div>
-
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                              <div class="form-group">
-                                <input type="text" readonly="" class="form-control form-control-sm" name="">
+                              <div class="col-md-8 col-sm-7 col-12">
+                                <div class="form-group">
+                                  <input type="text" readonly="" class="form-control form-control-sm" name="">
+                                </div>
                               </div>
-                            </div>
 
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                              <label>Item Produksi</label>
-                            </div>
 
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                              <div class="form-group">
-                                <input type="text" readonly="" class="form-control form-control-sm" name="">
+                              <div class="col-md-4 col-sm-5 col-12">
+                                <label>Jumlah Produksi</label>
                               </div>
-                            </div>
 
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                              <label>Jumlah Produksi</label>
-                            </div>
-
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                              <div class="form-group">
-                                <input type="text" readonly="" class="form-control form-control-sm" name="">
+                              <div class="col-md-5 col-sm-7 col-12">
+                                <div class="form-group">
+                                  <input type="text" class="form-control form-control-sm" name="">
+                                </div>
                               </div>
-                            </div>
 
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                              <label>Jumlah Produksi Rusak</label>
-                            </div>
 
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                              <div class="form-group">
-                                <input type="number" min="0" class="form-control form-control-sm" name="">
+                              <div class="col-md-4 col-sm-5 col-12">
+                                <label>Satuan</label>
                               </div>
-                            </div>
 
-                          </div>
-                          
+                              <div class="col-md-5 col-sm-7 col-12">
+                                <div class="form-group">
+                                  <select class="form-control form-control-sm">
+                                    <option>--Pilih--</option>
+                                  </select>
+                                </div>
+                              </div>
+
+
+                              <div class="col-md-4 col-sm-5 col-12">
+                                <label>Jumlah Semen</label>
+                              </div>
+
+                              <div class="col-md-5 col-sm-7 col-12">
+                                <div class="form-group">
+                                  <input type="text" class="form-control form-control-sm" name="">
+                                </div>
+                              </div>
+
+                              <div class="col-md-4 col-sm-5 col-12">
+                                <label>Satuan</label>
+                              </div>
+
+                              <div class="col-md-5 col-sm-7 col-12">
+                                <div class="form-group">
+                                  <select class="form-control form-control-sm">
+                                    <option>--Pilih--</option>
+                                  </select>
+                                </div>
+                              </div>
+
+                              <div class="col-md-4 col-sm-5 col-12">
+                                <label>Jumlah Orang</label>
+                              </div>
+
+                              <div class="col-md-5 col-sm-7 col-12">
+                                <div class="form-group">
+                                  <input type="text" class="form-control form-control-sm" name="">
+                                </div>
+                              </div>
+
+                            </div>
+                          </fieldset>
+
                         </section>
                     </div>
                     <div class="card-footer text-right">

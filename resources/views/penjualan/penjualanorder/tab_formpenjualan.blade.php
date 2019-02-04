@@ -58,7 +58,7 @@
                         			<label>Tanggal Order</label>
                         			<div class="form-group">
                         				<div class="input-group">
-	                        				<input type="text" class="form-control form-control-sm" value="{{date('d-m-Y')}}" name="">
+	                        				<input type="text" class="form-control form-control-sm datepicker" value="{{date('d-m-Y')}}" name="">
 	                        				<div class="input-group-append">
 	                        					<button class="btn btn-primary btn-sm" type="button"><i class="fa fa-calendar"></i></button>
 	                        				</div>

@@ -42,9 +42,9 @@
 	                                    	<th width="1%">No</th>
 	                                    	<th>Kode Barang</th>
 							                <th>Nama Barang</th>
+							                <th>Jenis Adonan</th>
 							                <th>Hasil</th>
 							                <th>Satuan</th>
-							                <th>Tipe Barang</th>
 							                <th width="15%">Aksi</th>
 							            </tr>
 	                                </thead>
@@ -53,9 +53,9 @@
 	                                		<td>1</td>
 	                                		<td>BRG/1</td>
 	                                		<td>Paving</td>
+	                                		<td>K-150</td>
 	                                		<td>8</td>
 	                                		<td>PCS</td>
-	                                		<td>Barang Jual</td>
 	                                		<td>
 	                                			<div class="btn-group">
 	                                				<button class="btn btn-primary" title="Detail" type="button" data-toggle="modal" data-target="#detail"><i class="fa fa-list"></i></button>

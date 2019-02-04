@@ -198,6 +198,21 @@
                               </div>
                             </div>
 
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <label>Persentase Produksi Rusak</label>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <input type="number" class="form-control-sm form-control persentase" max="100" min="0" name="">
+                                  <span class="input-group-addon">
+                                    %
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+
 
 
                           </div>
@@ -232,7 +247,23 @@
 				loaderBg: '#55efc4',
 				icon: 'success'
 			})
-		})
+		});
+
+    $('.persentase').on('keyup blur focus', function(){
+      // console.log('persentase');
+      var min, max, ini;
+
+      ini = $(this);
+
+      min = 0;
+
+      max = 100;
+
+      if(parseFloat(ini.val()) > max){
+        ini.val(max);
+      }
+
+    });
   });
 </script>
 @endsection

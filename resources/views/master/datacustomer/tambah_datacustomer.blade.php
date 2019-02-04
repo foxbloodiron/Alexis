@@ -270,7 +270,7 @@
 		});
 
     $('#btn-simpan').click(function(){
-      console.log('simpan');
+      // console.log('simpan');
 
       var kode_wilayah, nomor_polisi, huruf_belakang, nopol;
 
@@ -291,7 +291,7 @@
     });
 
     $('#btn-edit').click(function(){
-      console.log('edit');
+      // console.log('edit');
       $('#tabel_nopol tbody').find('input').attr('readonly', false);
 
       $('#btn-simpan').removeClass('d-none');

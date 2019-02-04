@@ -53,13 +53,26 @@
                         			</div>
 
                                     <div class="col-md-4 col-sm-5 col-12">
+                                        <label>Jenis Adonan</label>
+                                    </div>
+
+                                    <div class="col-md-8 col-sm-7 col-12">
+                                        <div class="form-group">
+                                        
+                                           <input type="text" class="form-control form-control-sm" name=""> 
+                                                
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-4 col-sm-5 col-12">
                                         <label>Jumlah Hasil Produksi</label>
                                     </div>
 
                                     <div class="col-md-8 col-sm-7 col-12">
                                         <div class="form-group">
                                         
-                                           <input type="number" min="" class="form-control form-control-sm" name=""> 
+                                           <input type="number" min="0" class="form-control form-control-sm" name=""> 
                                                 
                                         </div>
                                     </div>
@@ -71,9 +84,7 @@
                                     <div class="col-md-8 col-sm-7 col-12">
                                         <div class="form-group">
                                         
-                                           <select class="form-control form-control-sm">
-                                                <option value="">--Pilih--</option>
-                                            </select>   
+                                           <input type="text" readonly="" class="form-control form-control-sm" value="Biji" name="">
                                                 
                                         </div>
                                     </div>
@@ -88,7 +99,6 @@
                                         <div class="form-group">
                                             <select class="form-control form-control-sm select2" id="bahan" name="">
                                                 <option value="" disabled="" selected="">--Pilih--</option>
-                                                <option value="1">Semen</option>
                                                 <option value="2">Pasir</option>
                                                 <option value="3">Air</option>
                                             </select>
@@ -97,23 +107,22 @@
                                     <div class="col-md-3 col-sm-3 col-12">
                                         <label>Qty</label>
                                         <div class="form-group">
-                                            <div class="input-group">
-                                                <input type="number" class="form-control-sm form-control" id="qty" name="">
-                                                <div class="input-group-append">
-                                                    <button type="button" class="btn btn-primary btn-sm btn-tambah"><i class="fa fa-plus"></i></button>
-                                                </div>
-                                            </div>
+                                            <input type="number" class="form-control-sm form-control" id="qty" name="">
                                         </div>
                                     </div>
                                     <div class="col-md-3 col-sm-3 col-12">
                                         <label>Satuan</label>
                                         <div class="form-group">
-                                            <select class="form-control form-control-sm" id="satuan" name="">
-                                                <option value="" disabled="" selected="">--Pilih--</option>
-                                                <option value="1">Kg</option>
-                                                <option value="2">Pcs</option>
-                                                <option value="3">Ton</option>
-                                            </select>
+                                            <div class="input-group">
+                                                <select class="form-control form-control-sm" id="satuan" name="">
+                                                    <option value="1">Kg</option>
+                                                    <option value="2">Pcs</option>
+                                                    <option value="3">Ton</option>
+                                                </select>
+                                                <div class="input-group-append">
+                                                    <button type="button" class="btn btn-primary btn-sm btn-tambah"><i class="fa fa-plus"></i></button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>                                                                        
                                 </div>
@@ -132,7 +141,17 @@
                         					<th width="1%"></th>
                         				</tr>
                         			</thead>
-                                    <tbody></tbody>
+                                    <tbody>
+                                        <tr>
+                                            <td>#</td>
+                                            <td>BRG/1</td>
+                                            <td>Semen</td>
+                                            <td><input type="number" min="0" class="form-control-sm form-control" name=""></td>
+                                            <td>Sak</td>
+                                            <td>-</td>
+                                            <td align="center">-</td>
+                                        </tr>
+                                    </tbody>
                         		</table>
                         	</div>
 

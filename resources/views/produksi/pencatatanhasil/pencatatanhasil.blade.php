@@ -49,8 +49,8 @@
 			                            <table class="table data-table table-hover tabel-striped table-bordered" cellspacing="0">
 			                                <thead class="bg-primary">
 			                                    <tr>
-									                <th>Kode Produksi</th>
-									                <th>Nama Item</th>
+									                <th>Kode SPK</th>
+									                <th>Nama Barang</th>
 									                <th>Jumlah Produksi</th>
 									                <th>Tanggal Produksi</th>
 									                <th>Status</th>
@@ -59,7 +59,7 @@
 			                                </thead>
 			                                <tbody>
 			                                	<tr>
-			                                		<td>PR/20181115/1</td>
+			                                		<td>SPK/PR/20181115/1</td>
 			                                		<td>Paving</td>
 			                                		<td>150</td>
 			                                		<td>15 Nov 2018</td>
@@ -90,7 +90,7 @@
 			                            <table class="table data-table table-hover tabel-striped table-bordered" cellspacing="0">
 			                                <thead class="bg-primary">
 			                                    <tr>
-									                <th>Kode Produksi</th>
+									                <th>Kode SPK</th>
 									                <th>Nama Item</th>
 									                <th>Jumlah Produksi</th>
 									                <th>Tanggal Produksi</th>
@@ -100,7 +100,7 @@
 			                                </thead>
 			                                <tbody>
 			                                	<tr>
-			                                		<td>PTR/20181115/1</td>
+			                                		<td>SPK/PTR/20181115/1</td>
 			                                		<td>Paving</td>
 			                                		<td>150</td>
 			                                		<td>15 Nov 2018</td>
@@ -153,7 +153,7 @@
 			                            <table class="table data-table table-hover tabel-striped table-bordered" cellspacing="0">
 			                                <thead class="bg-primary">
 			                                    <tr>
-									                <th>Kode Produksi</th>
+									                <th>Kode SPK</th>
 									                <th>Nama Item</th>
 									                <th>Jumlah Produksi</th>
 									                <th>Tanggal Produksi</th>
@@ -162,7 +162,7 @@
 			                                </thead>
 			                                <tbody>
 			                                	<tr>
-			                                		<td>PR/20181115/2</td>
+			                                		<td>SPK/PR/20181115/2</td>
 			                                		<td>Paving Abu</td>
 			                                		<td>100</td>
 			                                		<td>13 Nov 2018</td>
@@ -170,7 +170,7 @@
 			                                		
 			                                	</tr>
 			                                	<tr>
-			                                		<td>PTR/20181115/2</td>
+			                                		<td>SPK/PTR/20181115/2</td>
 			                                		<td>Paving Abu</td>
 			                                		<td>100</td>
 			                                		<td>13 Nov 2018</td>

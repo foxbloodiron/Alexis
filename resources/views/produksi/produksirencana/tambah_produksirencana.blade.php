@@ -45,14 +45,14 @@
                             </div>
                             
                             <div class="col-md-3 col-sm-6 col-12">
-                              <label>Kode POS Order</label>
+                              <label>Nota POS Order</label>
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-12">
                               <div class="form-group">
-                                <select class="form-control form-control-sm select2">
-                                  <option disabled="" selected="">--Pilih Kode POS Order--</option>
-                                  <option>PO/20190129/1</option>
+                                <select class="form-control form-control-sm select2" id="nota">
+                                  <option disabled="" selected="" value="">--Pilih Nota POS Order--</option>
+                                  <option value="1">PO/20190129/1</option>
                                 </select>
                               </div>
                             </div>
@@ -68,8 +68,59 @@
                               </div>
                             </div>
 
+                          </div>
+
+                          <div class="row">
+
+                            <div class="col-md-6 col-sm-12 col-12">
+
+                              <div class="row">
+                                
+                                <div class="col-md-6 col-sm-6 col-12">
+                                  <label>Tanggal Rencana Produksi</label>
+                                </div>
+
+                                <div class="col-md-6 col-sm-6 col-12">
+                                  <div class="form-group">
+                                    <input type="text" class="form-control form-control-sm" id="tanggal_rencana" name="tanggal_rencana">
+                                  </div>
+                                </div>
+                                
+                                <div class="col-md-6 col-sm-6 col-12">
+                                  <label>Lama Produksi</label>
+                                </div>
+
+                                <div class="col-md-6 col-sm-6 col-12">
+                                  <div class="form-group">
+                                    <div class="input-group">
+                                      <input type="number" min="0" class="form-control form-control-sm" id="jumlah_hari" name="jumlah_hari">
+                                      <span class="input-group-addon">
+                                        Hari
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                                
+                                <div class="col-md-6 col-sm-6 col-12">
+                                  <label>Target Selesai </label>
+                                </div>
+
+                                <div class="col-md-6 col-sm-6 col-12">
+                                  <div class="form-group">
+                                    <input type="text" class="form-control form-control-sm" readonly="" id="target_selesai" name="target_selesai">
+                                  </div>
+                                </div>
+
+                              </div>
+
+                            </div>
+
+                          </div>
+
+                          <div class="row">
+                            
                             <div class="col-md-3 col-sm-6 col-12">
-                              <label>Nama Mesin</label>
+                              <label>Jenis Mesin</label>
                             </div>
 
                             <div class="col-md-9 col-sm-6 col-12">
@@ -78,43 +129,6 @@
                                 </select>
                               </div>
                             </div>
-                            
-
-                            <div class="col-md-3 col-sm-6 col-12">
-                              <label>Tanggal Rencana Produksi</label>
-                            </div>
-
-                            <div class="col-md-3 col-sm-6 col-12">
-                              <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" id="tanggal_rencana" name="tanggal_rencana">
-                              </div>
-                            </div>
-                            
-                            <div class="col-md-3 col-sm-6 col-12">
-                              <label>Lama Produksi</label>
-                            </div>
-
-                            <div class="col-md-3 col-sm-6 col-12">
-                              <div class="form-group">
-                                <div class="input-group">
-                                  <input type="number" min="0" class="form-control form-control-sm" id="jumlah_hari" name="jumlah_hari">
-                                  <span class="input-group-addon">
-                                    Hari
-                                  </span>
-                                </div>
-                              </div>
-                            </div>
-                            
-                            <div class="col-md-3 col-sm-6 col-12">
-                              <label>Target Selesai </label>
-                            </div>
-
-                            <div class="col-md-3 col-sm-6 col-12">
-                              <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" readonly="" id="target_selesai" name="target_selesai">
-                              </div>
-                            </div>
-                            
                             
                           </div>
 
@@ -125,6 +139,10 @@
                                 <tr>
                                   <th>Barang</th>
                                   <th>Satuan</th>
+                                  <th>Jenis Adonan</th>
+                                  <th>Qty</th>
+                                  <th>Qty Semen Sistem</th>
+                                  <th>Stok</th>
                                 </tr>
                               </thead>
                               <tbody></tbody>
@@ -160,6 +178,8 @@
       searching : false,
       paging : false
     });
+
+    var counter = 0;
 
     $('#tanggal_rencana').datepicker({
       enableOnReadonly:false,
@@ -198,6 +218,90 @@
     $('#target_selesai').datepicker({
       format:'dd-mm-yyyy',
       enableOnReadonly:false
+    });
+
+
+    function datatable_append(){
+      table.row.add(
+        [
+        'Paving T8',
+        'Pcs',
+        '<select class="form-control-sm form-control select2 jenis_adonan" name="jenis_adonan[]">'+
+          '<option value="" disabled="" selected="">--Pilih--</option>'+
+          '<option value="1">k-150</option>'+
+          '<option value="2">k-200</option>'+
+          '<option value="3">k-250</option>'+
+        '</select>',
+        '<input type="number" min="0" class="form-control-sm form-control" value="0">',
+        '<input type="text" class="form-control form-control-sm qty_semen_sistem" value="" readonly>',
+        '<input type="text" class="form-control form-control-sm stok_sistem" value="" readonly>'
+        ]).draw();
+      table.row.add([
+        'Paving Merah',
+        'Pcs',
+        '<select class="form-control-sm form-control select2 jenis_adonan" name="jenis_adonan[]">'+
+          '<option value="" disabled="" selected="">--Pilih--</option>'+
+          '<option value="1">k-150</option>'+
+          '<option value="2">k-200</option>'+
+          '<option value="3">k-250</option>'+
+        '</select>',
+        '<input type="number" min="0" class="form-control-sm form-control" value="0">',
+        '<input type="text" class="form-control form-control-sm qty_semen_sistem" value="" readonly>',
+        '<input type="text" class="form-control form-control-sm stok_sistem" value="" readonly>'
+        ]).draw();
+      table.row.add([
+        'Paving Abu',
+        'Pcs',
+        '<select class="form-control-sm form-control select2 jenis_adonan" name="jenis_adonan[]">'+
+          '<option value="" disabled="" selected="">--Pilih--</option>'+
+          '<option value="1">k-150</option>'+
+          '<option value="2">k-200</option>'+
+          '<option value="3">k-250</option>'+
+        '</select>',
+        '<input type="number" min="0" class="form-control-sm form-control" value="0">',
+        '<input type="text" class="form-control form-control-sm qty_semen_sistem" value="" readonly>',
+        '<input type="text" class="form-control form-control-sm stok_sistem" value="" readonly>'
+        ]).draw();
+
+      counter++;
+
+      $('.select2').select2();
+    }
+
+    $('#nota').change(function(){
+
+      if ($(this).val() != '' && counter === 0) {
+        datatable_append();
+      }
+
+    });
+
+    $('#table_produksi tbody').on('change', '.jenis_adonan', function(){
+
+      var parents, qty_semen_sistem, stok_sistem, ini;
+      ini = $(this);
+
+      parents = ini.parents('tr');
+
+
+      qty_semen_sistem = parents.find('.qty_semen_sistem');
+
+      stok_sistem = parents.find('.stok_sistem');
+
+      if (ini.val() === '1') {
+        qty_semen_sistem.val('150');
+        stok_sistem.val('150');
+      } else if(ini.val() === '2'){
+        qty_semen_sistem.val('200');
+        stok_sistem.val('200');
+      } else if(ini.val() === '3'){
+        qty_semen_sistem.val('250');
+        stok_sistem.val('250');
+      } else {
+        console.log('eroro');
+      }
+
+
     });
 
 

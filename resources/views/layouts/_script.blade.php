@@ -128,8 +128,7 @@
     })
     on('select2:close',function(){
       $(this).focus();
-    })
-    ;
+    });
 
     $('.input-rupiah').maskMoney({
         thousands:".",
@@ -137,9 +136,14 @@
         prefix:"Rp. "
     });
 
-    $('.select2-container').css('width','unset');
+    setTimeOut(function(){
+      $('.select2-container').css('width','unset');
+
+    },1000);
 
     $('.input-jam').inputmask({"regex":"^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"});
+
+    $(".persentase").inputmask({"regex": "^[1-9][0-9]?$|^100$" });
 	});
 </script>
 <script type="text/javascript">

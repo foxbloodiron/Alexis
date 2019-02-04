@@ -39,6 +39,8 @@
 }
 .input-group-addon {
     padding: 0 7px 0 7px;
+    display: flex;
+    align-items: center;
 }
 .modal-open .main-wrapper{
 	overflow: hidden;
@@ -218,4 +220,11 @@ h6
 	/*font-family: 'Quantico', sans-serif;*/
 	/*font-family: 'Fredoka One', sans-serif;*/
 	font-family: 'Chakra Petch', sans-serif;
+}
+.form-control-xs {
+    height: 25px;
+    font-size: 10pt;
+}
+.select2.select2-container{
+	width: 100%;
 }

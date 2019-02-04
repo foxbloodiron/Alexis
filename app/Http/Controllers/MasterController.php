@@ -66,6 +66,10 @@ class MasterController extends Controller
     {
         return view('master/dataarmada/tambah_dataarmada');
     }
+    public function tambah_dataarmada_own()
+    {
+        return view('master/dataarmada/tambah_dataarmada_own');
+    }    
     public function edit_dataarmada()
     {
         return view('master/dataarmada/edit_dataarmada');
@@ -117,6 +121,14 @@ class MasterController extends Controller
     public function edit_suplier()
     {
         return view('master/barangsuplier/edit_suplier');
+    }
+    public function ongkoskirim()
+    {
+        return view('master.ongkoskirim.ongkoskirim');
+    }
+    public function tambah_ongkoskirim()
+    {
+        return view('master.ongkoskirim.tambah_ongkoskirim');
     }
 }
 

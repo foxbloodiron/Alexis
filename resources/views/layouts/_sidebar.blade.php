@@ -165,7 +165,10 @@
                             <a href="{{route('datamesin')}}">Data Mesin</a>
                         </li>
                         <li class="{{Request::is('master/barangsuplier/*') ? 'active' : ''}}">
-                            <a href="{{url('master/barangsuplier/barangsuplier')}}">Item Barang Suplier</a>
+                            <a href="{{route('barangsuplier')}}">Item Barang Suplier</a>
+                        </li>
+                        <li class="{{Request::is('master/ongkoskirim/*') ? 'active' : ''}}">
+                            <a href="{{route('ongkoskirim')}}">Data Ongkos Kirim</a>
                         </li>
                     </ul>
                 </li>

@@ -38,9 +38,19 @@
                         <label>Kode Produksi Tanpa Rencana</label>
                       </div>
 
-                      <div class="col-md-9 col-sm-8 col-12">
+                      <div class="col-md-3 col-sm-8 col-12">
                         <div class="form-group">
                           <input type="text" class="form-control form-control-sm" readonly="" name="">
+                        </div>
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-12">
+                        <label>Tanggal Rencana Produksi</label>
+                      </div>
+
+                      <div class="col-md-3 col-sm-8 col-12">
+                        <div class="form-group">
+                          <input type="text" class="form-control form-control-sm datepicker" value="{{date('d-m-Y')}}" name="">
                         </div>
                       </div>
 
@@ -59,36 +69,6 @@
                         </div>
                       </div>
 
-                      <div class="col-md-3 col-sm-6 col-12">
-                        <label>Nama Mesin</label>
-                      </div>
-
-                      <div class="col-md-9 col-sm-6 col-12">
-                        <div class="form-group">
-                          <select class="form-control form-control-sm select2">
-                          </select>
-                        </div>
-                      </div>
-
-                      <div class="col-md-3 col-sm-4 col-12">
-                        <label>Satuan</label>
-                      </div>
-
-                      <div class="col-md-9 col-sm-8 col-12">
-                        <div class="form-group">
-                          <input type="text" class="form-control form-control-sm" name="" readonly=""> 
-                        </div>
-                      </div>
-
-                      <div class="col-md-3 col-sm-4 col-12">
-                        <label>Tanggal Rencana Produksi</label>
-                      </div>
-
-                      <div class="col-md-3 col-sm-8 col-12">
-                        <div class="form-group">
-                          <input type="text" class="form-control form-control-sm datepicker" name="">
-                        </div>
-                      </div>
 
                       <div class="col-md-3 col-sm-4 col-12">
                         <label>Jumlah Produksi</label>
@@ -99,6 +79,52 @@
                           <input type="number" min="0" class="form-control form-control-sm" name="">
                         </div>
                       </div>
+
+                      <div class="col-md-3 col-sm-6 col-12">
+                        <label>Jenis Adonan</label>
+                      </div>
+
+                      <div class="col-md-3 col-sm-6 col-12">
+                        <div class="form-group">
+                          <select class="form-control form-control-sm select2">
+                            <option value="" selected="" disabled="">--Pilih--</option>
+                          </select>
+                        </div>
+                      </div>        
+
+
+                      <div class="col-md-3 col-sm-4 col-12">
+                        <label>Satuan</label>
+                      </div>
+
+                      <div class="col-md-9 col-sm-8 col-12">
+                        <div class="form-group">
+                          <input type="text" class="form-control form-control-sm" name="" readonly=""> 
+                        </div>
+                      </div>              
+
+                      <div class="col-md-3 col-sm-6 col-12">
+                        <label>Mesin</label>
+                      </div>
+
+                      <div class="col-md-9 col-sm-6 col-12">
+                        <div class="form-group">
+                          <select class="form-control form-control-sm select2">
+                            <option value="" selected="" disabled="">--Pilih--</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-12">
+                        <label>Jumlah Semen di Sistem</label>
+                      </div>
+
+                      <div class="col-md-9 col-sm-8 col-12">
+                        <div class="form-group">
+                          <input type="text" class="form-control form-control-sm" name="" readonly=""> 
+                        </div>
+                      </div>                      
+
 
                     </div>
                   </form>

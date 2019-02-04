@@ -42,7 +42,7 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                              <select class="js-example-placeholder-single js-states form-control">
+                              <select class="form-control-sm select2 form-control">
                                 <option></option>
                               </select>
                               </div>
