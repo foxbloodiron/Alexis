@@ -19,93 +19,7 @@
 
     <div class="row">
 
-      <div class="col-lg-4 col-md-5 col-sm-12 col-12">
-
-        <hr>
-
-            <table class="table table-striped">
-
-              <tbody>
-                <tr>
-                  <td class="font-weight-bold">Kode</td>
-                  <td>H/PTR/20181115/1</td>
-                </tr>
-                <tr>
-                  <td class="font-weight-bold">Tanggal Produksi</td>
-                  <td>15 Nov 2018</td>
-                </tr>
-                <tr>
-                  <td class="font-weight-bold">Progress</td>
-                  <td>3</td>
-                </tr>
-
-                <tr>
-                  <td class="font-weight-bold">Jumlah Rencana Produksi</td>
-                  <td>100</td>
-                </tr>
-                <tr>
-                  <td class="font-weight-bold">Satuan</td>
-                  <td>Biji</td>
-                </tr>
-                <tr>
-                  <td class="font-weight-bold">Jumlah Semen</td>
-                  <td>100</td>
-                </tr>
-                <tr>
-                  <td class="font-weight-bold">Jumlah Orang</td>
-                  <td>5</td>
-                </tr>
-              </tbody>
-
-            </table>
-
-            <hr>
-
-            <table class="table table-striped">
-
-              <tbody>
-                <tr>
-                  <td class="font-weight-bold" width="50%">Total Produksi</td>
-                  <td><input type="text" class="form-control form-control-xs form-control-nb text-right" readonly="" value="0" name=""></td>
-                </tr>
-                <tr>
-                  <td class="font-weight-bold">Reject</td>
-                  <td><input type="text" class="form-control form-control-xs form-control-nb text-right" readonly="" value="0" name=""></td>
-                </tr>
-                <tr>
-                  <td class="font-weight-bold">Nett Produksi</td>
-                  <td><input type="text" class="form-control form-control-xs form-control-nb text-right" readonly="" value="0" name=""></td>
-                </tr>
-                <tr>
-                  <td class="font-weight-bold">Upah</td>
-                  <td><input type="text" class="form-control form-control-xs form-control-nb text-right" readonly="" value="0" name=""></td>
-                </tr>
-              </tbody>
-
-            </table>
-        <hr>
-
-
-            <table class="table table-striped">
-
-              <tbody>
-                <tr>
-                  <td class="font-weight-bold" width="50%">Total Bonus</td>
-                  <td><input type="text" class="form-control form-control-xs form-control-nb text-right" readonly="" value="0" name=""></td>
-                </tr>
-                <tr>
-                  <td class="font-weight-bold">Total Upah</td>
-                  <td><input type="text" class="form-control form-control-xs form-control-nb text-right" readonly="" value="0" name=""></td>
-                </tr>
-              </tbody>
-
-            </table>
-
-        <hr>
-
-      </div>
-
-      <div class="col-lg-8 col-md-7 col-sm-12 col-12">
+      <div class="col-12">
         
         <div class="card">
             <div class="card-header bordered p-2">
@@ -121,11 +35,11 @@
 
                   <div class="row">
 
-                    <div class="col-md-4 col-sm-5 col-12">
+                    <div class="col-md-3 col-sm-4 col-12">
                       <label>Pilih Periode Produksi</label>
                     </div>
 
-                    <div class="col-md-8 col-sm-7 col-12">
+                    <div class="col-md-9 col-sm-8 col-12">
                       <div class="form-group">
                         <div class="input-group input-daterange">
                           <input type="text" class="form-control form-control-sm" name="" value="15-11-2018" id="date_start">
@@ -136,11 +50,11 @@
                       </div>
                     </div>
 
-                    <div class="col-md-4 col-sm-5 col-12">
+                    <div class="col-md-3 col-sm-4 col-12">
                       <label>Pilih Mandor</label>
                     </div>
 
-                    <div class="col-md-8 col-sm-7 col-12">
+                    <div class="col-md-9 col-sm-8 col-12">
                       <div class="form-group">
                         <select class="form-control form-control-sm select2">
                           <option value="" disabled="" selected="">--Pilih--</option>
@@ -149,11 +63,11 @@
                     </div>
 
 
-                    <div class="col-md-4 col-sm-5 col-12">
+                    <div class="col-md-3 col-sm-4 col-12">
                       <label>Nama Barang</label>
                     </div>
 
-                    <div class="col-md-8 col-sm-7 col-12">
+                    <div class="col-md-9 col-sm-8 col-12">
                       <div class="form-group">
                         <input type="text" class="form-control form-control-sm" readonly="" value="Paving" name="">
                       </div>
@@ -181,15 +95,61 @@
 
                   <hr>
 
-{{--                   <div class="row">
+                  <div class="row">
 
-                    <div class="offset-md-6 col-md-6 col-sm-12">
+                    <div class="offset-lg-7 col-lg-5 offset-md-6 col-md-6 col-sm-7 offset-sm-5 col-12">
 
+                      <fieldset>
+                        <div class="row">
 
+                            <div class="col-md-4 col-sm-5 col-12">
+                              <label>Jumlah Produksi</label>
+                            </div>
+
+                            <div class="col-md-8 col-sm-7 col-12">
+                              <div class="form-group">
+                                <input type="text" class="form-control form-control-sm" readonly="" name="">
+                              </div>
+                            </div>
+                            <div class="col-md-4 col-sm-5 col-12">
+                              <label>Reject</label>
+                            </div>
+
+                            <div class="col-md-8 col-sm-7 col-12">
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <span class="input-group-addon">2.5 %</span>
+                                  <input type="text" class="form-control form-control-sm" name="">
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-5 col-12">
+                              <label>Nett Produksi</label>
+                            </div>
+
+                            <div class="col-md-8 col-sm-7 col-12">
+                              <div class="form-group">
+                                <input type="text" class="form-control form-control-sm" readonly="" name="">
+                              </div>
+                            </div>
+                                
+                            <div class="col-md-4 col-sm-5 col-12">                            
+                              <label>Upah</label>
+                            </div>
+
+                            <div class="col-md-8 col-sm-7 col-12">
+                              <div class="form-group">
+                                <input type="text" class="form-control form-control-sm" name="">
+                              </div>
+                            </div>
+
+                        </div>
+                      </fieldset>
 
                     </div>
                     
-                  </div> --}}
+                  </div>
 
                   <h3>Tambahan Bonus</h3>
 
@@ -207,6 +167,40 @@
                       <tbody></tbody>
                     </table>
                   </div>
+
+                  <div class="row">
+
+                    <div class="offset-lg-7 col-lg-5 offset-md-6 col-md-6 col-sm-7 offset-sm-5 col-12">
+
+                      <fieldset>
+                        <div class="row">
+
+                            <div class="col-md-4 col-sm-5 col-12">
+                              <label>Total Bonus</label>
+                            </div>
+
+                            <div class="col-md-8 col-sm-7 col-12">
+                              <div class="form-group">
+                                <input type="text" class="form-control form-control-sm" readonly="" name="">
+                              </div>
+                            </div>
+                                
+                            <div class="col-md-4 col-sm-5 col-12">                            
+                              <label>Total Upah</label>
+                            </div>
+
+                            <div class="col-md-8 col-sm-7 col-12">
+                              <div class="form-group">
+                                <input type="text" class="form-control form-control-sm" readonly="" name="">
+                              </div>
+                            </div>
+
+                        </div>
+                      </fieldset>
+
+                    </div>
+                    
+                  </div>                  
 
 
 
@@ -333,8 +327,13 @@
     function datatable_append_tunjangan(){
       asw.row.add([
         '<input type="number" min="0" class="form-control form-control-sm orang" name="">',
-        '<input type="text" class="form-control form-control-sm" name="">',
-        '<input type="text" class="form-control form-control-sm upah" name="">',
+        '<select class="form-control form-control-sm">'+
+          '<option value="" disabled="" selected="">--Pilih--</option>'+
+          '<option value="1">Transport</option>'+
+          '<option value="2">Makan</option>'+
+        '</select>'
+        ,
+        '<input type="text" class="form-control form-control-sm upah" readonly="" name="">',
         '<input type="text" class="form-control form-control-sm total_upah" readonly="" name="">',
         '<button class="btn btn-danger btn-sm btn-hapus-tunjangan" type="button"><i class="fa fa-trash-o"></i></button>'
 
