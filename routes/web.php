@@ -22,9 +22,15 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/home', 'HomeController@index')->name('home');
 
 	// Master
-	Route::get('/master/databarang/index', 'MasterController@databarang')->name('databarang');
-	Route::get('/master/databarang/create', 'MasterController@tambah_databarang')->name('tambah_databarang');
-	Route::get('/master/databarang/edit', 'MasterController@edit_databarang')->name('edit_databarang');
+	Route::get('/master/databarang/index', 'MasterBarangController@databarang')->name('databarang');
+	Route::get('/master/databarang/create', 'MasterBarangController@tambah_databarang')->name('tambah_databarang');
+	Route::get('/master/databarang/edit/{id}', 'MasterBarangController@edit_databarang')->name('edit_databarang');
+	Route::get('/master/databarang/tipe_barang', 'MasterBarangController@tipe_barang');
+	Route::post('/master/databarang/save', 'MasterBarangController@save_barang');
+	Route::post('/master/databarang/update', 'MasterBarangController@update');
+	Route::get('/master/databarang/disabled', 'MasterBarangController@disabled');
+
+
 	Route::get('/master/datasuplier/index', 'MasterController@datasuplier')->name('datasuplier');
 	Route::get('/master/datasuplier/create', 'MasterController@tambah_datasuplier')->name('tambah_datasuplier');
 	Route::get('/master/datasuplier/edit', 'MasterController@edit_datasuplier')->name('edit_datasuplier');
@@ -39,9 +45,15 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/master/datapegawai/datapegawai', 'MasterController@datapegawai')->name('datapegawai');
 	Route::get('/master/datapegawai/tambah_datapegawai', 'MasterController@tambah_datapegawai')->name('tambah_datapegawai');
 	Route::get('/master/datapegawai/edit_datapegawai', 'MasterController@edit_datapegawai')->name('edit_datapegawai');
+	
+
 	Route::get('/master/datasatuan/datasatuan', 'MasterController@datasatuan')->name('datasatuan');
 	Route::get('/master/datasatuan/tambah_datasatuan', 'MasterController@tambah_datasatuan')->name('tambah_datasatuan');
-	Route::get('/master/datasatuan/edit_datasatuan', 'MasterController@edit_datasatuan')->name('edit_datasatuan');
+	Route::get('/master/datasatuan/edit_datasatuan/{id}', 'MasterController@edit_datasatuan');
+	Route::post('/master/datasatuan/save', 'MasterController@save_datasatuan');
+	Route::post('/master/datasatuan/update', 'MasterController@update_satuan');
+	Route::post('/master/datasatuan/disabled', 'MasterController@disabeld_satuan');
+
 	Route::get('/master/datamesin/datamesin', 'MasterController@datamesin')->name('datamesin');
 	Route::get('/master/datamesin/tambah_datamesin', 'MasterController@tambah_datamesin')->name('tambah_datamesin');
 	Route::get('/master/datamesin/edit_datamesin', 'MasterController@edit_datamesin')->name('edit_datamesin');

@@ -43,28 +43,26 @@
 							            </tr>
 	                                </thead>
 	                                <tbody>
-	                                	<tr>
-	                                		<td>1</td>
-	                                		<td>ST-00001</td>
-	                                		<td>KG</td>
-	                                		<td>
-	                                			<div class="btn-group btn-group-sm">
-	                                				<button class="btn btn-warning btn-edit" onclick="window.location.href='{{ route('edit_datasatuan') }}'" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
-	                                				<button class="btn btn-danger btn-disable" type="button" title="Disable"><i class="fa fa-eye-slash"></i></button>
+	                                	@foreach($data['satuan'] as $index=>$satuan)
+	                                		<tr>
+	                                			<td> {{$index + 1}} </td>
+	                                			<td> {{$satuan->s_code}} </td>
+	                                			<td> {{$satuan->s_name}} </td>
+	                                		
+	                                			<td>
+	                                				<div class="btn-group btn-group-sm">
+	                                				@if($satuan->s_status == 'Y')
+	                                				<a class="btn btn-warning btn-edit" href="{{url('master/datasatuan/edit_datasatuan/'.$satuan->s_id.'')}}" type="button" title="Edit"><i class="fa fa-pencil"></i></a>
+	                                				@endif
+
+	                                				<button class="btn btn-danger btn-disable" type="button" title="Disable" onclick="hapus('{{$satuan->s_id}},{{$satuan->s_status}}')"><i class="fa fa-eye-slash"></i></button>
 	                                			</div>
-	                                		</td>
-	                                	</tr>
-	                                	<tr>
-	                                		<td>2</td>
-	                                		<td>ST-00002</td>
-	                                		<td>Pcs</td>
-	                                		<td>
-	                                			<div class="btn-group btn-group-sm">
-	                                				<button class="btn btn-warning btn-edit" onclick="window.location.href='{{ route('edit_datasatuan') }}'" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
-	                                				<button class="btn btn-danger btn-disable" type="button" title="Disable"><i class="fa fa-eye-slash"></i></button>
-	                                			</div>
-	                                		</td>
-	                                	</tr>
+
+
+	                                			</td>
+	                                		</tr>
+	                                	@endforeach
+	                                	
 							        </tbody>
 	                            </table>
 	                        </div>
@@ -83,8 +81,69 @@
 @endsection
 @section('extra_script')
 <script type="text/javascript">
+	function hapus(a){
+		split = a.split(",");
+		a = split[0];
+		status = split[1];
+		if(status == 'Y'){
+			datastatus = 'Disabled';
+		}
+		else {
+			datastatus = 'Enable';
+		}
+		$.confirm({
+				animation: 'RotateY',
+				closeAnimation: 'scale',
+				animationBounce: 1.5,
+				icon: 'fa fa-exclamation-triangle',
+			    title: datastatus,
+				content: 'Apa anda yakin mau ' + status + ' data ini?',
+				theme: 'disable',
+			    buttons: {
+			        info: {
+						btnClass: 'btn-blue',
+			        	text:'Ya',
+			        	action : function(){
+							$.ajax({
+								data : {a},
+								type : "post",
+								url : baseUrl + '/master/datasatuan/disabled',
+								dataType : "json",
+								success : function(response){
+									$.toast({
+										heading: 'Information',
+										text: 'Data Berhasil di Disable.',
+										bgColor: '#0984e3',
+										textColor: 'white',
+										loaderBg: '#fdcb6e',
+										icon: 'info'
+									})
 
-	$(document).ready(function(){
+									setTimeout(function(){
+			                         location.reload();	                            
+			                            },200);
+								}
+							})
+				        }
+			        },
+			        cancel:{
+			        	text: 'Tidak',
+					    action: function () {
+    			            // tutup confirm
+    			        }
+    			    }
+			    }
+			});
+	}
+
+
+$.ajaxSetup({
+     headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      },
+    });
+
+	/*$(document).ready(function(){
 		var table = $('#table_satuan').DataTable();
 
 		$(document).on('click', '.btn-disable', function(){
@@ -135,10 +194,6 @@
 			$(this).parents('.btn-group').html('<button class="btn btn-warning btn-edit" type="button" title="Edit"><i class="fa fa-pencil"></i></button>'+
 	                                		'<button class="btn btn-danger btn-disable" type="button" title="Disable"><i class="fa fa-eye-slash"></i></button>')
 		})
-
-		// function table_hapus(a){
-		// 	table.row($(a).parents('tr')).remove().draw();
-		// }
-	});
+	});*/
 </script>
 @endsection

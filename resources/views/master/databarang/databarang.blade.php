@@ -48,48 +48,25 @@
 	                                	</tr>
 	                                </thead>
 	                                <tbody>
+
+	                                	@foreach($data as $index=>$barang)
 	                                	<tr>
-	                                		<td>1</td>
-	                                		<td>BRG/001</td>
-	                                		<td>Semen</td>
-	                                		<td>Karung</td>
-	                                		<td>Bahan Baku</td>
-	                                		<td></td>
-	                                		<td>
-	                                			<div class="btn-group btn-group-sm">
-	                                				<button class="btn btn-warning btn-edit" onclick="window.location.href='{{ route('edit_databarang') }}'" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
-	                                				<button class="btn btn-danger btn-disable" type="button" title="Disable"><i class="fa fa-eye-slash"></i></button>
-	                                			</div>
-	                                		</td>
+	                                		<td> {{$index + 1}} </td>
+	                                		<td> {{$barang->i_code}} </td>
+	                                		<td> {{$barang->i_name}} </td>
+	                                		<td> {{$barang->s_name}} </td>
+	                                		<td> {{$barang->i_code_group}} </td>
+	                                		<td> {{number_format($barang->i_sat_hrg1 ,2 ,  '.' , ',')}} </td>
+	                                		<td> <div class="btn-group btn-group-sm">
+	                                			@if($barang->i_isactive == 'Y')
+	                                				<button class="btn btn-warning btn-edit" onclick="window.location.href='{{url('master/databarang/edit/'.$barang->i_id.'')}}'" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
+	                                			@endif
+	                                				<button class="btn btn-danger btn-disable" type="button" title="Disable" onclick="status('{{$barang->i_id}},{{$barang->i_isactive}}')"><i class="fa fa-eye-slash"></i></button>
+	                                			
+	                                			</div> </td>
 	                                	</tr>
-	                                	<tr>
-	                                		<td>2</td>
-	                                		<td>BRG/002</td>
-	                                		<td>Pasir</td>
-	                                		<td>Butir</td>
-	                                		<td>Bahan Baku</td>
-	                                		<td></td>
-	                                		<td>
-	                                			<div class="btn-group btn-group-sm">
-	                                				<button class="btn btn-warning btn-edit" onclick="window.location.href='{{ route('edit_databarang') }}'" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
-	                                				<button class="btn btn-danger btn-disable" type="button" title="Disable"><i class="fa fa-eye-slash"></i></button>
-	                                			</div>
-	                                		</td>
-	                                	</tr>
-	                                	<tr>
-	                                		<td>3</td>
-	                                		<td>BRG/003</td>
-	                                		<td>Cat</td>
-	                                		<td>Kaleng</td>
-	                                		<td>Bahan Baku</td>
-	                                		<td></td>
-	                                		<td>
-	                                			<div class="btn-group btn-group-sm">
-	                                				<button class="btn btn-warning btn-edit" onclick="window.location.href='{{ route('edit_databarang') }}'" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
-	                                				<button class="btn btn-danger btn-disable" type="button" title="Disable"><i class="fa fa-eye-slash"></i></button>
-	                                			</div>
-	                                		</td>
-	                                	</tr>
+	                                	@endforeach
+	                                	
 	                                </tbody>
 	                            </table>
 	                        </div>
@@ -109,33 +86,48 @@
 
 @section('extra_script')
 <script type="text/javascript">
-
-	$(document).ready(function(){
-		var table = $('#table_barang').DataTable();
-
-		$(document).on('click', '.btn-disable', function(){
-			var ini = $(this);
-			$.confirm({
+	function status(id){
+		split = id.split(",");
+		data_id = split[0];
+		active = split[1];
+		if(active == 'Y'){
+			$status = 'Disable';
+		}
+		else {
+			$status = 'Enable';
+		}
+		$.confirm({
                 animation: 'RotateY',
 				closeAnimation: 'scale',
 				icon: 'fa fa-exclamation-triangle',
-			    title: 'Disable',
-				content: 'Apa anda yakin mau disable data ini?',
+			    title: $status,
+				content: 'Apa anda yakin mau '+$status+' data ini?',
 				theme: 'disable',
 			    buttons: {
 			        info: {
 						btnClass: 'btn-blue',
 			        	text:'Ya',
 			        	action : function(){
-							$.toast({
-								heading: 'Information',
-								text: 'Data Berhasil di Disable.',
-								bgColor: '#0984e3',
-								textColor: 'white',
-								loaderBg: '#fdcb6e',
-								icon: 'info'
+							$.ajax({
+								data : {data_id},
+								type : "get",
+								url : baseUrl + '/master/databarang/disabled',
+								dataType : "json",
+								success : function(response){
+									$.toast({
+										heading: 'Information',
+										text: 'Data Berhasil di Enable.',
+										bgColor: '#0984e3',
+										textColor: 'white',
+										loaderBg: '#fdcb6e',
+										icon: 'info'
+									});
+
+									setTimeout(function(){
+			                         location.reload();	                            
+			                            },200);
+								}
 							})
-					        ini.parents('.btn-group').html('<button class="btn btn-danger btn-enable" type="button" title="Enable"><i class="fa fa-eye"></i></button>');
 				        }
 			        },
 			        cancel:{
@@ -146,24 +138,9 @@
     			    }
 			    }
 			});
-		});
+	}
 
-		$(document).on('click', '.btn-enable', function(){
-			$.toast({
-				heading: 'Information',
-				text: 'Data Berhasil di Enable.',
-				bgColor: '#0984e3',
-				textColor: 'white',
-				loaderBg: '#fdcb6e',
-				icon: 'info'
-			})
-			$(this).parents('.btn-group').html('<button class="btn btn-warning btn-edit" type="button" title="Edit"><i class="fa fa-pencil"></i></button>'+
-	                                		'<button class="btn btn-danger btn-disable" type="button" title="Disable"><i class="fa fa-eye-slash"></i></button>')
-		})
 
-		// function table_hapus(a){
-		// 	table.row($(a).parents('tr')).remove().draw();
-		// }
-	});
+	
 </script>
 @endsection

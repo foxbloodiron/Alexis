@@ -14,7 +14,7 @@
          / <span class="text-primary" style="font-weight: bold;">Tambah Data Barang</span>
        </p>
   </div>
-
+<form id="formsukses">
   <section class="section">
 
     <div class="row">
@@ -41,7 +41,7 @@
 
                             <div class="col-md-9 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" name="">
+                                <input type="text" class="form-control form-control-sm" name="nama_barang" required="">
                               </div>
                             </div>
 
@@ -51,7 +51,7 @@
 
                             <div class="col-md-9 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <select class="form-control form-control-sm">
+                                <select class="form-control form-control-sm tipe_barang" name="tipe_barang" required=">
                                   <option value="" selected="" disabled="">--Pilih Type Barang--</option>
                                   <option value="BB">Bahan Baku</option>
                                   <option value="SP">Spare Part</option>
@@ -67,9 +67,9 @@
 
                             <div class="col-md-9 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <select class="form-control form-control-sm">
+                                <select class="form-control form-control-sm" name="kelompok_barang" required=">
                                   <option value="" selected="" disabled="">--Pilih Kelompok Barang--</option>
-                                  <option value="BB">Bahan Baku Produksi</option>
+                                  <option value="BBP">Bahan Baku Produksi</option>
                                   <option value="BSJ">Barang Setengah Jadi</option>
                                   <option value="BJD">Barang Jadi</option>
                                 </select>
@@ -82,7 +82,7 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" readonly="" name="">
+                                <input type="text" class="form-control form-control-sm kode_barang" readonly="" name="kode_barang" required="">
                               </div>
                             </div>
 
@@ -92,7 +92,7 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <input type="number" class="form-control form-control-sm" name="">
+                                <input type="number" class="form-control form-control-sm" name="min_stock" required="">
                               </div>
                             </div>
 
@@ -102,8 +102,11 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <select class="form-control form-control-sm">
+                                <select class="form-control form-control-sm satuan_utama" name="satuan_utama" required="">
                                   <option value="">--Pilih--</option>
+                                   @foreach($data['satuan'] as $satuan)
+                                    <option value="{{$satuan->s_id}}"> {{$satuan->s_name}} </option>
+                                  @endforeach
                                 </select>
                               </div>
                             </div>
@@ -114,7 +117,8 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                               <input type="number" class="form-control-sm form-control" min="0" readonly="" value="1" name="">
+                               <input type="number" class="form-control-sm form-control isi_satuan_utama" min="0"  name="isi_satuan_utama" required="">
+                                <input type="hidden" class="form-control-sm form-control"  value="1" name="username">
                               </div>
                             </div>
 
@@ -124,8 +128,11 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <select class="form-control form-control-sm">
+                                <select class="form-control form-control-sm satuan_1" name="satuan_1" required="">
                                   <option value="">--Pilih--</option>
+                                   @foreach($data['satuan'] as $satuan)
+                                    <option value="{{$satuan->s_id}}"> {{$satuan->s_name}} </option>
+                                  @endforeach
                                 </select>
                               </div>
                             </div>
@@ -136,7 +143,7 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                               <input type="number" class="form-control-sm form-control" min="0" name="">
+                               <input type="number" class="form-control-sm form-control isi_satuan_1" min="0" name="isi_satuan_1">
                               </div>
                             </div>
 
@@ -146,8 +153,11 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <select class="form-control form-control-sm">
+                                <select class="form-control form-control-sm satuan_2" name="satuan_2">
                                   <option value="">--Pilih--</option>
+                                  @foreach($data['satuan'] as $satuan)
+                                    <option value="{{$satuan->s_id}}"> {{$satuan->s_name}} </option>
+                                  @endforeach
                                 </select>
                               </div>
                             </div>
@@ -158,7 +168,7 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                               <input type="number" class="form-control-sm form-control" min="0" name="">
+                               <input type="number" class="form-control-sm form-control isi_satuan_2" min="0" name="isi_satuan_2">
                               </div>
                             </div>
 
@@ -170,21 +180,21 @@
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <label>Harga Satuan Utama</label>
                               <div class="form-group">
-                               <input type="number" class="form-control-sm form-control" name="">
+                               <input type="text" class="form-control-sm form-control harga harga_satuan_utama text-right" name="harga_satuan_utama" required="">
                               </div>
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <label>Harga Satuan Alternatif 1</label>
                               <div class="form-group">
-                               <input type="number" class="form-control-sm form-control" name="">
+                               <input type="number" class="form-control-sm form-control harga harga_satuan_1 text-right" name="harga_satuan_1">
                               </div>
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <label>Harga Satuan Alternatif 2</label>
                               <div class="form-group">
-                               <input type="number" class="form-control-sm form-control" name="">
+                               <input type="number" class="form-control-sm form-control harga harga_satuan_2 text-right" name="harga_satuan_2">
                               </div>
                             </div>
 
@@ -194,7 +204,7 @@
 
                             <div class="col-md-9 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <textarea class="form-control"></textarea>
+                                <textarea class="form-control" name="detail" required=""></textarea>
                               </div>
                             </div>
 
@@ -205,7 +215,7 @@
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
                                 <div class="input-group">
-                                  <input type="number" class="form-control-sm form-control persentase" max="100" min="0" name="">
+                                  <input type="number" class="form-control-sm form-control persentase" max="100" min="0" name="persentase" required="">
                                   <span class="input-group-addon">
                                     %
                                   </span>
@@ -231,23 +241,221 @@
     </div>
 
   </section>
-
+</form>
 </article>
 
 @endsection
 @section('extra_script')
 <script type="text/javascript">
+
+  $('.isi_satuan_1').change(function(){
+    isi_satuan_1 = $(this).val();
+    satuan_1 = $('.satuan_1').val();
+    if(satuan_1 == ''){
+       $.toast({
+              heading: 'Warning',
+              text: 'Satuan Alternatif 1 Tidak di isi :)',
+              showHideTransition: 'plain',
+              icon: 'warning'
+          });
+         $(this).val('');
+    }
+  });
+
+
+   $('.isi_satuan_2').change(function(){
+    isi_satuan_1 = $(this).val();
+    satuan_1 = $('.satuan_2').val();
+    if(satuan_1 == ''){
+       $.toast({
+              heading: 'Warning',
+              text: 'Satuan Alternatif 2 Tidak di isi :)',
+              showHideTransition: 'plain',
+              icon: 'warning'
+          });
+         $(this).val('');
+    }
+  });
+
+   $('.harga_satuan_1').change(function(){
+      isi_satuan_1 = $(this).val();
+      satuan_1 = $('.satuan_1').val();
+      if(satuan_1 == ''){
+         $.toast({
+                heading: 'Warning',
+                text: 'Satuan Alternatif 1 Tidak di isi :)',
+                showHideTransition: 'plain',
+                icon: 'warning'
+            });
+           $(this).val('');
+      }
+   });
+
+   $('.harga_satuan_2').change(function(){
+      isi_satuan_1 = $(this).val();
+      satuan_1 = $('.satuan_2').val();
+      if(satuan_1 == ''){
+         $.toast({
+                heading: 'Warning',
+                text: 'Satuan Alternatif 2 Tidak di isi :)',
+                showHideTransition: 'plain',
+                icon: 'warning'
+            });
+           $(this).val('');
+      }
+   });
+
+  $('.tipe_barang').change(function(){
+    tipe_barang = $(this).val();
+
+    $.ajax({
+      data : {tipe_barang},
+      type : "get",
+      url : baseUrl + '/master/databarang/tipe_barang',
+      dataType : "json",
+      success : function(response){
+        console.log(response);
+        console.log('response');
+          $('.kode_barang').val(response);
+      }
+    })
+  })
+
+  $('.harga').maskMoney({thousands:'.', decimal:',', precision:2});
+
   $(document).ready(function(){
     $(document).on('click', '.btn-submit', function(){
-			$.toast({
-				heading: 'Success',
-				text: 'Data Berhasil di Simpan',
-				bgColor: '#00b894',
-				textColor: 'white',
-				loaderBg: '#55efc4',
-				icon: 'success'
-			})
+      form_data = $('#formsukses').serialize();
+      satuan_utama = $('.satuan_utama').val();
+      satuan_1 = $('.satuan_1').val();
+      satuan_2 = $('.satuan_2').val();
+
+      if(satuan_utama != ''){
+        isi_satuan_utama = $('.isi_satuan_utama').val();
+        harga_satuan_utama = $('.harga_satuan_utama').val();
+
+        if(isi_satuan_utama == ''){
+          $.toast({
+              heading: 'Warning',
+              text: 'Satuan Utama Belum di isi :)',
+              showHideTransition: 'plain',
+              icon: 'warning'
+          });
+          return false;
+        }
+        if(harga_satuan_utama == ''){
+           $.toast({
+              heading: 'Warning',
+              text: 'Harga Utama Belum di isi :)',
+              showHideTransition: 'plain',
+              icon: 'warning'
+          });
+            return false;
+        }
+
+      } // satuan utama
+
+      if(satuan_1 != ''){
+        isi_satuan_1 = $('.isi_satuan_1').val();
+       harga_satuan_1 = $('.harga_satuan_1').val();
+
+        if(isi_satuan_1 == ''){
+           $.toast({
+              heading: 'Warning',
+              text: 'Satuan Alternatif 1 Belum di isi :)',
+              showHideTransition: 'plain',
+              icon: 'warning'
+          });
+            return false;
+        }
+        if(harga_satuan_1== ''){
+           $.toast({
+              heading: 'Warning',
+              text: 'Harga Satuan 1 Belum di isi :)',
+              showHideTransition: 'plain',
+              icon: 'warning'
+          });
+            return false;
+        }
+      } // satuan 1
+
+      if(satuan_2 != ''){
+        isi_satuan_2 = $('.isi_satuan_2').val();
+        harga_satuan_2 = $('.harga_satuan_2').val();
+
+        if(isi_satuan_2 == ''){
+           $.toast({
+              heading: 'Warning',
+              text: 'Satuan Alternatif 2 Belum di isi :)',
+              showHideTransition: 'plain',
+              icon: 'warning'
+          });
+            return false;
+        }
+
+        if(harga_satuan_2 == ''){
+           $.toast({
+              heading: 'Warning',
+              text: 'Harga Alternatif 2 Belum di isi :)',
+              showHideTransition: 'plain',
+              icon: 'warning'
+          });
+            return false;
+        }
+      } // end satuan 2
+
+
+       $.confirm({
+        animation: 'RotateY',
+        closeAnimation: 'scale',
+        icon: 'fa fa-disc',
+          title: 'Simpan',
+        content: 'Apa anda yakin mau Simpan data ini?',
+        theme: 'disable',
+          buttons: {
+              info: {
+            btnClass: 'btn-blue',
+                text:'Ya',
+                action : function(){
+                 
+                    $.ajax({
+                      data : form_data,
+                      url : baseUrl + '/master/databarang/save',
+                      dataType : "json",
+                      type : "post",
+                      success : function(response){
+
+                        $.toast({
+                            heading: 'Success',
+                            text: 'Data Berhasil di Simpan',
+                            bgColor: '#00b894',
+                            textColor: 'white',
+                            loaderBg: '#55efc4',
+                            icon: 'success'
+                          })
+
+                          setTimeout(function(){
+                          window.location.href = baseUrl + '/master/databarang/index';
+                             
+                            },500);
+                      }
+                    });
+             
+                }
+              },
+              cancel:{
+                text: 'Tidak',
+              action: function () {
+                      // tutup confirm
+                  }
+              }
+          }
+      });
+			
 		});
+
+
+
 
     $('.persentase').on('keyup blur focus', function(){
       // console.log('persentase');
