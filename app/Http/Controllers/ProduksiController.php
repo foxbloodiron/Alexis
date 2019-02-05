@@ -14,6 +14,10 @@ class ProduksiController extends Controller
     {
         return view('produksi/pencatatanhasil/proses_pencatatanhasil');
     }
+    public function proses_pencatatanhasiltanparencana()
+    {
+        return view('produksi/pencatatanhasil/proses_pencatatanhasiltanparencana');
+    }
     public function perencanaanproduksi()
     {
     	return view('produksi/perencanaanproduksi/perencanaanproduksi');

@@ -189,7 +189,7 @@
       var ini   = $(this).datepicker('getDate');
       var hari  = parseInt($('#jumlah_hari').val());
 
-      if($('#jumlah_hari').val() === ''){
+      if($('#jumlah_hari').val() === '' || $('#jumlah_hari').val().length === 0){
         hari = parseInt(0);
       }
 
@@ -197,7 +197,7 @@
 
 
       $('#target_selesai').datepicker('setDate', ini);
-      console.log(ini);
+      // console.log(ini);
     });
 
     $('#jumlah_hari').keyup(function(){
@@ -298,7 +298,7 @@
         qty_semen_sistem.val('250');
         stok_sistem.val('250');
       } else {
-        console.log('eroro');
+        // console.log('eroro');
       }
 
 

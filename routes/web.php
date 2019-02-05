@@ -85,9 +85,9 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/purchasing/rencanabahanbaku/rencanabahanbaku', 'PurchaseController@rencanabahanbaku')->name('rencanabahanbaku');
 
 	// Stok
-	Route::get('/stok/dataadonan/dataadonan', 'StokController@dataadonan')->name('dataadonan');
-	Route::get('/stok/dataadonan/tambah_dataadonan', 'StokController@tambah_dataadonan')->name('tambah_dataadonan');
-	Route::get('/stok/dataadonan/edit_dataadonan', 'StokController@edit_dataadonan')->name('edit_dataadonan');
+	Route::get('/stok/dataadonan/index', 'StokController@dataadonan')->name('dataadonan');
+	Route::get('/stok/dataadonan/create', 'StokController@tambah_dataadonan')->name('tambah_dataadonan');
+	Route::get('/stok/dataadonan/edit', 'StokController@edit_dataadonan')->name('edit_dataadonan');
 	Route::get('/stok/opnamebahanbaku/opnamebahanbaku', 'StokController@opnamebahanbaku')->name('opnamebahanbaku');
 	Route::get('/stok/pencatatanbarangmasuk/pencatatanbarangmasuk', 'StokController@pencatatanbarangmasuk')->name('pencatatanbarangmasuk');
 	Route::get('/stok/pencatatanbarangmasuk/tambah_pencatatanbarangmasuk', 'StokController@tambah_pencatatanbarangmasuk')->name('tambah_pencatatanbarangmasuk');
@@ -97,8 +97,9 @@ Route::group(['middleware' => 'guest'], function(){
 
 
 	// Produksi
-	Route::get('/produksi/pencatatanhasil/pencatatanhasil', 'ProduksiController@pencatatanhasil')->name('pencatatanhasil');
-	Route::get('/produksi/pencatatanhasil/proses_pencatatanhasil', 'ProduksiController@proses_pencatatanhasil')->name('proses_pencatatanhasil');
+	Route::get('/produksi/pencatatanhasil/index', 'ProduksiController@pencatatanhasil')->name('pencatatanhasil');
+	Route::get('/produksi/pencatatanhasil/denganrencana/process', 'ProduksiController@proses_pencatatanhasil')->name('proses_pencatatanhasil');
+	Route::get('/produksi/pencatatanhasil/tanparencana/process', 'ProduksiController@proses_pencatatanhasiltanparencana')->name('proses_pencatatanhasiltanparencana');
 	Route::get('/produksi/perencanaanproduksi/perencanaanproduksi', 'ProduksiController@perencanaanproduksi')->name('perencanaanproduksi');
 	Route::get('/produksi/produksirencana/index', 'ProduksiController@produksirencana')->name('produksirencana');
 	Route::get('/produksi/produksirencana/create', 'ProduksiController@tambah_produksirencana')->name('tambah_produksirencana');

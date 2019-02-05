@@ -4,7 +4,7 @@
             <i class="fa fa-bars"></i>
         </button>
     </div>
-    <div id="search-container" class="header-block header-block-search">
+{{--     <div id="search-container" class="header-block header-block-search">
         <form role="search">
             <div class="input-container">
                 <i class="fa fa-search"></i>
@@ -15,7 +15,7 @@
                 <div class="underline"></div>
             </div>
         </form>
-    </div>
+    </div> --}}
     <!-- <div class="header-block header-block-buttons">
         <a href="https://github.com/modularcode/modular-admin-html" class="btn btn-sm header-btn">
             <i class="fa fa-github-alt"></i>
@@ -32,9 +32,9 @@
     </div> -->
     <div class="header-block header-block-nav">
         <ul class="nav-profile">
-            <li class="d-block d-sm-block d-md-none">
+            {{-- <li class="d-block d-sm-block d-md-none">
                 <a id="search-mobile" href="javascript:void(0);"><i class="fa fa-search"></i></a>
-            </li>
+            </li> --}}
             <li class="notifications new">
                 <a href="" data-toggle="dropdown">
                     <i class="fa fa-bell-o"></i>
@@ -130,9 +130,20 @@
                 </div>  --}}
                 Alexis 
             </div>
+            <form role="search">
+                <div class="input-container">
+                    <i class="fa fa-search"></i>
+                    <input type="search" placeholder="Search" id="filterInput">
+                    <button type="button" class="btn btn-secondary btn-sm d-none" id="btn-reset">
+                        <i class="fa fa-times"></i>
+                    </button>
+                    <div class="underline"></div>
+                </div>
+            </form>
         </div>
         <nav class="menu" id="sidebar">
             <ul class="sidebar-menu metismenu" id="sidebar-menu">
+
                 <li class="{{Request::is('home') ? 'active' : ''  || Request::is('/') ? 'active' : ''}}">
                     <a href="{{url('/')}}">
                         <i class="fa fa-home"></i> Dashboard </a>
