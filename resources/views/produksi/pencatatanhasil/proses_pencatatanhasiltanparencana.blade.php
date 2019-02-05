@@ -5,12 +5,12 @@
 <article class="content">
 
   <div class="title-block text-primary">
-      <h1 class="title"> Proses Pencatatan Hasil Produksi Dengan Rencana </h1>
+      <h1 class="title"> Proses Pencatatan Hasil Produksi Tanpa Rencana </h1>
       <p class="title-description">
         <i class="fa fa-home"></i>&nbsp;<a href="{{url('/home')}}">Home</a> 
         / <span>Produksi</span> 
         / <a href="{{route('pencatatanhasil')}}"><span>Pencatatan Hasil Produksi</span> </a>
-        / <span class="text-primary" style="font-weight: bold;">Proses Pencatatan Hasil Produksi Dengan Rencana</span>
+        / <span class="text-primary" style="font-weight: bold;">Proses Pencatatan Hasil Produksi Tanpa Rencana</span>
        </p>
   </div>
 
@@ -54,7 +54,7 @@
         <div class="card">
                     <div class="card-header bordered p-2">
                       <div class="header-block">
-                        <h3 class="title"> Proses Pencatatan Hasil Produksi Dengan Rencana </h3>
+                        <h3 class="title"> Proses Pencatatan Hasil Produksi Tanpa Rencana </h3>
                       </div>
                       <div class="header-block pull-right">
                         <a href="{{route('pencatatanhasil')}}" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-left"></i></a>

@@ -33,6 +33,7 @@
 	                            <table class="table data-table table-hover" cellspacing="0">
 	                                <thead class="bg-primary">
 	                                    <tr>
+	                                    	<th>No</th>
 							                <th>Kode Produksi</th>
 							                <th>Nama Item</th>
 							                <th>Jumlah Produksi</th>
@@ -43,7 +44,8 @@
 	                                </thead>
 	                                <tbody>
 	                                	<tr>
-	                                		<td>PTR/2018-11-15/1</td>
+	                                		<td>1</td>
+	                                		<td>H/PTR/20181115/1</td>
 	                                		<td>Paving</td>
 	                                		<td>150</td>
 	                                		<td>15 Nov 2018</td>
@@ -51,7 +53,8 @@
 	                                		<td align="center"><a class="btn btn-primary btn-sm" href="{{route('proses_upahboronganproduksi')}}">Proses</a></td>
 	                                	</tr>
 	                                	<tr>
-	                                		<td>PTR/2018-11-15/2</td>
+	                                		<td>2</td>
+	                                		<td>H/PR/20181113/1</td>
 	                                		<td>Paving Abu</td>
 	                                		<td>100</td>
 	                                		<td>13 Nov 2018</td>
