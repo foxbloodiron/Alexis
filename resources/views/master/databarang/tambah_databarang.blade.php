@@ -67,7 +67,7 @@
 
                             <div class="col-md-9 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <select class="form-control form-control-sm" name="kelompok_barang" required=">
+                                <select class="form-control form-control-sm" name="kelompok_barang" required="">
                                   <option value="" selected="" disabled="">--Pilih Kelompok Barang--</option>
                                   <option value="BBP">Bahan Baku Produksi</option>
                                   <option value="BSJ">Barang Setengah Jadi</option>
