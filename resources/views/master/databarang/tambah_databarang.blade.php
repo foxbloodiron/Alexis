@@ -51,7 +51,7 @@
 
                             <div class="col-md-9 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <select class="form-control form-control-sm tipe_barang" name="tipe_barang" required=">
+                                <select class="form-control form-control-sm tipe_barang" name="tipe_barang" required="">
                                   <option value="" selected="" disabled="">--Pilih Type Barang--</option>
                                   <option value="BB">Bahan Baku</option>
                                   <option value="SP">Spare Part</option>
