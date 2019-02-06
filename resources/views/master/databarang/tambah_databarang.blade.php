@@ -215,7 +215,7 @@
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
                                 <div class="input-group">
-                                  <input type="number" class="form-control-sm form-control persentase" max="100" min="0" name="persentase" required="">
+                                  <input type="number" class="form-control-sm form-control persentase" max="100" min="0" step="0.1" name="persentase" required="">
                                   <span class="input-group-addon">
                                     %
                                   </span>
