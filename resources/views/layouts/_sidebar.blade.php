@@ -135,7 +135,7 @@
                     <div class="input-container-prepend">
                         <i class="fa fa-search"></i>
                     </div>
-                    <input type="search" placeholder="Search" id="filterInput">
+                    <input type="search" placeholder="Cari Menu" id="filterInput">
                     <button type="button" class="btn btn-secondary btn-sm d-none" id="btn-reset">
                         <i class="fa fa-times"></i>
                     </button>

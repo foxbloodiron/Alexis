@@ -232,7 +232,7 @@ h6
 	display: flex;
 	flex-wrap: wrap;
 	position: relative;
-	margin: 5px 0 5px 0;
+	margin: 10px 0 10px 0;
 }
 .sidebar-header .input-container > i{
 	display: flex;
@@ -240,28 +240,42 @@ h6
 	flex: 1 1 auto;
 	width: 1%;
 }
-.sidebar-header #filterInput {
+.sidebar-header .input-container #filterInput {
     background: transparent;
     border: unset;
     border-bottom: 1px solid yellow;
     color: white;
     font-family: 'Chakra Petch', sans-serif;
     width: 80%;
+    flex: 1 1 auto;
     transition: .2s;
     font-size: 13pt;
 }
-.sidebar-header #filterInput:hover,
-.sidebar-header #filterInput:focus{
+.sidebar-header:hover .input-container #filterInput,
+.sidebar-header:focus-within .input-container #filterInput{
     border-bottom: 3px solid yellow;
     font-size: 16pt;
 }
-.sidebar-header #btn-reset{
+.sidebar-header .input-container #btn-reset{
 	background: transparent;
     border: unset;
     color: red;
-    flex: 1 1 auto;
+    /*flex: 1 1 auto;*/
+    left: 210px;
+    top: 0;	
     width: 1%;
     right: 0;
+    position: absolute;
+    transition: .2s;
+}
+.sidebar-header .input-container #filterInput::placeholder
+{
+	color: #A3A3A3;
+}
+.sidebar-header:focus-within .input-container #btn-reset,
+.sidebar-header:hover .input-container #btn-reset
+{
+	top:5px;
 }
 .sidebar-header .input-container .input-container-prepend,
 .sidebar-header .input-container .input-container-append
