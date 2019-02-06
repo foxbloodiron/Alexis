@@ -187,14 +187,14 @@
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <label>Harga Satuan Alternatif 1</label>
                               <div class="form-group">
-                               <input type="number" class="form-control-sm form-control harga harga_satuan_1 text-right" name="harga_satuan_1">
+                               <input type="text" class="form-control-sm form-control harga harga_satuan_1 text-right" name="harga_satuan_1">
                               </div>
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <label>Harga Satuan Alternatif 2</label>
                               <div class="form-group">
-                               <input type="number" class="form-control-sm form-control harga harga_satuan_2 text-right" name="harga_satuan_2">
+                               <input type="text" class="form-control-sm form-control harga harga_satuan_2 text-right" name="harga_satuan_2">
                               </div>
                             </div>
 
