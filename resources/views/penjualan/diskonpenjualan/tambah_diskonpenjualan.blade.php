@@ -175,7 +175,7 @@
                                   </div>
 
                                   <div class="form-group">
-                                    <label>Nama Customer</label>
+                                    <label>Keterangan Project</label>
                                     <div class="form-group">
                                       <textarea class="form-control" readonly=""></textarea>
                                     </div>
