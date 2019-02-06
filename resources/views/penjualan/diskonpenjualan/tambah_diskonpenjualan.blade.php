@@ -168,7 +168,7 @@
                                   </div>
 
                                   <div class="form-group">
-                                    <label>Alamat Customer</label>
+                                    <label>Alamat</label>
                                     <div class="form-group">
                                       <input type="text" class="form-control form-control-sm" readonly="" name="">
                                     </div>

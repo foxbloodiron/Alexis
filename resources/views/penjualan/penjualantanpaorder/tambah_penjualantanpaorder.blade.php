@@ -127,8 +127,8 @@
                                   <th>Barang</th>
                                   <th>Qty</th>
                                   <th>Harga</th>
-                                  <th>Disc Percent</th>
-                                  <th>Disc Value</th>
+                                  <th>Disc Persen</th>
+                                  <th>Disc Harga</th>
                                   <th width="1%"></th>
                                 </tr>
                               </thead>
