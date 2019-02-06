@@ -251,8 +251,8 @@ h6
     transition: .2s;
     font-size: 13pt;
 }
-.sidebar-header:hover .input-container #filterInput,
-.sidebar-header:focus-within .input-container #filterInput{
+.sidebar-header .input-container:hover #filterInput,
+.sidebar-header .input-container:focus-within #filterInput{
     border-bottom: 3px solid yellow;
     font-size: 16pt;
 }
@@ -272,8 +272,8 @@ h6
 {
 	color: #A3A3A3;
 }
-.sidebar-header:focus-within .input-container #btn-reset,
-.sidebar-header:hover .input-container #btn-reset
+.sidebar-header .input-container:hover #btn-reset,
+.sidebar-header .input-container:focus-within #btn-reset
 {
 	top:5px;
 }
@@ -305,4 +305,31 @@ h6
     background: transparent;
     border-bottom: 1.4px dotted grey;
     border-radius: unset;
+}
+#sidebar-collapse-btn{
+	cursor: pointer;
+}
+@media (min-width: 998.98px){
+	.app{
+		padding-left: 240px;
+	}
+	.app.sidebar-open{
+		padding-left: 0;
+	}
+	.app.sidebar-open aside.sidebar{
+		left: -240px;
+	}
+	.app aside.sidebar{
+		left: 0;
+	}
+	.app.sidebar-open #customize-menu{
+		left: -240px;
+		transition: .2s;
+	}
+	.app.sidebar-open .header{
+		left: 0;
+	}
+	.app.sidebar-open .footer{
+		left: 0;
+	}
 }

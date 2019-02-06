@@ -18,7 +18,7 @@
         <link rel="stylesheet" type="text/css" href="{{asset('assets/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css')}}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
         {{-- <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Chakra+Petch|Quantico|Russo+One" rel="stylesheet"> --}}
-        <link rel="stylesheet" href="{{asset('assets/fonts/Chakra_Petch/ChakraPetch-Regular.ttf')}}">
+        {{-- <link rel="stylesheet" href="{{asset('assets/fonts/Chakra_Petch/ChakraPetch-Regular.ttf')}}"> --}}
 
         <!-- Theme initialization -->
         <script>
@@ -31,10 +31,12 @@
 
             if (themeName)
             {
+                // $(document.head).append('<link rel="stylesheet" id="theme-style" href="' + firstUrl +'/assets/css/app-' + themeName + '.css">');
                 document.write('<link rel="stylesheet" id="theme-style" href="' + firstUrl +'/assets/css/app-' + themeName + '.css">');
             }
             else
             {
+                // $(document.head).append('<link rel="stylesheet" id="theme-style" href="' + firstUrl +'/assets/css/app.css">');
                 document.write('<link rel="stylesheet" id="theme-style" href="' + firstUrl +'/assets/css/app.css">');
             }
         </script>
