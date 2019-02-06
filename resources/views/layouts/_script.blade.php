@@ -23,7 +23,26 @@
 <script src="{{asset('assets/js/vue.js')}}"></script>
 
 <script src="{{asset('assets/inputmask/min/jquery.inputmask.bundle.min.js')}}"></script>
+<script type="text/javascript">
+  var getstorage;
+  $('#sidebar-collapse-btn').click(function(){
+    getstorage = localStorage.getItem('sidebar-collapse-storage');
 
+    // console.log(getstorage);
+    if(getstorage){
+      localStorage.removeItem('sidebar-collapse-storage');
+    }else{
+      localStorage.setItem('sidebar-collapse-storage', 'sidebar-open');
+    }
+  });
+
+  //set sidebar ketika di refresh
+  getstorage = localStorage.getItem('sidebar-collapse-storage');
+  if (getstorage) {
+    $('#app').addClass(getstorage);
+  }  
+
+</script>
 <script type="text/javascript">
   var baseUrl = "{{url('/')}}";
 
@@ -253,24 +272,4 @@ $.ajaxSetup({
 
 
     });
-</script>
-<script type="text/javascript">
-  var getstorage;
-  $('#sidebar-collapse-btn').click(function(){
-    getstorage = localStorage.getItem('sidebar-collapse-storage');
-
-    // console.log(getstorage);
-    if(getstorage){
-      localStorage.removeItem('sidebar-collapse-storage');
-    }else{
-      localStorage.setItem('sidebar-collapse-storage', 'sidebar-open');
-    }
-  });
-
-  //set sidebar ketika di refresh
-  getstorage = localStorage.getItem('sidebar-collapse-storage');
-  if (getstorage) {
-    $('#app').addClass(getstorage);
-  }  
-
 </script>
