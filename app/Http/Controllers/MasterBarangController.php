@@ -39,9 +39,10 @@ class MasterBarangController extends Controller
     public function tipe_barang(Request $request) {
         $tipe_barang = $request->tipe_barang;
 
-        $caritipe = DB::select("SELECT  substring(max(i_code),12) as id from m_item
+        $caritipe = DB::select("SELECT  substring(max(i_code),4) as id from m_item
                                   WHERE i_type = '$tipe_barang'");
 
+      
         $index = (integer)$caritipe[0]->id + 1;
         $index = str_pad($index, 4, '0' , STR_PAD_LEFT);
         $nota = $tipe_barang . '-' . $index;
@@ -74,12 +75,12 @@ class MasterBarangController extends Controller
             $masterbarang->i_code_group = $request->kelompok_barang;
             $masterbarang->i_name = $request->nama_barang;
             $masterbarang->i_sat1 = $request->satuan_utama;
-            if($request->satuan_2 != ''){
+            if($request->satuan_1 != ''){
                 $masterbarang->i_sat2 = $request->satuan_1;
                 $masterbarang->i_sat_hrg2 = $harga_satuan_1;
-                $masterbarang->i_sat2_isi2 = $request->isi_satuan_1;
+                $masterbarang->i_sat_isi2 = $request->isi_satuan_1;
             }
-            if($request->satuan_3 != ''){
+            if($request->satuan_2 != ''){
                 $masterbarang->i_sat_isi3 = $request->isi_satuan_2;
                 $masterbarang->i_sat_hrg3 = $harga_satuan_2;
                 $masterbarang->i_sat3 = $request->satuan_2;
@@ -134,7 +135,7 @@ class MasterBarangController extends Controller
             ]); 
 
 
-            if($request->satuan_2 != ''){
+            if($request->satuan_1 != ''){
                 DB::table('m_item')
                 ->where('i_id' , $idbarang)
                 ->update([
@@ -143,13 +144,13 @@ class MasterBarangController extends Controller
                     'i_sat_isi2' => $request->isi_satuan_1,
                 ]);
             }
-            if($request->satuan_3 != ''){
+            if($request->satuan_2 != ''){
                  DB::table('m_item')
                 ->where('i_id' , $idbarang)
                 ->update([
-                    'i_sat2' => $request->satuan_2,
-                    'i_sat_hrg2' => $harga_satuan_2,
-                    'i_sat_isi2' => $request->isi_satuan_2,
+                    'i_sat3' => $request->satuan_2,
+                    'i_sat_hrg3' => $harga_satuan_2,
+                    'i_sat_isi3' => $request->isi_satuan_2,
                 ]);
             }
 

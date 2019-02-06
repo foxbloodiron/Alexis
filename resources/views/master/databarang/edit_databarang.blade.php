@@ -208,21 +208,21 @@
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <label>Harga Satuan Utama</label>
                               <div class="form-group">
-                               <input type="text" class="form-control-sm form-control harga harga_satuan_utama text-right" name="harga_satuan_utama"value="{{number_format($barang->i_sat_hrg1 , 2, '.' ,',')}}" required="">
+                               <input type="text" class="form-control-sm form-control harga harga_satuan_utama text-right" name="harga_satuan_utama"value="{{number_format($barang->i_sat_hrg1 , 2, ',' ,'.')}}" required="">
                               </div>
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <label>Harga Satuan Alternatif 1</label>
                               <div class="form-group">
-                               <input type="number" class="form-control-sm form-control harga harga_satuan_1 text-right" name="harga_satuan_1" value="{{number_format($barang->i_sat_hrg2,2,'.',',')}}">
+                               <input type="text" class="form-control-sm form-control harga harga_satuan_1 text-right" name="harga_satuan_1" value="{{number_format($barang->i_sat_hrg2,2,',','.')}}">
                               </div>
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <label>Harga Satuan Alternatif 2</label>
                               <div class="form-group">
-                               <input type="number" class="form-control-sm form-control harga harga_satuan_2 text-right" name="harga_satuan_2" value="{{$barang->i_sat_hrg3,2,'.',','}}">
+                               <input type="text" class="form-control-sm form-control harga harga_satuan_2 text-right" name="harga_satuan_2" value="{{number_format($barang->i_sat_hrg3, 2 , ',' , '.')}}">
                               </div>
                             </div>
 
@@ -232,7 +232,7 @@
 
                             <div class="col-md-9 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <textarea class="form-control" name="detail" value="{{$barang->i_det}}" required=""></textarea>
+                                <textarea class="form-control" name="detail" required=""> {{$barang->i_det}}</textarea>
                               </div>
                             </div>
 
