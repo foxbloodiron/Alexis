@@ -132,7 +132,9 @@
             </div>
             <form role="search">
                 <div class="input-container">
-                    <i class="fa fa-search"></i>
+                    <div class="input-container-prepend">
+                        <i class="fa fa-search"></i>
+                    </div>
                     <input type="search" placeholder="Search" id="filterInput">
                     <button type="button" class="btn btn-secondary btn-sm d-none" id="btn-reset">
                         <i class="fa fa-times"></i>
