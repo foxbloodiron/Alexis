@@ -5,7 +5,7 @@
                 <h3 class="title"> Data Armada Customer </h3>
             </div>
             <div class="header-block pull-right">
-    			<a class="btn btn-primary" href="{{route('tambah_dataarmada_cus')}}"><i class="fa fa-plus"></i>&nbsp;Tambah Data</a>
+    			<a class="btn btn-primary" href="{{route('tambah_dataarmada_customer')}}"><i class="fa fa-plus"></i>&nbsp;Tambah Data</a>
             	
             </div>
         </div>

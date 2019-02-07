@@ -58,7 +58,7 @@
                             <table class="table table-hover table-striped table-bordered" id="table_rencana">
                               <thead class="bg-primary">
                                 <tr align="center">
-                                  <th>Suplier</th>
+                                  <th>Customer</th>
                                   <th>Plat Kendaraan</th>
                                   <th>Panjang</th>
                                   <th>Lebar</th>
@@ -100,7 +100,7 @@
       $('#table_rencana tbody')
       .append(
         '<tr>'+
-          '<td>Isqy Jaya, UD</td>'+
+          '<td>Alpha</td>'+
           '<td>N 9626 UT</td>'+
           '<td><input type="text" class="form-control form-control-sm" name=""></td>'+
           '<td><input type="text" class="form-control form-control-sm" name=""></td>'+

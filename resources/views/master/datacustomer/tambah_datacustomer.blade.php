@@ -174,7 +174,7 @@
                         </section>
                     </div>
                     <div class="card-footer text-right">
-                      <button class="btn btn-primary btn-submit" type="button">Simpan</button>
+                      <button class="btn btn-primary" id="btn-submit" type="button">Simpan</button>
                       <a href="{{route('datacustomer')}}" class="btn btn-secondary">Kembali</a>
                     </div>
                 </div>
@@ -218,7 +218,7 @@
         $('.125mm').addClass('d-none');
       }
     });
-    $(document).on('click', '.btn-submit', function(){
+    $( '#btn-submit' ).on('click', function(){
 			$.toast({
 				heading: 'Success',
 				text: 'Data Berhasil di Simpan',
@@ -226,7 +226,45 @@
 				textColor: 'white',
 				loaderBg: '#55efc4',
 				icon: 'success'
-			})
+			});
+
+      $.confirm({
+        animation: 'RotateY',
+        closeAnimation: 'scale',
+        animationBounce: 1.5,
+        icon: 'fa fa-question-circle',
+          title: 'Pilih',
+        content: 'Pilih Pindah Halaman',
+        theme: 'dark',
+        columnClass:'col-md-6 col-sm-12 col-12',
+          buttons: {
+              cutomer: {
+                btnClass: 'btn-blue',
+                text:'Data Customer',
+                action : function(){
+                  window.location.href = '{{route('datacustomer')}}';
+                }
+              },
+              armada:{
+                text: 'Data Armada',
+                btnClass: 'btn-info',
+                action: function(){
+                  window.location.href = '{{route('dataarmada')}}';
+                }
+              },
+              tetap: {
+                text:'Tetap dihalaman',
+                btnClass:'btn-default',
+                action: function(){
+                  location.reload();
+                }
+              }
+          
+        },
+        backgroundDismiss: function(){
+            location.reload();
+        }
+      });
 		});
 
     $('#tabel_nopol tbody').on('click', '.btn-hapus', function(){
@@ -245,6 +283,7 @@
         '</tr>'
         );
     });
+
   });
 </script>
 @endsection
