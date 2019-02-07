@@ -32,8 +32,26 @@
             <div class="card-block">
                 <section>
                     <div class="row">
-                      <div class="col-md-3 col-sm-6">
-                        
+                      <div class="col-md-3 col-sm-6 col-12">
+                        <label>Nota</label>
+                      </div>
+
+                      <div class="col-md-3 col-sm-6 col-12">
+                        <div class="form-group">
+                          <select class="form-control form-control-sm select2">
+                            <option value="" selected="" disabled="">--Pilih--</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="col-md-3 col-sm-6 col-12">
+                        <label>Nama Customer</label>
+                      </div>
+
+                      <div class="col-md-3 col-sm-6 col-12">
+                        <div class="form-group">
+                          <input type="text " class="form-control form-control-sm" readonly="" name="">
+                        </div>
                       </div>
                     </div>
                 </section>

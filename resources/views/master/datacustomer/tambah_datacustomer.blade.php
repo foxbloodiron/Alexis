@@ -145,9 +145,9 @@
                               
                               <thead class="bg-primary">
                                 <tr>
-                                  <th rowspan="2">No</th>
+                                  <th rowspan="2" align="center" valign="middle">No</th>
                                   <th colspan="3">Plat Nomor Kendaraan</th>
-                                  <th rowspan="2">Aksi</th>
+                                  <th rowspan="2" align="center" valign="middle">Aksi</th>
                                 </tr>
                                 <tr>
                                   <th>Kode Wilayah</th>
@@ -157,53 +157,13 @@
                               </thead>
                               <tbody>
                                 <tr>
-                                  <td>#</td>
+                                  <td align="center">#</td>
                                   <td><input type="text" class="form-control form-control-sm" id="kode_wilayah" name=""></td>
                                   <td><input type="text" class="form-control form-control-sm" id="nomor_polisi" name=""></td>
                                   <td><input type="text" class="form-control form-control-sm" id="huruf_belakang" name=""></td>
-                                  <td>
-                                    <button class="btn btn-success btn-sm" id="btn-simpan"><i class="fa fa-check-square"></i></button>
-                                    <button class="btn btn-warning btn-sm d-none" id="btn-edit"><i class="fa fa-pencil"></i></button>
+                                  <td align="center">
+                                    <button class="btn btn-primary" id="btn-tambah"><i class="fa fa-plus-square"></i></button>
                                   </td>
-                                </tr>
-                              </tbody>
-
-                            </table>
-
-                          </div>
-
-                          <div class="table-responsive">
-
-                            <table class="table table-bordered table-hover table-striped" id="tabel_kubik" cellspacing="0">
-
-                              <thead class="bg-primary">
-                                <tr>
-                                  <th rowspan="2">No</th>
-                                  <th rowspan="2">Suplier</th>
-                                  <th rowspan="2">Plat Kendaraan</th>
-                                  <th rowspan="2">Panjang</th>
-                                  <th rowspan="2">Lebar</th>
-                                  <th colspan="2">Tinggi</th>
-                                  <th colspan="2">Kubikasi M<sup>3</sup></th>
-                                </tr>
-                                <tr>
-                                  <th>Bak</th>
-                                  <th>Muatan</th>
-                                  <th>Bak</th>
-                                  <th>Muatan</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td>#</td>
-                                  <td><input type="text" class="form-control form-control-sm" name=""></td>
-                                  <td><input type="text" class="form-control form-control-sm" id="plat_nomor" readonly="" name=""></td>
-                                  <td><input type="text" class="form-control form-control-sm" name=""></td>
-                                  <td><input type="text" class="form-control form-control-sm" name=""></td>
-                                  <td><input type="text" class="form-control form-control-sm" name=""></td>
-                                  <td><input type="text" class="form-control form-control-sm" name=""></td>
-                                  <td><input type="text" class="form-control form-control-sm" name=""></td>
-                                  <td><input type="text" class="form-control form-control-sm" name=""></td>
                                 </tr>
                               </tbody>
 
@@ -269,34 +229,21 @@
 			})
 		});
 
-    $('#btn-simpan').click(function(){
-      // console.log('simpan');
-
-      var kode_wilayah, nomor_polisi, huruf_belakang, nopol;
-
-      kode_wilayah =  $('#kode_wilayah').val();
-      nomor_polisi =  $('#nomor_polisi').val();
-      huruf_belakang =  $('#huruf_belakang').val();
-
-      nopol = kode_wilayah + ' ' + nomor_polisi + ' ' + huruf_belakang;
-
-      $('#plat_nomor').val(nopol);
-
-      $('#tabel_nopol tbody').find('input').attr('readonly', true);
-
-
-      $('#btn-edit').removeClass('d-none');
-      $(this).addClass('d-none');
-
+    $('#tabel_nopol tbody').on('click', '.btn-hapus', function(){
+      $(this).parents('tr').remove();
     });
 
-    $('#btn-edit').click(function(){
-      // console.log('edit');
-      $('#tabel_nopol tbody').find('input').attr('readonly', false);
-
-      $('#btn-simpan').removeClass('d-none');
-      $(this).addClass('d-none');
-
+    $('#btn-tambah').on('click',function(){
+      $('#tabel_nopol tbody')
+      .append(
+        '<tr>'+
+          '<td align="center">#</td>'+
+          '<td><input type="text" class="form-control form-control-sm" name=""></td>'+
+          '<td><input type="text" class="form-control form-control-sm" name=""></td>'+
+          '<td><input type="text" class="form-control form-control-sm" name=""></td>'+
+          '<td align="center"><button class="btn btn-danger btn-hapus" type="button"><i class="fa fa-trash-o"></i></button></td>'+
+        '</tr>'
+        );
     });
   });
 </script>

@@ -38,6 +38,7 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/master/dataarmada/create', 'MasterController@tambah_dataarmada_own')->name('tambah_dataarmada_own');
 	Route::get('/master/dataarmada/suplier/create', 'MasterController@tambah_dataarmada')->name('tambah_dataarmada');
 	Route::get('/master/dataarmada/suplier/edit', 'MasterController@edit_dataarmada')->name('edit_dataarmada');
+	Route::get('/master/dataarmada/customer/create', 'MasterController@tambah_dataarmada_customer')->name('tambah_dataarmada_customer');
 	Route::get('/master/dataarmada/modal_dataarmada', 'MasterController@modal_dataarmada')->name('modal_dataarmada');
 	Route::get('/master/datacustomer/datacustomer', 'MasterController@datacustomer')->name('datacustomer');
 	Route::get('/master/datacustomer/tambah_datacustomer', 'MasterController@tambah_datacustomer')->name('tambah_datacustomer');
