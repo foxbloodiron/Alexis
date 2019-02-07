@@ -172,11 +172,9 @@
                   <tr>
                     <th>No</th>
                     <th>Progress</th>
-                    <th>Jumlah</th>
-                    <th>Produksi</th>
+                    <th>Jumlah Produksi</th>
                     <th>Satuan</th>
-                    <th>Jumlah</th>
-                    <th>Semen</th>
+                    <th>Jumlah Semen</th>
                     <th>Satuan</th>
                     <th>Jumlah </th>
                   </tr>

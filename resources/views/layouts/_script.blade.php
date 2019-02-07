@@ -23,7 +23,26 @@
 <script src="{{asset('assets/js/vue.js')}}"></script>
 
 <script src="{{asset('assets/inputmask/min/jquery.inputmask.bundle.min.js')}}"></script>
+<script type="text/javascript">
+  var getstorage;
+  $('#sidebar-collapse-btn').click(function(){
+    getstorage = localStorage.getItem('sidebar-collapse-storage');
 
+    // console.log(getstorage);
+    if(getstorage){
+      localStorage.removeItem('sidebar-collapse-storage');
+    }else{
+      localStorage.setItem('sidebar-collapse-storage', 'sidebar-open');
+    }
+  });
+
+  //set sidebar ketika di refresh
+  getstorage = localStorage.getItem('sidebar-collapse-storage');
+  if (getstorage) {
+    $('#app').addClass(getstorage);
+  }  
+
+</script>
 <script type="text/javascript">
   var baseUrl = "{{url('/')}}";
 
@@ -132,8 +151,8 @@ $.ajaxSetup({
     $('.select2').select2({
         theme:"bootstrap",
         dropdownAutoWidth: true
-    })
-    on('select2:close',function(){
+    });
+    $('.select2').on('select2:close', function(){
       $(this).focus();
     });
 
@@ -143,7 +162,7 @@ $.ajaxSetup({
         prefix:"Rp. "
     });
 
-    setTimeOut(function(){
+    setTimeout(function(){
       $('.select2-container').css('width','unset');
 
     },1000);

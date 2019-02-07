@@ -38,6 +38,7 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/master/dataarmada/create', 'MasterController@tambah_dataarmada_own')->name('tambah_dataarmada_own');
 	Route::get('/master/dataarmada/suplier/create', 'MasterController@tambah_dataarmada')->name('tambah_dataarmada');
 	Route::get('/master/dataarmada/suplier/edit', 'MasterController@edit_dataarmada')->name('edit_dataarmada');
+	Route::get('/master/dataarmada/customer/create', 'MasterController@tambah_dataarmada_customer')->name('tambah_dataarmada_customer');
 	Route::get('/master/dataarmada/modal_dataarmada', 'MasterController@modal_dataarmada')->name('modal_dataarmada');
 	Route::get('/master/datacustomer/datacustomer', 'MasterController@datacustomer')->name('datacustomer');
 	Route::get('/master/datacustomer/tambah_datacustomer', 'MasterController@tambah_datacustomer')->name('tambah_datacustomer');
@@ -88,12 +89,12 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/stok/dataadonan/index', 'StokController@dataadonan')->name('dataadonan');
 	Route::get('/stok/dataadonan/create', 'StokController@tambah_dataadonan')->name('tambah_dataadonan');
 	Route::get('/stok/dataadonan/edit', 'StokController@edit_dataadonan')->name('edit_dataadonan');
-	Route::get('/stok/opnamebahanbaku/opnamebahanbaku', 'StokController@opnamebahanbaku')->name('opnamebahanbaku');
-	Route::get('/stok/pencatatanbarangmasuk/pencatatanbarangmasuk', 'StokController@pencatatanbarangmasuk')->name('pencatatanbarangmasuk');
-	Route::get('/stok/pencatatanbarangmasuk/tambah_pencatatanbarangmasuk', 'StokController@tambah_pencatatanbarangmasuk')->name('tambah_pencatatanbarangmasuk');
-	Route::get('/stok/penggunaanbahanbaku/penggunaanbahanbaku', 'StokController@penggunaanbahanbaku')->name('penggunaanbahanbaku');
-	Route::get('/stok/penggunaanbahanbaku/tambah_penggunaanbahanbaku', 'StokController@tambah_penggunaanbahanbaku')->name('tambah_penggunaanbahanbaku');
-	Route::get('/stok/tipemenghitunghpp/tipemenghitunghpp', 'StokController@tipemenghitunghpp')->name('tipemenghitunghpp');
+	Route::get('/stok/opnamebahanbaku/index', 'StokController@opnamebahanbaku')->name('opnamebahanbaku');
+	Route::get('/stok/pencatatanbarangmasuk/index', 'StokController@pencatatanbarangmasuk')->name('pencatatanbarangmasuk');
+	Route::get('/stok/pencatatanbarangmasuk/create', 'StokController@tambah_pencatatanbarangmasuk')->name('tambah_pencatatanbarangmasuk');
+	Route::get('/stok/penggunaanbahanbaku/index', 'StokController@penggunaanbahanbaku')->name('penggunaanbahanbaku');
+	Route::get('/stok/penggunaanbahanbaku/create', 'StokController@tambah_penggunaanbahanbaku')->name('tambah_penggunaanbahanbaku');
+	Route::get('/stok/tipemenghitunghpp/index', 'StokController@tipemenghitunghpp')->name('tipemenghitunghpp');
 
 
 	// Produksi
@@ -124,10 +125,11 @@ Route::group(['middleware' => 'guest'], function(){
 
 
 	// Pengiriman
-	Route::get('/pengiriman/perencanaanpengiriman/perencanaanpengiriman', 'PengirimanController@perencanaanpengiriman')->name('perencanaanpengiriman');
-	Route::get('/pengiriman/suratjalan/suratjalan', 'PengirimanController@suratjalan')->name('suratjalan');
-	Route::get('/pengiriman/upahboronganpengiriman/upahboronganpengiriman', 'PengirimanController@upahboronganpengiriman')->name('upahboronganpengiriman');
-	Route::get('/pengiriman/upahboronganpengiriman/proses_upahboronganpengiriman', 'PengirimanController@proses_upahboronganpengiriman')->name('proses_upahboronganpengiriman');
+	Route::get('/pengiriman/perencanaanpengiriman/index', 'PengirimanController@perencanaanpengiriman')->name('perencanaanpengiriman');
+	Route::get('/pengiriman/perencanaanpengiriman/create', 'PengirimanController@tambah_perencanaanpengiriman')->name('tambah_perencanaanpengiriman');
+	Route::get('/pengiriman/suratjalan/index', 'PengirimanController@suratjalan')->name('suratjalan');
+	Route::get('/pengiriman/upahboronganpengiriman/index', 'PengirimanController@upahboronganpengiriman')->name('upahboronganpengiriman');
+	Route::get('/pengiriman/upahboronganpengiriman/process', 'PengirimanController@proses_upahboronganpengiriman')->name('proses_upahboronganpengiriman');
 
 	// Biaya dan Beban
 	Route::get('/biayadanbeban/alattuliskantor/alattuliskantor', 'BiayaController@alattuliskantor')->name('alattuliskantor');

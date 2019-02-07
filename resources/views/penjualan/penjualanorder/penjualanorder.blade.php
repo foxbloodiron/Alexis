@@ -19,7 +19,7 @@
 
      	   <ul class="nav nav-pills">
             <li class="nav-item">
-                <a href="" class="nav-link active" data-target="#pos" aria-controls="pos" data-toggle="tab" role="tab">Penjualan Project</a>
+                <a href="" class="nav-link active" data-target="#pos" aria-controls="pos" data-toggle="tab" role="tab">Penjualan Dengan Order</a>
             </li>
             <li class="nav-item">
                 <a href="" class="nav-link" data-target="#list_pos" aria-controls="list_pos" data-toggle="tab" role="tab">List Penjualan</a>

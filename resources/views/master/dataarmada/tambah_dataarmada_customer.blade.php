@@ -5,12 +5,12 @@
 <article class="content">
 
   <div class="title-block text-primary">
-      <h1 class="title"> Data Armada Suplier </h1>
+      <h1 class="title"> Data Armada Customer </h1>
       <p class="title-description">
         <i class="fa fa-home"></i>&nbsp;<a href="{{url('/home')}}">Home</a>
          / <span>Master Data</span>
          / <a href="{{route('dataarmada')}}"><span>Data Armada</span></a>
-         / <span class="text-primary" style="font-weight: bold;">Tambah Data Armada Suplier</span>
+         / <span class="text-primary" style="font-weight: bold;">Tambah Data Armada Customer</span>
        </p>
   </div>
 
@@ -23,7 +23,7 @@
         <div class="card">
                     <div class="card-header bordered p-2">
                       <div class="header-block">
-                        <h3 class="title">Tambah Data Armada Suplier </h3>
+                        <h3 class="title">Tambah Data Armada Customer </h3>
                       </div>
                       <div class="header-block pull-right">
                         <a href="{{route('dataarmada')}}" class="btn btn-secondary"><i class="fa fa-arrow-left"></i></a>
@@ -37,7 +37,7 @@
                           <div class="row">
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
-                              <label>Suplier</label>
+                              <label>Customer</label>
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
@@ -58,7 +58,7 @@
                             <table class="table table-hover table-striped table-bordered" id="table_rencana">
                               <thead class="bg-primary">
                                 <tr align="center">
-                                  <th>Suplier</th>
+                                  <th>Customer</th>
                                   <th>Plat Kendaraan</th>
                                   <th>Panjang</th>
                                   <th>Lebar</th>
@@ -100,7 +100,7 @@
       $('#table_rencana tbody')
       .append(
         '<tr>'+
-          '<td>Isqy Jaya, UD</td>'+
+          '<td>Alpha</td>'+
           '<td>N 9626 UT</td>'+
           '<td><input type="text" class="form-control form-control-sm" name=""></td>'+
           '<td><input type="text" class="form-control form-control-sm" name=""></td>'+

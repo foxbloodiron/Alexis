@@ -135,7 +135,7 @@
                         </section>
                     </div>
                     <div class="card-footer text-right">
-                      <button class="btn btn-primary btn-submit" type="button">Simpan</button>
+                      <button class="btn btn-primary" id="btn-submit" type="button">Simpan</button>
                       <a href="{{route('datasuplier')}}" class="btn btn-secondary">Kembali</a>
                     </div>
                 </div>
@@ -197,16 +197,55 @@
         );
     });
 
-    $(document).on('click', '.btn-submit', function(){
-			$.toast({
-				heading: 'Success',
-				text: 'Data Berhasil di Simpan',
-				bgColor: '#00b894',
-				textColor: 'white',
-				loaderBg: '#55efc4',
-				icon: 'success'
-			})
-		})
+    $( '#btn-submit' ).on('click', function(){
+      $.toast({
+        heading: 'Success',
+        text: 'Data Berhasil di Simpan',
+        bgColor: '#00b894',
+        textColor: 'white',
+        loaderBg: '#55efc4',
+        icon: 'success'
+      });
+
+      $.confirm({
+        animation: 'RotateY',
+        closeAnimation: 'scale',
+        animationBounce: 1.5,
+        icon: 'fa fa-question-circle',
+          title: 'Pilih',
+        content: 'Pilih Pindah Halaman',
+        theme: 'dark',
+        columnClass:'col-md-6 col-sm-12 col-12',
+          buttons: {
+              cutomer: {
+                btnClass: 'btn-blue',
+                text:'Data Suplier',
+                action : function(){
+                  window.location.href = '{{route('datasuplier')}}';
+                }
+              },
+              armada:{
+                text: 'Data Armada',
+                btnClass: 'btn-info',
+                action: function(){
+                  window.location.href = '{{route('dataarmada')}}';
+                }
+              },
+              tetap: {
+                text:'Tetap dihalaman',
+                btnClass:'btn-default',
+                action: function(){
+                  location.reload();
+                }
+              }
+          
+        },
+        backgroundDismiss: function(){
+            location.reload();
+        }
+      });
+    });
+
   });
 </script>
 @endsection

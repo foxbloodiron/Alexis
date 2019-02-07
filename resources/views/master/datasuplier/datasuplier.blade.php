@@ -113,7 +113,7 @@
 <script type="text/javascript">
 
 	$(document).ready(function(){
-		var table = $('#table_satuan').DataTable();
+		var table = $('#table_suplier').DataTable();
 
 		$(document).on('click', '.btn-disable', function(){
 			var ini = $(this);

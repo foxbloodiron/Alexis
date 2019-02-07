@@ -73,6 +73,10 @@ class MasterController extends Controller
     {
         return view('master/dataarmada/tambah_dataarmada');
     }
+    public function tambah_dataarmada_customer()
+    {
+        return view('master/dataarmada/tambah_dataarmada_customer');
+    }
     public function tambah_dataarmada_own()
     {
         return view('master/dataarmada/tambah_dataarmada_own');

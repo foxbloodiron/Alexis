@@ -85,7 +85,7 @@
                                     </div>
 
                                     <div class="col-md-6 col-sm-12">
-                                      <label>Harga Disc</label>
+                                      <label>Harga Setelah di Diskon</label>
                                     </div>
 
                                     <div class="col-md-6 col-sm-12">
@@ -103,7 +103,7 @@
                                   <div class="row">
 
                                     <div class="col-md-6 col-sm-12">
-                                      <label>Disc Percent</label>
+                                      <label>Diskon Persen</label>
                                     </div>
 
                                     <div class="col-md-6 col-sm-12">
@@ -119,7 +119,7 @@
 
 
                                     <div class="col-md-6 col-sm-12">
-                                      <label>Disc Value</label>
+                                      <label>Diskon Harga</label>
                                     </div>
 
                                     <div class="col-md-6 col-sm-12">
@@ -140,7 +140,7 @@
 
                           <div id="div_nota" class="d-none">
                             <fieldset>
-                              <div class="row mb-3">
+                              <div class="row">
 
                                 <div class="col-md-3 col-sm-6 col-xs-12">
                                   <label>Nota</label>
@@ -155,6 +155,52 @@
                                 </div>
                               </div>
 
+                              <hr>
+
+                              <div class="row">
+                                <div class="col-lg-9 col-md-8 col-sm-7 col-12">
+
+                                  <div class="form-group">
+                                    <label>Nama Customer</label>
+                                    <div class="form-group">
+                                      <input type="text" class="form-control form-control-sm" readonly="" name="">
+                                    </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label>Alamat</label>
+                                    <div class="form-group">
+                                      <input type="text" class="form-control form-control-sm" readonly="" name="">
+                                    </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label>Keterangan Project</label>
+                                    <div class="form-group">
+                                      <textarea class="form-control" readonly=""></textarea>
+                                    </div>
+                                  </div>
+
+
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-5 col-12">
+
+                                  <div class="form-group">
+                                    <label>Tanggal Order</label>
+                                    <input type="text" class="form-control form-control-sm" readonly="" name="">
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label>Jatuh Tempo</label>
+                                    <input type="text" class="form-control form-control-sm" readonly="" name="">
+                                  </div>
+
+                                </div>
+                              </div>
+
+                              <hr>
+
                               <div class="table-responsive mb-3">
                                 <table class="table table-hover table-striped table-bordered data-table" cellspacing="0">
                                   <thead class="bg-primary">
@@ -163,8 +209,8 @@
                                       <th>Jumlah</th>
                                       <th>Satuan</th>
                                       <th>Harga</th>
-                                      <th>Disc Percent</th>
-                                      <th>Disc Value</th>
+                                      <th>Disc Persen</th>
+                                      <th>Disc Harga</th>
                                       <th>Total</th>
                                     </tr>
                                   </thead>

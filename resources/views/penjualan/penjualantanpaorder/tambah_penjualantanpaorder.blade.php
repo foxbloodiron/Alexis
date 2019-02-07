@@ -75,6 +75,16 @@
                                   </div>
                                 </div>
                               </div>
+
+                               <div class="col-md-3 col-sm-6 col-12">
+                                <label>Alamat</label>
+                              </div>
+
+                              <div class="col-md-9 col-sm-6 col-12">
+                                <div class="form-group">
+                                  <textarea readonly="" class="form-control" name=""></textarea>
+                                </div>
+                              </div>
                               
                             </div>
                           </fieldset>
@@ -127,8 +137,8 @@
                                   <th>Barang</th>
                                   <th>Qty</th>
                                   <th>Harga</th>
-                                  <th>Disc Percent</th>
-                                  <th>Disc Value</th>
+                                  <th>Disc Persen</th>
+                                  <th>Disc Harga</th>
                                   <th width="1%"></th>
                                 </tr>
                               </thead>
