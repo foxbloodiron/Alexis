@@ -226,19 +226,19 @@
                     </a>
                     <ul class="sidebar-nav">
                         <li class="{{Request::is('stok/dataadonan/*') ? 'active' : ''}}">
-                            <a href="{{url('stok/dataadonan/dataadonan')}}">Data Adonan</a>
+                            <a href="{{route('dataadonan')}}">Data Adonan</a>
                         </li>
                         <li class="{{Request::is('stok/tipemenghitunghpp/*') ? 'active' : ''}}">
-                            <a href="{{url('stok/tipemenghitunghpp/tipemenghitunghpp')}}">Tipe Menghitung HPP</a>
+                            <a href="{{route('tipemenghitunghpp')}}">Tipe Menghitung HPP</a>
                         </li>
                         <li class="{{Request::is('stok/pencatatanbarangmasuk/*') ? 'active' : ''}}">
-                            <a href="{{url('stok/pencatatanbarangmasuk/pencatatanbarangmasuk')}}">Pencatatan Barang Masuk</a>
+                            <a href="{{route('pencatatanbarangmasuk')}}">Pencatatan Barang Masuk</a>
                         </li>
                         <li class="{{Request::is('stok/penggunaanbahanbaku/*') ? 'active' : ''}}">
-                            <a href="{{url('stok/penggunaanbahanbaku/penggunaanbahanbaku')}}">Penggunaan Bahan Baku </a>
+                            <a href="{{route('penggunaanbahanbaku')}}">Penggunaan Bahan Baku </a>
                         </li>
                         <li class="{{Request::is('stok/opnamebahanbaku/*') ? 'active' : ''}}">
-                            <a href="{{url('stok/opnamebahanbaku/opnamebahanbaku')}}">Opname Bahan Baku </a>
+                            <a href="{{route('opnamebahanbaku')}}">Opname Bahan Baku </a>
                         </li>
                     </ul>
                 </li>
@@ -311,14 +311,14 @@
                     </a>
                     <ul class="sidebar-nav">
                         <li class="{{Request::is('pengiriman/perencanaanpengiriman/*') ? 'active' : ''}}">
-                            <a href="{{url('pengiriman/perencanaanpengiriman/perencanaanpengiriman')}}"> Perencanaan Pengiriman</a>
+                            <a href="{{route('perencanaanpengiriman')}}"> Perencanaan Pengiriman</a>
                         </li>
                         <li class="{{Request::is('pengiriman/upahboronganpengiriman/*') ? 'active' : ''}}">
-                            <a href="{{url('pengiriman/upahboronganpengiriman/upahboronganpengiriman')}}"> Upah Borongan Pengiriman</a>
+                            <a href="{{route('upahboronganpengiriman')}}"> Upah Borongan Pengiriman</a>
                         </li>
 
                         <li class="{{Request::is('pengiriman/suratjalan/*') ? 'active' : ''}}">
-                            <a href="{{url('pengiriman/suratjalan/suratjalan')}}"> Surat Jalan</a>
+                            <a href="{{route('suratjalan')}}"> Surat Jalan</a>
                         </li>
                         
                     </ul>

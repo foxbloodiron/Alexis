@@ -31,11 +31,6 @@
 				<div class="tab-content">
 					<div class="tab-pane active fade in show" id="pengiriman">
 						<div class="card">
-	                        <div class="card-header bordered p-2">
-	                        	<div class="header-block">
-		                            <h3 class="title"> Operasional Jalan </h3>
-		                        </div>
-	                        </div>
 		                    <div class="card-block">
 		                        <section>
 		                        	
@@ -102,12 +97,6 @@
 		            </div>
 		            <div class="tab-pane fade in" id="upah">
 		            	<div class="card">
-
-	            			<div class="card-header bordered p-2">
-	            				<div class="header-block">
-		            				<h3 class="title">Upah Borangan Pengiriman</h3>
-		            			</div>
-	            			</div>
 		            		<div class="card-block">
 		            			
 		            			<section>

@@ -10,6 +10,10 @@ class PengirimanController extends Controller
     {
     	return view('pengiriman/perencanaanpengiriman/perencanaanpengiriman');
     }
+    public function tambah_perencanaanpengiriman()
+    {
+        return view('pengiriman/perencanaanpengiriman/tambah_perencanaanpengiriman');
+    }    
     public function suratjalan()
     {
     	return view('pengiriman/suratjalan/suratjalan');
