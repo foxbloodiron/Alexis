@@ -324,7 +324,10 @@ h6
 	}
 	.app.sidebar-open #customize-menu{
 		left: -240px;
-		transition: .2s;
+		transition: .3s;
+	}
+	.app #customize-menu{
+		transition: .3s;
 	}
 	.app.sidebar-open .header{
 		left: 0;

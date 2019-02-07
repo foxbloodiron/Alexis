@@ -75,6 +75,16 @@
                                   </div>
                                 </div>
                               </div>
+
+                               <div class="col-md-3 col-sm-6 col-12">
+                                <label>Alamat</label>
+                              </div>
+
+                              <div class="col-md-9 col-sm-6 col-12">
+                                <div class="form-group">
+                                  <textarea readonly="" class="form-control" name=""></textarea>
+                                </div>
+                              </div>
                               
                             </div>
                           </fieldset>
