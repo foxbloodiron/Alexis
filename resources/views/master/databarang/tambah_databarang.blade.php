@@ -41,7 +41,7 @@
 
                             <div class="col-md-9 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" name="nama_barang" required="">
+                                <input type="text" class="form-control form-control-sm data" name="nama_barang" required="">
                               </div>
                             </div>
 
@@ -51,7 +51,7 @@
 
                             <div class="col-md-9 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <select class="form-control form-control-sm tipe_barang" name="tipe_barang" required="">
+                                <select class="form-control form-control-sm tipe_barang data" name="tipe_barang" required="">
                                   <option value="" selected="" disabled="">--Pilih Type Barang--</option>
                                   <option value="BB">Bahan Baku</option>
                                   <option value="SP">Spare Part</option>
@@ -67,7 +67,7 @@
 
                             <div class="col-md-9 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <select class="form-control form-control-sm" name="kelompok_barang" required="">
+                                <select class="form-control form-control-sm data" name="kelompok_barang" required="">
                                   <option value="" selected="" disabled="">--Pilih Kelompok Barang--</option>
                                   <option value="BBP">Bahan Baku Produksi</option>
                                   <option value="BSJ">Barang Setengah Jadi</option>
@@ -82,7 +82,7 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <input type="text" class="form-control form-control-sm kode_barang" readonly="" name="kode_barang" required="">
+                                <input type="text" class="form-control form-control-sm kode_barang data" readonly="" name="kode_barang" required="">
                               </div>
                             </div>
 
@@ -92,7 +92,7 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <input type="number" class="form-control form-control-sm" name="min_stock" required="">
+                                <input type="number" class="form-control form-control-sm data" name="min_stock" required="">
                               </div>
                             </div>
 
@@ -102,7 +102,7 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <select class="form-control form-control-sm satuan_utama" name="satuan_utama" required="">
+                                <select class="form-control form-control-sm satuan_utama data" name="satuan_utama" required="">
                                   <option value="">--Pilih--</option>
                                    @foreach($data['satuan'] as $satuan)
                                     <option value="{{$satuan->s_id}}"> {{$satuan->s_name}} </option>
@@ -117,7 +117,7 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                               <input type="number" class="form-control-sm form-control isi_satuan_utama" min="0"  name="isi_satuan_utama" required="">
+                               <input type="number" class="form-control-sm form-control isi_satuan_utama data" min="0"  name="isi_satuan_utama" required="" readonly="" value="1">
                                 <input type="hidden" class="form-control-sm form-control"  value="1" name="username">
                               </div>
                             </div>
@@ -180,21 +180,21 @@
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <label>Harga Satuan Utama</label>
                               <div class="form-group">
-                               <input type="text" class="form-control-sm form-control harga harga_satuan_utama text-right" name="harga_satuan_utama" required="">
+                               <input type="text" class="form-control-sm form-control harga harga_satuan_utama text-right data" name="harga_satuan_utama" required="">
                               </div>
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <label>Harga Satuan Alternatif 1</label>
                               <div class="form-group">
-                               <input type="text" class="form-control-sm form-control harga harga_satuan_1 text-right" name="harga_satuan_1">
+                               <input type="text" class="form-control-sm form-control harga harga_satuan_1 text-right" name="harga_satuan_1" readonly="">
                               </div>
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <label>Harga Satuan Alternatif 2</label>
                               <div class="form-group">
-                               <input type="text" class="form-control-sm form-control harga harga_satuan_2 text-right" name="harga_satuan_2">
+                               <input type="text" class="form-control-sm form-control harga harga_satuan_2  text-right" name="harga_satuan_2" readonly="">
                               </div>
                             </div>
 
@@ -204,7 +204,7 @@
 
                             <div class="col-md-9 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <textarea class="form-control" name="detail" required=""></textarea>
+                                <textarea class="form-control data" name="detail" required=""></textarea>
                               </div>
                             </div>
 
@@ -215,7 +215,7 @@
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
                                 <div class="input-group">
-                                  <input type="number" class="form-control-sm form-control persentase" max="100" min="0" step="0.1" name="persentase" required="">
+                                  <input type="number" class="form-control-sm form-control persentase data" max="100" min="0" step="0.1" name="persentase" required="">
                                   <span class="input-group-addon">
                                     %
                                   </span>
@@ -231,7 +231,7 @@
                     </div>
 
                     <div class="card-footer text-right">
-                      <button class="btn btn-primary btn-submit" type="button">Simpan</button>
+                      <button class="btn btn-primary btn-submit simpan" type="button">Simpan</button>
                       <a href="{{route('databarang')}}" class="btn btn-secondary">Kembali</a>
                     </div>
                 </div>
@@ -248,9 +248,22 @@
 @section('extra_script')
 <script type="text/javascript">
 
+   function addCommas(nStr) {
+            nStr += '';
+            x = nStr.split('.');
+            x1 = x[0];
+            x2 = x.length > 1 ? ',' + x[1] : '';
+            var rgx = /(\d+)(\d{3})/;
+            while (rgx.test(x1)) {
+                x1 = x1.replace(rgx, '$1' + '.' + '$2');
+            }
+            return x1 + x2;
+    }
+
   $('.isi_satuan_1').change(function(){
     isi_satuan_1 = $(this).val();
     satuan_1 = $('.satuan_1').val();
+    harga = $('.harga_satuan_utama').val();
     if(satuan_1 == ''){
        $.toast({
               heading: 'Warning',
@@ -260,12 +273,28 @@
           });
          $(this).val('');
     }
+    else {
+      if(harga != ''){
+        if(isi_satuan_1 != ''){
+                 harga = harga.replace(/\./g,'');
+                 harga = harga.replace(/,/g,'.');
+        
+                 hasilharga2 = parseFloat(parseFloat(isi_satuan_1) * parseFloat(harga)).toFixed(2);
+        
+                $('.harga_satuan_1').val(addCommas(hasilharga2));
+          }
+          else {
+            $('.harga_satuan_1').val('');
+          }
+      }
+    }
   });
 
 
    $('.isi_satuan_2').change(function(){
     isi_satuan_1 = $(this).val();
     satuan_1 = $('.satuan_2').val();
+    harga = $('.harga_satuan_utama').val();
     if(satuan_1 == ''){
        $.toast({
               heading: 'Warning',
@@ -275,11 +304,51 @@
           });
          $(this).val('');
     }
+    else {
+      if(harga != ''){
+         if(isi_satuan_1 != ''){
+              harga = harga.replace(/\./g,'');
+             harga = harga.replace(/,/g,'.');
+
+             hasilharga2 = parseFloat(parseFloat(isi_satuan_1) * parseFloat(harga)).toFixed(2);
+
+            $('.harga_satuan_2').val(addCommas(hasilharga2));
+         }
+         else {
+          $('.harga_satuan_2').val('');
+         }
+      }
+    }
   });
+   $('.harga_satuan_utama').change(function(){
+    satuan_1 = $('.satuan_1').val();
+    harga = $(this).val();
+    harga = harga.replace(/\./g,'');
+    harga = harga.replace(/,/g,'.');
+    if(satuan_1 != ''){
+      isi_satuan_1 = $('.isi_satuan_1').val();
+      
+
+       hasilharga = parseFloat(parseFloat(isi_satuan_1) * parseFloat(harga));
+       $('.harga_satuan_1').val(hasilharga);
+    }
+
+      satuan_2 = $('.satuan_2').val();
+    if(satuan_2 != ''){
+      isi_satuan_2 = $('.isi_satuan_2').val();
+      if(isi_satuan_2 != ''){
+          hasilharga2 = parseFloat(parseFloat(isi_satuan_2) * parseFloat(harga)).toFixed(2);
+
+        $('.harga_satuan_2').val(addCommas(hasilharga2));
+      }     
+    }
+   });
 
    $('.harga_satuan_1').change(function(){
       isi_satuan_1 = $(this).val();
       satuan_1 = $('.satuan_1').val();
+
+    
       if(satuan_1 == ''){
          $.toast({
                 heading: 'Warning',
@@ -289,6 +358,8 @@
             });
            $(this).val('');
       }
+
+
    });
 
    $('.harga_satuan_2').change(function(){
@@ -404,6 +475,16 @@
         }
       } // end satuan 2
 
+      data = $('.data').val();
+      if(data == ''){
+         $.toast({
+              heading: 'Warning',
+              text: 'Mohon Lengkapi Data :)',
+              showHideTransition: 'plain',
+              icon: 'warning'
+          });
+            return false;
+      }
 
        $.confirm({
         animation: 'RotateY',
@@ -424,7 +505,7 @@
                       dataType : "json",
                       type : "post",
                       success : function(response){
-
+                        $(this).attr('disabled' , true);
                         $.toast({
                             heading: 'Success',
                             text: 'Data Berhasil di Simpan',
@@ -433,6 +514,7 @@
                             loaderBg: '#55efc4',
                             icon: 'success'
                           })
+                          $('.simpan').attr('disabled' , true);
 
                           setTimeout(function(){
                           window.location.href = baseUrl + '/master/databarang/index';
