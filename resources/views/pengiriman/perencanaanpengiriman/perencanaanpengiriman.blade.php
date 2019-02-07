@@ -36,7 +36,6 @@
 	                                    <tr>
 							                <th>Nota</th>
 							                <th>Sopir</th>
-							                <th>Armada</th>
 							                <th>Jadwal</th>
 							                <th>Aksi</th>
 							            </tr>
@@ -45,7 +44,6 @@
 	                                	<tr>
 	                                		<td>PP/20190207/1</td>
 	                                		<td>Alpha</td>
-	                                		<td>Bravo-09</td>
 	                                		<td>07-02-2019 22:22:22</td>
 	                                		<td>
 	                                			<div class="btn-group btn-group-sm">
@@ -57,7 +55,6 @@
 	                                	<tr>
 	                                		<td>PP/20190207/2</td>
 	                                		<td>Bravo</td>
-	                                		<td>Charlie-09</td>
 	                                		<td>07-02-2019 22:22:22</td>
 	                                		<td>
 	                                			<div class="btn-group btn-group-sm">
@@ -69,7 +66,6 @@
 	                                	<tr>
 	                                		<td>PP/20190207/3</td>
 	                                		<td>Charlie</td>
-	                                		<td>Delta-09</td>
 	                                		<td>07-02-2019 22:22:22</td>
 	                                		<td>
 	                                			<div class="btn-group btn-group-sm">
@@ -98,6 +94,8 @@
 @section('extra_script')
 <script type="text/javascript">
 	$(document).ready(function(){
+
+		
 
 	});
 </script>

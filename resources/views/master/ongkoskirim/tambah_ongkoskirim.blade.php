@@ -17,9 +17,34 @@
   <section class="section">
 
     <div class="row">
+      <div class="col-md-4 col-sm-12 col-12">
+        <h5>Barang yang belum ada Ongkos Kirimnya</h5>
+        <hr>
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered table-hover" id="tabel_belum" cellspacing="0">
+            <thead class="bg-primary">
+              <tr>
+                <th>Nama Barang</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for($i=0;$i<100;$i++)
+                <tr>
+                  <td>Semen</td>
+                </tr>
+                <tr>
+                  <td>Sirtu</td>
+                </tr>
+                <tr>
+                  <td>Abu Batu</td>
+                </tr>
+              @endfor
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-
-      <div class="col-12">
+      <div class="col-md-8 col-sm-12 col-12">
         
         <div class="card">
                     <div class="card-header bordered p-2">
@@ -100,4 +125,21 @@
 
 </article>
 
+@endsection
+
+@section('extra_script')
+<script type="text/javascript">
+  
+  $(document).ready(function(){
+    var eueue = $('#tabel_belum').DataTable({
+      "scrollY":        "200px",
+        "scrollCollapse": true,
+        "paging":         false
+    });
+    // !important
+    $('div[id^="tabel_belum"]').find('.row:first-child').find('.col-md-6:first-child').remove();
+    // end !important
+  });
+
+</script>
 @endsection

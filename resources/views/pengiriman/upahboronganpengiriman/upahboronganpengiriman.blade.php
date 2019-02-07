@@ -40,7 +40,6 @@
 			                                    <tr>
 									                <th>Nota</th>
 									                <th>Sopir</th>
-									                <th>Armada</th>
 									                <th>Jadwal</th>
 									                <th>Status</th>
 									                <th>Aksi</th>
@@ -50,7 +49,7 @@
 			                                	<tr>
 			                                		<td>PP/20181123/1</td>
 			                                		<td>Alpha</td>
-			                                		<td>Bravo-09</td>
+			                                		
 			                                		<td>24-11-2018 22:22:22</td>
 			                                		<td><span class="badge badge-secondary badge-pill">Packing</span></td>
 			                                		<td>
@@ -64,7 +63,7 @@
 			                                	<tr>
 			                                		<td>PP/20181123/2</td>
 			                                		<td>Bravo</td>
-			                                		<td>Charlie-09</td>
+			                                		
 			                                		<td>24-11-2018 22:22:22</td>
 			                                		<td><span class="badge badge-info badge-pill">Proses Pengiriman</span></td>
 			                                		<td>
@@ -78,7 +77,7 @@
 			                                	<tr>
 			                                		<td>PP/20181123/3</td>
 			                                		<td>Charlie</td>
-			                                		<td>Delta-09</td>
+			                                		
 			                                		<td>24-11-2018 22:22:22</td>
 			                                		<td><span class="badge badge-success badge-pill">Sudah diterima</span></td>
 			                                		<td>

@@ -66,6 +66,15 @@
                           </div>
                         </div>
 
+                        <div class="col-md-3 col-sm-6 col-12">
+                          <label>Jadwal</label>
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 col-12">
+                          <div class="form-group">
+                            <input type="text " class="form-control form-control-sm datetimepicker" id="jadwal" name="jadwal">
+                          </div>
+                        </div>
 
                       </div>
                   </fieldset>

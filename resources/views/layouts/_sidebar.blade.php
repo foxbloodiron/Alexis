@@ -183,6 +183,9 @@
                         <li class="{{Request::is('master/ongkoskirim/*') ? 'active' : ''}}">
                             <a href="{{route('ongkoskirim')}}">Data Ongkos Kirim</a>
                         </li>
+                        <li>
+                            <a href="javascript:void(0);">Data Tunjangan</a>
+                        </li>
                     </ul>
                 </li>
                 <!-- <li class="{{Request::is('suplier/*') ? 'active open' : ''}}">
