@@ -145,7 +145,7 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                               <input type="number" class="form-control-sm form-control isi_satuan_utama"  step="0.1" name="isi_satuan_utama" value="{{$barang->i_sat_isi1}}" required="">
+                               <input type="number" class="form-control-sm form-control isi_satuan_utama"  step="0.1" name="isi_satuan_utama" value="{{$barang->i_sat_isi1}}" required="" readonly="" value="1">
                                 <input type="hidden" class="form-control-sm form-control"  value="1" name="username">
                               </div>
                             </div>
@@ -215,14 +215,14 @@
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <label>Harga Satuan Alternatif 1</label>
                               <div class="form-group">
-                               <input type="text" class="form-control-sm form-control harga harga_satuan_1 text-right" name="harga_satuan_1" value="{{number_format($barang->i_sat_hrg2,2,',','.')}}">
+                               <input type="text" class="form-control-sm form-control harga harga_satuan_1 text-right" name="harga_satuan_1" value="{{number_format($barang->i_sat_hrg2,2,',','.')}}" readonly="">
                               </div>
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <label>Harga Satuan Alternatif 2</label>
                               <div class="form-group">
-                               <input type="text" class="form-control-sm form-control harga harga_satuan_2 text-right" name="harga_satuan_2" value="{{number_format($barang->i_sat_hrg3, 2 , ',' , '.')}}">
+                               <input type="text" class="form-control-sm form-control harga harga_satuan_2 text-right" name="harga_satuan_2" value="{{number_format($barang->i_sat_hrg3, 2 , ',' , '.')}}" readonly="">
                               </div>
                             </div>
 
@@ -276,9 +276,22 @@
 @section('extra_script')
 <script type="text/javascript">
 
+   function addCommas(nStr) {
+            nStr += '';
+            x = nStr.split('.');
+            x1 = x[0];
+            x2 = x.length > 1 ? ',' + x[1] : '';
+            var rgx = /(\d+)(\d{3})/;
+            while (rgx.test(x1)) {
+                x1 = x1.replace(rgx, '$1' + '.' + '$2');
+            }
+            return x1 + x2;
+    }
+
   $('.isi_satuan_1').change(function(){
     isi_satuan_1 = $(this).val();
     satuan_1 = $('.satuan_1').val();
+    harga = $('.harga_satuan_utama').val();
     if(satuan_1 == ''){
        $.toast({
               heading: 'Warning',
@@ -288,12 +301,28 @@
           });
          $(this).val('');
     }
+    else {
+      if(harga != ''){
+        if(isi_satuan_1 != ''){
+                 harga = harga.replace(/\./g,'');
+                 harga = harga.replace(/,/g,'.');
+        
+                 hasilharga2 = parseFloat(parseFloat(isi_satuan_1) * parseFloat(harga)).toFixed(2);
+        
+                $('.harga_satuan_1').val(addCommas(hasilharga2));
+          }
+          else {
+            $('.harga_satuan_1').val('');
+          }
+      }
+    }
   });
 
 
    $('.isi_satuan_2').change(function(){
     isi_satuan_1 = $(this).val();
     satuan_1 = $('.satuan_2').val();
+    harga = $('.harga_satuan_utama').val();
     if(satuan_1 == ''){
        $.toast({
               heading: 'Warning',
@@ -303,7 +332,45 @@
           });
          $(this).val('');
     }
+    else {
+      if(harga != ''){
+         if(isi_satuan_1 != ''){
+              harga = harga.replace(/\./g,'');
+             harga = harga.replace(/,/g,'.');
+
+             hasilharga2 = parseFloat(parseFloat(isi_satuan_1) * parseFloat(harga)).toFixed(2);
+
+            $('.harga_satuan_2').val(addCommas(hasilharga2));
+         }
+         else {
+          $('.harga_satuan_2').val('');
+         }
+      }
+    }
   });
+   $('.harga_satuan_utama').change(function(){
+    satuan_1 = $('.satuan_1').val();
+    harga = $(this).val();
+    harga = harga.replace(/\./g,'');
+    harga = harga.replace(/,/g,'.');
+    if(satuan_1 != ''){
+      isi_satuan_1 = $('.isi_satuan_1').val();
+      
+
+       hasilharga = parseFloat(parseFloat(isi_satuan_1) * parseFloat(harga));
+       $('.harga_satuan_1').val(hasilharga);
+    }
+
+      satuan_2 = $('.satuan_2').val();
+    if(satuan_2 != ''){
+      isi_satuan_2 = $('.isi_satuan_2').val();
+      if(isi_satuan_2 != ''){
+          hasilharga2 = parseFloat(parseFloat(isi_satuan_2) * parseFloat(harga)).toFixed(2);
+
+        $('.harga_satuan_2').val(addCommas(hasilharga2));
+      }     
+    }
+   });
 
    $('.harga_satuan_1').change(function(){
       isi_satuan_1 = $(this).val();

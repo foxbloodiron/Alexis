@@ -14,6 +14,7 @@ class MasterBarangController extends Controller
 
         $data = DB::table('m_item')
                 ->join('m_satuan' , 's_id' , '=' , 'i_sat1')
+                ->orderBy('i_id' , 'desc')
                 ->get();
 
     	return view('master/databarang/databarang', compact('data'));
@@ -42,7 +43,7 @@ class MasterBarangController extends Controller
         $caritipe = DB::select("SELECT  substring(max(i_code),4) as id from m_item
                                   WHERE i_type = '$tipe_barang'");
 
-      
+     
         $index = (integer)$caritipe[0]->id + 1;
         $index = str_pad($index, 4, '0' , STR_PAD_LEFT);
         $nota = $tipe_barang . '-' . $index;
@@ -74,6 +75,10 @@ class MasterBarangController extends Controller
             $masterbarang->i_type = $request->tipe_barang;
             $masterbarang->i_code_group = $request->kelompok_barang;
             $masterbarang->i_name = $request->nama_barang;
+
+
+
+
             $masterbarang->i_sat1 = $request->satuan_utama;
             if($request->satuan_1 != ''){
                 $masterbarang->i_sat2 = $request->satuan_1;
@@ -96,8 +101,6 @@ class MasterBarangController extends Controller
             $masterbarang->i_updated_by = $request->username;
             $masterbarang->i_isactive = 'Y';
             $masterbarang->save();
-
-
 
             return json_encode('sukses');
          });
