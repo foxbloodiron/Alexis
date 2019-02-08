@@ -52,7 +52,7 @@
 	                                			<div class="pull-right">10.000,00</div>
 
 	                                		</td>
-	                                		<td>
+	                                		<td align="center">
 	                                			<div class="btn-group btn-group-sm">
 	                                				<button class="btn btn-warning btn-edit" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
 	                                				<button class="btn btn-danger btn-disable" type="button" title="Disable"><i class="fa fa-times-circle"></i></button>
