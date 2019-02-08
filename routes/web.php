@@ -75,6 +75,10 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/master/ongkoskirim/index', 'MasterController@ongkoskirim')->name('ongkoskirim');
 	Route::get('/master/ongkoskirim/create', 'MasterController@tambah_ongkoskirim')->name('tambah_ongkoskirim');
 
+	Route::get('/master/datatunjangan/index', 'MasterController@datatunjangan')->name('datatunjangan');
+	Route::get('/master/datatunjangan/create', 'MasterController@tambah_datatunjangan')->name('tambah_datatunjangan');
+
+
 	// Purchasing
 	Route::get('/purchasing/rencanapembelian/rencanapembelian', 'PurchaseController@rencanapembelian')->name('rencanapembelian');
 	Route::get('/purchasing/rencanapembelian/tambah_rencanapembelian', 'PurchaseController@tambah_rencanapembelian')->name('tambah_rencanapembelian');

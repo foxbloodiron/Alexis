@@ -225,5 +225,16 @@ class MasterController extends Controller
     {
         return view('master.ongkoskirim.tambah_ongkoskirim');
     }
+
+    public function datatunjangan()
+    {
+        return view('master.datatunjangan.datatunjangan');
+    }
+
+    public function tambah_datatunjangan()
+    {
+        return view('master.datatunjangan.tambah_datatunjangan');
+    }
+
 }
 

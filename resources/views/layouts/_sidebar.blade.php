@@ -183,8 +183,8 @@
                         <li class="{{Request::is('master/ongkoskirim/*') ? 'active' : ''}}">
                             <a href="{{route('ongkoskirim')}}">Data Ongkos Kirim</a>
                         </li>
-                        <li>
-                            <a href="javascript:void(0);">Data Tunjangan</a>
+                        <li class="{{Request::is('master/datatunjangan/*')}}">
+                            <a href="{{route('datatunjangan')}}">Data Tunjangan</a>
                         </li>
                     </ul>
                 </li>

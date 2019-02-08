@@ -254,7 +254,7 @@ h6
 .sidebar-header .input-container:hover #filterInput,
 .sidebar-header .input-container:focus-within #filterInput{
     border-bottom: 3px solid yellow;
-    font-size: 16pt;
+    /*font-size: 16pt;*/
 }
 .sidebar-header .input-container #btn-reset{
 	background: transparent;
