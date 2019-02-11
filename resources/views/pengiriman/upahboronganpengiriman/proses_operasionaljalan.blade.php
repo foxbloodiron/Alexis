@@ -1,16 +1,50 @@
 @extends('main')
 
+@section('extra_style')
+<style type="text/css">
+.div-ubah-status {
+    width: 200px;
+    display: inline-block;
+    float: left;
+    text-align: left;
+    display: table-cell;
+}
+
+.card-footer{
+    line-height: 2;
+    display: table;
+}
+.card-footer-button{
+    display: table-cell;
+    vertical-align: middle;
+}
+@media (max-width: 576px){
+    .div-ubah-status{
+        width: 100%;
+        margin-bottom: 10px;
+        display: unset;
+    }
+    .card-footer{
+        display: unset;
+    }
+    .card-footer-button{
+        display: unset;
+    }
+}
+</style>
+@endsection
+
 @section('content')
 
 <article class="content">
 
 	<div class="title-block text-primary">
-	    <h1 class="title"> Proses Upah Borongan Pengiriman </h1>
+	    <h1 class="title"> Proses Operasional Jalan </h1>
 	    <p class="title-description">
 	    	<i class="fa fa-home"></i>&nbsp;<a href="{{url('/home')}}">Home</a> 
 	    	/ <span>Pengiriman</span> 
 	    	/ <a href="{{route('upahboronganpengiriman')}}"><span>Upah Borongan Pengiriman</span> </a>
-	    	/ <span class="text-primary font-weight-bold">Proses Upah Borongan Pengiriman</span>
+	    	/ <span class="text-primary font-weight-bold">Proses Operasional Jalan</span>
 	     </p>
 	</div>
 
@@ -23,7 +57,7 @@
 				<div class="card">
                     <div class="card-header bordered p-2">
                         <div class="header-block">
-                            <h3 class="title"> Proses Upah Borongan Pengiriman </h3>
+                            <h3 class="title"> Proses Operasional Jalan </h3>
                         </div>
                         <div class="header-block pull-right">
                             <a href="{{route('upahboronganpengiriman')}}" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-left"></i></a>
@@ -120,8 +154,21 @@
                         </section>
                     </div>
                     <div class="card-footer text-right">
-                    	<button class="btn btn-primary" id="btn-simpan" type="button">Proses</button>
-                    	<a href="{{route('upahboronganpengiriman')}}" class="btn btn-secondary">Kembali</a>
+                        <div class="div-ubah-status">
+                            <small>Status</small>
+                            <select class="form-control form-control-sm" id="select-status">
+                                <option selected="" value="1">Sedang diproses</option>
+                                <option value="2">Proses Pengiriman</option>
+                                <option value="3">Sudah diterima</option>
+                            </select>
+                            <div id="stattus">
+                                <span class="badge badge-secondary badge-pill">Sedang diproses</span>
+                            </div>
+                        </div>
+                        <div class="card-footer-button">
+                        	<button class="btn btn-primary" id="btn-simpan" type="button">Simpan</button>
+                        	<a href="{{route('upahboronganpengiriman')}}" class="btn btn-secondary">Kembali</a>
+                        </div>
                     </div>
                 </div>
 
@@ -139,15 +186,69 @@
     $(document).ready(function(){
         var eueue = $('#table_barang').DataTable();
 
+        $('#select-status').change(function(){
+            var ini, stattus;
+
+            ini         = $(this);
+            stattus     = $('#stattus');
+
+            if (ini.val() === '1') {
+                stattus.html('<span class="badge badge-secondary badge-pill">Sedang diproses</span>')
+            } else if(ini.val() === '2'){
+                stattus.html('<span class="badge badge-info badge-pill">Proses Pengiriman</span>')
+
+            } else if(ini.val() === '3'){
+                stattus.html('<span class="badge badge-success badge-pill">Sudah diterima</span>')
+            }
+        });
+
         $('#btn-simpan').click(function(){
-             $.toast({
+            var selectstatus;
+            selectstatus    = $('#select-status');
+
+            if (selectstatus.val() === '3') {
+                $.confirm({
+                    animation: 'RotateY',
+                    closeAnimation: 'scale',
+                    animationBounce: 1.5,
+                    icon: 'fa fa-exclamation-triangle',
+                    title: 'Konfirmasi',
+                    content: 'Apa anda yakin mengakhiri proses ini?',
+                    theme: 'disable',
+                    buttons: {
+                        info: {
+                            btnClass: 'btn-blue',
+                            text:'Ya',
+                            action : function(){
+                                $.toast({
+                                    heading: 'Information',
+                                    text: 'Data Berhasil di disimpan!',
+                                    bgColor: '#0984e3',
+                                    textColor: 'white',
+                                    loaderBg: '#fdcb6e',
+                                    icon: 'info'
+                                })
+                                
+                            }
+                        },
+                        cancel:{
+                            text: 'Tidak',
+                            action: function () {
+                                // tutup confirm
+                            }
+                        }
+                    }
+                });
+            } else {
+                $.toast({
                     heading: 'Information',
                     text: 'Data Berhasil di disimpan!',
                     bgColor: '#0984e3',
                     textColor: 'white',
                     loaderBg: '#fdcb6e',
                     icon: 'info'
-            })
+                })
+            }
         });
     });
 </script>

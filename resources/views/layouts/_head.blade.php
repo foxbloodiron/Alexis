@@ -51,6 +51,11 @@
                 width: 8px !important;
 
             }
+            .datetimepicker {
+                position: absolute;
+                background: white;
+                border: 1px solid #ddd;
+            }
         </style>
         <link rel="stylesheet" type="text/css" href="{{asset('assets/css/alamraya-style.css')}}">
 </head>

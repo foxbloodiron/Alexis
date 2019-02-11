@@ -85,10 +85,12 @@
                           <th>Barang</th>
                           <th>Satuan</th>
                           <th>Qty</th>
-                          <th>Pemilik Kendaraan</th>
-                          <th>Nama Pemilik</th>
+                          <th width="15%">Pemilik Kendaraan</th>
+                          <th width="15%">Nama Pemilik</th>
                           <th>Nopol</th>
                           <th>Sopir</th>
+                          <th width="20%">Ongkos Kirim per Jumlah Barang</th>
+
                         </tr>
                       </thead>
                     </table>
@@ -135,6 +137,7 @@
         '<select class="form-control form-control-sm pilih_nopol" readonly="">'+          
         '</select>',
         '<input type="text" class="form-control form-control-sm nama_sopir" readonly="">',
+        '<input type="text" readonly="" class="form-control form-control-sm" value="Rp. 20.000,00/100">'
 
 
       ]).draw();
@@ -152,6 +155,7 @@
         '<select class="form-control form-control-sm pilih_nopol" readonly="">'+          
         '</select>',
         '<input type="text" class="form-control form-control-sm nama_sopir" readonly="">',
+        '<input type="text" readonly="" class="form-control form-control-sm" value="Rp. 21.000,00/100">'
 
 
       ]).draw();
@@ -169,6 +173,7 @@
         '<select class="form-control form-control-sm pilih_nopol" readonly="">'+          
         '</select>',
         '<input type="text" class="form-control form-control-sm nama_sopir" readonly="">',
+        '<input type="text" readonly="" class="form-control form-control-sm" value="Rp. 22.000,00/100">'
 
 
       ]).draw();      

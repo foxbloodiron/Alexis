@@ -50,7 +50,7 @@
 
                      			<div class="col-md-9 col-md-8 col-12">
                      				<div class="form-group">
-                     					<input type="text" class="form-control form-control-sm" name="">
+                     					<input type="text" class="form-control form-control-sm text-right input-rupiah" name="">
                      				</div>
                      			</div>
                      		</div>

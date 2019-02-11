@@ -275,7 +275,7 @@ h6
 .sidebar-header .input-container:hover #btn-reset,
 .sidebar-header .input-container:focus-within #btn-reset
 {
-	top:5px;
+	top:1px;
 }
 .sidebar-header .input-container .input-container-prepend,
 .sidebar-header .input-container .input-container-append
@@ -335,4 +335,53 @@ h6
 	.app.sidebar-open .footer{
 		left: 0;
 	}
+}
+/*@media (min-width: 998.98px){
+	.app{
+		padding-left: 240px;
+	}
+	.app.sidebar-open{
+		padding-left: 60px;
+	}
+	.app.sidebar-open aside.sidebar{
+		left: -180px;
+	}
+	.app aside.sidebar{
+		left: 0;
+	}
+	.app.sidebar-open #customize-menu{
+		left: -240px;
+		transition: .3s;
+	}
+	.app #customize-menu{
+		transition: .3s;
+	}
+	.app.sidebar-open .header{
+		left: 60px;
+	}
+	.app.sidebar-open .footer{
+		left: 60px;
+	}
+	.app.sidebar-open .sidebar .sidebar-menu > li > a i
+	{
+		position: absolute;
+		right: 15px;
+	}
+	.app.sidebar-open .sidebar .sidebar-menu > li > a i.fa.arrow{
+		left: 0;
+		position: absolute;
+	}
+
+}*/
+
+@media (max-width: 767.98px)
+.footer .author > ul {
+    display: block;
+}
+@media (max-width: 991.98px)
+.footer .author > ul {
+    display: block;
+}
+.footer .author ul > li{
+	display: inline-block;
 }

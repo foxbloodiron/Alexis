@@ -2,8 +2,6 @@
 
 @section('content')
 
-@include('pengiriman.perencanaanpengiriman.tambah_perencanaanpengiriman')
-
 <article class="content">
 
 	<div class="title-block text-primary">

@@ -35,7 +35,7 @@
 		                        <section>
 		                        	
 		                        	<div class="table-responsive">
-			                            <table class="table data-table table-hover" cellspacing="0">
+			                            <table class="table table-hover table-striped table-bordered" cellspacing="0" id="table-operasional">
 			                                <thead class="bg-primary">
 			                                    <tr>
 									                <th>Nota</th>
@@ -47,17 +47,52 @@
 			                                </thead>
 			                                <tbody>
 			                                	<tr>
+			                                		<td>PP/20190207/3</td>
+			                                		<td>Delta</td>
+			                                		
+			                                		<td>07-02-2019 22:22:22</td>
+			                                		<td><span class="badge badge-secondary badge-pill">Sedang diproses</span></td>
+			                                		<td align="center">
+			                                			<div class="btn-group">
+			                                				<button class="btn btn-primary btn-sm btn-operasional-proses" type="button">Proses</button>
+			                                			</div>
+			                                		</td>
+			                                	</tr>
+			                                	<tr>
+			                                		<td>PP/20190207/2</td>
+			                                		<td>Echo</td>
+			                                		
+			                                		<td>07-02-2019 22:22:22</td>
+			                                		<td><span class="badge badge-secondary badge-pill">Sedang diproses</span></td>
+			                                		<td align="center">
+			                                			<div class="btn-group">
+			                                				<button class="btn btn-primary btn-sm btn-operasional-proses" type="button">Proses</button>
+			                                			</div>
+			                                		</td>
+			                                	</tr>
+			                                	<tr>
+			                                		<td>PP/20190207/1</td>
+			                                		<td>Foxtrot</td>
+			                                		
+			                                		<td>07-02-2019 22:22:22</td>
+			                                		<td><span class="badge badge-secondary badge-pill">Sedang diproses</span></td>
+			                                		<td align="center">
+			                                			<div class="btn-group">
+			                                				<button class="btn btn-primary btn-sm btn-operasional-proses" type="button">Proses</button>
+			                                			</div>
+			                                		</td>
+			                                	</tr>
+
+			                                	<tr>
 			                                		<td>PP/20181123/1</td>
 			                                		<td>Alpha</td>
 			                                		
 			                                		<td>24-11-2018 22:22:22</td>
-			                                		<td><span class="badge badge-secondary badge-pill">Packing</span></td>
-			                                		<td>
-			                                			<div class="btn-group btn-group-sm">
-				                                			<button class="btn btn-info" data-toggle="modal" data-target="#status" type="button" title="Status"><i class="fa fa-gear"></i></button>
-				                                			<button class="btn btn-warning" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
-				                                			<button class="btn btn-danger" type="button" title="Hapus"><i class="fa fa-trash-o"></i></button>
-				                                		</div>
+			                                		<td><span class="badge badge-secondary badge-pill">Sedang diproses</span></td>
+			                                		<td align="center">
+			                                			<div class="btn-group">
+			                                				<button class="btn btn-primary btn-sm btn-operasional-proses" type="button">Proses</button>
+			                                			</div>
 			                                		</td>
 			                                	</tr>
 			                                	<tr>
@@ -66,12 +101,10 @@
 			                                		
 			                                		<td>24-11-2018 22:22:22</td>
 			                                		<td><span class="badge badge-info badge-pill">Proses Pengiriman</span></td>
-			                                		<td>
-			                                			<div class="btn-group btn-group-sm">
-				                                			<button class="btn btn-info" data-toggle="modal" data-target="#status" type="button" title="Status"><i class="fa fa-gear"></i></button>
-				                                			<button class="btn btn-warning" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
-				                                			<button class="btn btn-danger" type="button" title="Hapus"><i class="fa fa-trash-o"></i></button>
-				                                		</div>
+			                                		<td align="center">
+			                                			<div class="btn-group">
+			                                				<button class="btn btn-primary btn-sm btn-operasional-proses" type="button">Proses</button>
+			                                			</div>
 			                                		</td>
 			                                	</tr>
 			                                	<tr>
@@ -80,10 +113,8 @@
 			                                		
 			                                		<td>24-11-2018 22:22:22</td>
 			                                		<td><span class="badge badge-success badge-pill">Sudah diterima</span></td>
-			                                		<td>
-			                                			<div class="btn-group btn-group-sm">
-				                                			<button class="btn btn-danger" disabled="" type="button" title="Hapus"><i class="fa fa-trash-o"></i></button>
-				                                		</div>
+			                                		<td align="center">
+			                                			-
 			                                		</td>
 			                                	</tr>
 
@@ -101,7 +132,7 @@
 		            			<section>
 
 		            				<div class="table-responsive">
-		            					<table class="table table-bordered table-hover table-striped data-table" cellspacing="0">
+		            					<table class="table table-bordered table-hover table-striped" id="table-upah" cellspacing="0">
 		            						<thead class="bg-primary">
 		            							<tr>
 		            								<th>No</th>
@@ -116,7 +147,7 @@
 		            								<td>PP/20181123/3</td>
 		            								<td><span class="badge badge-pill badge-secondary">Belum dibayar</span></td>
 		            								<td>
-		            									<a class="btn btn-info btn-sm" href="{{route('proses_upahboronganpengiriman')}}" title="Proses"><i class="fa fa-gear"></i></a>
+		            									<a class="btn btn-primary btn-sm" href="{{route('proses_upahboronganpengiriman')}}" title="Proses">Proses</a>
 		            								</td>
 		            							</tr>
 		            						</tbody>
@@ -141,6 +172,13 @@
 @section('extra_script')
 <script type="text/javascript">
 	$(document).ready(function(){
+		var table1, table2;
+
+		table1	= $('#table-operasional').DataTable({
+			order : [[3,'asc']]
+		});
+		table2	= $('#table-upah').DataTable();
+
 		$('#status_pilih').on('change', function(){
 			if($(this).val() != ''){
 				console.log('a');
@@ -165,6 +203,10 @@
 				$('#example_badge').text('');
 			}
 		});
+
+		$('#table-operasional tbody').on('click', '.btn-operasional-proses', function(){
+			window.location.href	= '{{route('proses_operasionaljalan')}}';
+		});	
 	});
 </script>
 @endsection

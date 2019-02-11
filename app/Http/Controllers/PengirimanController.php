@@ -26,4 +26,8 @@ class PengirimanController extends Controller
     {
         return view('pengiriman/upahboronganpengiriman/proses_upahboronganpengiriman');
     }
+    public function proses_operasionaljalan()
+    {
+        return view('pengiriman/upahboronganpengiriman/proses_operasionaljalan');
+    }    
 }
