@@ -260,10 +260,8 @@ h6
 	background: transparent;
     border: unset;
     color: red;
-    /*flex: 1 1 auto;*/
     left: 210px;
     top: 0;	
-    width: 1%;
     right: 0;
     position: absolute;
     transition: .2s;
@@ -373,12 +371,14 @@ h6
 	}
 
 }*/
-
-@media (max-width: 767.98px)
 .footer .author > ul {
     display: block;
 }
 @media (max-width: 991.98px)
+.footer .author > ul {
+    display: block;
+}
+@media (max-width: 767.98px)
 .footer .author > ul {
     display: block;
 }

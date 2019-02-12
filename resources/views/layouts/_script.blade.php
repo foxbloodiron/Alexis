@@ -13,6 +13,8 @@
 <script src="{{asset('assets/js/app.js')}}"></script>
 {{-- <script type="text/javascript" src="{{asset('assets/jquery-ui/jquery-ui.js')}}"></script> --}}
 <script src="{{asset('assets/datatables/datatables.min.js')}}"></script>
+<script src="{{asset('assets/datatables/Responsive-2.2.2/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{asset('assets/datatables/Responsive-2.2.2/js/responsive.bootstrap4.min.js')}}"></script>
 <script src="{{asset('assets/datepicker/js/bootstrap-datepicker.min.js')}}"></script>
 <script src="{{asset('assets/select2/select2.js')}}"></script>
 <script src="{{asset('assets/js/jquery.maskMoney.min.js')}}"></script>
@@ -25,7 +27,7 @@
 <script src="{{asset('assets/inputmask/min/jquery.inputmask.bundle.min.js')}}"></script>
 <script type="text/javascript">
   var getstorage;
-  $('#sidebar-collapse-btn').click(function(){
+  $('#sidebar-collapse-btn, #sidebar-overlay').click(function(){
     getstorage = localStorage.getItem('sidebar-collapse-storage');
 
     // console.log(getstorage);
@@ -95,9 +97,13 @@ $.ajaxSetup({
         }
 
     });
+    $('.table').attr('width', '100%');
+    
+    var datatable = $('.data-table').dataTable();
 
-
-		$('.data-table').dataTable();
+    // new $.fn.dataTable.Responsive( datatable, {
+    //     details: true
+    // } );
 
 		$('.datepicker').datepicker({
 			format:"dd-mm-yyyy",

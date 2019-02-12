@@ -1,9 +1,16 @@
 <header class="header">
-    <div class="header-block header-block-collapse">
+    <div class="header-block header-block-collapse
+     {{-- d-lg-none d-sm-block --}}
+     ">
         <button class="collapse-btn" id="sidebar-collapse-btn">
             <i class="fa fa-bars"></i>
         </button>
     </div>
+{{--     <div class="header-block header-block-collapse d-lg-block d-sm-none d-none">
+        <button class="collapse-btn" id="sidebar-collapse-btn-lg"  style="color:rosybrown;">
+            <i class="fa fa-bars"></i>
+        </button>
+    </div>   --}}  
 {{--     <div id="search-container" class="header-block header-block-search">
         <form role="search">
             <div class="input-container">

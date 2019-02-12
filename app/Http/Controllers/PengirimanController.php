@@ -18,6 +18,10 @@ class PengirimanController extends Controller
     {
     	return view('pengiriman/suratjalan/suratjalan');
     }
+    public function tambah_suratjalan()
+    {
+        return view('pengiriman/suratjalan/tambah_suratjalan');
+    }    
     public function upahboronganpengiriman()
     {
     	return view('pengiriman/upahboronganpengiriman/upahboronganpengiriman');
