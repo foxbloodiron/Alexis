@@ -133,6 +133,7 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/pengiriman/perencanaanpengiriman/create', 'PengirimanController@tambah_perencanaanpengiriman')->name('tambah_perencanaanpengiriman');
 	Route::get('/pengiriman/suratjalan/index', 'PengirimanController@suratjalan')->name('suratjalan');
 	Route::get('/pengiriman/suratjalan/create', 'PengirimanController@tambah_suratjalan')->name('tambah_suratjalan');
+	Route::get('/pengiriman/suratjalan/print', 'PengirimanController@print_suratjalan')->name('print_suratjalan');
 	Route::get('/pengiriman/upahboronganpengiriman/index', 'PengirimanController@upahboronganpengiriman')->name('upahboronganpengiriman');
 	Route::get('/pengiriman/upahboronganpengiriman/upah/process', 'PengirimanController@proses_upahboronganpengiriman')->name('proses_upahboronganpengiriman');
 	Route::get('/pengiriman/upahboronganpengiriman/operasional/process', 'PengirimanController@proses_operasionaljalan')->name('proses_operasionaljalan');

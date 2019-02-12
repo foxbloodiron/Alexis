@@ -74,6 +74,10 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		var table = $('#table_suratjalan').DataTable();
+
+		$('#table_suratjalan tbody').on('click', '.btn-print', function(){
+			window.open('{{route('print_suratjalan')}}', '_blank');
+		});
 	});
 </script>
 @endsection
