@@ -135,12 +135,14 @@
                     <span class="l l4"></span>
                     <span class="l l5"></span>
                 </div>  --}}
-                Alexis 
+                <span class="brand-title">Alexis</span>
             </div>
             <form role="search">
                 <div class="input-container">
                     <div class="input-container-prepend">
-                        <i class="fa fa-search"></i>
+                        <button class="btn btn-secondary btn-sm" type="button" id="btn-search-menu">
+                            <i class="fa fa-search"></i>
+                        </button>
                     </div>
                     <input type="search" placeholder="Cari Menu" id="filterInput">
                     <button type="button" class="btn btn-secondary btn-sm d-none" id="btn-reset">
@@ -155,11 +157,14 @@
 
                 <li class="{{Request::is('home') ? 'active' : ''  || Request::is('/') ? 'active' : ''}}">
                     <a href="{{url('/')}}">
-                        <i class="fa fa-home"></i> Dashboard </a>
+                        <i class="fa fa-home"></i> 
+                        <span class="menu-title">Dashboard </span>
+                    </a>
                 </li>
                 <li class="{{Request::is('master/*') ? 'active open' : ''}}">
                     <a href="#">
-                        <i class="fa fa-th-large"></i> Master Data
+                        <i class="fa fa-th-large"></i> 
+                        <span class="menu-title">Master Data</span>
                         <i class="fa arrow"></i>
                     </a>
                     <ul class="sidebar-nav">
@@ -211,7 +216,8 @@
                 </li> -->
                 <li class="{{Request::is('purchasing/*') ? 'active open' : ''}}">
                     <a href="#">
-                        <i class="fa fa-credit-card"></i> Purchasing
+                        <i class="fa fa-credit-card"></i>
+                        <span class="menu-title">Purchasing</span>
                         <i class="fa arrow"></i>
                     </a>
                     <ul class="sidebar-nav">
@@ -231,7 +237,8 @@
                 </li>
                 <li class="{{Request::is('stok/*') ? 'active open' : ''}}">
                     <a href="#">
-                        <i class="fa fa-desktop"></i> Stok
+                        <i class="fa fa-desktop"></i> 
+                        <span class="menu-title">Stok</span>
                         <i class="fa arrow"></i>
                     </a>
                     <ul class="sidebar-nav">
@@ -254,7 +261,8 @@
                 </li>
                 <li class="{{Request::is('produksi/*') ? 'active open' : ''}}">
                     <a href="#">
-                        <i class="fa fa-product-hunt"></i> Produksi
+                        <i class="fa fa-product-hunt"></i> 
+                        <span class="menu-title">Produksi</span>
                         <i class="fa arrow"></i>
                     </a>
                     <ul class="sidebar-nav">
@@ -280,7 +288,8 @@
                 </li>
                 <li class="{{Request::is('customer/*') ? 'active open' : ''}}">
                     <a href="#">
-                        <i class="fa fa-group"></i> Customer
+                        <i class="fa fa-group"></i>
+                        <span class="menu-title">Customer</span>
                         <i class="fa arrow"></i>
                     </a>
                     <ul class="sidebar-nav">
@@ -292,7 +301,8 @@
                 </li>
                 <li class="{{Request::is('penjualan/*') ? 'active open' : ''}}">
                     <a href="#">
-                        <i class="fa fa-usd"></i> Penjualan
+                        <i class="fa fa-usd"></i>
+                        <span class="menu-title">Penjualan</span>
                         <i class="fa arrow"></i>
                     </a>
                     <ul class="sidebar-nav">
@@ -316,7 +326,7 @@
                 </li>
                 <li class="{{Request::is('pengiriman/*') ? 'active open' : ''}}">
                     <a href="#">
-                        <i class="fa fa-truck"></i> Pengiriman
+                        <i class="fa fa-truck"></i><span class="menu-title"> Pengiriman</span>
                         <i class="fa arrow"></i>
                     </a>
                     <ul class="sidebar-nav">
@@ -335,7 +345,7 @@
                 </li>
                 <li class="{{Request::is('biayadanbeban/*') ? 'active open' : ''}}">
                     <a href="#">
-                        <i class="fa fa-balance-scale "></i> Biaya dan Beban
+                        <i class="fa fa-balance-scale "></i><span class="menu-title"> Biaya dan Beban</span>
                         <i class="fa arrow"></i>
                     </a>
                     <ul class="sidebar-nav">
@@ -374,7 +384,7 @@
                 </li>
                 <li class="{{Request::is('danasosial/*') ? 'active open' : ''}}">
                     <a href="#">
-                        <i class="fa fa-users"></i> Dana Sosial
+                        <i class="fa fa-users"></i><span class="menu-title"> Dana Sosial</span>
                         <i class="fa arrow"></i>
                     </a>
                     <ul class="sidebar-nav">
@@ -398,7 +408,7 @@
                 </li>
                 <li class="{{Request::is('aset/*') ? 'active open' : ''}}">
                     <a href="#">
-                        <i class="fa fa-line-chart"></i> Aset
+                        <i class="fa fa-line-chart"></i><span class="menu-title"> Aset</span>
                         <i class="fa arrow"></i>
                     </a>
                     <ul class="sidebar-nav">
@@ -413,7 +423,7 @@
                 </li>
                 <li class="{{Request::is('keuangan/*') ? 'active open' : ''}}">
                     <a href="#">
-                        <i class="fa fa-money"></i> Keuangan
+                        <i class="fa fa-money"></i><span class="menu-title"> Keuangan</span>
                         <i class="fa arrow"></i>
                     </a>
                     <ul class="sidebar-nav">
@@ -428,7 +438,7 @@
                         </li>
                         <li class="">
                             <a href="javascript:void(0);">
-                                <i class="fa fa-search-plus"></i> Analisa
+                                <i class="fa fa-search-plus"></i><span class="menu-title"> Analisa</span>
                                 <i class="fa arrow"></i>
                             </a>
                             <ul class="sidebar-nav">
@@ -464,7 +474,7 @@
                 </li>
                 <li class="{{Request::is('system/*') ? 'active open' : ''}}">
                     <a href="#">
-                        <i class="fa fa-user-circle-o "></i> Admin System
+                        <i class="fa fa-user-circle-o "></i><span class="menu-title"> Admin System</span>
                         <i class="fa arrow"></i>
                     </a>
                     <ul class="sidebar-nav">
@@ -578,7 +588,9 @@
                     </li>
                 </ul>
                 <a href="#">
-                    <i class="fa fa-cog"></i> Customize </a>
+                    <i class="fa fa-cog"></i> 
+                    <span class="customize-menu-title">Customize </span>
+                </a>
             </li>
         </ul>
     </footer>

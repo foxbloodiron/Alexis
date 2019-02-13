@@ -30,7 +30,7 @@
   $('#sidebar-collapse-btn, #sidebar-overlay').click(function(){
     getstorage = localStorage.getItem('sidebar-collapse-storage');
 
-    // console.log(getstorage);
+    console.log(getstorage);
     if(getstorage){
       localStorage.removeItem('sidebar-collapse-storage');
     }else{
@@ -229,13 +229,14 @@ $.ajaxSetup({
 
         // $('#wid-id-0 .widget-body').html($('#sidebar ul > li').parents('li').text() + '<br>')
         $('#sidebar ul > li > a').each(function(){
-          $(this).prepend('<span class="d-none"> '+ $(this).parents('li').ignore('span').ignore('ul').text() +'</span>');
+          $(this).prepend('<span class="d-none"> '+ $(this).parents('li').find('.menu-title').ignore('span').ignore('ul').text() +'</span>');
         });
         $('#sidebar ul > li:has(ul) > a').each(function(){
           $(this).prepend('<span class="d-none d-sm-none"> '+ $(this).parent('li').children().ignore('span').text() +'</span>');
         });
         $('#sidebar ul > li > ul > li > a').each(function(){
-          $(this).prepend('<span class="d-none d-xs-none"> '+ $(this).parent().parent().parent().ignore('span').ignore('ul').text() +'</span>');
+          // $(this).prepend('<span class="d-none d-xs-none"> '+ $(this).parent().parent().parent().ignore('span').ignore('ul').text() +'</span>');
+          $(this).prepend('<span class="d-none d-xs-none"> '+ $(this).parent().parent().parent().ignore('span').ignore('ul').find('.menu-title').text() +'</span>');
         });
 
         $search_fld.on('keyup focus blur resize', function(){
@@ -273,7 +274,6 @@ $.ajaxSetup({
         $btn_search_menu.on('click', function(){
           $search_fld.focus();
         });
-
 
 
 
