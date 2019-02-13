@@ -363,6 +363,7 @@ h6
 
 	{
 		width: 60px;
+		box-shadow: inset -3px 0px 0 rgba(0, 0, 0, .1), inset 3px 0 0 rgba(0, 0, 0, .07);
 	}
 
 	.app aside.sidebar,
