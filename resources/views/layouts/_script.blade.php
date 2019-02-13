@@ -31,13 +31,10 @@
     getstorage = localStorage.getItem('sidebar-collapse-storage');
 
     console.log(getstorage);
-    if(getstorage){
-      localStorage.removeItem('sidebar-collapse-storage');
-    }else{
-      localStorage.setItem('sidebar-collapse-storage', 'sidebar-open');
-    }
-  });
 
+  (getstorage) ? (localStorage.removeItem('sidebar-collapse-storage')) : (localStorage.setItem('sidebar-collapse-storage', 'sidebar-open'));
+
+  });
   //set sidebar ketika di refresh
   getstorage = localStorage.getItem('sidebar-collapse-storage');
   if (getstorage) {
