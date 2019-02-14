@@ -30,7 +30,7 @@
   $('#sidebar-collapse-btn, #sidebar-overlay').click(function(){
     getstorage = localStorage.getItem('sidebar-collapse-storage');
 
-    console.log(getstorage);
+    // console.log(getstorage);
 
   (getstorage) ? (localStorage.removeItem('sidebar-collapse-storage')) : (localStorage.setItem('sidebar-collapse-storage', 'sidebar-open'));
 
