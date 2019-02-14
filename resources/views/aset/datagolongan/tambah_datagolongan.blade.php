@@ -28,7 +28,7 @@
               </div>
               
               <div class="header-block pull-right">
-                <button class="btn btn-primary" data-toggle="modal" data-target="#tambah"><i class="fa fa-plus"></i>&nbsp;Tambah Data</button>
+                <a class="btn btn-secondary btn-sm" href="{{route('datagolongan')}}" title="Kembali"><i class="fa fa-arrow-left"></i></a>
               </div>
 
             </div>
@@ -39,11 +39,11 @@
                       
                       <div class="row">
                         
-                        <div class="col-md-3 col-sm-4 col-12">
+                        <div class="col-md-4 col-sm-5 col-12">
                           <label>Nama Group Aset</label>
                         </div>
 
-                        <div class="col-md-9 col-sm-8 col-12">
+                        <div class="col-md-8 col-sm-7 col-12">
                           <div class="form-group">
                             <div class="input-group">
                               <input type="text" class="form-control form-control-sm" readonly="" placeholder="Di isi oleh Admin" name="">
@@ -54,6 +54,50 @@
                           </div>
                         </div>
 
+
+                        <div class="col-md-4 col-sm-5 col-12">
+                          <label>Golongan Group <span class="text-danger">*</span></label>
+                        </div>
+
+                        <div class="col-md-8 col-sm-7 col-12">
+                          <div class="form-group">
+                            <div class="input-group">
+                              <select class="form-control form-control-sm select2" name="">
+                                <option value="" selected="" disabled="">--Pilih--</option>
+                              </select>
+                              <div class="input-group-addon" title="Parameter golongan digunakan untuk pencarian data">
+                                <i class="fa fa-question-circle"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <div class="col-md-4 col-sm-5 col-12">
+                          <label>Nama Group Aset <span class="text-danger">*</span></label>
+                        </div>
+
+                        <div class="col-md-8 col-sm-7 col-12">
+                          <div class="form-group">
+                            <input type="text" class="form-control form-control-sm" placeholder="contoh: Inventaris Kantor" name="">
+                          </div>
+                        </div>
+
+
+
+                        <div class="col-md-4 col-sm-5 col-12">
+                          <label>Keterangan Group</label>
+                        </div>
+
+                        <div class="col-md-8 col-sm-7 col-12">
+                          <div class="form-group">
+                            <input type="text" class="form-control form-control-sm" placeholder="contoh: Kumpulan Aset Inventaris Kantor" name="">
+                          </div>
+                        </div>
+
+                        <hr>
+                        
+
                       </div>
 
                     </div>
@@ -63,6 +107,10 @@
                     </div>
                   </div>
                 </section>
+            </div>
+            <div class="card-footer text-right">
+              <button class="btn btn-primary" type="button">Simpan</button>
+              <a href="{{route('datagolongan')}}" class="btn btn-secondary">Kembali</a>
             </div>
         </div>
 
