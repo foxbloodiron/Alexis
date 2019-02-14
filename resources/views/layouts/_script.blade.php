@@ -165,10 +165,10 @@ $.ajaxSetup({
         prefix:"Rp. "
     });
 
-    setTimeout(function(){
-      $('.select2-container').css('width','unset');
+    // setTimeout(function(){
+    //   $('.select2-container').css('width','unset');
 
-    },1000);
+    // },1000);
 
     $('.input-jam').inputmask({"regex":"^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"});
 

@@ -11,6 +11,17 @@
       <div class="modal-body">
         
         <div class="row">
+
+          <div class="col-md-3 col-sm-4 col-12">
+            <label>Total Amount</label>
+          </div>
+
+          <div class="col-md-9 col-sm-8 col-12">
+            <div class="form-group">
+              <input type="text" readonly="" class="form-control form-control-sm text-right" name="">
+            </div>
+          </div>
+
           <div class="col-md-3 col-sm-4 col-12">
             <label>Tipe Pembayaran</label>
           </div>
@@ -33,6 +44,16 @@
           <div class="col-md-9 col-sm-8 col-12">
             <div class="form-group">
               <input type="text" class="form-control form-control-sm input-rupiah text-right" name="">
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-4 col-12">
+            <label>Kembalian</label>
+          </div>
+
+          <div class="col-md-9 col-sm-8 col-12">
+            <div class="form-group">
+              <input type="text" readonly="" class="form-control form-control-sm text-right" name="">
             </div>
           </div>
 

@@ -394,10 +394,10 @@
                     </a>
                     <ul class="sidebar-nav">
                         <li class="{{Request::is('aset/pengadaan/*') ? 'active' : ''}}">
-                            <a href="{{url('aset/pengadaan/pengadaan')}}"> Pengadaan</a>
+                            <a href="{{route('datagolongan')}}"> Data Golongan Aset</a>
                         </li>
                         <li class="{{Request::is('aset/penyusutan/*') ? 'active' : ''}}">
-                            <a href="{{url('aset/penyusutan/penyusutan')}}"> Penyusutan</a>
+                            <a href="{{route('dataaset')}}"> Data Aset</a>
                         </li>
                         
                     </ul>

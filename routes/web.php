@@ -162,8 +162,9 @@ Route::group(['middleware' => 'guest'], function(){
 	// Route::get('/danasosial/sumbangan/sumbangan', 'DanaController@sumbangan');
 
 	// Aset
-	Route::get('/aset/pengadaan/pengadaan', 'AsetController@pengadaan');	
-	Route::get('/aset/penyusutan/penyusutan', 'AsetController@penyusutan');	
+	Route::get('/aset/datagolongan/index', 'AsetController@datagolongan')->name('datagolongan');	
+	Route::get('/aset/datagolongan/create', 'AsetController@tambah_datagolongan')->name('tambah_datagolongan');	
+	Route::get('/aset/dataaset/index', 'AsetController@dataaset')->name('dataaset');	
 
 	// Keuangan
 	Route::get('/keuangan/a_3bottomline/a_3bottomline', 'KeuanganController@a_3bottomline');

@@ -15,9 +15,10 @@
                 <thead class="bg-primary">
                     <tr>
                         <th>Kode | Item</th>
-                        <th>i_type</th>
+                        <th>Tipe Barang</th>
                         <th>Opname</th>
                         <th>Satuan</th>
+                        <th>Keterangan</th>
                     </tr>
                 </thead>
                 <tbody>
