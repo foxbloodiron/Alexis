@@ -454,3 +454,6 @@ h6
 .footer .author ul > li{
 	display: inline-block;
 }
+label:has(+ .checkbox) > span{
+	cursor: pointer;
+}

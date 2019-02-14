@@ -1,27 +1,18 @@
 <!-- Modal -->
-<div id="tambah" class="modal fade" role="dialog">
+<div id="tambah_mesin" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header bg-gradient-info">
-        <h4 class="modal-title">Form Maintenance Kendaraan</h4>
+        <h4 class="modal-title">Form Maintenance Mesin</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
         <div class="row">
-          
-          
+
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <label>Pemilik</label>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <div class="form-group">
-                <input type="text" class="form-control form-control-sm" readonly="" value="CV. Alexis" name="">
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <label>Nopol Kendaraan</label>
+              <label>Mesin</label>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12">
               <div class="form-group">
@@ -31,7 +22,7 @@
               </div>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <label>Sopir</label>
+              <label>Mandor</label>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12">
               <div class="form-group">

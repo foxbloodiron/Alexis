@@ -152,7 +152,7 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/biayadanbeban/upahharian/upahharian', 'BiayaController@upahharian')->name('upahharian');
 
 	// Dana Sosial
-	
+
 	Route::get('/danasosial/index', 'DanaController@danasosial')->name('danasosial');
 
 	// Route::get('/danasosial/kampung/kampung', 'DanaController@kampung');
@@ -187,10 +187,11 @@ Route::group(['middleware' => 'guest'], function(){
 	// Route::get('/suplier/dataarmada/dataarmada', 'SuplierController@dataarmada');
 
 	// Admin System
-	Route::get('/system/manajemenhakakses/manajemenhakakses', 'SystemController@manajemenhakakses');
-	Route::get('/system/manajemenuser/manajemenuser', 'SystemController@manajemenuser');
-	Route::get('/system/profilperusahaan/profilperusahaan', 'SystemController@profilperusahaan');
-	Route::get('/system/tahunfinansial/tahunfinansial', 'SystemController@tahunfinansial');
+	Route::get('/system/manajemenhakakses/index', 'SystemController@manajemenhakakses')->name('manajemenhakakses');
+	Route::get('/system/manajemenhakakses/create', 'SystemController@tambah_manajemenhakakses')->name('tambah_manajemenhakakses');
+	Route::get('/system/manajemenuser/index', 'SystemController@manajemenuser')->name('manajemenuser');
+	Route::get('/system/profilperusahaan/index', 'SystemController@profilperusahaan')->name('profilperusahaan');
+	Route::get('/system/tahunfinansial/index', 'SystemController@tahunfinansial')->name('tahunfinansial');
 
 }); // End Route Group
 

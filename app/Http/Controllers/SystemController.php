@@ -11,6 +11,11 @@ class SystemController extends Controller
     	return view('system/manajemenhakakses/manajemenhakakses
     		');
     }
+    public function tambah_manajemenhakakses()
+    {
+        return view('system/manajemenhakakses/tambah_manajemenhakakses
+            ');
+    }
     public function manajemenuser()
     {
     	return view('system/manajemenuser/manajemenuser

@@ -460,16 +460,16 @@
                     </a>
                     <ul class="sidebar-nav">
                         <li class="{{Request::is('system/manajemenuser/*') ? 'active' : ''}}">
-                            <a href="{{url('system/manajemenuser/manajemenuser')}}"> Manajemen User</a>
+                            <a href="{{route('manajemenuser')}}"> Manajemen User</a>
                         </li>
                         <li class="{{Request::is('system/manajemenhakakses/*') ? 'active' : ''}}">
-                            <a href="{{url('system/manajemenhakakses/manajemenhakakses')}}"> Manajemen Hak Akses</a>
+                            <a href="{{route('manajemenhakakses')}}"> Manajemen Hak Akses</a>
                         </li>
                         <li class="{{Request::is('system/profilperusahaan/*') ? 'active' : ''}}">
-                            <a href="{{url('system/profilperusahaan/profilperusahaan')}}"> Profil Perusahaan</a>
+                            <a href="{{route('profilperusahaan')}}"> Profil Perusahaan</a>
                         </li>
                         <li class="{{Request::is('system/tahunfinansial/*') ? 'active' : ''}}">
-                            <a href="{{url('system/tahunfinansial/tahunfinansial')}}"> Tahun Financial</a>
+                            <a href="{{route('tahunfinansial')}}"> Tahun Financial</a>
                         </li>
                         
                     </ul>
