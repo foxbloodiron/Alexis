@@ -20,7 +20,7 @@
                 <th>Disc Persen</th>
                 <th>Disc Nilai</th>
                 <th>Disc Total</th>
-                <th>Total</th>
+                <th>Total Pembelian</th>
               </tr>
             </thead>
             <tbody>
@@ -28,25 +28,17 @@
                 <td>Paving 8T</td>
                 <td>200</td>                
                 <td>
-                  <div class="row">
-                    <div class="col-5">Rp. </div><div class="col-7 text-right">10.000,00</div>
-                  </div>
+                  <div class="pull-left">Rp. </div><div class="pull-right">10.000,00</div>
                 </td>
                 <td>25%</td>
                 <td>
-                  <div class="row">
-                    <div class="col-5">Rp. </div><div class="col-7 text-right">0,00</div>
-                  </div>
+                  <div class="pull-left">Rp. </div><div class="pull-right">0,00</div>
                 </td>
                 <td>
-                  <div class="row">
-                    <div class="col-5">Rp. </div><div class="col-7 text-right">7.500,00</div>
-                  </div>
+                  <div class="pull-left">Rp. </div><div class="pull-right">7.500,00</div>
                 </td>
                 <td>
-                  <div class="row">
-                    <div class="col-5">Rp. </div><div class="col-7 text-right">1.000.000,00</div>
-                  </div>
+                  <div class="pull-left">Rp. </div><div class="pull-right">1.000.000,00</div>
                 </td>
               </tr>
             </tbody>
