@@ -7,7 +7,9 @@
 	<div class="title-block text-primary">
 	    <h1 class="title"> Upah Borongan </h1>
 	    <p class="title-description">
-	    	<i class="fa fa-home"></i>&nbsp;<a href="{{url('/home')}}">Home</a> / <span>Biaya dan Beban</span> / <span class="text-primary" style="font-weight: bold;">Upah Borongan</span>
+	    	<i class="fa fa-home"></i>&nbsp;<a href="{{url('/home')}}">Home</a> 
+	    	/ <span>Biaya dan Beban</span> 
+	    	/ <span class="text-primary font-weight-bold">Upah Borongan</span>
 	     </p>
 	</div>
 

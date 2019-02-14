@@ -45,7 +45,7 @@
 
                                     <div class="col-md-6 col-sm-6 col-12">
                                       <div class="form-group">
-                                        <input type="number" class="form-control form-control-sm" id="nama_upah" name="nama_upah">
+                                        <input type="text" class="form-control form-control-sm" id="nama_upah" name="nama_upah">
                                       </div>
                                     </div>
 
@@ -156,6 +156,11 @@
                             </div>
 
                         </section>
+                    </div>
+
+                    <div class="card-footer text-right">
+                      <button class="btn btn-primary" type="button">Simpan</button>
+                      <a href="{{route('upahborongan')}}" class="btn btn-secondary">Kembali</a>
                     </div>
                 </div>
 
