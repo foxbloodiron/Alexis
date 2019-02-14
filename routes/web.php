@@ -152,11 +152,14 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/biayadanbeban/upahharian/upahharian', 'BiayaController@upahharian')->name('upahharian');
 
 	// Dana Sosial
-	Route::get('/danasosial/kampung/kampung', 'DanaController@kampung');
-	Route::get('/danasosial/koramil/koramil', 'DanaController@koramil');
-	Route::get('/danasosial/masjid/masjid', 'DanaController@masjid');
-	Route::get('/danasosial/polsek/polsek', 'DanaController@polsek');
-	Route::get('/danasosial/sumbangan/sumbangan', 'DanaController@sumbangan');
+	
+	Route::get('/danasosial/index', 'DanaController@danasosial')->name('danasosial');
+
+	// Route::get('/danasosial/kampung/kampung', 'DanaController@kampung');
+	// Route::get('/danasosial/koramil/koramil', 'DanaController@koramil');
+	// Route::get('/danasosial/masjid/masjid', 'DanaController@masjid');
+	// Route::get('/danasosial/polsek/polsek', 'DanaController@polsek');
+	// Route::get('/danasosial/sumbangan/sumbangan', 'DanaController@sumbangan');
 
 	// Aset
 	Route::get('/aset/pengadaan/pengadaan', 'AsetController@pengadaan');	

@@ -382,29 +382,10 @@
                         
                     </ul>
                 </li>
-                <li class="{{Request::is('danasosial/*') ? 'active open' : ''}}">
-                    <a href="#">
+                <li class="{{Request::is('danasosial/*') ? 'active' : ''}}">
+                    <a href="{{route('danasosial')}}">
                         <i class="fa fa-users"></i><span class="menu-title"> Dana Sosial</span>
-                        <i class="fa arrow"></i>
                     </a>
-                    <ul class="sidebar-nav">
-                        <li class="{{Request::is('danasosial/polsek/*') ? 'active' : ''}}">
-                            <a href="{{url('danasosial/polsek/polsek')}}"> Polsek</a>
-                        </li>
-                        <li class="{{Request::is('danasosial/koramil/*') ? 'active' : ''}}">
-                            <a href="{{url('danasosial/koramil/koramil')}}"> Koramil</a>
-                        </li>
-                        <li class="{{Request::is('danasosial/kampung/*') ? 'active' : ''}}">
-                            <a href="{{url('danasosial/kampung/kampung')}}"> Kampung</a>
-                        </li>
-                        <li class="{{Request::is('danasosial/masjid/*') ? 'active' : ''}}">
-                            <a href="{{url('danasosial/masjid/masjid')}}"> Masjid</a>
-                        </li>
-                        <li class="{{Request::is('danasosial/sumbangan/*') ? 'active' : ''}}">
-                            <a href="{{url('danasosial/sumbangan/sumbangan')}}"> Sumbangan</a>
-                        </li>
-                        
-                    </ul>
                 </li>
                 <li class="{{Request::is('aset/*') ? 'active open' : ''}}">
                     <a href="#">
