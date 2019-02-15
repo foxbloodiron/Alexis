@@ -17,7 +17,7 @@
                 <th>Barang</th>
                 <th width="1%">Qty</th>
                 <th>Harga</th>
-                <th>Disc Persen</th>
+                <th width="1%">Disc Persen</th>
                 <th>Disc Nilai</th>
                 <th>Disc Total</th>
                 <th>Total Pembelian</th>
@@ -28,17 +28,25 @@
                 <td>Paving 8T</td>
                 <td>200</td>                
                 <td>
-                  <div class="pull-left">Rp. </div><div class="pull-right">10.000,00</div>
+                  <div class="w-100" style="height: 20px;">
+                    <div class="pull-left">Rp. </div><div class="pull-right">10.000,00</div>
+                  </div>
                 </td>
                 <td>25%</td>
                 <td>
-                  <div class="pull-left">Rp. </div><div class="pull-right">0,00</div>
+                  <div class="w-100" style="height: 20px;">
+                    <div class="pull-left">Rp. </div><div class="pull-right">0,00</div>
+                  </div>
                 </td>
                 <td>
-                  <div class="pull-left">Rp. </div><div class="pull-right">7.500,00</div>
+                  <div class="w-100" style="height: 20px;">
+                    <div class="pull-left">Rp. </div><div class="pull-right">7.500,00</div>
+                  </div>
                 </td>
                 <td>
-                  <div class="pull-left">Rp. </div><div class="pull-right">1.000.000,00</div>
+                  <div class="w-100" style="height: 20px;">
+                    <div class="pull-left">Rp. </div><div class="pull-right">1.000.000,00</div>
+                  </div>
                 </td>
               </tr>
             </tbody>

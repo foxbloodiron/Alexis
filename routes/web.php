@@ -12,12 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    return redirect('home');
 });
 
 Auth::routes();
 
-Route::group(['middleware' => 'guest'], function(){
+Route::group(['middleware' => 'auth'], function(){
 
 	Route::get('/home', 'HomeController@index')->name('home');
 
@@ -150,6 +150,9 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/biayadanbeban/upahborongan/tambah_upahborongan', 'BiayaController@tambah_upahborongan')->name('tambah_upahborongan');
 	Route::get('/biayadanbeban/upahbulanan/upahbulanan', 'BiayaController@upahbulanan')->name('upahbulanan');
 	Route::get('/biayadanbeban/upahharian/upahharian', 'BiayaController@upahharian')->name('upahharian');
+	Route::get('/biayadanbeban/pengeluarankecil/index', 'BiayaController@pengeluarankecil')->name('pengeluarankecil');
+	Route::get('/biayadanbeban/pengeluarankecil/create', 'BiayaController@tambah_pengeluarankecil')->name('tambah_pengeluarankecil');
+
 
 	// Dana Sosial
 

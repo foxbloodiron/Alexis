@@ -90,6 +90,11 @@
 		$('#btn-tambah-barang').click(function(){
 			datatable_append();
 		});
+
+		$('#table_opname tbody').on('click', '.btn-delete', function(){
+			tablle.row($(this).parents('tr')).remove().draw();
+
+		});
 	});	
 </script>
 @endsection

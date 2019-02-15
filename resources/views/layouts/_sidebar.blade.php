@@ -361,7 +361,7 @@
                         <li class="{{Request::is('biayadanbeban/sewalahan/*') ? 'active' : ''}}">
                             <a href="{{url('biayadanbeban/sewalahan/sewalahan')}}"> Sewa Lahan</a>
                         </li>
-                        <li class="{{Request::is('biayadanbeban/biayaoperasional/*') ? 'active' : ''}}">
+                       {{--  <li class="{{Request::is('biayadanbeban/biayaoperasional/*') ? 'active' : ''}}">
                             <a href="{{url('biayadanbeban/biayaoperasional/biayaoperasional')}}"> Biaya Operasional</a>
                         </li>
                         <li class="{{Request::is('biayadanbeban/biayabahanbakar/*') ? 'active' : ''}}">
@@ -375,6 +375,9 @@
                         </li>
                         <li class="{{Request::is('biayadanbeban/alattuliskantor/*') ? 'active' : ''}}">
                             <a href="{{url('biayadanbeban/alattuliskantor/alattuliskantor')}}"> Alat Tulis Kantor</a>
+                        </li> --}}
+                        <li class="{{Request::is('biayadanbeban/pengeluarankecil/*') ? 'active' : ''}}">
+                            <a href="{{route('pengeluarankecil')}}">Biaya Pengeluaran Kecil</a>
                         </li>
                         <li class="{{Request::is('biayadanbeban/maintenance/*') ? 'active' : ''}}">
                             <a href="{{url('biayadanbeban/maintenance/maintenance')}}"> Maintenance</a>
@@ -382,11 +385,11 @@
                         
                     </ul>
                 </li>
-                <li class="{{Request::is('danasosial/*') ? 'active' : ''}}">
+{{--                 <li class="{{Request::is('danasosial/*') ? 'active' : ''}}">
                     <a href="{{route('danasosial')}}">
                         <i class="fa fa-users"></i><span class="menu-title"> Dana Sosial</span>
                     </a>
-                </li>
+                </li> --}}
                 <li class="{{Request::is('aset/*') ? 'active open' : ''}}">
                     <a href="#">
                         <i class="fa fa-line-chart"></i><span class="menu-title"> Aset</span>
