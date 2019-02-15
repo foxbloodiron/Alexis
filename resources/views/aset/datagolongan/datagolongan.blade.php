@@ -34,7 +34,7 @@
                         <section>
                         	
                         	<div class="table-responsive">
-	                            <table class="table data-table table-hover" cellspacing="0">
+	                            <table class="table table-striped table-bordered table-hover" id="table_datagolongan" cellspacing="0">
 	                                <thead class="bg-primary">
 	                                    <tr>
 							                <th>No</th>
@@ -61,4 +61,11 @@
 
 </article>
 
+@endsection
+@section('extra_script')
+<script type="text/javascript">
+	$(document).ready(function(){
+		var uvuvwevwevwe_onyetenyevwe_ugwemuhwem_osas = $('#table_datagolongan').DataTable();
+	});
+</script>
 @endsection

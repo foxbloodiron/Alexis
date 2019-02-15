@@ -168,6 +168,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/aset/datagolongan/index', 'AsetController@datagolongan')->name('datagolongan');	
 	Route::get('/aset/datagolongan/create', 'AsetController@tambah_datagolongan')->name('tambah_datagolongan');	
 	Route::get('/aset/dataaset/index', 'AsetController@dataaset')->name('dataaset');	
+	Route::get('/aset/dataaset/create', 'AsetController@tambah_dataaset')->name('tambah_dataaset');	
 
 	// Keuangan
 	Route::get('/keuangan/a_3bottomline/a_3bottomline', 'KeuanganController@a_3bottomline');

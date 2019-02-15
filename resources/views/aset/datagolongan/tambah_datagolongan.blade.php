@@ -95,15 +95,84 @@
                           </div>
                         </div>
 
-                        <hr>
+                        <div class="col-12">
+                          <hr>
+                        </div>
                         
+                        <div class="col-md-6 col-sm-12">
+                          <label>Akun Harta <label class="text-danger">*</label></label>
+                        </div>
+
+                        <div class="col-md-6 col-sm-12">
+                          <div class="form-group">
+                            <select class="form-control form-control-sm">
+                              <option value="" selected="" disabled="">--Pilih--</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-12">
+                          <label>Akun Akm. Penyusutan <label class="text-danger">*</label></label>
+                        </div>
+
+                        <div class="col-md-6 col-sm-12">
+                          <div class="form-group">
+                            <select class="form-control form-control-sm">
+                              <option value="" selected="" disabled="">--Pilih--</option>
+                            </select>
+                          </div>
+                        </div>
+
+
+                        <div class="col-md-6 col-sm-12">
+                          <label>Akun Beban Penyusutan <label class="text-danger">*</label></label>
+                        </div>
+
+                        <div class="col-md-6 col-sm-12">
+                          <div class="form-group">
+                            <select class="form-control form-control-sm">
+                              <option value="" selected="" disabled="">--Pilih--</option>
+                            </select>
+                          </div>
+                        </div>
+
 
                       </div>
 
                     </div>
 
                     <div class="col-md-6 col-sm-12">
-                      
+                      <h6 class="font-weight-bold">Detail Terkait Golongan yang dipilih</h6>
+                      <table class="table table-bordered">
+                        <thead>
+                          
+                          <tr align="center">
+                            <th>Metode</th>
+                            <th>Masa Manfaat</th>
+                            <th>Persentase Penyusutan</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr align="center">
+                            <td>Garis Lurus</td>
+                            <td>4 Tahun</td>
+                            <td>25%</td>
+                          </tr>
+                          <tr align="center">
+                            <td>Saldo Menurun</td>
+                            <td>4 Tahun</td>
+                            <td>50%</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <ul>
+                        <li>
+                          <small class="font-weight-bold">Dua Metode Diatas Akan Anda Pilih Saat Membuat Aset Baru.</small>
+                        </li>
+                        <li>
+                          <small class="font-weight-bold">Penentuan Nilai Masa Manfaat Dan Persentase Penyusutan, Sesuai Dengan <a href="https://www.google.co.id/search?q=psak+no+17&amp;oq=&amp;sourceid=chrome&amp;ie=UTF-8" target="_blank">PSAK Nomor 17.</a></small>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </section>

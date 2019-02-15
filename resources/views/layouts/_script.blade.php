@@ -165,6 +165,11 @@ $.ajaxSetup({
         prefix:"Rp. "
     });
 
+    $('.input-number').maskMoney({
+        thousands:".",
+        decimal:","
+    });
+
     // setTimeout(function(){
     //   $('.select2-container').css('width','unset');
 
