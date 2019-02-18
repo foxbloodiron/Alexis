@@ -46,7 +46,7 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/master/datapegawai/datapegawai', 'MasterController@datapegawai')->name('datapegawai');
 	Route::get('/master/datapegawai/tambah_datapegawai', 'MasterController@tambah_datapegawai')->name('tambah_datapegawai');
 	Route::get('/master/datapegawai/edit_datapegawai', 'MasterController@edit_datapegawai')->name('edit_datapegawai');
-	
+
 
 	Route::get('/master/datasatuan/datasatuan', 'MasterController@datasatuan')->name('datasatuan');
 	Route::get('/master/datasatuan/tambah_datasatuan', 'MasterController@tambah_datasatuan')->name('tambah_datasatuan');
@@ -152,7 +152,7 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/biayadanbeban/upahharian/upahharian', 'BiayaController@upahharian')->name('upahharian');
 
 	// Dana Sosial
-	
+
 	Route::get('/danasosial/index', 'DanaController@danasosial')->name('danasosial');
 
 	// Route::get('/danasosial/kampung/kampung', 'DanaController@kampung');
@@ -162,8 +162,8 @@ Route::group(['middleware' => 'guest'], function(){
 	// Route::get('/danasosial/sumbangan/sumbangan', 'DanaController@sumbangan');
 
 	// Aset
-	Route::get('/aset/pengadaan/pengadaan', 'AsetController@pengadaan');	
-	Route::get('/aset/penyusutan/penyusutan', 'AsetController@penyusutan');	
+	Route::get('/aset/pengadaan/pengadaan', 'AsetController@pengadaan');
+	Route::get('/aset/penyusutan/penyusutan', 'AsetController@penyusutan');
 
 	// Keuangan
 	Route::get('/keuangan/a_3bottomline/a_3bottomline', 'KeuanganController@a_3bottomline');
