@@ -151,10 +151,12 @@ $.ajaxSetup({
     //     }
     // });
 
-    $('.select2').select2({
-        theme:"bootstrap",
-        dropdownAutoWidth: true
-    });
+    $.fn.select2.defaults.set( "theme", "bootstrap" );
+    $.fn.select2.defaults.set( 'dropdownAutoWidth', true );
+    $.fn.select2.defaults.set( 'width', 'resolve' );
+
+    $('.select2').select2();
+    
     $('.select2').on('select2:close', function(){
       $(this).focus();
     });
@@ -174,6 +176,12 @@ $.ajaxSetup({
       $('.select2-container').css('width','unset');
 
     },1000);
+
+    $('.select2').on('select2:opening', function(){
+
+      $('.select2-container').css('width','unset');
+
+    });
 
     $('.input-jam').inputmask({"regex":"^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"});
 
