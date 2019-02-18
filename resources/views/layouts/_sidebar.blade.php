@@ -361,7 +361,7 @@
                         <li class="{{Request::is('biayadanbeban/sewalahan/*') ? 'active' : ''}}">
                             <a href="{{url('biayadanbeban/sewalahan/sewalahan')}}"> Sewa Lahan</a>
                         </li>
-                        <li class="{{Request::is('biayadanbeban/biayaoperasional/*') ? 'active' : ''}}">
+                       {{--  <li class="{{Request::is('biayadanbeban/biayaoperasional/*') ? 'active' : ''}}">
                             <a href="{{url('biayadanbeban/biayaoperasional/biayaoperasional')}}"> Biaya Operasional</a>
                         </li>
                         <li class="{{Request::is('biayadanbeban/biayabahanbakar/*') ? 'active' : ''}}">
@@ -375,6 +375,9 @@
                         </li>
                         <li class="{{Request::is('biayadanbeban/alattuliskantor/*') ? 'active' : ''}}">
                             <a href="{{url('biayadanbeban/alattuliskantor/alattuliskantor')}}"> Alat Tulis Kantor</a>
+                        </li> --}}
+                        <li class="{{Request::is('biayadanbeban/pengeluarankecil/*') ? 'active' : ''}}">
+                            <a href="{{route('pengeluarankecil')}}">Biaya Pengeluaran Kecil</a>
                         </li>
                         <li class="{{Request::is('biayadanbeban/maintenance/*') ? 'active' : ''}}">
                             <a href="{{url('biayadanbeban/maintenance/maintenance')}}"> Maintenance</a>
@@ -382,22 +385,22 @@
                         
                     </ul>
                 </li>
-                <li class="{{Request::is('danasosial/*') ? 'active' : ''}}">
+{{--                 <li class="{{Request::is('danasosial/*') ? 'active' : ''}}">
                     <a href="{{route('danasosial')}}">
                         <i class="fa fa-users"></i><span class="menu-title"> Dana Sosial</span>
                     </a>
-                </li>
+                </li> --}}
                 <li class="{{Request::is('aset/*') ? 'active open' : ''}}">
                     <a href="#">
                         <i class="fa fa-line-chart"></i><span class="menu-title"> Aset</span>
                         <i class="fa arrow"></i>
                     </a>
                     <ul class="sidebar-nav">
-                        <li class="{{Request::is('aset/pengadaan/*') ? 'active' : ''}}">
-                            <a href="{{url('aset/pengadaan/pengadaan')}}"> Pengadaan</a>
+                        <li class="{{Request::is('aset/datagolongan/*') ? 'active' : ''}}">
+                            <a href="{{route('datagolongan')}}"> Data Golongan Aset</a>
                         </li>
-                        <li class="{{Request::is('aset/penyusutan/*') ? 'active' : ''}}">
-                            <a href="{{url('aset/penyusutan/penyusutan')}}"> Penyusutan</a>
+                        <li class="{{Request::is('aset/dataaset/*') ? 'active' : ''}}">
+                            <a href="{{route('dataaset')}}"> Data Aset</a>
                         </li>
                         
                     </ul>
@@ -460,16 +463,16 @@
                     </a>
                     <ul class="sidebar-nav">
                         <li class="{{Request::is('system/manajemenuser/*') ? 'active' : ''}}">
-                            <a href="{{url('system/manajemenuser/manajemenuser')}}"> Manajemen User</a>
+                            <a href="{{route('manajemenuser')}}"> Manajemen User</a>
                         </li>
                         <li class="{{Request::is('system/manajemenhakakses/*') ? 'active' : ''}}">
-                            <a href="{{url('system/manajemenhakakses/manajemenhakakses')}}"> Manajemen Hak Akses</a>
+                            <a href="{{route('manajemenhakakses')}}"> Manajemen Hak Akses</a>
                         </li>
                         <li class="{{Request::is('system/profilperusahaan/*') ? 'active' : ''}}">
-                            <a href="{{url('system/profilperusahaan/profilperusahaan')}}"> Profil Perusahaan</a>
+                            <a href="{{route('profilperusahaan')}}"> Profil Perusahaan</a>
                         </li>
                         <li class="{{Request::is('system/tahunfinansial/*') ? 'active' : ''}}">
-                            <a href="{{url('system/tahunfinansial/tahunfinansial')}}"> Tahun Financial</a>
+                            <a href="{{route('tahunfinansial')}}"> Tahun Financial</a>
                         </li>
                         
                     </ul>

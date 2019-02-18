@@ -3,6 +3,7 @@
 @section('content')
 
 @include('penjualan.penjualanorder.modal_cust')
+@include('penjualan.penjualanorder.modal_pembayaran')
 
 <article class="content">
 
@@ -17,12 +18,15 @@
 
 	<section class="section">
 
-     	   <ul class="nav nav-pills">
+ 	   	<ul class="nav nav-pills">
             <li class="nav-item">
                 <a href="" class="nav-link active" data-target="#pos" aria-controls="pos" data-toggle="tab" role="tab">Penjualan Dengan Order</a>
             </li>
             <li class="nav-item">
                 <a href="" class="nav-link" data-target="#list_pos" aria-controls="list_pos" data-toggle="tab" role="tab">List Penjualan</a>
+            </li>
+            <li class="nav-item">
+            	<a href="" class="nav-link" data-target="#tab_pembayaran" data-toggle="tab" role="tab">Pembayaran</a>
             </li>
         </ul>
 
@@ -34,6 +38,7 @@
 
 					@include('penjualan.penjualanorder.tab_formpenjualan')
 					@include('penjualan.penjualanorder.tab_list')
+					@include('penjualan.penjualanorder.tab_pembayaran')
 
 				</div>
 
@@ -49,6 +54,7 @@
 @section('extra_script')
 <script type="text/javascript">
 	var table = $('#table_penjualan').DataTable();
+	var table2 	= $('#table_pembayaran').DataTable();
 	var counter = 0;
 	function table_tambah(){
 		table.row.add([

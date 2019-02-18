@@ -1,8 +1,22 @@
 @extends('main')
 
+@section('extra_style')
+<style type="text/css">
+  #btn-bayar{
+    margin-right: 30px;
+  }
+  @media (max-width: 400px){
+    #btn-bayar{
+      margin-right: unset;
+    }
+  }
+</style>
+@endsection
+
 @section('content')
 
 @include('penjualan.penjualantanpaorder.modal_cust')
+@include('penjualan.penjualantanpaorder.modal_bayar')
 
 <article class="content">
 
@@ -148,7 +162,7 @@
                         </section>
                     </div>
                     <div class="card-footer text-right">
-
+                      <button class="btn btn-info" type="button" data-target="#modal_bayar" data-toggle="modal" id="btn-bayar">Bayar</button>
                       <button class="btn btn-primary" type="button" id="btn-simpan-pacar"{{--buat istri ketiga--}}>Simpan</button>
                       <a class="btn btn-secondary" href="{{route('penjualantanpaorder')}}">Kembali</a>
                       
@@ -175,6 +189,13 @@
     $('#barang').on('select2:close',function(){
 
       $(this).focus();
+
+    });
+
+    $('#barang').on('select2:select',function(e){
+      // var cupu = e.params.data;
+      // console.log(cupu);
+      $('#qty').focus();
 
     });
 

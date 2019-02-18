@@ -243,7 +243,7 @@ h6
 .sidebar-header .input-container #filterInput {
     background: transparent;
     border: unset;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 2px solid lightgray;
     color: white;
     font-family: 'Chakra Petch', sans-serif;
     width: 80%;
@@ -254,11 +254,11 @@ h6
 }
 .sidebar-header .input-container .underline,
 .sidebar-header .input-container .underline{
-	height: 1px;
+	height: 2px;
 	background: yellow;
     width: 0;
     transition: 1s ease;
-    margin-top: -1px;
+    margin-top: -2px;
     margin-left: 39px;
 }
 
@@ -454,3 +454,11 @@ h6
 .footer .author ul > li{
 	display: inline-block;
 }
+label:has(+ .checkbox) > span{
+	cursor: pointer;
+}
+@media (min-width: 992px)
+.modal-lg {
+    max-width: 1000px;
+}
+

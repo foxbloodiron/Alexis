@@ -50,4 +50,12 @@ class BiayaController extends Controller
     {
     	return view('biayadanbeban/upahharian/upahharian');
     }
+    public function pengeluarankecil()
+    {
+        return view('biayadanbeban/pengeluarankecil/pengeluarankecil');
+    }
+    public function tambah_pengeluarankecil()
+    {
+        return view('biayadanbeban/pengeluarankecil/tambah_pengeluarankecil');
+    }    
 }
