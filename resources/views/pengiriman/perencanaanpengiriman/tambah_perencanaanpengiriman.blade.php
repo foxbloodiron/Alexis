@@ -83,11 +83,11 @@
                       <thead class="bg-primary">
                         <tr>
                           <th>Barang</th>
-                          <th>Satuan</th>
-                          <th>Qty</th>
-                          <th width="15%">Pemilik Kendaraan</th>
+                          <th width="1%">Satuan</th>
+                          <th width="1%">Qty</th>
+                          <th width="10%">Pemilik Kendaraan</th>
                           <th width="15%">Nama Pemilik</th>
-                          <th>Nopol</th>
+                          <th width="15%">Nopol</th>
                           <th>Sopir</th>
                           <th width="20%">Ongkos Kirim per Jumlah Barang</th>
 
