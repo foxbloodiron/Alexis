@@ -1035,4 +1035,47 @@ body[class*=jconfirm-no-scroll-] {
   -webkit-transform: scale(1);
           transform: scale(1);
 }
-
+/*======================================= Custom Theme Ari =======================================*/
+.jconfirm.jconfirm-modular-admin .jconfirm-bg {
+  background-color: darkslategray;
+  opacity: .4;
+}
+.jconfirm.jconfirm-modular-admin .jconfirm-box {
+  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  background: #3a4651;
+  border-radius: 5px;
+  color: white;
+}
+.jconfirm.jconfirm-modular-admin .jconfirm-box .jconfirm-title-c .jconfirm-icon-c {
+  margin-right: 8px;
+  margin-left: 0px;
+}
+.jconfirm.jconfirm-modular-admin .jconfirm-box .jconfirm-buttons {
+  float: right;
+}
+.jconfirm.jconfirm-modular-admin .jconfirm-box .jconfirm-buttons button {
+  border: none;
+  background-image: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  text-shadow: none;
+  -webkit-transition: background .1s;
+  transition: background .1s;
+  color: white;
+}
+.jconfirm.jconfirm-modular-admin .jconfirm-box .jconfirm-buttons button.btn-default {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #fff;
+  background: none;
+}
+.jconfirm.jconfirm-modular-admin .jconfirm-box .jconfirm-buttons button.btn-default:hover {
+  background: #3a4651;
+}
+.jconfirm.jconfirm-modular-admin.jconfirm-rtl .jconfirm-title-c .jconfirm-icon-c {
+  margin-left: 8px;
+  margin-right: 0px;
+}
+/*===================================== End Custom Theme Ari =====================================*/

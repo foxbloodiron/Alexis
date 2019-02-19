@@ -46,8 +46,24 @@ class KeuanganController extends Controller
     {
     	return view('keuangan/laporankeuangan/laporankeuangan');
     }
-    public function prosesinputtransaksi()
+    public function inputtransaksikas()
     {
-    	return view('keuangan/prosesinputtransaksi/prosesinputtransaksi');
+    	return view('keuangan/prosesinputtransaksi/inputtransaksikas');
+    }
+    public function inputtransaksibank()
+    {
+        return view('keuangan/prosesinputtransaksi/inputtransaksibank');
+    }
+    public function inputtransaksimemorial()
+    {
+        return view('keuangan/prosesinputtransaksi/inputtransaksimemorial');
+    }        
+    public function pilih_prosesinputtransaksi()
+    {
+        return view('keuangan/prosesinputtransaksi/pilih_prosesinputtransaksi');
+    }    
+    public function analisa()
+    {
+        return view('keuangan/analisa/analisa');
     }
 }

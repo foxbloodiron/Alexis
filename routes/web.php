@@ -177,19 +177,25 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/aset/datagolongan/index', 'AsetController@datagolongan')->name('datagolongan');	
 	Route::get('/aset/datagolongan/create', 'AsetController@tambah_datagolongan')->name('tambah_datagolongan');	
 	Route::get('/aset/dataaset/index', 'AsetController@dataaset')->name('dataaset');	
+	Route::get('/aset/dataaset/create', 'AsetController@tambah_dataaset')->name('tambah_dataaset');	
 
 	// Keuangan
-	Route::get('/keuangan/a_3bottomline/a_3bottomline', 'KeuanganController@a_3bottomline');
-	Route::get('/keuangan/a_cashflow/a_cashflow', 'KeuanganController@a_cashflow');
-	Route::get('/keuangan/a_commonsize/a_commonsize', 'KeuanganController@a_commonsize');
-	Route::get('/keuangan/a_net/a_net', 'KeuanganController@a_net');
-	Route::get('/keuangan/a_pertumbuhanaset/a_pertumbuhanaset', 'KeuanganController@a_pertumbuhanaset');
-	Route::get('/keuangan/a_progress/a_progress', 'KeuanganController@a_progress');
-	Route::get('/keuangan/a_rasiokeuangan/a_rasiokeuangan', 'KeuanganController@a_rasiokeuangan');
-	Route::get('/keuangan/a_roe/a_roe', 'KeuanganController@a_roe');
+	// Route::get('/keuangan/a_3bottomline/a_3bottomline', 'KeuanganController@a_3bottomline');
+	// Route::get('/keuangan/a_cashflow/a_cashflow', 'KeuanganController@a_cashflow');
+	// Route::get('/keuangan/a_commonsize/a_commonsize', 'KeuanganController@a_commonsize');
+	// Route::get('/keuangan/a_net/a_net', 'KeuanganController@a_net');
+	// Route::get('/keuangan/a_pertumbuhanaset/a_pertumbuhanaset', 'KeuanganController@a_pertumbuhanaset');
+	// Route::get('/keuangan/a_progress/a_progress', 'KeuanganController@a_progress');
+	// Route::get('/keuangan/a_rasiokeuangan/a_rasiokeuangan', 'KeuanganController@a_rasiokeuangan');
+	// Route::get('/keuangan/a_roe/a_roe', 'KeuanganController@a_roe');
 	Route::get('/keuangan/laporaninputtransaksi/laporaninputtransaksi', 'KeuanganController@laporaninputtransaksi');
-	Route::get('/keuangan/laporankeuangan/laporankeuangan', 'KeuanganController@laporankeuangan');
-	Route::get('/keuangan/prosesinputtransaksi/prosesinputtransaksi', 'KeuanganController@prosesinputtransaksi');
+	Route::get('/keuangan/laporankeuangan/select', 'KeuanganController@laporankeuangan')->name('laporankeuangan');
+	Route::get('/keuangan/prosesinputtransaksi/select', 'KeuanganController@pilih_prosesinputtransaksi')->name('pilih_prosesinputtransaksi');
+	Route::get('/keuangan/prosesinputtransaksi/inputransaksikas/create', 'KeuanganController@inputtransaksikas')->name('inputtransaksikas');
+	Route::get('/keuangan/prosesinputtransaksi/inputransaksibank/create', 'KeuanganController@inputtransaksibank')->name('inputtransaksibank');
+	Route::get('/keuangan/prosesinputtransaksi/inputransaksimemorial/create', 'KeuanganController@inputtransaksimemorial')->name('inputtransaksimemorial');
+	Route::get('/keuangan/analisa/select', 'KeuanganController@analisa')->name('analisa');
+
 
 	// Suplier
 	// Route::get('/suplier/barangsuplier/barangsuplier', 'SuplierController@barangsuplier')->name('barangsuplier');

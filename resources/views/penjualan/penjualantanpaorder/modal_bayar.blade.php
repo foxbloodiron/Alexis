@@ -12,7 +12,6 @@
         
         <div class="row">
 
-
           <div class="col-md-3 col-sm-4 col-12">
             <label>Total Amount</label>
           </div>
@@ -23,6 +22,15 @@
             </div>
           </div>
 
+          <div class="col-md-3 col-sm-4 col-12">
+            <label>Tanggal Bayar</label>
+          </div>
+
+          <div class="col-md-9 col-sm-8 col-12">
+            <div class="form-group">
+              <input type="text" class="form-control form-control-sm datepicker" value="{{date('d-m-Y')}}" name="">
+            </div>
+          </div>
 
           <div class="col-md-3 col-sm-4 col-12">
             <label>Tipe Pembayaran</label>
@@ -59,6 +67,16 @@
             </div>
           </div>
 
+
+          <div class="col-md-3 col-sm-4 col-12">
+            <label>Keterangan</label>
+          </div>
+
+          <div class="col-md-9 col-sm-8 col-12">
+            <div class="form-group">
+              <textarea class="form-control" name=""></textarea>
+            </div>
+          </div>
 
         </div>
 
