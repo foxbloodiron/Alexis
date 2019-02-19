@@ -31,9 +31,14 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('/master/databarang/disabled', 'MasterBarangController@disabled');
 
 
-	Route::get('/master/datasuplier/index', 'MasterController@datasuplier')->name('datasuplier');
-	Route::get('/master/datasuplier/create', 'MasterController@tambah_datasuplier')->name('tambah_datasuplier');
-	Route::get('/master/datasuplier/edit', 'MasterController@edit_datasuplier')->name('edit_datasuplier');
+	Route::get('/master/datasuplier/index', 'MasterSupplierController@datasuplier')->name('datasuplier');
+	Route::get('/master/datasuplier/create', 'MasterSupplierController@tambah_datasuplier')->name('tambah_datasuplier');
+	Route::get('/master/datasuplier/edit/{id}', 'MasterSupplierController@edit_datasuplier')->name('edit_datasuplier');
+	Route::post('/master/datasuplier/save', 'MasterSupplierController@save_datasupplier')->name('edit_datasuplier');
+	Route::get('/master/datasuplier/disabled', 'MasterSupplierController@disabled');
+	Route::post('/master/datasuplier/update', 'MasterSupplierController@update');
+
+
 	Route::get('/master/dataarmada/index', 'MasterController@dataarmada')->name('dataarmada');
 	Route::get('/master/dataarmada/create', 'MasterController@tambah_dataarmada_own')->name('tambah_dataarmada_own');
 	Route::get('/master/dataarmada/suplier/create', 'MasterController@tambah_dataarmada')->name('tambah_dataarmada');

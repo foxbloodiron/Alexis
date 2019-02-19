@@ -37,6 +37,8 @@ class MasterController extends Controller
     {
         return view('master/datasuplier/edit_datasuplier');
     }
+
+    
     public function datacustomer()
     {
     	return view('master/datacustomer/datacustomer');

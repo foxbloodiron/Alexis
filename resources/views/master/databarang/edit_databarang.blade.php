@@ -56,25 +56,39 @@
                                   <option value="" disabled="">--Pilih Type Barang--</option>
                                   @if($barang->i_type = 'BB')
                                     <option value="BB" selected="">Bahan Baku</option>
+                                      <option value="BP">Bahan Produksi</option>
                                     <option value="SP">Spare Part</option>
                                     <option value="BJ">Barang Jual</option>
                                     <option value="LL">Lain-lain</option>
                                   @elseif($barang->i_type = 'SP')
                                     <option value="BB">Bahan Baku</option>
+                                      <option value="BP">Bahan Produksi</option>
                                     <option value="SP" selected="">Spare Part</option>
                                     <option value="BJ">Barang Jual</option>
                                      <option value="LL">Lain-lain</option>
                                   @elseif($barang->i_type = 'BJ')
                                     <option value="BB">Bahan Baku</option>
+                                      <option value="BP">Bahan Produksi</option>
                                     <option value="SP">Spare Part</option>
                                     <option value="BJ" selected="">Barang Jual</option>
                                      <option value="LL">Lain-lain</option>
                                   @elseif($barang->i_type = 'LL')
                                        <option value="BB">Bahan Baku</option>
+                                         <option value="BP">Bahan Produksi</option>
                                     <option value="SP">Spare Part</option>
                                     <option value="BJ">Barang Jual</option>
                                      <option value="LL" selected="">Lain-lain</option>
+                                  @elseif($barang->i_type = 'BP')
+                                     <option value="BB">Bahan Baku</option>
+                                      <option value="BP" selected="">Bahan Produksi</option>
+                                    <option value="SP">Spare Part</option>
+                                    <option value="BJ">Barang Jual</option>
+                                     <option value="LL">Lain-lain</option>
+
+
                                   @endif
+
+
                                 </select>
                               </div>
                             </div>
@@ -87,12 +101,9 @@
                               <div class="form-group">
                                 <select class="form-control form-control-sm" name="kelompok_barang" required="">
                                   <option value="" selected="" disabled="">--Pilih Kelompok Barang--</option>
-                                  @if($barang->i_code_group == 'BBP')
-                                    <option value="BBP" selected="">Bahan Baku Produksi</option>
-                                    <option value="BSJ">Barang Setengah Jadi</option>
-                                    <option value="BJD">Barang Jadi</option>
-                                  @elseif($barang->i_code_group == 'BSJ'))
-                                   <option value="BBP">Bahan Baku Produksi</option>
+                             
+                                  @if($barang->i_code_group == 'BSJ'))
+                                  
                                     <option value="BSJ" selected="">Barang Setengah Jadi</option>
                                     <option value="BJD">Barang Jadi</option>
                                   @elseif($barang->i_code_group == 'BJD'))
