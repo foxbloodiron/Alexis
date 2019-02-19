@@ -243,7 +243,7 @@ h6
 .sidebar-header .input-container #filterInput {
     background: transparent;
     border: unset;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 2px solid lightgray;
     color: white;
     font-family: 'Chakra Petch', sans-serif;
     width: 80%;
@@ -254,11 +254,11 @@ h6
 }
 .sidebar-header .input-container .underline,
 .sidebar-header .input-container .underline{
-	height: 1px;
+	height: 2px;
 	background: yellow;
     width: 0;
     transition: 1s ease;
-    margin-top: -1px;
+    margin-top: -2px;
     margin-left: 39px;
 }
 
@@ -299,15 +299,15 @@ h6
 }
 .form-control-nb:focus {
     box-shadow: unset;
-    border-bottom: 3px solid #abaaaa;
+    border-bottom: 2px solid #C9C9C9;
     background: transparent;
     transition: .2s;
-    padding: .375rem 1rem;
+    /*padding: .375rem 1rem;*/
 }
 .form-control-nb {
     border: unset;
     background: transparent;
-    border-bottom: 1.4px solid grey;
+    border-bottom: 1.4px solid #E2E2E2;
     border-radius: unset;
 }
 .form-control-nb[readonly] {
@@ -453,4 +453,111 @@ h6
 }
 .footer .author ul > li{
 	display: inline-block;
+}
+label:has(+ .checkbox) > span{
+	cursor: pointer;
+}
+@media (min-width: 992px)
+.modal-lg {
+    max-width: 1000px;
+}
+
+.text-none-underline{
+	text-decoration: none !important;
+}
+.keuangan-card{
+	vertical-align: middle;
+}
+.keuangan-card fieldset{
+	padding: 50px;
+}
+.text-blue{
+	color: #007bff !important;
+}
+a.text-blue:hover,a.text-blue:focus{
+	color: #0065D1 !important;
+}
+.text-indigo{
+	color: #6610f2 !important;
+}
+a.text-indigo:hover,a.text-indigo:focus{
+	color: #450AB2 !important;
+}
+.text-purple{
+	color: #6f42c1 !important;
+}
+a.text-purple:hover,a.text-purple:focus{
+	color: #472A7E !important;
+}
+.text-pink{
+	color: #e83e8c !important;
+}
+a.text-pink:hover,a.text-pink:focus{
+	color: #B51660 !important;
+}
+.text-red{
+	color: #dc3545 !important;
+}
+a.text-red:hover,a.text-red:focus{
+	color: #A91D2B !important;
+}
+.text-orange{
+	color: #fd7e14 !important;
+}
+a.text-orange:hover,a.text-orange:focus{
+	color: #D46002 !important;
+}
+.text-yellow{
+	color: #ffc107 !important;
+}
+a.text-yellow:hover,a.text-yellow:focus{
+	color: #C69500 !important;
+}
+.text-green{
+	color: #28a745 !important;
+}
+a.text-green:hover,a.text-green:focus{
+	color: #208737 !important;
+}
+.text-teal{
+	color: #20c997 !important;
+}
+a.text-teal:hover,a.text-teal:focus{
+	color: #1AA279 !important;
+}
+.text-cyan{
+	color: #17a2b8 !important;
+}
+a.text-cyan:hover,a.text-cyan:focus{
+	color: #138799 !important;
+}
+.text-white{
+	color: #fff !important;
+}
+a.text-white:hover,a.text-white:focus{
+	color: #DDD !important;
+}
+.text-gray{
+	color: #6c757d !important;
+}
+a.text-gray:hover,a.text-gray:focus{
+	color: #868F96 !important;
+}
+.text-dark-gray{
+	color: #343a40 !important;
+}
+a.text-dark-gray:hover,a.text-dark-gray:focus{
+	color: #4B545C !important;
+}
+.text-light{
+	color: #f8f9fa !important;
+}
+a.text-light:hover,a.text-light:focus{
+	color: #C9D1D8 !important;
+}
+.text-dark{
+	color: #343a40 !important;
+}
+a.text-dark:hover,a.text-dark:focus{
+	color: #4B545C !important;
 }

@@ -132,7 +132,7 @@ $.ajaxSetup({
     $('.input-daterange').datepicker({
         format:'dd-mm-yyyy',
         enableOnReadonly:false
-
+        
     });
     
     $('.datetimepicker').datetimepicker({
@@ -151,10 +151,12 @@ $.ajaxSetup({
     //     }
     // });
 
-    $('.select2').select2({
-        theme:"bootstrap",
-        dropdownAutoWidth: true
-    });
+    $.fn.select2.defaults.set( "theme", "bootstrap" );
+    $.fn.select2.defaults.set( 'dropdownAutoWidth', true );
+    $.fn.select2.defaults.set( 'width', 'resolve' );
+
+    $('.select2').select2();
+
     $('.select2').on('select2:close', function(){
       $(this).focus();
     });
@@ -165,10 +167,21 @@ $.ajaxSetup({
         prefix:"Rp. "
     });
 
+    $('.input-number').maskMoney({
+        thousands:".",
+        decimal:","
+    });
+
     setTimeout(function(){
       $('.select2-container').css('width','unset');
 
     },1000);
+
+    $('.select2').on('select2:opening', function(){
+
+      $('.select2-container').css('width','unset');
+
+    });
 
     $('.input-jam').inputmask({"regex":"^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"});
 
@@ -206,13 +219,35 @@ $.ajaxSetup({
         var random = Math.floor(Math.random() * coeg.length);
 
         // $.toast(coeg[random]);
+        
+        $('#btn-logout').confirm({
+            title:'Peringatan!',
+            theme:'modular-admin',
+            content: 'Apakah anda yakin mau logout?',
+            buttons: {
+              ya:{
+                text:'Ya',
+                btnClass:'btn-primary',
+                action: function(){
+                    $('#logout-form').submit();
+                }
+              },
+              tidak:{
+                text:'Tidak',
+                btnClass:'btn-default',
+                action:function(){
+                  //Nothing
+                }
+              }
+            }
+        });
     });
 </script>
 
 <script type="text/javascript">
     $(document).ready(function(){
-        // custom function .ignore()
-        $.fn.ignore = function(sel){
+        // custom function .ignoretag()
+        $.fn.ignoretag = function(sel){
           return this.clone().find(sel||">*").remove().end();
         };
         // end custom function
@@ -226,14 +261,14 @@ $.ajaxSetup({
 
         // $('#wid-id-0 .widget-body').html($('#sidebar ul > li').parents('li').text() + '<br>')
         $('#sidebar ul > li > a').each(function(){
-          $(this).prepend('<span class="d-none"> '+ $(this).parents('li').find('.menu-title').ignore('span').ignore('ul').text() +'</span>');
+          $(this).prepend('<span class="d-none"> '+ $(this).parents('li').find('.menu-title').ignoretag('span').ignoretag('ul').text() +'</span>');
         });
         $('#sidebar ul > li:has(ul) > a').each(function(){
-          $(this).prepend('<span class="d-none d-sm-none"> '+ $(this).parent('li').children().ignore('span').text() +'</span>');
+          $(this).prepend('<span class="d-none d-sm-none"> '+ $(this).parent('li').children().ignoretag('span').text() +'</span>');
         });
         $('#sidebar ul > li > ul > li > a').each(function(){
-          // $(this).prepend('<span class="d-none d-xs-none"> '+ $(this).parent().parent().parent().ignore('span').ignore('ul').text() +'</span>');
-          $(this).prepend('<span class="d-none d-xs-none"> '+ $(this).parent().parent().parent().ignore('span').ignore('ul').find('.menu-title').text() +'</span>');
+          // $(this).prepend('<span class="d-none d-xs-none"> '+ $(this).parent().parent().parent().ignoretag('span').ignoretag('ul').text() +'</span>');
+          $(this).prepend('<span class="d-none d-xs-none"> '+ $(this).parent().parent().parent().ignoretag('span').ignoretag('ul').find('.menu-title').text() +'</span>');
         });
 
         $search_fld.on('keyup focus blur resize', function(){

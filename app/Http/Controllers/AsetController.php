@@ -6,12 +6,20 @@ use Illuminate\Http\Request;
 
 class AsetController extends Controller
 {
-    public function pengadaan()
+    public function datagolongan()
     {
-    	return view('aset/pengadaan/pengadaan');
+    	return view('aset/datagolongan/datagolongan');
     }
-    public function penyusutan()
+    public function tambah_datagolongan()
     {
-    	return view('aset/penyusutan/penyusutan');
+    	return view('aset/datagolongan/tambah_datagolongan');
     }
+    public function dataaset()
+    {
+    	return view('aset/dataaset/dataaset');
+    }
+    public function tambah_dataaset()
+    {
+    	return view('aset/dataaset/tambah_dataaset');
+    }    
 }

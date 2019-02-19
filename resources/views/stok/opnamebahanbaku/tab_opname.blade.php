@@ -55,6 +55,23 @@
 		                                </div>
 		                              </div>
 
+
+		                              <div class="col-md-3 col-sm-6 col-xs-12">
+		                                <label>Tipe Barang</label>
+		                              </div>
+
+		                              <div class="col-md-3 col-sm-6 col-xs-12">
+		                                <div class="form-group">
+		                                  	<select class="form-control form-control-sm tipe_barang data" name="tipe_barang" required="">
+			                                  	<option value="" selected="">--Pilih Type Barang--</option>
+			                                  	<option value="BB">Bahan Baku</option>
+			                                  	<option value="SP">Spare Part</option>
+			                                  	<option value="BJ">Barang Jual</option>
+			                                  	<option value="LL">Lain-lain</option>
+			                                </select>
+		                                </div>
+		                              </div>
+
 		                        		</div>
 		                        	</fieldset>
 
@@ -64,8 +81,14 @@
 		                              <div class="col-md-6 col-sm-8 col-xs-12">
 		                                <label>Barang</label>
 		                                <div class="form-group">
-		                                  <select class="form-control form-control-sm select2">
-		                                  	<option value="">--Pilih--</option>
+		                                  <select class="form-control form-control-sm select2" id="barang">
+		                                  	<option value="" disabled="" selected="">--Pilih--</option>
+		                                  	<option value="1">Tensla 1x2</option>
+		                                  	<option value="2">Paving Abu</option>
+		                                  	<option value="3">Paving Merah</option>
+		                                  	<option value="4">Paving 8T</option>
+		                                  	<option value="5">Tensla 1x1</option>
+
 		                                  </select>
 		                                </div>
 		                              </div>
@@ -74,9 +97,9 @@
 		                              	<label>Qty Real</label>
 		                              	<div class="form-group">
 		                              		<div class="input-group">
-				                                <input type="number" min="0" class="form-control-sm form-control" name="">
+				                                <input type="number" min="0" class="form-control-sm form-control" id="qty_real" name="">
 				                                <div class="input-group-append">
-				                                	<button class="btn btn-sm btn-primary" title="Tambah" type="button"><i class="fa fa-plus"></i></button>
+				                                	<button class="btn btn-sm btn-primary" title="Tambah" type="button" id="btn-tambah-barang"><i class="fa fa-plus"></i></button>
 				                                </div>
 				                            </div>
 		                                </div>
@@ -92,7 +115,7 @@
 		                        	</fieldset>
 
 		                        	<div class="table-responsive">
-			                            <table class="table data-table table-hover" cellspacing="0">
+			                            <table class="table table-striped table-bordered table-hover" id="table_opname" cellspacing="0">
 			                                <thead class="bg-primary">
 			                                    <tr>
 									                <th>Kode | Item</th>
@@ -100,6 +123,7 @@
 									                <th>Satuan</th>
 									                <th>Qty Real</th>
 									                <th>Opname</th>
+									                <th>Keterangan</th>
 									                <th>Aksi</th>
 									            </tr>
 			                                </thead>

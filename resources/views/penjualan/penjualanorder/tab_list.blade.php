@@ -33,7 +33,6 @@
     						<tr>
     							<th width="1%">No</th>
     							<th>Nota</th>
-    							<th>Nama Project</th>
     							<th>Customer</th>
     							<th width="15%">Aksi</th>
     						</tr>
