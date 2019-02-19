@@ -27,7 +27,7 @@
 					<div class="col-md-6 col-sm-6 col-12">
 						
 						<div class="alert alert-success alert-dismissible fade show" role="alert">
-							<span class="badge badge-pill badge-light">1</span> Rencana Pembelian <strong>Disetujui</strong>
+							<span class="badge badge-pill badge-light">{{ $amount_disetujui }}</span> Rencana Pembelian <strong>Disetujui</strong>
 							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
@@ -38,7 +38,7 @@
 					<div class="col-md-6 col-sm-6 col-12">
 						
 						<div class="alert alert-info alert-dismissible fade show" role="alert">
-							<span class="badge badge-pill badge-light">1</span> Rencana Pembelian <strong>Waiting</strong>
+							<span class="badge badge-pill badge-light">{{ $amount_waiting }}</span> Rencana Pembelian <strong>Waiting</strong>
 							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
@@ -97,4 +97,6 @@
 		$('#detail_rencana_edit').modal('show');
 	});
 </script>
+@include('purchasing/rencanapembelian/js/commander')
+  @include('purchasing/rencanapembelian/js/functions')
 @endsection
