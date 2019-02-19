@@ -415,45 +415,14 @@
                     </a>
                     <ul class="sidebar-nav">
                         <li class="{{Request::is('keuangan/prosesinputtransaksi/*') ? 'active' : ''}}">
-                            <a href="{{url('keuangan/prosesinputtransaksi/prosesinputtransaksi')}}"> Proses Input Transaksi</a>
+                            <a href="{{route('pilih_prosesinputtransaksi')}}"> Proses Input Transaksi</a>
                         </li>
-                        <li class="{{Request::is('keuangan/laporaninputtransaksi/*') ? 'active' : ''}}">
-                            <a href="{{url('keuangan/laporaninputtransaksi/laporaninputtransaksi')}}"> Laporan Input Transaksi</a>
-                        </li>
+
                         <li class="{{Request::is('keuangan/laporankeuangan/*') ? 'active' : ''}}">
-                            <a href="{{url('keuangan/laporankeuangan/laporankeuangan')}}"> Laporan Keuangan</a>
+                            <a href="{{route('laporankeuangan')}}"> Laporan Keuangan</a>
                         </li>
-                        <li class="">
-                            <a href="javascript:void(0);">
-                                <i class="fa fa-search-plus"></i><span class="menu-title"> Analisa</span>
-                                <i class="fa arrow"></i>
-                            </a>
-                            <ul class="sidebar-nav">
-                                <li class="{{Request::is('keuangan/a_progress/*') ? 'active' : ''}}">
-                                    <a href="{{url('keuangan/a_progress/a_progress')}}"> Analisa Progress Terhadap Perencanaan</a>
-                                </li>
-                                <li class="{{Request::is('keuangan/a_net/*') ? 'active' : ''}}">
-                                    <a href="{{url('keuangan/a_net/a_net')}}"> Analisa Net Profit Terhadap OCF</a>
-                                </li>
-                                <li class="{{Request::is('keuangan/a_pertumbuhanaset/*') ? 'active' : ''}}">
-                                    <a href="{{url('keuangan/a_pertumbuhanaset/a_pertumbuhanaset')}}"> Analisa Pertumbuhan Aset</a>
-                                </li>
-                                <li class="{{Request::is('keuangan/a_cashflow/*') ? 'active' : ''}}">
-                                    <a href="{{url('keuangan/a_cashflow/a_cashflow')}}"> Analisa Cashflow</a>
-                                </li>
-                                <li class="{{Request::is('keuangan/a_commonsize/*') ? 'active' : ''}}">
-                                    <a href="{{url('keuangan/a_commonsize/a_commonsize')}}"> Analisa Common Size dan Index</a>
-                                </li>
-                                <li class="{{Request::is('keuangan/a_rasiokeuangan/*') ? 'active' : ''}}">
-                                    <a href="{{url('keuangan/a_rasiokeuangan/a_rasiokeuangan')}}"> Analisa Rasio Keuangan</a>
-                                </li>
-                                <li class="{{Request::is('keuangan/a_3bottomline/*') ? 'active' : ''}}">
-                                    <a href="{{url('keuangan/a_3bottomline/a_3bottomline')}}"> Analisa Three Bottom Line</a>
-                                </li>
-                                <li class="{{Request::is('keuangan/a_roe/*') ? 'active' : ''}}">
-                                    <a href="{{url('keuangan/a_roe/a_roe')}}"> Analisa ROE</a>
-                                </li>
-                            </ul>
+                        <li class="{{Request::is('keuangan/analisa/*') ? 'active' : ''}}">
+                            <a href="{{route('analisa')}}">Analisa</a>
                         </li>
 
                         

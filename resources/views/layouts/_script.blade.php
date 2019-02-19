@@ -132,7 +132,7 @@ $.ajaxSetup({
     $('.input-daterange').datepicker({
         format:'dd-mm-yyyy',
         enableOnReadonly:false
-
+        
     });
     
     $('.datetimepicker').datetimepicker({

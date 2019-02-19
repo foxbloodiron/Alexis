@@ -5,11 +5,11 @@
 <article class="content">
 
 	<div class="title-block text-primary">
-	    <h1 class="title"> Laporan Keuangan </h1>
+	    <h1 class="title"> Analisa </h1>
 	    <p class="title-description">
 	    	<i class="fa fa-home"></i>&nbsp;<a href="{{url('/home')}}">Home</a> 
 	    	/ <span>Keuangan</span> 
-	    	/ <span class="text-primary font-weight-bold">Laporan Keuangan</span>
+	    	/ <span class="text-primary font-weight-bold">Analisa</span>
 	     </p>
 	</div>
 
@@ -25,7 +25,7 @@
 						<div class="card-block text-center">
 							<fieldset>
 								<i class="fa fa-clipboard"></i>	<br>	
-								<span>Jurnal Umum</span>
+								<span>Analisa Net Profit/OCF</span>
 							</fieldset>
 						</div>
 						
@@ -41,8 +41,8 @@
 
 						<div class="card-block text-center">
 							<fieldset>
-								<i class="fa fa-book"></i>	<br>	
-								<span>Buku Besar</span>
+								<i class="fa fa-clipboard"></i>	<br>	
+								<span>Analisa Hutang Piutang</span>
 							</fieldset>
 						</div>
 						
@@ -58,8 +58,8 @@
 
 						<div class="card-block text-center">
 							<fieldset>
-								<i class="fa fa-random"></i>	<br>	
-								<span>Neraca Saldo</span>
+								<i class="fa fa-clipboard"></i>	<br>	
+								<span>Analisa Pertumbuhan Aset</span>
 							</fieldset>
 						</div>
 						
@@ -75,42 +75,8 @@
 
 						<div class="card-block text-center">
 							<fieldset>
-								<i class="fa fa-columns"></i>	<br>	
-								<span>Neraca</span>
-							</fieldset>
-						</div>
-						
-					</div>
-				</a>
-
-			</div>
-
-			<div class="col-md-4 col-sm-6 col-12">
-
-				<a href="#" class="text-none-underline text-purple">
-					<div class="card keuangan-card">
-
-						<div class="card-block text-center">
-							<fieldset>
-								<i class="fa fa-line-chart"></i>	<br>	
-								<span>Laba Rugi</span>
-							</fieldset>
-						</div>
-						
-					</div>
-				</a>
-
-			</div>
-
-			<div class="col-md-4 col-sm-6 col-12">
-
-				<a href="#" class="text-none-underline text-teal">
-					<div class="card keuangan-card">
-
-						<div class="card-block text-center">
-							<fieldset>
-								<i class="fa fa-refresh"></i>	<br>	
-								<span>Arus Kas</span>
+								<i class="fa fa-clipboard"></i>	<br>	
+								<span>Analisa Aset Terhadap Ekuitas</span>
 							</fieldset>
 						</div>
 						
