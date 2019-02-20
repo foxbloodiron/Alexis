@@ -96,7 +96,7 @@
                           <fieldset class="mt-3">
                             <div class="row">
                               
-                              <div class="col-md-4 col-sm-4 col-12">
+                              <div class="col-md-6 col-sm-3 col-12">
                                 <label>Barang</label>
                                 <div class="form-group">
                                   <select class="select2 form-control form-control-sm" id="barang" name="">
@@ -107,7 +107,7 @@
                                   </select>
                                 </div>
                               </div>
-                              <div class="col-md-4 col-sm-4 col-12">
+                              <div class="col-md-2 col-sm-3 col-12">
                                 <label for="">Satuan</label>
                                 <div class="form-group">
                                   <select class="form-control form-control-sm">
@@ -116,7 +116,7 @@
                                 </div>
                               </div>
 
-                              <div class="col-md-4 col-sm-4 col-xs-12">
+                              <div class="col-md-2 col-sm-3 col-xs-12">
                                 <label>Qty</label>
                                 <div class="form-group form-group-sm">
                                   <div class="input-group input-group-sm">
@@ -125,6 +125,13 @@
                                       <button class="btn btn-primary btn-tambah" type="button" title="Tambah"><i class="fa fa-plus"></i></button>
                                     </div>
                                   </div>
+                                </div>
+                              </div>
+
+                              <div class="col-md-2 col-sm-3 col-12">
+                                <label for="">Stok</label>
+                                <div class="form-group">
+                                  <input type="text" class="form-control form-control-sm" readonly="" name="">
                                 </div>
                               </div>
 
