@@ -68,7 +68,7 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" name="npwp" value="{{$supplier->s_npwp}}">
+                                <input type="number" class="form-control form-control-sm" name="npwp" value="{{$supplier->s_npwp}}">
                               </div>
                             </div>
 
@@ -89,7 +89,7 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" name="fax" value="{{$supplier->s_fax}}">
+                                <input type="number" class="form-control form-control-sm" name="fax" value="{{$supplier->s_fax}}">
                               </div>
                             </div>
 
@@ -127,7 +127,7 @@
                             </div>
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                               <input type="text" class="form-control form-control-sm" name="rekening" value="{{$supplier->s_rekening}}">
+                               <input type="number" class="form-control form-control-sm" name="rekening" value="{{$supplier->s_rekening}}">
                               </div>
                             </div>
 

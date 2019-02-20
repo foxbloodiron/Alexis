@@ -65,7 +65,7 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" name="npwp">
+                                <input type="number" class="form-control form-control-sm" name="npwp">
                               </div>
                             </div>
 
@@ -75,7 +75,7 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" name="nmr_hp">
+                                <input type="number" class="form-control form-control-sm" name="nmr_hp">
                               </div>
                             </div>
 
@@ -86,7 +86,7 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" name="fax">
+                                <input type="number" class="form-control form-control-sm" name="fax">
                               </div>
                             </div>
 
@@ -124,7 +124,7 @@
                             </div>
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                               <input type="text" class="form-control form-control-sm" name="rekening">
+                               <input type="number" class="form-control form-control-sm" name="rekening">
                               </div>
                             </div>
 
@@ -156,7 +156,7 @@
                               </div>
                             </div>
 
-                            <div class="table-responsive mt-3 col-sm-6" >
+                            <div class="table-responsive mt-3 col-sm-6 text-center" >
                             <table class="table table-hover table-striped table-bordered" id="table_rencana">
                               <thead class="bg-primary">
                                 <tr align="center">
