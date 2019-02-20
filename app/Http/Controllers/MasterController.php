@@ -67,30 +67,7 @@ class MasterController extends Controller
     {
         return view('master/datapegawai/edit_datapegawai');
     }
-    public function dataarmada()
-    {
-    	return view('master/dataarmada/dataarmada');
-    }
-    public function tambah_dataarmada()
-    {
-        return view('master/dataarmada/tambah_dataarmada');
-    }
-    public function tambah_dataarmada_customer()
-    {
-        return view('master/dataarmada/tambah_dataarmada_customer');
-    }
-    public function tambah_dataarmada_own()
-    {
-        return view('master/dataarmada/tambah_dataarmada_own');
-    }    
-    public function edit_dataarmada()
-    {
-        return view('master/dataarmada/edit_dataarmada');
-    }
-    public function modal_dataarmada()
-    {
-        return view('master/dataarmada/modal_dataarmada');
-    }
+  
    
     public function datasatuan()
     {   

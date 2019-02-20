@@ -71,7 +71,7 @@ class MasterSupplierController extends Controller
 
             DB::DELETE("DELETE FROM m_kendaraan where k_flag = 'SUPPLIER' and k_pemilik = '$idsupplier'");
 
-            for($j = 0; $j < count($request->wilayah); $j++){
+            for($j = 0; $j < count($request->nopol); $j++){
                 $urut_kendaraan = DB::table('m_kendaraan')
                         ->max('k_id');
                 $urut_kendaraan = $urut_kendaraan +1;
@@ -80,7 +80,7 @@ class MasterSupplierController extends Controller
                     'k_id' => $urut_kendaraan,
                     'k_pemilik' => $urut,
                     'k_flag' => 'SUPPLIER',
-                    'k_nopol' => strtoupper($request->wilayah[$j]),
+                    'k_nopol' => strtoupper($request->nopol[$j]),
                     'created_by' => $request->username,
                     'updated_by' => $request->username,
                 ]);
@@ -121,7 +121,7 @@ class MasterSupplierController extends Controller
             ]);
 
 
-            for($j = 0; $j < count($request->nopol); $j++){
+            for($j = 0; $j < count($request->wilayah); $j++){
                 $urut_kendaraan = DB::table('m_kendaraan')
                         ->max('k_id');
                 $urut_kendaraan = $urut_kendaraan +1;
