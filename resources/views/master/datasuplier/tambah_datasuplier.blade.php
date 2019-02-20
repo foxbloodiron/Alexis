@@ -13,7 +13,7 @@
          / <span class="text-primary" style="font-weight: bold;"> Tambah Data Suplier</span>
        </p>
   </div>
-
+  <form id="formdata">
   <section class="section">
 
     <div class="row">
@@ -35,16 +35,19 @@
                         <section>
                           
                           <div id="sectionsuplier" class="row">
-                            
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                              <label>Nama Perusahaan</label>
+                        
+                             <div class="col-md-3 col-sm-6 col-xs-12">
+                              <label> Kode Supplier </label>
                             </div> 
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" readonly="" name="">
+                                <input type="text" class="form-control kodesupplier" readonly="" name="kodesupplier" value="{{$nota}}">
                               </div>
+
+                              <input type="hidden" name="cabang" value="A-001">
                             </div>
+
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <label>Nama Suplier</label>
@@ -52,7 +55,17 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" name="">
+                                <input type="text" class="form-control form-control-sm" name="namasupplier">
+                              </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <label> NPWP </label>
+                            </div> 
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <div class="form-group">
+                                <input type="number" class="form-control form-control-sm" name="npwp">
                               </div>
                             </div>
 
@@ -62,7 +75,7 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" name="">
+                                <input type="number" class="form-control form-control-sm" name="nmr_hp">
                               </div>
                             </div>
 
@@ -73,7 +86,7 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" name="">
+                                <input type="number" class="form-control form-control-sm" name="fax">
                               </div>
                             </div>
 
@@ -83,7 +96,8 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" name="">
+                                <input type="text" class="form-control form-control-sm" name="email">
+                                <input type="hidden" class="form-control form-control-sm" name="username" value="Ana">
                               </div>
                             </div>
 
@@ -92,20 +106,57 @@
                             </div>
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <textarea class="form-control form-control-sm"></textarea>
+                              <input type="text" class="form-control form-control-sm" name="alamat">
                               </div>
                             </div>
                             
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <label> Bank </label>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <div class="form-group">
+                               <input type="text" class="form-control form-control-sm" name="namabank">
+                              </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <label> Rekening </label>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <div class="form-group">
+                               <input type="number" class="form-control form-control-sm" name="rekening">
+                              </div>
+                            </div>
+
+                             <div class="col-md-3 col-sm-6 col-xs-12">
+                              <label> Limit </label>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <div class="form-group">
+                                <input type="text" class="form-control form-control-sm limit text-right" name="limit">
+                              </div>
+                            </div>
+
+
+                             <div class="col-md-3 col-sm-6 col-xs-12">
+                              <label> Batas Top </label>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <div class="form-group">
+                               <input type="number" class="form-control form-control-sm" name="top">
+                              </div>
+                            </div>
+
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <label>Keterangan</label>
                             </div>
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <textarea class="form-control form-control-sm"></textarea>
+                                <textarea class="form-control form-control-sm" name="keterangan"></textarea>
                               </div>
                             </div>
 
-                            <div class="table-responsive mt-3">
+                            <div class="table-responsive mt-3 col-sm-6 text-center" >
                             <table class="table table-hover table-striped table-bordered" id="table_rencana">
                               <thead class="bg-primary">
                                 <tr align="center">
@@ -114,17 +165,15 @@
                                   <th width="10%" rowspan="2">Aksi</th>
                                 </tr>
                                 <tr>
-                                  <th>Kode Wilayah</th>
-                                  <th>Nomer Polisi</th>
-                                  <th>Huruf Belakang</th>
+                                  <th colspan="3" class="text-center">Nopol</th>
+                                  
                                 </tr>
                               </thead>
                               <tbody>
                                 <tr>
                                   <td align="center">#</td>
-                                  <td><input type="text" class="form-control form-control-sm" name="" value="L"></td>
-                                  <td><input type="text" class="form-control form-control-sm" name="" value="3680"></td>
-                                  <td><input type="text" class="form-control form-control-sm" name="" value="NOB"></td>
+                                  <td colspan="3"> <input type="text" class="form-control form-control-sm nopol" name="wilayah[]" value="L" style="text-transform: uppercase"></td>
+
                                   <td align="center"><button class="btn btn-primary btn-tambah" type="button"><i class="fa fa-plus"></i></button></td>
                                 </tr>
                               </tbody>
@@ -145,7 +194,7 @@
     </div>
 
   </section>
-
+</form>
 </article>
 
 @endsection
@@ -189,24 +238,16 @@
       .append(
         '<tr>'+
           '<td align="center">#</td>'+
-          '<td><input type="text" class="form-control form-control-sm" name=""></td>'+
-          '<td><input type="text" class="form-control form-control-sm" name=""></td>'+
-          '<td><input type="text" class="form-control form-control-sm" name=""></td>'+
+          '<td colspan="3"><input type="text" class="form-control form-control-sm nopol" name="wilayah[]" style="text-transform: uppercase"></td>'+
           '<td align="center"><button class="btn btn-danger btn-hapus" type="button"><i class="fa fa-trash-o"></i></button></td>'+
         '</tr>'
         );
     });
 
-    $( '#btn-submit' ).on('click', function(){
-      $.toast({
-        heading: 'Success',
-        text: 'Data Berhasil di Simpan',
-        bgColor: '#00b894',
-        textColor: 'white',
-        loaderBg: '#55efc4',
-        icon: 'success'
-      });
 
+    $( '#btn-submit' ).on('click', function(){
+        form_data = $('#formdata').serialize();
+       
       $.confirm({
         animation: 'RotateY',
         closeAnimation: 'scale',
@@ -221,30 +262,113 @@
                 btnClass: 'btn-blue',
                 text:'Data Suplier',
                 action : function(){
-                  window.location.href = '{{route('datasuplier')}}';
+
+                   $.ajax({
+                      type : "post",
+                      url : baseUrl + '/master/datasuplier/save',
+                      data : form_data,
+                      dataType : "json",
+                      success : function(response){
+                          $.toast({
+                            heading: 'Success',
+                            text: 'Data Berhasil di Simpan',
+                            bgColor: '#00b894',
+                            textColor: 'white',
+                            loaderBg: '#55efc4',
+                            icon: 'success'
+                          });
+
+                          setTimeout(function(){
+                             window.location.href = '{{route('datasuplier')}}';                            
+                            },500);
+                      },
+                      error : function(){
+                        $.toast({
+                          heading: 'Warning',
+                          text: 'Maaf Error, Hubungi Developer :)',
+                          showHideTransition: 'plain',
+                          icon: 'warning'
+                      });
+                      }
+                    })
+
+                  
                 }
               },
               armada:{
                 text: 'Data Armada',
                 btnClass: 'btn-info',
                 action: function(){
-                  window.location.href = '{{route('dataarmada')}}';
+                    $.ajax({
+                      type : "post",
+                      url : baseUrl + '/master/datasuplier/save',
+                      data : form_data,
+                      dataType : "json",
+                      success : function(response){
+                          $.toast({
+                            heading: 'Success',
+                            text: 'Data Berhasil di Simpan',
+                            bgColor: '#00b894',
+                            textColor: 'white',
+                            loaderBg: '#55efc4',
+                            icon: 'success'
+                          });
+
+                          setTimeout(function(){
+                             window.location.href = '{{route('dataarmada')}}';                            
+                            },500);
+                      },
+                      error : function(){
+                        $.toast({
+                          heading: 'Warning',
+                          text: 'Maaf Error, Hubungi Developer :)',
+                          showHideTransition: 'plain',
+                          icon: 'warning'
+                      });
+                      }
+                    }) 
                 }
               },
               tetap: {
                 text:'Tetap dihalaman',
                 btnClass:'btn-default',
                 action: function(){
-                  location.reload();
+                   $.ajax({
+                      type : "post",
+                      url : baseUrl + '/master/datasuplier/save',
+                      data : form_data,
+                      dataType : "json",
+                      success : function(response){
+                          $.toast({
+                            heading: 'Success',
+                            text: 'Data Berhasil di Simpan',
+                            bgColor: '#00b894',
+                            textColor: 'white',
+                            loaderBg: '#55efc4',
+                            icon: 'success'
+                          });
+
+                          $('#btn-submit').attr('disabled' , true);
+                      },
+                      error : function(){
+                        $.toast({
+                          heading: 'Warning',
+                          text: 'Maaf Error, Hubungi Developer :)',
+                          showHideTransition: 'plain',
+                          icon: 'warning'
+                      });
+                      }
+                    }) 
                 }
-              }
-          
         },
+      },
         backgroundDismiss: function(){
             location.reload();
         }
       });
     });
+
+    $('.limit').maskMoney({thousands:'.', decimal:',', allowZero:true});
 
   });
 </script>

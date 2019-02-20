@@ -10,8 +10,9 @@
     </div>
 </div>
 <script src="{{asset('assets/js/vendor.js')}}"></script>
+
 <script src="{{asset('assets/js/app.js')}}"></script>
-{{-- <script type="text/javascript" src="{{asset('assets/jquery-ui/jquery-ui.js')}}"></script> --}}
+<script src="{{asset('assets/jquery-ui/jquery-ui.js')}}"></script>
 <script src="{{asset('assets/datatables/datatables.min.js')}}"></script>
 <script src="{{asset('assets/datatables/Responsive-2.2.2/js/dataTables.responsive.min.js')}}"></script>
 <!-- <script src="{{asset('assets/datatables/Responsive-2.2.2/js/responsive.bootstrap4.min.js')}}"></script> -->

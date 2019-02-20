@@ -31,15 +31,26 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/master/databarang/disabled', 'MasterBarangController@disabled');
 
 
-	Route::get('/master/datasuplier/index', 'MasterController@datasuplier')->name('datasuplier');
-	Route::get('/master/datasuplier/create', 'MasterController@tambah_datasuplier')->name('tambah_datasuplier');
-	Route::get('/master/datasuplier/edit', 'MasterController@edit_datasuplier')->name('edit_datasuplier');
-	Route::get('/master/dataarmada/index', 'MasterController@dataarmada')->name('dataarmada');
-	Route::get('/master/dataarmada/create', 'MasterController@tambah_dataarmada_own')->name('tambah_dataarmada_own');
-	Route::get('/master/dataarmada/suplier/create', 'MasterController@tambah_dataarmada')->name('tambah_dataarmada');
-	Route::get('/master/dataarmada/suplier/edit', 'MasterController@edit_dataarmada')->name('edit_dataarmada');
-	Route::get('/master/dataarmada/customer/create', 'MasterController@tambah_dataarmada_customer')->name('tambah_dataarmada_customer');
-	Route::get('/master/dataarmada/modal_dataarmada', 'MasterController@modal_dataarmada')->name('modal_dataarmada');
+	Route::get('/master/datasuplier/index', 'MasterSupplierController@datasuplier')->name('datasuplier');
+	Route::get('/master/datasuplier/create', 'MasterSupplierController@tambah_datasuplier')->name('tambah_datasuplier');
+	Route::get('/master/datasuplier/edit/{id}', 'MasterSupplierController@edit_datasuplier')->name('edit_datasuplier');
+	Route::post('/master/datasuplier/save', 'MasterSupplierController@save_datasupplier')->name('edit_datasuplier');
+	Route::get('/master/datasuplier/disabled', 'MasterSupplierController@disabled');
+	Route::post('/master/datasuplier/update', 'MasterSupplierController@update');
+
+
+	Route::get('/master/dataarmada/index', 'MasterArmadaController@dataarmada')->name('dataarmada');
+	Route::get('/master/dataarmada/create', 'MasterArmadaController@tambah_dataarmada_own')->name('tambah_dataarmada_own');
+	Route::post('/master/dataarmada/save', 'MasterArmadaController@save_dataarmada_own');
+
+
+
+	Route::get('/master/dataarmada/suplier/create', 'MasterArmadaController@tambah_dataarmada')->name('tambah_dataarmada');
+	Route::get('/master/dataarmada/suplier/edit', 'MasterArmadaController@edit_dataarmada')->name('edit_dataarmada');
+	Route::get('/master/dataarmada/customer/create', 'MasterArmadaController@tambah_dataarmada_customer')->name('tambah_dataarmada_customer');
+	Route::get('/master/dataarmada/modal_dataarmada', 'MasterArmadaController@modal_dataarmada')->name('modal_dataarmada');
+
+
 	Route::get('/master/datacustomer/datacustomer', 'MasterController@datacustomer')->name('datacustomer');
 	Route::get('/master/datacustomer/tambah_datacustomer', 'MasterController@tambah_datacustomer')->name('tambah_datacustomer');
 	Route::get('/master/datacustomer/edit_datacustomer', 'MasterController@edit_datacustomer')->name('edit_datacustomer');
@@ -205,11 +216,21 @@ Route::group(['middleware' => 'auth'], function(){
 	// Route::get('/keuangan/a_roe/a_roe', 'KeuanganController@a_roe');
 	Route::get('/keuangan/laporaninputtransaksi/laporaninputtransaksi', 'KeuanganController@laporaninputtransaksi');
 	Route::get('/keuangan/laporankeuangan/select', 'KeuanganController@laporankeuangan')->name('laporankeuangan');
+	Route::get('/keuangan/laporankeuangan/jurnal', 'KeuanganController@jurnal')->name('jurnal');
+	Route::get('/keuangan/laporankeuangan/buku_besar', 'KeuanganController@buku_besar')->name('buku_besar');
+	Route::get('/keuangan/laporankeuangan/neraca_saldo', 'KeuanganController@neraca_saldo')->name('neraca_saldo');
+	Route::get('/keuangan/laporankeuangan/neraca', 'KeuanganController@neraca')->name('neraca');
+	Route::get('/keuangan/laporankeuangan/laba_rugi', 'KeuanganController@laba_rugi')->name('laba_rugi');
+	Route::get('/keuangan/laporankeuangan/arus_kas', 'KeuanganController@arus_kas')->name('arus_kas');
 	Route::get('/keuangan/prosesinputtransaksi/select', 'KeuanganController@pilih_prosesinputtransaksi')->name('pilih_prosesinputtransaksi');
 	Route::get('/keuangan/prosesinputtransaksi/inputransaksikas/create', 'KeuanganController@inputtransaksikas')->name('inputtransaksikas');
 	Route::get('/keuangan/prosesinputtransaksi/inputransaksibank/create', 'KeuanganController@inputtransaksibank')->name('inputtransaksibank');
 	Route::get('/keuangan/prosesinputtransaksi/inputransaksimemorial/create', 'KeuanganController@inputtransaksimemorial')->name('inputtransaksimemorial');
 	Route::get('/keuangan/analisa/select', 'KeuanganController@analisa')->name('analisa');
+	Route::get('/keuangan/analisa/net_profit_ocf', 'KeuanganController@net_profit_ocf')->name('net_profit_ocf');
+	Route::get('/keuangan/analisa/hutang_piutang', 'KeuanganController@hutang_piutang')->name('hutang_piutang');
+	Route::get('/keuangan/analisa/pertumbuhan_aset', 'KeuanganController@pertumbuhan_aset')->name('pertumbuhan_aset');
+	Route::get('/keuangan/analisa/aset_ekuitas', 'KeuanganController@aset_ekuitas')->name('aset_ekuitas');
 
 
 	// Suplier

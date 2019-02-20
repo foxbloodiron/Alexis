@@ -57,6 +57,7 @@
                                   <option value="SP">Spare Part</option>
                                   <option value="BJ">Barang Jual</option>
                                   <option value="LL">Lain-lain</option>
+                                  <option value="BP">Bahan Produksi</option>
                                 </select>
                               </div>
                             </div>
@@ -69,7 +70,7 @@
                               <div class="form-group">
                                 <select class="form-control form-control-sm data" name="kelompok_barang" required="">
                                   <option value="" selected="" disabled="">--Pilih Kelompok Barang--</option>
-                                  <option value="BBP">Bahan Baku Produksi</option>
+                               
                                   <option value="BSJ">Barang Setengah Jadi</option>
                                   <option value="BJD">Barang Jadi</option>
                                 </select>
