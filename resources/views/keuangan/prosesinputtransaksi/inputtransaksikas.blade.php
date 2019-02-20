@@ -10,6 +10,9 @@
 
 @section('content')
 
+@include('keuangan.prosesinputtransaksi.modal_kas')
+
+
 <article class="content">
 
 	<div class="title-block text-primary">
@@ -55,7 +58,7 @@
                         						<div class="input-group">
 	                        						<input type="text" readonly="" class="form-control form-control-sm" placeholder="Di isi oleh sistem" name="">
 	                        						<div class="input-group-btn">
-	                        							<button class="btn btn-secondary"><i class="fa fa-search"></i></button>
+	                        							<button class="btn btn-secondary" data-target="#detail" data-toggle="modal"><i class="fa fa-search"></i></button>
 	                        						</div>
 	                        					</div>
                         					</div>
