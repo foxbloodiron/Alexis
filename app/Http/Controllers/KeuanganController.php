@@ -66,4 +66,28 @@ class KeuanganController extends Controller
     {
         return view('keuangan/analisa/analisa');
     }
+    public function jurnal()
+    {
+        return view('modul_keuangan.laporan.jurnal.index');
+    }    
+    public function buku_besar()
+    {
+        return view('modul_keuangan.laporan.buku_besar.index');
+    }    
+    public function neraca_saldo()
+    {
+        return view('modul_keuangan.laporan.neraca_saldo.index');
+    }    
+    public function neraca()
+    {
+        return view('modul_keuangan.laporan.neraca.index');
+    }    
+    public function laba_rugi()
+    {
+        return view('modul_keuangan.laporan.laba_rugi.index');
+    }    
+    public function arus_kas()
+    {
+        return view('modul_keuangan.laporan.arus_kas.index');
+    }    
 }

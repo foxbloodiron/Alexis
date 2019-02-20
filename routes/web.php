@@ -191,6 +191,12 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/keuangan/prosesinputtransaksi/inputransaksibank/create', 'KeuanganController@inputtransaksibank')->name('inputtransaksibank');
 	Route::get('/keuangan/prosesinputtransaksi/inputransaksimemorial/create', 'KeuanganController@inputtransaksimemorial')->name('inputtransaksimemorial');
 	Route::get('/keuangan/analisa/select', 'KeuanganController@analisa')->name('analisa');
+	Route::get('/keuangan/analisa/jurnal', 'KeuanganController@jurnal')->name('jurnal');
+	Route::get('/keuangan/analisa/buku_besar', 'KeuanganController@buku_besar')->name('buku_besar');
+	Route::get('/keuangan/analisa/neraca_saldo', 'KeuanganController@neraca_saldo')->name('neraca_saldo');
+	Route::get('/keuangan/analisa/neraca', 'KeuanganController@neraca')->name('neraca');
+	Route::get('/keuangan/analisa/laba_rugi', 'KeuanganController@laba_rugi')->name('laba_rugi');
+	Route::get('/keuangan/analisa/arus_kas', 'KeuanganController@arus_kas')->name('arus_kas');
 
 
 	// Suplier

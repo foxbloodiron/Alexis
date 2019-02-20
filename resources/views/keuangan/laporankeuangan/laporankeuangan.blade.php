@@ -19,7 +19,7 @@
 
 			<div class="col-md-4 col-sm-6 col-12">
 
-				<a href="#" class="text-none-underline text-blue">
+				<a href="{{route('jurnal')}}" class="text-none-underline text-blue">
 					<div class="card keuangan-card">
 
 						<div class="card-block text-center">
@@ -36,7 +36,7 @@
 
 			<div class="col-md-4 col-sm-6 col-12">
 
-				<a href="#" class="text-none-underline text-warning">
+				<a href="{{route('buku_besar')}}" class="text-none-underline text-warning">
 					<div class="card keuangan-card">
 
 						<div class="card-block text-center">
@@ -53,7 +53,7 @@
 
 			<div class="col-md-4 col-sm-6 col-12">
 
-				<a href="#" class="text-none-underline text-danger">
+				<a href="{{route('neraca_saldo')}}" class="text-none-underline text-danger">
 					<div class="card keuangan-card">
 
 						<div class="card-block text-center">
@@ -70,7 +70,7 @@
 
 			<div class="col-md-4 col-sm-6 col-12">
 
-				<a href="#" class="text-none-underline text-success">
+				<a href="{{route('neraca')}}" class="text-none-underline text-success">
 					<div class="card keuangan-card">
 
 						<div class="card-block text-center">
@@ -87,7 +87,7 @@
 
 			<div class="col-md-4 col-sm-6 col-12">
 
-				<a href="#" class="text-none-underline text-purple">
+				<a href="{{route('laba_rugi')}}" class="text-none-underline text-purple">
 					<div class="card keuangan-card">
 
 						<div class="card-block text-center">
@@ -104,7 +104,7 @@
 
 			<div class="col-md-4 col-sm-6 col-12">
 
-				<a href="#" class="text-none-underline text-teal">
+				<a href="{{route('arus_kas')}}" class="text-none-underline text-teal">
 					<div class="card keuangan-card">
 
 						<div class="card-block text-center">
