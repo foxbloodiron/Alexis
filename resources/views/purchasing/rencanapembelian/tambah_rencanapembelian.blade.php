@@ -160,6 +160,6 @@
   });
 
 </script>
-  @include('purchasing/rencanapembelian/js/form_commander')
-  @include('purchasing/rencanapembelian/js/form_functions')
+  @include('purchasing/rencanapembelian/js/form_tanparencana_commander')
+  @include('purchasing/rencanapembelian/js/form_tanparencana_functions')
 @endsection

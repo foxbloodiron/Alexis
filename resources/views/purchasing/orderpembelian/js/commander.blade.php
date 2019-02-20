@@ -1,6 +1,6 @@
 <script>
-  purchase_plan = { pp_id : null};
-  tabel_purchase_plan = null;
+  purchase_order = { po_id : null};
+  tabel_purchase_order = null;
   $(document).ready(function(){
   	tabel_detail_edit = $('#tabel_detail_edit').DataTable({
   		'columnDefs' : [{
@@ -33,36 +33,36 @@
       format : 'dd/mm/yyyy'
     });
 
-    tabel_purchase_plan = $("#tabel_purchase_plan").DataTable({
+    tabel_purchase_order = $("#tabel_purchase_order").DataTable({
       "processing" : true,
       "serverside" : true,
       ajax: {
-        "url": "{{ url('purchasing/rencanapembelian/find_d_purchase_plan') }}",
+        "url": "{{ url('purchasing/orderpembelian/find_d_purchase_order') }}",
         
         data: {
           "_token": "{{ csrf_token() }}",
         },
       },
       columns: [
-        { data : 'pp_tanggal_label' },
-    		{ data : 'pp_code' },
+        { data : 'po_tanggal_label' },
+    		{ data : 'po_code' },
     		{ data : 'name' },
     		{ data : 's_name' },
-        { data : 'pp_tanggal_approve_label' },
+        { data : 'po_tanggal_approve_label' },
 		{ 
 			data : null,
 			render : function(res) {
         var classbadge;
-        if(res.pp_status == 'WT') {
+        if(res.po_status == 'WT') {
           classbadge = 'badge-info';
         }
-        else if(res.pp_status == 'AP') {
+        else if(res.po_status == 'AP') {
           classbadge = 'badge-primary';
         }
-        else if(res.pp_status == 'NAP') {
+        else if(res.po_status == 'NAP') {
           classbadge = 'badge-danger';
         }
-				var outp = '<span class="badge ' + classbadge + '">' + res.pp_status_label + '</span>';
+				var outp = '<span class="badge ' + classbadge + '">' + res.po_status_label + '</span>';
 				return outp;
 			} 
 		},
@@ -70,7 +70,7 @@
 			data : null,
 			render : function(res) {
         is_disabled = 'disabled';
-        if(res.pp_status == 'WT') {
+        if(res.po_status == 'WT') {
           is_disabled = '';
         }
 				var outp = '<button ' + is_disabled + ' class="btn btn-info" title="Approve" data-toggle="modal" data-target="#modal_update_status" onclick="open_form_update_status(this)"><i class="fa fa-check"></i></button>';
@@ -82,10 +82,10 @@
           data : null,
           render : function(res) {
           	is_disabled = 'disabled';
-            if(res.pp_status == 'WT') {	
+            if(res.po_status == 'WT') {	
             	is_disabled = '';
             }
-            var btn = '<div class="btn-group btn-group-sm"><button onclick="open_form_detail(this) "type="button" class="btn btn-info rencana_detail" title="Detail" data-toggle="modal" data-target="#detail_rencana"><i class="fa fa-list"></i></button><button type="button" ' + is_disabled + ' class="btn btn-warning rencana_edit" title="Edit" onclick="open_form_update(this)" data-toggle="modal" data-target="#detail_rencana_edit"><i class="fa fa-pencil"></i></button><button ' + is_disabled + ' type="button" class="btn btn-danger rencana_hapus" title="Hapus" onclick="hapus(this)"><i class="fa fa-trash-o"></i></button></div>';
+            var btn = '<div class="btn-group btn-group-sm"><button onclick="open_form_detail(this) "type="button" class="btn btn-info order_detail" title="Detail" data-toggle="modal" data-target="#detail_order"><i class="fa fa-list"></i></button><button type="button" ' + is_disabled + ' class="btn btn-warning order_edit" title="Edit" onclick="open_form_update(this)" data-toggle="modal" data-target="#detail_order_edit"><i class="fa fa-pencil"></i></button><button ' + is_disabled + ' type="button" class="btn btn-danger order_hapus" title="Hapus" onclick="hapus(this)"><i class="fa fa-trash-o"></i></button></div>';
 
             return btn;
           } 
@@ -97,30 +97,30 @@
       }]
     });
 
-    tabel_history_purchase_plan = $("#tabel_history_purchase_plan").DataTable({
+    tabel_history_purchase_order = $("#tabel_history_purchase_order").DataTable({
       "processing" : true,
       "serverside" : true,
       ajax: {
-        "url": "{{ url('purchasing/rencanapembelian/find_d_purchase_plan') }}",
+        "url": "{{ url('purchasing/orderpembelian/find_d_purchase_order') }}",
         
         data: {
           "_token": "{{ csrf_token() }}",
         },
       },
       columns: [
-        { data : 'pp_tanggal_label' },
-    		{ data : 'pp_code' },
+        { data : 'po_tanggal_label' },
+    		{ data : 'po_code' },
     		{ data : 'name' },
     		{ data : 's_name' },
-        { data : 'pp_tanggal_approve_label' },
+        { data : 'po_tanggal_approve_label' },
     		{ 
     			data : null,
     			render : function(res) {
             var classbadge = "badge-primary";
-            if( res.pp_status_po == 'NA') {
+            if( res.po_status_po == 'NA') {
               classbadge = 'badge-danger';
             }
-    				var outp = '<span class="badge ' + classbadge + '">' + res.pp_status_po_label + '</span>';
+    				var outp = '<span class="badge ' + classbadge + '">' + res.po_status_po_label + '</span>';
     				return outp;
     			} 
     		},

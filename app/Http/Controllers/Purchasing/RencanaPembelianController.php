@@ -99,7 +99,7 @@ class RencanaPembelianController extends Controller
         $rows = $rows->where('pp_status', $pp_status);
        }
 
-       $rows = $rows->select('pp_id','pp_status', 'pp_officer', 'pp_code', 'pp_supplier', 's_name', 'name', DB::raw("DATE_FORMAT(pp_tanggal_approve, '%d-%m-%Y') AS pp_tanggal_approve_label"), DB::raw("DATE_FORMAT(pp_tanggal, '%d-%m-%Y') AS pp_tanggal_label"), DB::raw("CASE pp_status WHEN 'WT' THEN 'Waiting' WHEN 'AP' THEN 'Disetujui' WHEN 'NAP' THEN 'Tidak Disetujui' END AS pp_status_label"))->get();
+       $rows = $rows->select('pp_id','pp_status', 'pp_officer', 'pp_code', 'pp_supplier','pp_status_po', 's_name', 'name', DB::raw("DATE_FORMAT(pp_tanggal_approve, '%d-%m-%Y') AS pp_tanggal_approve_label"), DB::raw("DATE_FORMAT(pp_tanggal, '%d-%m-%Y') AS pp_tanggal_label"), DB::raw("CASE pp_status WHEN 'WT' THEN 'Waiting' WHEN 'AP' THEN 'Disetujui' WHEN 'NAP' THEN 'Tidak Disetujui' END AS pp_status_label"), DB::raw("CASE pp_status_po WHEN 'NA' THEN 'Belum Aktif' WHEN 'A' THEN 'PO Aktif' WHEN 'NAP' THEN 'Tidak Disetujui' END AS pp_status_po_label"))->get();
        
 
        $res = array('data' => $rows);
@@ -253,6 +253,41 @@ class RencanaPembelianController extends Controller
       else {
         echo 'ID Kosong';
         return false;
+      }
+      
+
+      return response()->json($res);
+    }
+
+    function approve_d_purchase_plan(Request $request){
+      $pp_id = $request->pp_id;
+      $pp_id = $pp_id != null ? $pp_id : '';  
+
+      if($pp_id != '') {
+        DB::beginTransaction();
+        try {
+
+          $pp_status = $request->pp_status;
+          $pp_status = $pp_status != null ? $pp_status : '';
+         
+          d_purchase_plan::where('pp_id', $pp_id)->update([
+            'pp_status' => $pp_status,
+            'pp_tanggal_approve' => date('Y-m-d')
+          ]);
+
+          DB::commit();
+          return response()->json(['status' => 'sukses']);
+        }
+        catch(\Exception $e) {
+          DB::rollback();
+          return response()->json(['status' => 'Gagal. ' . $e]);
+        }  
+      }
+      else {
+        $res= [
+          'status' => 'gagal.',
+          'message' => 'ID Kosong'
+        ];
       }
       
 

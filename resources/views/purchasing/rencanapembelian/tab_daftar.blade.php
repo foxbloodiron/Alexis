@@ -33,9 +33,9 @@
 
                     <div class="col-md-3 col-sm-12">
                         <div class="form-group">
-                            <select name="tampilData" id="tampil_data" class="form-control form-control-sm">
+                            <select name="pp_status" id="pp_status" class="form-control form-control-sm">
+                                <option value="">Tampilkan Data : Semua</option>
                                 <option value="wait">Tampilkan Data : Waiting</option>
-                                <option value="edit">Tampilkan Data : Dapat diedit</option>
                                 <option value="confirm">Tampilkan Data : Disetujui</option>
                             </select>
                         </div>

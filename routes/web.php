@@ -80,6 +80,8 @@ Route::group(['middleware' => 'auth'], function(){
 
 
 	// Purchasing
+
+	// Rencana pembelian
 	Route::get('/purchasing/rencanapembelian/rencanapembelian', 'Purchasing\RencanaPembelianController@rencanapembelian')->name('rencanapembelian');
 	Route::get('/purchasing/rencanapembelian/tambah_rencanapembelian', 'Purchasing\RencanaPembelianController@tambah_rencanapembelian')->name('tambah_rencanapembelian');
 	Route::get('/purchasing/rencanapembelian/preview_rencanapembelian/{id}', 'Purchasing\RencanaPembelianController@preview_rencanapembelian')->name('preview_rencanapembelian');
@@ -89,11 +91,24 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/purchasing/rencanapembelian/find_m_item', 'Purchasing\RencanaPembelianController@find_m_item')->middleware('auth');
 	Route::post('/purchasing/rencanapembelian/insert_d_purchase_plan', 'Purchasing\RencanaPembelianController@insert_d_purchase_plan')->middleware('auth')->name('insert_d_purchase_plan');
 	Route::post('/purchasing/rencanapembelian/update_d_purchase_plan', 'Purchasing\RencanaPembelianController@update_d_purchase_plan')->middleware('auth')->name('update_d_purchase_plan');
+	Route::get('/purchasing/rencanapembelian/approve_d_purchase_plan', 'Purchasing\RencanaPembelianController@approve_d_purchase_plan')->middleware('auth')->name('approve_d_purchase_plan');
 	Route::get('/purchasing/rencanapembelian/find_m_supplier', 'Purchasing\RencanaPembelianController@find_m_supplier')->middleware('auth');
 
-	Route::get('/purchasing/orderpembelian/orderpembelian', 'PurchaseController@orderpembelian')->name('orderpembelian');
-	Route::get('/purchasing/orderpembelian/tambah_orderpembelian', 'PurchaseController@tambah_orderpembelian')->name('tambah_orderpembelian');
-	Route::get('/purchasing/orderpembelian/tambah_orderpembelian_tanparencana', 'PurchaseController@tambah_orderpembelian_tanparencana')->name('tambah_orderpembelian_tanparencana');
+	// Order pembelian
+	Route::get('/purchasing/orderpembelian/orderpembelian', 'Purchasing\OrderPembelianController@orderpembelian')->name('orderpembelian');
+	Route::get('/purchasing/orderpembelian/tambah_orderpembelian', 'Purchasing\OrderPembelianController@tambah_orderpembelian')->name('tambah_orderpembelian');
+	Route::get('/purchasing/orderpembelian/preview_orderpembelian/{id}', 'Purchasing\OrderPembelianController@preview_orderpembelian')->name('preview_orderpembelian');
+	Route::get('/purchasing/orderpembelian/edit_orderpembelian/{id}', 'Purchasing\OrderPembelianController@edit_orderpembelian')->name('edit_orderpembelian');
+	Route::get('/purchasing/orderpembelian/find_d_purchase_order', 'Purchasing\OrderPembelianController@find_d_purchase_order')->middleware('auth');
+	Route::get('/purchasing/orderpembelian/delete_d_purchase_order/{id}', 'Purchasing\OrderPembelianController@delete_d_purchase_order')->middleware('auth');
+	Route::get('/purchasing/orderpembelian/find_m_item', 'Purchasing\OrderPembelianController@find_m_item')->middleware('auth');
+	Route::post('/purchasing/orderpembelian/insert_d_purchase_order', 'Purchasing\OrderPembelianController@insert_d_purchase_order')->middleware('auth')->name('insert_d_purchase_order');
+	Route::post('/purchasing/orderpembelian/update_d_purchase_order', 'Purchasing\OrderPembelianController@update_d_purchase_order')->middleware('auth')->name('update_d_purchase_order');
+	Route::get('/purchasing/orderpembelian/approve_d_purchase_order', 'Purchasing\OrderPembelianController@approve_d_purchase_order')->middleware('auth')->name('approve_d_purchase_order');
+	Route::get('/purchasing/orderpembelian/find_m_supplier', 'Purchasing\OrderPembelianController@find_m_supplier')->middleware('auth');
+
+	Route::get('/purchasing/orderpembelian/tambah_orderpembelian_tanparencana', 'Purchasing\OrderPembelianController@tambah_orderpembelian_tanparencana')->name('tambah_orderpembelian_tanparencana');
+
 	Route::get('/purchasing/returnpembelian/returnpembelian', 'PurchaseController@returnpembelian')->name('returnpembelian');
 	Route::get('/purchasing/returnpembelian/tambah_returnpembelian', 'PurchaseController@tambah_returnpembelian')->name('tambah_returnpembelian');
 	Route::get('/purchasing/rencanabahanbaku/rencanabahanbaku', 'PurchaseController@rencanabahanbaku')->name('rencanabahanbaku');

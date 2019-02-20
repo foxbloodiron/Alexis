@@ -21,9 +21,9 @@
                     <div class="col-md-6 col-sm-12">
                       <div class="form-group">
                         <div class="input-group input-group-sm input-daterange">
-                          <input type="text" class="form-control" name="">
+                          <input type="text" class="form-control" name="" id="tgl_awal">
                           <span class="input-group-addon">-</span>
-                          <input type="text" class="form-control" name="">
+                          <input type="text" class="form-control" name=""  id="tgl_akhir">
                           <div class="input-group-append">
                           	<button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
                           	<button class="btn btn-secondary" type="button"><i class="fa fa-refresh"></i></button>
@@ -39,10 +39,9 @@
             	
                 	<div class="table-responsive">
                 		
-                		<table class="table table-hover table-striped data-table" cellspacing="0">
+                		<table class="table table-hover table-striped" cellspacing="0" id="tabel_purchase_order">
                 			<thead class="bg-primary">
                 				<tr>
-                					<th>No</th>
                 					<th>Tgl Order</th>
                 					<th>No Order</th>
                 					<th>Staff</th>
@@ -50,32 +49,13 @@
                 					<th>Cara Bayar</th>
                 					<th>Total</th>
                 					<th>Tgl Kirim</th>
-                					<th>Status</th>
+                                    <th>Status</th>
+                					<th>Ubah Status</th>
                 					<th>Aksi</th>
                 				</tr>
                 			</thead>
 
                 			<tbody>
-                				<tr>
-                					<td>1</td>
-                					<td>2 Jan 2019</td>
-                					<td>PO/201901/1</td>
-                					<td>Administrator</td>
-                					<td>Alpha</td>
-                					<td>TUNAI</td>
-                					<td>2.000</td>
-                					<td>3 Jan 2019</td>
-                					<td>
-                						<span class="badge badge-success badge-pill">Diterima</span>
-                					</td>
-                					<td>
-                						<div class="btn-group btn-group-sm">
-                							<button class="btn btn-info btn_order_detail" type="button" title="Detail"><i class="fa fa-list"></i></button>
-                							<button class="btn btn-warning" disabled="" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
-                							<button class="btn btn-danger" disabled="" type="button" title="Delete"><i class="fa fa-trash-o"></i></button>
-                						</div>
-                					</td>
-                				</tr>
                 			</tbody>
                 		</table>
 

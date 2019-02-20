@@ -67,8 +67,6 @@
 
 
 			<div class="col-12">
-				
-
 
                 <div class="tab-content">
 
@@ -89,6 +87,8 @@
 
 @endsection
 @section('extra_script')
+
+@include('purchasing/rencanapembelian/includes/modal_update_status')
 <script type="text/javascript">
 	$('.rencana_detail').click(function(){
 		$('#detail_rencana').modal('show');
