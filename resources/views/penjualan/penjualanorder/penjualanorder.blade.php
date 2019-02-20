@@ -56,24 +56,60 @@
 	var table = $('#table_penjualan').DataTable();
 	var table2 	= $('#table_pembayaran').DataTable();
 	var counter = 0;
+
 	function table_tambah(){
-		table.row.add([
-			'<input type="text" readonly="" class="form-control form-control-sm" value="'+$('#barang option:selected').text()+'">'+
-			'<input type="hidden" value="'+$('#barang').val()+'" class="barang">',
-			'<input type="number" min="0" class="form-control form-control-sm" value="'+$('#qty').val()+'">',
-			'<input type="text" readonly="" class="form-control form-control-sm">',
-			'<input type="text" readonly="" class="form-control form-control-sm">',
-			'<input type="text" readonly="" class="form-control form-control-sm">',
-			'<input type="text" readonly="" class="form-control form-control-sm">',
-			'<input type="text" readonly="" class="form-control form-control-sm">',
-			'<button class="btn btn-danger btn-hapus-kenangan" type="button" title="Delete"><i class="fa fa-trash-o"></i></button>'
-			]).draw(false);
+		if ( $('#qty').val() === '' || $('#barang').val() === '' || $('#qty').val().length === 0 || $('#barang').val().length === 0 ) {
+			
+				if ( $('#qty').val() === '' || $('#qty').val().length === 0 ) {
+					$.toast({
+						icon:'warning',
+						heading:'Peringatan!',
+						text:'Qty tidak boleh kosong!'
+					});
+					$('#qty').parents('.form-group').addClass('has-error');
+				}
+				if ( $('#barang').val() === '' || $('#barang').val().length === 0 ) {
+					$.toast({
+						icon:'warning',
+						heading:'Peringatan!',
+						text:'Barang tidak boleh kosong!'
+					});
+					$('#barang').parents('.form-group').addClass('has-error');
+				}
 
-		counter++;
+			return false;
 
-		$('#qty').val('');
-		$('#barang').prop('selectedIndex', 0).trigger('change');
+		} else if($('#qty').val() !== '' || $('#barang').val() !== ''){
+
+				table.row.add([
+					'<input type="text" readonly="" class="form-control form-control-sm" value="'+$('#barang option:selected').text()+'">'+
+					'<input type="hidden" value="'+$('#barang').val()+'" class="barang">',
+					'<input type="number" min="0" class="form-control form-control-sm" value="'+$('#qty').val()+'">',
+					'<input type="text" readonly="" class="form-control form-control-sm">',
+					'<input type="text" readonly="" class="form-control form-control-sm">',
+					'<input type="text" readonly="" class="form-control form-control-sm">',
+					'<input type="text" readonly="" class="form-control form-control-sm">',
+					'<input type="text" readonly="" class="form-control form-control-sm">',
+					'<button class="btn btn-danger btn-hapus-kenangan" type="button" title="Delete"><i class="fa fa-trash-o"></i></button>'
+					]).draw(false);
+
+				counter++;
+
+				$('#qty').val('');
+				$('#barang').prop('selectedIndex', 0).trigger('change');
+				$('#barang').select2('open');
+		}
 	}
+
+	$('#barang').on('select2:select', function(){
+		$('#qty').focus();
+	})
+
+	$('#input-barang input, #input-barang select').on('change focus blur keyup', function(){
+		if($(this).val() !== '' || $(this).val().length !== 0){
+			$(this).parents('.form-group').removeClass('has-error');
+		}
+	});
 
 	function hapus_row(a){
 		table.row($(a).parents('tr')).remove().draw();
