@@ -161,7 +161,7 @@
 	<body>
 		<div id="vue-element">
 			<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="box-shadow: 0px 5px 10px #555;">
-			    <a class="navbar-brand" href="{{ url('/') }}">{{ jurnal()->companyName }}</a>
+			    <a class="navbar-brand" href="{{ url('/') }}">{{-- {{ jurnal()->companyName }} --}} CV. Alexis</a>
 
 			    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 			      <span class="navbar-toggler-icon"></span>
@@ -230,28 +230,28 @@
 			<div class="container-fluid" style="background: none; margin-top: 70px; padding: 10px 30px;">
 				<div id="contentnya">
 
-					<?php 
+					{{-- @php
 						if($_GET['type'] == 'bulan')
 							$tanggal_1 = explode('/', $_GET['d1'])[0];
-					?>					
+					@endphp --}}				
 
 					{{-- Judul Kop --}}
 
-						<table width="100%" border="0" style="border-bottom: 1px solid #333;" v-if="pageNow == 1" v-cloak>
+						<table width="100%" border="0" style="border-bottom: 1px solid #333;"{{--  v-if="pageNow == 1" v-cloak --}}>
 				          <thead>
 				            <tr>
 				              <th style="text-align: left; font-size: 14pt; font-weight: 600; padding-top: 10px;" colspan="2">Analisa Hutang Piutang</th>
 				            </tr>
 
 				            <tr>
-				              <th style="text-align: left; font-size: 12pt; font-weight: 500" colspan="2">{{ jurnal()->companyName }}</th>
+				              <th style="text-align: left; font-size: 12pt; font-weight: 500" colspan="2">{{-- {{ jurnal()->companyName }} --}} CV. Alexis</th>
 				            </tr>
 
 				            <tr>
 				              <th style="text-align: left; font-size: 8pt; font-weight: 500; padding-bottom: 10px;">(Angka Disajikan Dalam Rupiah, Kecuali Dinyatakan Lain)</th>
 
 				              <th class="text-right" style="font-size: 8pt; font-weight: normal;">
-				              	<b>Periode {{ $tanggal_1 }}</b>
+				              	<b>Periode {{-- {{ $tanggal_1 }} --}}</b>
 				              </th>
 				            </tr>
 				          </thead>
@@ -260,7 +260,7 @@
 				    {{-- End Judul Kop --}}
 
 			    	<div style="padding-top: 20px;">
-						<table class="table" id="table-data" v-cloak>
+						<table class="table" id="table-data" {{-- v-cloak --}}>
 							<thead>
 								<tr>
 									<th width="20%" rowspan="2" style="vertical-align: middle; background-color: #0099CC; color: white;">Periode</th>
@@ -330,7 +330,7 @@
 	                </div>
 	                
 	                <div class="content-popup">
-	                	<form id="form-setting" method="get" action="{{ route('analisa.keuangan.hutang_piutang') }}">
+	                	<form id="form-setting" method="get" action="{{-- {{ route('analisa.keuangan.hutang_piutang') }} --}}">
 	                	<input type="hidden" readonly name="_token" value="{{ csrf_token() }}">
 	                    <div class="col-md-12">
 
@@ -395,7 +395,7 @@
     	<script src="{{ asset('modul_keuangan/js/vendors/vue_2_x/components/select.component.js') }}"></script>
     	<script src="{{ asset('modul_keuangan/js/vendors/vue_2_x/components/datepicker.component.js') }}"></script>
 
-    	<script type="text/javascript">
+    	{{-- <script type="text/javascript">
 
 			var app = 	new Vue({
 			    			el: '#vue-element',
@@ -704,6 +704,6 @@
 				                },
 				            }
 			    		})
-    	</script>
+    	</script> --}}
 	</body>
 </html>

@@ -90,4 +90,22 @@ class KeuanganController extends Controller
     {
         return view('modul_keuangan.laporan.arus_kas.index');
     }    
+
+    public function net_profit_ocf()
+    {
+        return view('modul_keuangan.analisa.net_profit_ocf.index');
+    }  
+    public function hutang_piutang()
+    {
+        return view('modul_keuangan.analisa.hutang_piutang.index');
+    }  
+    public function pertumbuhan_aset()
+    {
+        return view('modul_keuangan.analisa.pertumbuhan_aset.index');
+    }  
+    public function aset_ekuitas()
+    {
+        return view('modul_keuangan.analisa.aset_ekuitas.index');
+    }              
+
 }

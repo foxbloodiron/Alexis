@@ -19,7 +19,7 @@
 
 			<div class="col-md-4 col-sm-6 col-12">
 
-				<a href="#" class="text-none-underline text-blue">
+				<a href="{{route('net_profit_ocf')}}" class="text-none-underline text-blue">
 					<div class="card keuangan-card">
 
 						<div class="card-block text-center">
@@ -36,7 +36,7 @@
 
 			<div class="col-md-4 col-sm-6 col-12">
 
-				<a href="#" class="text-none-underline text-warning">
+				<a href="{{route('hutang_piutang')}}" class="text-none-underline text-warning">
 					<div class="card keuangan-card">
 
 						<div class="card-block text-center">
@@ -53,7 +53,7 @@
 
 			<div class="col-md-4 col-sm-6 col-12">
 
-				<a href="#" class="text-none-underline text-danger">
+				<a href="{{route('pertumbuhan_aset')}}" class="text-none-underline text-danger">
 					<div class="card keuangan-card">
 
 						<div class="card-block text-center">
@@ -70,7 +70,7 @@
 
 			<div class="col-md-4 col-sm-6 col-12">
 
-				<a href="#" class="text-none-underline text-success">
+				<a href="{{route('aset_ekuitas')}}" class="text-none-underline text-success">
 					<div class="card keuangan-card">
 
 						<div class="card-block text-center">
