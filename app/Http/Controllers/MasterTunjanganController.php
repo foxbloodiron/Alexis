@@ -56,8 +56,6 @@ class MasterTunjanganController extends Controller
      */
     public function index()
     {
-      $datas = DB::table('m_tunjangan')
-        ->get();
       return view('master/datatunjangan/datatunjangan');
     }
 
@@ -66,7 +64,7 @@ class MasterTunjanganController extends Controller
      *
      * @return Yajra/DataTable : server-side
      */
-    public function getlist_datatunjangan()
+    public function getlist()
     {
       $datas = DB::table('m_tunjangan')
         ->get();
