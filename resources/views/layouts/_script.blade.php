@@ -15,7 +15,7 @@
 <script src="{{asset('assets/jquery-ui/jquery-ui.js')}}"></script>
 <script src="{{asset('assets/datatables/datatables.min.js')}}"></script>
 <script src="{{asset('assets/datatables/Responsive-2.2.2/js/dataTables.responsive.min.js')}}"></script>
-<!-- <script src="{{asset('assets/datatables/Responsive-2.2.2/js/responsive.bootstrap4.min.js')}}"></script> -->
+<script src="{{asset('assets/datatables/Responsive-2.2.2/js/responsive.bootstrap4.min.js')}}"></script>
 <script src="{{asset('assets/datepicker/js/bootstrap-datepicker.min.js')}}"></script>
 <script src="{{asset('assets/select2/select2.js')}}"></script>
 <script src="{{asset('assets/js/jquery.maskMoney.min.js')}}"></script>
