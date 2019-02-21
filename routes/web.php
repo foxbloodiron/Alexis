@@ -69,10 +69,16 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/master/datamesin/datamesin', 'MasterController@datamesin')->name('datamesin');
 	Route::get('/master/datamesin/tambah_datamesin', 'MasterController@tambah_datamesin')->name('tambah_datamesin');
 	Route::get('/master/datamesin/edit_datamesin', 'MasterController@edit_datamesin')->name('edit_datamesin');
-	Route::get('/master/datacustomer/index', 'MasterController@datacustomer')->name('datacustomer');
-	Route::get('/master/datacustomer/create', 'MasterController@tambah_datacustomer')->name('tambah_datacustomer');
-	Route::get('/master/datacustomer/edit', 'MasterController@edit_datacustomer')->name('edit_datacustomer');
-	Route::get('/master/datapegawai/index', 'MasterController@datapegawai')->name('datapegawai');
+
+	Route::get('/master/datacustomer/index', 'MasterCustomerController@index')->name('datacustomer');
+	Route::get('/master/datacustomer/getlist', 'MasterCustomerController@getlist')->name('getlist_datacustomer');
+	Route::get('/master/datacustomer/create', 'MasterCustomerController@create')->name('tambah_datacustomer');
+	Route::post('/master/datacustomer/save', 'MasterCustomerController@store')->name('save_datacustomer');
+  Route::get('/master/datacustomer/edit/', 'MasterCustomerController@edit')->name('edit_datacustomer');
+  Route::post('/master/datacustomer/update/', 'MasterCustomerController@update')->name('update_datacustomer');
+  Route::post('/master/datacustomer/disable/', 'MasterCustomerController@delete')->name('disable_datacustomer');
+
+  Route::get('/master/datapegawai/index', 'MasterController@datapegawai')->name('datapegawai');
 	Route::get('/master/datapegawai/create', 'MasterController@tambah_datapegawai')->name('tambah_datapegawai');
 	Route::get('/master/datapegawai/edit', 'MasterController@edit_datapegawai')->name('edit_datapegawai');
 	Route::get('/master/datasatuan/index', 'MasterController@datasatuan')->name('datasatuan');
@@ -91,7 +97,7 @@ Route::group(['middleware' => 'auth'], function(){
 
 
 	Route::get('/master/datatunjangan/index', 'MasterTunjanganController@index')->name('datatunjangan');
-  Route::get('/master/datatunjangan/getlist', 'MasterTunjanganController@getlist_datatunjangan')->name('getlist_datatunjangan');
+  Route::get('/master/datatunjangan/getlist', 'MasterTunjanganController@getlist')->name('getlist_datatunjangan');
   Route::get('/master/datatunjangan/create', 'MasterTunjanganController@create')->name('tambah_datatunjangan');
   Route::post('/master/datatunjangan/save', 'MasterTunjanganController@store')->name('save_datatunjangan');
 	Route::get('/master/datatunjangan/edit/{id}', 'MasterTunjanganController@edit')->name('edit_datatunjangan');
