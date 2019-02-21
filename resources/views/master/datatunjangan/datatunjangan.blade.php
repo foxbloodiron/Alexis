@@ -38,26 +38,10 @@
 		                                    	<th width="1%">No</th>
 													                <th>Nama Tunjangan</th>
 													                <th>Jumlah Tunjangan</th>
-													                <th>Aksi</th>
+													                <th width="10%">Aksi</th>
 													            </tr>
 	                                </thead>
 	                                <tbody>
-	                                	<!-- <tr>
-	                                		<td>1</td>
-	                                		<td>Tunjangan Transport</td>
-	                                		<td>
-	                                			<div class="pull-left">Rp. </div>
-	                                			<div class="pull-right">10.000,00</div>
-
-	                                		</td>
-	                                		<td align="center">
-	                                			<div class="btn-group btn-group-sm">
-	                                				<button class="btn btn-warning btn-edit" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
-	                                				<button class="btn btn-danger btn-disable" type="button" title="Disable"><i class="fa fa-times-circle"></i></button>
-	                                			</div>
-	                                		</td>
-	                                	</tr>
-																		 -->
 							        						</tbody>
 	                            </table>
 	                        </div>
@@ -107,7 +91,7 @@
 			columns: [
 				{data: 'DT_RowIndex'},
 				{data: 'tj_name'},
-				{data: 'tj_nominal'},
+				{data: 'nominal'},
 				{data: 'action', name: 'action'}
 			],
 			pageLength: 10,

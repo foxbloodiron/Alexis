@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use Validator;
-// use Yajra\Datatables\Datatables;
+use Yajra\DataTables\DataTables;
 
 class MasterTunjanganController extends Controller
 {
@@ -49,7 +49,6 @@ class MasterTunjanganController extends Controller
       return $float_nominal;
     }
 
-
     /**
      * Display a listing of the resource.
      *
@@ -72,15 +71,18 @@ class MasterTunjanganController extends Controller
       $datas = DB::table('m_tunjangan')
         ->get();
 
-      return Datatables::of($datas)
+      return DataTables::of($datas)
         ->addIndexColumn()
+        ->addColumn('nominal', function($datas) {
+          return '<td><span class="float-left">Rp </span><span class="float-right">'. number_format($datas->tj_nominal, 2, ',', '.') .'</span></td>';
+        })
         ->addColumn('action', function($datas) {
           return '<div class="btn-group btn-group-sm">
           <button class="btn btn-warning btn-edit" onclick="EditTunjangan('.$datas->tj_id.')" rel="tooltip" data-placement="top"><i class="fa fa-pencil"></i></button>
           <button class="btn btn-danger btn-disable" onclick="DisableTunjangan('.$datas->tj_id.')" rel="tooltip" data-placement="top"><i class="fa fa-times-circle"></i></button>
           </div>';
         })
-        ->rawColumns(['action'])
+        ->rawColumns(['nominal', 'action'])
         ->make(true);
     }
 
@@ -167,16 +169,15 @@ class MasterTunjanganController extends Controller
           'message' => $errors
         ]);
       }
-      // start: execute insert data to db 'm_tunjangan'
+      // start: execute update data to db 'm_tunjangan'
       DB::beginTransaction();
       try {
-        $id = DB::table('m_tunjangan')->max('tj_id') + 1;
         $nominal = $this->convert_nominal($request->tunjangan_nominal);
         DB::table('m_tunjangan')
-          ->insert([
-            'tj_id' => $id,
+          ->where('tj_id', $id)
+          ->update([
             'tj_name' => $request->tunjangan_name,
-            'tj_nominal' => $request->tunjangan_nominal
+            'tj_nominal' => $nominal
           ]);
         DB::commit();
         return response()->json([
@@ -197,8 +198,24 @@ class MasterTunjanganController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete($id)
     {
-        //
+      // start: execute delete data to db 'm_tunjangan'
+      DB::beginTransaction();
+      try {
+        DB::table('m_tunjangan')
+          ->where('tj_id', $id)
+          ->delete();
+        DB::commit();
+        return response()->json([
+          'status' => 'berhasil'
+        ]);
+      } catch (\Exception $e) {
+        DB::rollback();
+        return response()->json([
+          'status' => 'gagal',
+          'message' => $e
+        ]);
+      }
     }
 }
