@@ -195,11 +195,14 @@
                         <li class="{{Request::is('master/barangsuplier/*') ? 'active' : ''}}">
                             <a href="{{route('barangsuplier')}}">Item Barang Suplier</a>
                         </li>
-                        <li class="{{Request::is('master/ongkoskirim/*') ? 'active' : ''}}">
-                            <a href="{{route('ongkoskirim')}}">Data Ongkos Kirim</a>
+                        <li class="{{Request::is('master/upah/*') ? 'active' : ''}}">
+                            <a href="{{route('upah')}}">Data Upah</a>
                         </li>
                         <li class="{{Request::is('master/datatunjangan/*')}}">
                             <a href="{{route('datatunjangan')}}">Data Tunjangan</a>
+                        </li>
+                        <li class="{{Request::is('master/datajabatan/*') ? 'active' : ''}}">
+                            <a href="{{route('datajabatan')}}">Data Jabatan</a>
                         </li>
                     </ul>
                 </li>
@@ -352,9 +355,9 @@
                         <i class="fa arrow"></i>
                     </a>
                     <ul class="sidebar-nav">
-                        <li class="{{Request::is('biayadanbeban/upahborongan/*') ? 'active' : ''}}">
+                        {{-- <li class="{{Request::is('biayadanbeban/upahborongan/*') ? 'active' : ''}}">
                             <a href="{{url('biayadanbeban/upahborongan/upahborongan')}}"> Upah Borongan</a>
-                        </li>
+                        </li> --}}
                         <li class="{{Request::is('biayadanbeban/upahharian/*') ? 'active' : ''}}">
                             <a href="{{url('biayadanbeban/upahharian/upahharian')}}"> Upah Harian</a>
                         </li>

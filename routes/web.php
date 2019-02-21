@@ -83,8 +83,12 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/master/barangsuplier/edit_barang', 'MasterController@edit_barang')->name('edit_barang');
 	Route::get('/master/barangsuplier/tambah_suplier', 'MasterController@tambah_suplier')->name('tambah_suplier');
 	Route::get('/master/barangsuplier/edit_suplier', 'MasterController@edit_suplier')->name('edit_suplier');
-	Route::get('/master/ongkoskirim/index', 'MasterController@ongkoskirim')->name('ongkoskirim');
-	Route::get('/master/ongkoskirim/create', 'MasterController@tambah_ongkoskirim')->name('tambah_ongkoskirim');
+	Route::get('/master/upah/index', 'MasterController@upah')->name('upah');
+	Route::get('/master/upah/create', 'MasterController@tambah_upah')->name('tambah_upah');
+	Route::get('/master/datajabatan/index', 'MasterController@datajabatan')->name('datajabatan');
+	Route::get('/master/datajabatan/create', 'MasterController@tambah_datajabatan')->name('tambah_datajabatan');
+	Route::get('/master/datajabatan/edit', 'MasterController@edit_datajabatan')->name('edit_datajabatan');
+
 
 	Route::get('/master/datatunjangan/index', 'MasterTunjanganController@index')->name('datatunjangan');
   Route::get('/master/datatunjangan/getlist', 'MasterTunjanganController@getlist_datatunjangan')->name('getlist_datatunjangan');
@@ -151,7 +155,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/produksi/produksitanparencana/index', 'ProduksiController@produksitanparencana')->name('produksitanparencana');
 	Route::get('/produksi/produksitanparencana/create', 'ProduksiController@tambah_produksitanparencana')->name('tambah_produksitanparencana');
 	Route::get('/produksi/upahboronganproduksi/upahboronganproduksi', 'ProduksiController@upahboronganproduksi')->name('upahboronganproduksi');
-	Route::get('/produksi/upahboronganproduksi/proses_upahboronganproduksi', 'ProduksiController@proses_upahboronganproduksi')->name('proses_upahboronganproduksi');
+	Route::get('/produksi/upahboronganproduksi/tambah_upahboronganproduksi', 'ProduksiController@tambah_upahboronganproduksi')->name('tambah_upahboronganproduksi');
 	Route::get('/produksi/spk/spk', 'ProduksiController@spk')->name('spk_produksi');
 
 	// Customer
