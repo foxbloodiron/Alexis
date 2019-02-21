@@ -40,7 +40,7 @@
 
                               <div class="col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
-                                  <input type="text" class="form-control form-control-sm" readonly="" name="">
+                                  <input type="text" class="form-control form-control-sm" readonly="" name="" placeholder="( Auto )">
                                 </div>
                               </div>
 
@@ -84,7 +84,7 @@
 
                               <div class="col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
-                                  <select class="form-control form-control-sm select2">
+                                  <select class="form-control form-control-sm" name="po_purchase_plan" id="po_purchase_plan">
                                     <option value="">--Pilih--</option>
                                   </select>
                                 </div>
@@ -96,7 +96,7 @@
 
                               <div class="col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
-                                  <select class="form-control form-control-sm select2">
+                                  <select class="form-control form-control-sm" name="po_supplier" id="po_supplier">
                                     <option value="">--Pilih--</option>
                                   </select>
                                 </div>
@@ -109,7 +109,6 @@
                             <table class="table table-bordered table-hover table-striped" id="table_order" cellspacing="0">
                               <thead class="bg-primary">
                                 <tr>
-                                  <th width="1%">No</th>
                                   <th>Kode | Barang</th>
                                   <th width="10%">Qty</th>
                                   <th width="10%">Satuan</th>
@@ -133,7 +132,7 @@
 
                                 <div class="col-lg-12">
                                   <div class="form-group">
-                                    <input type="text" readonly="" class="form-control form-control-sm" name="">
+                                    <input type="text" readonly="" class="form-control form-control-sm" name="po_total_gross" id="po_total_gross">
                                   </div>
                                 </div>
                                 
@@ -143,7 +142,7 @@
                                 
                                 <div class="col-lg-12">
                                   <div class="form-group">
-                                    <input type="text" readonly="" class="form-control form-control-sm" name="">
+                                    <input type="text" class="form-control form-control-sm" name="po_disc_value" id="po_disc_value">
                                   </div>
                                 </div>
 
@@ -153,7 +152,7 @@
                                 
                                 <div class="col-lg-12">
                                   <div class="form-group">
-                                    <input type="text" readonly="" class="form-control form-control-sm" name="">
+                                    <input type="text" class="form-control form-control-sm" name="po_disc_percent" id="po_disc_percent">
                                   </div>
                                 </div>
 
@@ -163,7 +162,7 @@
                                 
                                 <div class="col-lg-12">
                                   <div class="form-group">
-                                    <input type="text" readonly="" class="form-control form-control-sm" name="">
+                                    <input type="text" class="form-control form-control-sm" name="po_tax_percent" id="po_tax_percent">
                                   </div>
                                 </div>
 
@@ -173,7 +172,7 @@
                                 
                                 <div class="col-lg-12">
                                   <div class="form-group">
-                                    <input type="text" readonly="" class="form-control form-control-sm" name="">
+                                    <input type="text" readonly="" class="form-control form-control-sm" name="po_total_net" id="po_total_net">
                                   </div>
                                 </div>
 
@@ -203,4 +202,7 @@
     $('#table_order').dataTable();
   });
 </script>
+  @include('purchasing/orderpembelian/js/form_commander')
+  @include('purchasing/orderpembelian/js/form_functions')
+
 @endsection

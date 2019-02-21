@@ -60,4 +60,7 @@
 		$('#modal_detail_order').modal('show');
 	});
 </script>
+  @include('purchasing/orderpembelian/js/commander')
+  @include('purchasing/orderpembelian/js/functions')
+
 @endsection

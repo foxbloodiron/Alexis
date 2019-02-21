@@ -13,7 +13,7 @@
          / <span class="text-primary" style="font-weight: bold;">Tambah Data Armada (Own)</span>
        </p>
   </div>
-
+  <form id="form_tambah">
   <section class="section">
 
     <div class="row">
@@ -42,7 +42,7 @@
 
                               <div class="col-md-3 col-sm-6 col-12">
                                 <div class="form-group">
-                                  <input type="text" class="form-control form-control-sm" name="">
+                                  <input type="text" class="form-control form-control-sm" name="sopir">
                                 </div>
                               </div>
 
@@ -52,7 +52,7 @@
 
                               <div class="col-md-3 col-sm-6 col-12">
                                 <div class="form-group">
-                                  <input type="text" class="form-control form-control-sm" name="">
+                                  <input type="number" class="form-control form-control-sm" name="telp">
                                 </div>
                               </div>
                               
@@ -67,21 +67,19 @@
                               <thead class="bg-primary">
                                 <tr>
                                   <th rowspan="2">No</th>
-                                  <th colspan="3">Plat Nomor Kendaraan</th>
+                                  <th colspan="3" class="text-center">Plat Nomor Kendaraan</th>
                                   <th rowspan="2">Aksi</th>
                                 </tr>
                                 <tr>
-                                  <th>Kode Wilayah</th>
-                                  <th>Nomor Polisi</th>
-                                  <th>Huruf Belakang</th>
+                                  <th colspan="3" class="text-center">Nopol</th>
+                                  
                                 </tr>
                               </thead>
                               <tbody>
                                 <tr>
                                   <td>#</td>
-                                  <td><input type="text" class="form-control form-control-sm" id="kode_wilayah" name=""></td>
-                                  <td><input type="text" class="form-control form-control-sm" id="nomor_polisi" name=""></td>
-                                  <td><input type="text" class="form-control form-control-sm" id="huruf_belakang" name=""></td>
+                                  <td colspan="3"><input type="text" class="form-control form-control-sm" id="kode_wilayah" name="nopol" style="text-transform: uppercase"></td>
+                                 
                                   <td>
                                     <button class="btn btn-success btn-sm" id="btn-simpan"><i class="fa fa-check-square"></i></button>
                                     <button class="btn btn-warning btn-sm d-none" id="btn-edit"><i class="fa fa-pencil"></i></button>
@@ -117,14 +115,18 @@
                               <tbody>
                                 <tr>
                                   <td>#</td>
-                                  <td><input type="text" class="form-control form-control-sm" readonly="" value="CV. Alexis Beton" name=""></td>
-                                  <td><input type="text" class="form-control form-control-sm" id="plat_nomor" readonly="" name=""></td>
-                                  <td><input type="text" class="form-control form-control-sm" name=""></td>
-                                  <td><input type="text" class="form-control form-control-sm" name=""></td>
-                                  <td><input type="text" class="form-control form-control-sm" name=""></td>
-                                  <td><input type="text" class="form-control form-control-sm" name=""></td>
-                                  <td><input type="text" class="form-control form-control-sm" name=""></td>
-                                  <td><input type="text" class="form-control form-control-sm" name=""></td>
+                                  <td><input type="text" class="form-control form-control-sm" readonly="" value="CV. Alexis Beton">
+
+                                  <input type="hidden" class="form-control form-control-sm" readonly="" value="A-001" name="cabang">
+
+                                  </td>
+                                  <td><input type="text" class="form-control form-control-sm" id="plat_nomor" readonly="" name="" style="text-transform: uppercase"></td>
+                                  <td><input type="text" class="form-control form-control-sm" name="panjang"></td>
+                                  <td><input type="text" class="form-control form-control-sm" name="lebar"></td>
+                                  <td><input type="text" class="form-control form-control-sm" name="baktinggi"></td>
+                                  <td><input type="text" class="form-control form-control-sm" name="muatantinggi"></td>
+                                  <td><input type="text" class="form-control form-control-sm" name="bakkubik"></td>
+                                  <td><input type="text" class="form-control form-control-sm" name="muatankubik"></td>
                                 </tr>
                               </tbody>
 
@@ -144,7 +146,7 @@
     </div>
 
   </section>
-
+</form>
 </article>
 
 @endsection
@@ -155,6 +157,12 @@
     placeholder: "Search",
     allowClear: true
     });
+
+    $('#kode_wilayah').change(function(){
+      val = $(this).val();
+      alert(val);
+      $('#plat_nomor').val(val);
+    })
 
     $('.btn-submit').on('click',function(){
       $('#table_rencana tbody')
@@ -173,14 +181,26 @@
     });
 
     $(document).on('click', '.btn-submit1', function(){
-			$.toast({
-				heading: 'Success',
-				text: 'Data Berhasil di Simpan',
-				bgColor: '#00b894',
-				textColor: 'white',
-				loaderBg: '#55efc4',
-				icon: 'success'
-			})
+		     
+        formdata = $('#formtambah').serialize();
+        $.ajax({
+          data : formdata,
+          dataType : "json",
+          type : "post",
+          url : baseUrl + '/master/dataarmada/save',
+          success : function (response){
+               $.toast({
+                  heading: 'Success',
+                  text: 'Data Berhasil di Simpan',
+                  bgColor: '#00b894',
+                  textColor: 'white',
+                  loaderBg: '#55efc4',
+                  icon: 'success'
+                })
+          }
+
+        })
+
 		})
 
 

@@ -40,7 +40,7 @@
 
                               <div class="col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
-                                  <input type="text" class="form-control form-control-sm" readonly="" name="">
+                                  <input type="text" class="form-control form-control-sm" readonly="" name="" placeholder="( Auto )">
                                 </div>
                               </div>
 
@@ -50,7 +50,8 @@
 
                               <div class="col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
-                                  <input type="text" class="form-control form-control-sm" readonly="" name="">
+                                  <input type="hidden" name="{{ Auth::user()->id }}">
+                                  <input type="text" class="form-control form-control-sm" readonly="" name="" value="{{ Auth::user()->name }}">
                                 </div>
                               </div>
 
@@ -60,7 +61,7 @@
 
                               <div class="col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
-                                  <input type="text" class="form-control form-control-sm datepicker" value="{{date('d-m-Y')}}" name="">
+                                  <input type="text" class="form-control form-control-sm datepicker" value="{{date('d-m-Y')}}" name="po_tanggal" id="po_tanggal">
                                 </div>
                               </div>
 
@@ -70,10 +71,10 @@
 
                               <div class="col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
-                                  <select class="form-control form-control-sm">
-                                    <option value="CASH">Tunai</option>
-                                    <option value="DEPOSIT">Deposit</option>
-                                    <option value="CREDIT">Tempo</option>
+                                  <select class="form-control form-control-sm" name="po_method">
+                                    <option value="tunai">Tunai</option>
+                                    <option value="deposit">Deposit</option>
+                                    <option value="tempo">Tempo</option>
                                   </select>
                                 </div>
                               </div>
@@ -84,7 +85,7 @@
 
                               <div class="col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
-                                  <select class="form-control form-control-sm select2">
+                                  <select class="form-control form-control-sm" name="po_supplier">
                                     <option value="">--Pilih--</option>
                                   </select>
                                 </div>
@@ -96,10 +97,10 @@
                           <fieldset class="mt-3">
                             <div class="row">
                               
-                              <div class="col-md-4 col-sm-4 col-12">
+                              <div class="col-md-6 col-sm-3 col-12">
                                 <label>Barang</label>
                                 <div class="form-group">
-                                  <select class="select2 form-control form-control-sm" id="barang" name="">
+                                  <select class="form-control form-control-sm" id="i_name">
                                     <option selected="" disabled="" value="">--Pilih--</option>
                                     <option>Semen</option>
                                     <option>Pasir</option>
@@ -107,20 +108,20 @@
                                   </select>
                                 </div>
                               </div>
-                              <div class="col-md-4 col-sm-4 col-12">
+                              <div class="col-md-2 col-sm-3 col-12">
                                 <label for="">Satuan</label>
                                 <div class="form-group">
-                                  <select class="form-control form-control-sm">
+                                  <select class="form-control form-control-sm" id="i_satuan">
                                     <option value="" selected="" disabled="">-Pilih-</option>
                                   </select>
                                 </div>
                               </div>
 
-                              <div class="col-md-4 col-sm-4 col-xs-12">
+                              <div class="col-md-2 col-sm-3 col-xs-12">
                                 <label>Qty</label>
                                 <div class="form-group form-group-sm">
                                   <div class="input-group input-group-sm">
-                                    <input type="number" class="form-control form-control-sm" id="qty" min="0" name="">
+                                    <input type="number" class="form-control form-control-sm" id="qty" min="0" id="qty">
                                     <div class="input-group-append">
                                       <button class="btn btn-primary btn-tambah" type="button" title="Tambah"><i class="fa fa-plus"></i></button>
                                     </div>
@@ -128,11 +129,18 @@
                                 </div>
                               </div>
 
+                              <div class="col-md-2 col-sm-3 col-12">
+                                <label for="">Stok</label>
+                                <div class="form-group">
+                                  <input type="text" class="form-control form-control-sm" readonly="" name="">
+                                </div>
+                              </div>
+
                             </div>
                           </fieldset>
 
                           <div class="table-responsive mt-3">
-                            <table class="table table-bordered table-hover table-striped" cellspacing="0" id="table_order">
+                            <table class="table table-bordered table-hover table-striped" cellspacing="0" id="tabll_purchase_order_dt">
                               <thead class="bg-primary">
                                 <tr align="center">
                                   <th width="20%">Kode | Barang</th>
@@ -252,4 +260,7 @@
     }
   });
 </script>
+  @include('purchasing/orderpembelian/js/form_tanparencana_commander')
+  @include('purchasing/orderpembelian/js/form_tanparencana_functions')
+
 @endsection

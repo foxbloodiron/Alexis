@@ -35,64 +35,37 @@
 	                                    <tr align="center">
 							                <th width="1%">No</th>
 							                <th width="10%">Perusahaan</th>
-							                <th width="30%">Nama Suplier</th>
-							                <th width="1%">Alamat</th>
+							                <th width="10%">Nama Suplier</th>
+							                <th width="10%">Alamat</th>
 							                <th width="17%">No Hp</th>
-							                <th width="1%">Fax</th>
-											<th width="1%">Keterangan</th>
-											<th width="21%">Plat Nomer</th>
+							                <th width="5%">Fax</th>
+											<th width="5%">Keterangan</th>
+											
 							                <th width="5%">Aksi</th>
 							            </tr>
 	                                </thead>
 	                                <tbody>
+	                                	@foreach($data['supplier'] as $index=>$supplier)
 	                                	<tr>
-	                                		<td>1</td>
-	                                		<td>PT. Alpha</td>
-	                                		<td>Alpha</td>
-	                                		<td>Jl. Alpha</td>
-	                                		<td></td>
-	                                		<td></td>
-											<td></td>
-											<td></td>
-	                                		<td>
+	                                		<td> {{$index + 1}} </td>
+	                                		<td> {{$supplier->c_name}} </td>
+	                                		<td> {{$supplier->s_name}} </td>
+	                                		<td> {{$supplier->s_address}} </td>
+	                                		<td> {{$supplier->s_phone}} </td>
+	                                		<td> {{$supplier->s_fax}} </td>
+	                                		<td> {{$supplier->s_note}} </td>
+	                                		<td> 
 	                                			<div class="btn-group btn-group-sm">
-	                                				<button class="btn btn-warning btn-edit" onclick="window.location.href='{{route('edit_datasuplier')}}'" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
-	                                				<button class="btn btn-danger btn-disable" type="button" title="Delete"><i class="fa fa-eye-slash"></i></button>
+	                                				@if($supplier->s_isactive == 'Y')
+	                                				<a class="btn btn-warning btn-edit" href="{{url('/master/datasuplier/edit/'.$supplier->s_id.'')}}" type="button" title="Edit"><i class="fa fa-pencil"></i></a>
+	                                				@endif
+
+	                                				<button class="btn btn-danger btn-disable" type="button" title="Delete" onclick="status('{{$supplier->s_id}},{{$supplier->s_isactive}}')"><i class="fa fa-eye-slash"></i></button>
 	                                			</div>
 	                                		</td>
 	                                	</tr>
-	                                	<tr>
-	                                		<td>2</td>
-	                                		<td>PT. Bravo</td>
-	                                		<td>Bravo</td>
-	                                		<td>Jl. Bravo</td>
-	                                		<td></td>
-	                                		<td></td>
-											<td></td>
-											<td></td>
-	                                		<td>
-	                                			<div class="btn-group btn-group-sm">
-	                                				<button class="btn btn-warning btn-edit" onclick="window.location.href='{{route('edit_datasuplier')}}'" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
-	                                				<button class="btn btn-danger btn-disable" type="button" title="Delete"><i class="fa fa-eye-slash"></i></button>
-	                                			</div>
-	                                		</td>
-	                                	</tr>
-	                                	<tr>
-	                                		<td>3</td>
-	                                		<td>PT. Charlie</td>
-	                                		<td>Charlie</td>
-	                                		<td>Jl. Charlie</td>
-	                                		<td></td>
-	                                		<td></td>
-											<td></td>
-											<td></td>
-	                                		<td>
-	                                			<div class="btn-group btn-group-sm">
-	                                				<button class="btn btn-warning btn-edit" onclick="window.location.href='{{route('edit_datasuplier')}}'" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
-	                                				<button class="btn btn-danger btn-disable" type="button" title="Delete"><i class="fa fa-eye-slash"></i></button>
-	                                			</div>
-	                                		</td>
-	                                	</tr>
+	                                	@endforeach
+
 	                                </tbody>
 	                            </table>
 	                        </div>
@@ -111,34 +84,55 @@
 @endsection
 @section('extra_script')
 <script type="text/javascript">
+	var table = $('#table_suplier').DataTable();
 
-	$(document).ready(function(){
-		var table = $('#table_suplier').DataTable();
+	function status(a){
+		split = a.split(",");
+		id = split[0];
+		active = split[1];
 
-		$(document).on('click', '.btn-disable', function(){
-			var ini = $(this);
-			$.confirm({
+		if(active == 'Y'){
+			$status = 'Disable';
+		}
+		else {
+			$status = 'Enable';
+		}
+
+
+		$.confirm({
 				animation: 'RotateY',
 				closeAnimation: 'scale',
 				animationBounce: 1.5,
 				icon: 'fa fa-exclamation-triangle',
-			    title: 'Disable',
-				content: 'Apa anda yakin mau disable data ini?',
+			    title: $status,
+				content: 'Apa anda yakin mau ' + $status +' data ini?',
 				theme: 'disable',
 			    buttons: {
 			        info: {
 						btnClass: 'btn-blue',
 			        	text:'Ya',
 			        	action : function(){
-							$.toast({
-								heading: 'Information',
-								text: 'Data Berhasil di Disable.',
-								bgColor: '#0984e3',
-								textColor: 'white',
-								loaderBg: '#fdcb6e',
-								icon: 'info'
+			        		$.ajax({
+								data : {id,active},
+								type : "get",
+								url : baseUrl + '/master/datasuplier/disabled',
+								dataType : "json",
+								success : function(response){
+									$.toast({
+										heading: 'Information',
+										text: 'Data Berhasil di Disable.',
+										bgColor: '#0984e3',
+										textColor: 'white',
+										loaderBg: '#fdcb6e',
+										icon: 'info'
+									})
+							       
+							      setTimeout(function(){
+			                         location.reload();	                            
+			                            },200);
+								}
 							})
-					        ini.parents('.btn-group').html('<button class="btn btn-danger btn-enable" type="button" title="enable"><i class="fa fa-eye"></i></button>');
+							
 				        }
 			        },
 			        cancel:{
@@ -149,24 +143,8 @@
     			    }
 			    }
 			});
-		});
+	}
 
-		$(document).on('click', '.btn-enable', function(){
-			$.toast({
-				heading: 'Information',
-				text: 'Data Berhasil di Enable.',
-				bgColor: '#0984e3',
-				textColor: 'white',
-				loaderBg: '#fdcb6e',
-				icon: 'info'
-			})
-			$(this).parents('.btn-group').html('<button class="btn btn-warning btn-edit" type="button" title="Edit"><i class="fa fa-pencil"></i></button>'+
-	                                		'<button class="btn btn-danger btn-disable" type="button" title="Delete"><i class="fa fa-eye-slash"></i></button>')
-		})
-
-		// function table_hapus(a){
-		// 	table.row($(a).parents('tr')).remove().draw();
-		// }
-	});
+	
 </script>
 @endsection

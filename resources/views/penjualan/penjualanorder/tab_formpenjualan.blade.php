@@ -74,7 +74,7 @@
                 	</div>
                 </fieldset>
 
-                <fieldset class="mb-3">
+                <fieldset class="mb-3" id="input-barang">
                 	<div class="row">
 
                 		<div class="col-md-6 col-sm-12">

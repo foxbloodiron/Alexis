@@ -35,6 +35,7 @@
     							<th>Nota</th>
     							<th>Customer</th>
                   <th>Total Amount</th>
+                  <th>Status</th>
     							<th width="15%">Aksi</th>
     						</tr>
     					</thead>
@@ -48,7 +49,22 @@
                       <div class="col-5">Rp. </div><div class="col-7 text-right">20.000,00</div>
                     </div>
                   </td>
+                  <td align="center"><label class="badge badge-pill bg-secondary text-white">Belum Bayar</label></td>
+                  <td align="center">
+                    <button class="btn btn-primary btn-sm" type="button" title="Bayar" data-toggle="modal" data-target="#modal_bayar"><i class="fa fa-money"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>POSTO/20181207/1</td>      
+                  <td>Delta</td>
                   <td>
+                    <div class="row">
+                      <div class="col-5">Rp. </div><div class="col-7 text-right">20.000,00</div>
+                    </div>
+                  </td>
+                  <td align="center"><label class="badge badge-pill bg-success text-white">Lunas</label></td>
+                  <td align="center">
                     <button class="btn btn-primary btn-sm" type="button" title="Bayar" data-toggle="modal" data-target="#modal_bayar"><i class="fa fa-money"></i></button>
                   </td>
                 </tr>

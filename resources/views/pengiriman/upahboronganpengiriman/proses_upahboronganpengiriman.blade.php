@@ -1,5 +1,16 @@
 @extends('main')
 
+@section('extra_style')
+<style type="text/css">
+    .form-group.has-error .input-group input,
+    .form-group.has-error .input-group select
+    {
+        border-color: #a94442;
+    }
+
+</style>
+@endsection
+
 @section('content')
 
 <article class="content">
@@ -31,50 +42,51 @@
                     </div>
                     <div class="card-block">
                         <section>
+                            <fieldset class="mb-3" id="fieldset-1">
+                            	<div class="row">
+                            		
+                            		<div class="col-md-3 col-sm-4 col-12">
+                            			<label>Pemilik/Nopol/Sopir</label>
+                            		</div>
 
-                        	<div class="row">
-                        		
-                        		<div class="col-md-3 col-sm-6 col-xs-12">
-                        			<label>Nota</label>
-                        		</div>
+                            		<div class="col-md-9 col-sm-8 col-12">
+                            			<div class="form-group">
+                            				<select class="form-control form-control-sm select2" name="" id="nopol">
+                                                <option value="" selected="">--Pilih--</option>
+                                                <optgroup label="CV.Alexis">
+                                                    <option value="1">CV.Alexis - L 123 UD - Su Ep</option>
+                                                    <option value="2">CV.Alexis - L 456 BV - Paijo</option>
+                                                </optgroup>
+                                                <optgroup label="Alpha">
+                                                    <option value="3">Alpha - L 987 BU - Tole</option>
+                                                </optgroup>
+                                                <optgroup label="Bravo">
+                                                    <option value="4">Bravo - L 789 UM - Wawan</option>
+                                                </optgroup>
+                                            </select>
+                            			</div>
+                            		</div>
 
-                        		<div class="col-md-3 col-sm-6 col-xs-12">
-                        			<div class="form-group">
-                        				<input type="text" readonly="" class="form-control form-control-sm" value="POS-TO/20190208/1" name="">
-                        			</div>
-                        		</div>
 
-                        		<div class="col-md-3 col-sm-6 col-xs-12">
-                        			<label>Nama Customer</label>
-                        		</div>
+                                    <div class="col-md-3 col-sm-4 col-12">
+                                        <label>Tanggal</label>
+                                    </div>
 
-                        		<div class="col-md-3 col-sm-6 col-xs-12">
-                        			<div class="form-group">
-                        				<input type="text" readonly="" class="form-control form-control-sm" value="Alpha" name="">
-                        			</div>
-                        		</div>
+                                    <div class="col-md-9 col-sm-8 col-12">
+                                        <div class="form-group">
+                                            <div class="input-group input-daterange">
+                                                <input type="text" class="form-control form-control-sm" id="" name="">
+                                                <span class="input-group-addon">-</span>
+                                                <input type="text" class="form-control form-control-sm" id="" name="">
+                                            </div>
+                                        </div>
+                                    </div>
 
-                        		<div class="col-md-3 col-sm-6 col-xs-12">
-                        			<label>Alamat</label>
-                        		</div>
-
-                        		<div class="col-md-9 col-sm-6 col-xs-12">
-                        			<div class="form-group">
-                        				<textarea class="form-control" readonly="" name="">Jl. Alpha</textarea>
-                        			</div>
-                        		</div>
-
-                        		<div class="col-md-3 col-sm-6 col-xs-12">
-                        			<label>Jadwal</label>
-                        		</div>
-
-                        		<div class="col-md-3 col-sm-6 col-xs-12">
-                        			<div class="form-group">
-                        				<input type="text" readonly="" class="form-control form-control-sm" value="08-02-2019 23:59:59" name="">
-                        			</div>
-                        		</div>
-
-                        	</div>
+                                    <div class="col-12 text-right">
+                                        <button class="btn btn-primary" type="button" id="btn-proses">Proses</button>
+                                    </div>
+                            	</div>
+                            </fieldset>
 
                         	<div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover" id="table_barang" cellspacing="0">
@@ -82,37 +94,12 @@
                                         <tr>
                                             <th>Barang</th>
                                             <th width="10%">Qty</th>
-                                            <th>Nama Pemilik</th>
-                                            <th>Nopol</th>
-                                            <th>Sopir</th>
+                                            <th>Tanggal Pengiriman Selesai</th>
                                             <th>Ongkos Kirim per Jumlah Barang</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Paving 8T</td>
-                                            <td>50</td>
-                                            <td>Alpha</td>
-                                            <td>L 1234 BV</td>
-                                            <td>Su Ep</td>
-                                            <td>Rp. 20.000,00/100</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Paving Abu</td>
-                                            <td>100</td>
-                                            <td>Alpha</td>
-                                            <td>L 1234 BV</td>
-                                            <td>Tole</td>
-                                            <td>Rp. 21.000,00/100</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Paving Tortilla</td>
-                                            <td>120</td>
-                                            <td>Alpha</td>
-                                            <td>L 1234 BV</td>
-                                            <td>Paijo</td>
-                                            <td>Rp. 22.000,00/100</td>
-                                        </tr>
+                                        
                                     </tbody>
                                 </table>
                             </div>
@@ -120,7 +107,7 @@
                         </section>
                     </div>
                     <div class="card-footer text-right">
-                    	<button class="btn btn-primary" id="btn-simpan" type="button">Proses</button>
+                    	<button class="btn btn-primary" id="btn-simpan" type="button">Simpan</button>
                     	<a href="{{route('upahboronganpengiriman')}}" class="btn btn-secondary">Kembali</a>
                     </div>
                 </div>
@@ -149,6 +136,67 @@
                     icon: 'info'
             })
         });
+
+        $('#fieldset-1 input, #fieldset-1 select').on('change keyup blur focus hover', function(){
+            if($(this).val() !== ''){   
+                $(this).parents('.form-group').removeClass('has-error');
+            }
+
+
+        });
+
+        $('#btn-proses').click(function(){
+            var nopol, tanggal;
+            nopol = $('#nopol');
+            tanggal = $('.input-daterange input');
+
+            if(nopol.val() !== '' && tanggal.val() !== ''){
+
+                datatable_append();
+
+            } else if(nopol.val() === '' || tanggal.val() === ''){
+
+                if (nopol.val() === '') {
+                    $.toast({
+                        icon:'warning',
+                        text:'Nopol/Sopir tidak boleh kosong',
+                        heading:'Peringatan!'
+                    });
+                    nopol.parents('.form-group').addClass('has-error');
+                }
+                if (tanggal.val() === '') {
+                    $.toast({
+                        icon:'warning',
+                        text:'Tanggal tidak boleh kosong',
+                        heading:'Peringatan!'
+                    });
+                    tanggal.parents('.form-group').addClass('has-error');
+
+                }
+
+                eueue.clear().draw();
+            }
+        });
+
+
+        $('.input-daterange input').each(function(){
+            $(this).datepicker({endDate:'0d'});
+        });
+
+        function datatable_append(){
+            eueue.row.add([
+                'Paving Abu',
+                '12',
+                '08-02-2019',
+                'Rp. 20.000,00/100'
+                ]).draw();
+            eueue.row.add([
+                'Paving Merah',
+                '12',
+                '09-02-2019',
+                'Rp. 20.000,00/100'
+                ]).draw();
+        }
     });
 </script>
 @endsection
