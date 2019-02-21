@@ -86,6 +86,8 @@
 
 @section('extra_script')
 <script type="text/javascript">
+	var table1 = $('#table_barang').DataTable();
+
 	function status(id){
 		split = id.split(",");
 		data_id = split[0];

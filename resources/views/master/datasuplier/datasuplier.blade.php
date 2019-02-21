@@ -84,6 +84,7 @@
 @endsection
 @section('extra_script')
 <script type="text/javascript">
+	var table = $('#table_suplier').DataTable();
 
 	function status(a){
 		split = a.split(",");
