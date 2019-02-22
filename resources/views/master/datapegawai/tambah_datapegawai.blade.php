@@ -23,7 +23,7 @@
         <div class="card">
                     <div class="card-header bordered p-2">
                       <div class="header-block">
-                        <h3 class="title">Edit Data Pegawai</h3>
+                        <h3 class="title">Tambah Data Pegawai</h3>
                       </div>
                       <div class="header-block pull-right">
                         <a href="{{route('datapegawai')}}" class="btn btn-secondary"><i class="fa fa-arrow-left"></i></a>
@@ -63,7 +63,12 @@
 
                             <div class="col-md-9 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" name="">
+                                <div class="input-group">
+                                  <input type="password" class="form-control form-control-sm" name="">
+                                  <div class="input-group-append">
+                                    <button class="btn-sm btn btn-primary" id="btn-show"><i class="fa fa-eye"></i></button>
+                                  </div>
+                                </div>
                               </div>
                             </div>
 
@@ -144,6 +149,18 @@
                               </div>
                             </div>
 
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <label>Jabatan</label>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <div class="form-group">
+                                <select class="form-control form-control-sm select2" name="">
+                                  <option value="">--Pilih--</option>
+                                </select>
+                              </div>
+                            </div>
+
                           </div>
 
                           
@@ -167,7 +184,7 @@
 @section('extra_script')
 <script type="text/javascript">
   $(document).ready(function(){
-    $(document).on('click', '.btn-submit', function(){
+    $('.btn-submit').on('click', function(){
 			$.toast({
 				heading: 'Success',
 				text: 'Data Berhasil di Simpan',
@@ -175,8 +192,18 @@
 				textColor: 'white',
 				loaderBg: '#55efc4',
 				icon: 'success'
-			})
-		})
+			});
+		});
+
+    $('#btn-show').click(function(){
+      var input = $(this).parents('.input-group').find('input');
+
+      input.attr('type', function(index, attr){
+        return attr === 'password' ? 'text' : 'password';
+      });
+
+      $(this).find('i').toggleClass('fa-eye fa-eye-slash');
+    });
   });
 </script>
 @endsection

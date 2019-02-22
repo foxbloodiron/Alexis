@@ -38,6 +38,7 @@
 							                <th>Nama Pegawai</th>
 							                <th>Alamat</th>
 							                <th>Status Karyawan</th>
+							                <th>Jabatan</th>
 							                <th>Aksi</th>
 							            </tr>
 	                                </thead>
@@ -49,6 +50,7 @@
 	                                		<td>Alpha</td>
 	                                		<td>Jl. Alpha</td>
 	                                		<td>Sudah Menikah</td>
+	                                		<td>Direktur</td>
 	                                		<td>
 	                                			<div class="btn-group btn-group-sm">
 	                                				<button class="btn btn-warning btn-edit" title="Edit" onclick="window.location.href='{{ route('edit_datapegawai')}}'"type="button"><i class="fa fa-pencil"></i></button>
@@ -63,6 +65,7 @@
 	                                		<td>Bravo</td>
 	                                		<td>Jl. Bravo</td>
 	                                		<td>Sudah Menikah</td>
+	                                		<td>Office Boy</td>
 	                                		<td>
 	                                			<div class="btn-group btn-group-sm">
 													<button class="btn btn-warning btn-edit" title="Edit" onclick="window.location.href='{{ route('edit_datapegawai')}}'"type="button"><i class="fa fa-pencil"></i></button>
@@ -77,6 +80,7 @@
 	                                		<td>Charlie</td>
 	                                		<td>Jl. Charlie</td>
 	                                		<td>Belum Menikah</td>
+	                                		<td>Admin</td>
 	                                		<td>
 	                                			<div class="btn-group btn-group-sm">
 													<button class="btn btn-warning btn-edit" title="Edit" onclick="window.location.href='{{ route('edit_datapegawai')}}'"type="button"><i class="fa fa-pencil"></i></button>

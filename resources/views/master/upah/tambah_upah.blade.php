@@ -36,17 +36,7 @@ div.dataTables_wrapper div.dataTables_filter {
               </tr>
             </thead>
             <tbody>
-              {{-- @for($i=0;$i<10;$i++) --}}
-                <tr>
-                  <td>Semen</td>
-                </tr>
-                <tr>
-                  <td>Sirtu</td>
-                </tr>
-                <tr>
-                  <td>Abu Batu</td>
-                </tr>
-              {{-- @endfor --}}
+              
             </tbody>
           </table>
         </div>

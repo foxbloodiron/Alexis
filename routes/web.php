@@ -198,8 +198,10 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/biayadanbeban/sewalahan/sewalahan', 'BiayaController@sewalahan')->name('sewalahan');
 	Route::get('/biayadanbeban/upahborongan/upahborongan', 'BiayaController@upahborongan')->name('upahborongan');
 	Route::get('/biayadanbeban/upahborongan/tambah_upahborongan', 'BiayaController@tambah_upahborongan')->name('tambah_upahborongan');
-	Route::get('/biayadanbeban/upahbulanan/upahbulanan', 'BiayaController@upahbulanan')->name('upahbulanan');
-	Route::get('/biayadanbeban/upahharian/upahharian', 'BiayaController@upahharian')->name('upahharian');
+	Route::get('/biayadanbeban/upahbulanan/index', 'BiayaController@upahbulanan')->name('upahbulanan');
+	Route::get('/biayadanbeban/upahbulanan/create', 'BiayaController@tambah_upahbulanan')->name('tambah_upahbulanan');
+	Route::get('/biayadanbeban/upahharian/index', 'BiayaController@upahharian')->name('upahharian');
+	Route::get('/biayadanbeban/upahharian/create', 'BiayaController@tambah_upahharian')->name('tambah_upahharian');
 	Route::get('/biayadanbeban/pengeluarankecil/index', 'BiayaController@pengeluarankecil')->name('pengeluarankecil');
 	Route::get('/biayadanbeban/pengeluarankecil/create', 'BiayaController@tambah_pengeluarankecil')->name('tambah_pengeluarankecil');
 
