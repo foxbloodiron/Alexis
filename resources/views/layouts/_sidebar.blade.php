@@ -364,9 +364,9 @@
                         <li class="{{Request::is('biayadanbeban/upahbulanan/*') ? 'active' : ''}}">
                             <a href="{{route('upahbulanan')}}"> Upah Bulanan</a>
                         </li>
-                        <li class="{{Request::is('biayadanbeban/sewalahan/*') ? 'active' : ''}}">
+                        {{-- <li class="{{Request::is('biayadanbeban/sewalahan/*') ? 'active' : ''}}">
                             <a href="{{route('sewalahan')}}"> Sewa Lahan</a>
-                        </li>
+                        </li> --}}
                        {{--  <li class="{{Request::is('biayadanbeban/biayaoperasional/*') ? 'active' : ''}}">
                             <a href="{{route('biayaoperasional')}}"> Biaya Operasional</a>
                         </li>
