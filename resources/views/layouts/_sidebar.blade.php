@@ -261,7 +261,7 @@
                             <a href="{{route('penggunaanbahanbaku')}}">Penggunaan Bahan Baku </a>
                         </li>
                         <li class="{{Request::is('stok/opnamebahanbaku/*') ? 'active' : ''}}">
-                            <a href="{{route('opnamebahanbaku')}}">Opname Bahan Baku </a>
+                            <a href="{{route('opnamebahanbaku')}}">Opname Stock </a>
                         </li>
                     </ul>
                 </li>
