@@ -79,11 +79,11 @@
                         <tr>
                           <th width="1%">No</th>
                           <th>Kode Produksi</th>
-                          <th>Nama Barang</th>
+                          <th width="25%">Nama Barang</th>
                           <th>Jumlah Produksi</th>
-                          <th>Reject</th>
+                          <th width="10%">Reject</th>
                           <th>Nett Produksi</th>
-                          <th>Total</th>
+                          <th width="15%">Upah</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -130,7 +130,7 @@
                             </div>
                                 
                             <div class="col-md-4 col-sm-5 col-12">                            
-                              <label>Upah</label>
+                              <label>Total Upah</label>
                             </div>
 
                             <div class="col-md-8 col-sm-7 col-12">
