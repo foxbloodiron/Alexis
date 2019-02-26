@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\model\purchasing\d_purchase_order;
 use App\model\purchasing\d_purchase_order_dt;
 use App\model\purchasing\d_purchase_plan;
+use App\model\purchasing\d_purchase_plan;
 use App\model\master\m_item;
 use App\model\master\m_supplier;
 use DB;
