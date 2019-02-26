@@ -1,44 +1,48 @@
 <script>
-  function append_item(){
-        
-        var m_item = $('#i_name').select2('data');
-        var is_exists = $("[name='podt_item[]'][value='" + m_item.i_id + "']");
-        if(is_exists.length == 0) {
-          var podt_item = "<input name='podt_item[]' value='" + m_item.i_id + "' type='hidden'>" + m_item.i_name;
-          var qty = $('#qty').val();
-          var podt_qty = "<input name='podt_qty[]' value='" + qty + "' type='number' class='form-control'>" ;
-          var podt_price = "<input name='podt_price[]' value='" + m_item.i_buy + "' type='hidden'>" + m_item.i_buy_label;
-          var harga_total = m_item.i_buy * $('#qty').val();
-          harga_total = 'Rp. ' + accounting.formatMoney(harga_total,"",0,'.',',') + ',00';
-          var aksi = '<button type="button" class="btn btn-danger btn-hapus"><i class="glyphicon glyphicon-trash"></i></button>';
+  
 
-          
-          table_purchase_plan_dt.row.add([
-            podt_item, podt_qty, podt_price, harga_total, aksi
-          ]).draw();
-        }
-        else {
-          var tr = is_exists.parents('tr');
-          var qty = $('#qty').val()
-          var unit_qty = qty != '' ? parseInt( qty ) : 0;
-          var new_qty = parseInt( $('#qty').val() );
-          var old_qty = tr.find('[name="podt_qty[]"]').val();
-          old_qty = parseInt(old_qty)
-          new_qty = new_qty + old_qty;
-          tr.find('[name="podt_qty[]"]').val(new_qty)
-          var unit_price = parseInt(
-            tr.find('[name="podt_price[]"]').val()
-          );
-          var harga_total =  unit_price * new_qty;
-          harga_total = 'Rp. ' + accounting.formatMoney(harga_total,"",0,'.',',');
-          tr.children('td:eq(3)').text(harga_total);
-          count_grandtotal();
-        }
+  function count_grandtotal() {
+    var qty = $('[name="podt_qty[]"]');
+      var price = $('[name="podt_price[]"]');
+      var item_qty, item_price, total_gross = 0, total_net = 0;
 
-      
+      for(x = 0;x < qty.length;x++) {
+        item_qty =  $( qty[x] ).val() ;
+        item_qty = item_qty != '' ? parseInt(item_qty) : 0;
+        item_price = $( price[x] ).val() ;
+        item_price = item_price.replace(/\D/g, '') ;
+        item_price = item_price != '' ? parseInt(item_price) : 0;
+        total_gross += ( item_qty * item_price );
       }
 
-	// Function untuk meng-insert sales plan
+      var disc_value = $('#po_disc_value').val();
+      var disc_percent = $('#po_disc_percent').val();
+      var tax_percent = $('#po_tax_percent').val();
+      disc_value = disc_value.replace(/\D/g, '');
+      disc_value = disc_value != '' ? parseInt(disc_value) : 0;
+      disc_percent = disc_percent != '' ? parseInt(disc_percent) : 0;
+      disc_percent = disc_percent / 100;
+      tax_percent = tax_percent != '' ? parseInt(tax_percent) : 0;
+      tax_percent = tax_percent / 100;
+
+      var result_disc = (total_gross - disc_value) * disc_percent;
+      var result_tax = result_disc * tax_percent;
+      total_net = total_gross - disc_value - result_disc + result_tax;  
+
+      $('#po_total_gross').val(
+        'Rp. ' + accounting.formatMoney(total_gross,"",0,'.',',')
+      );
+      $('#po_total_net').val(
+        'Rp. ' + accounting.formatMoney(total_net,"",0,'.',',')
+      );
+  }
+
+  function remove_detail(obj) {
+    var tr = $(obj).parents('tr');
+    table_purchase_order_dt.row(tr).remove().draw();
+  }
+
+  // Function untuk meng-insert sales plan
   function insert_purchase_order() {
     var data = $('#form_purchase_order').serialize();
     $.ajax({
@@ -73,15 +77,54 @@
     });
   }
 
+  function update_purchase_order() {
+    var data = $('#form_purchase_order').serialize();
+    $.ajax({
+      url: "{{ url('/purchasing/orderpembelian/update_d_purchase_order') }}",
+      type: 'POST',
+      data: data,
+      dataType: 'json',
+      success: function (response) {
+        if(response.status == 'sukses') {
+          
+          $.toast({  
+            heading: 'Sukses',
+            text: 'Data berhasil disimpan',
+            icon: 'success'
+          });
+
+          setTimeout(function(){
+            location.href = '{{ route('orderpembelian') }}#po_tanpa';
+          }, 3000);
+        }
+        else {
+          $.toast({
+            heading: 'Error',
+            text: 'Terjadi kesalahan',
+            bgColor: '#d63031',
+            textColor: 'white',
+            loaderBg: '#ff7675',
+            icon: 'error'
+          });          
+        }
+      }
+    });
+  }
+
   
   
 
   // Function untuk menghitung grand total ketika menambahkan atau mengurangi item
   function append_purchase_order_dt() {
       // Validasi
-      var last_item = $('[name="podt_item[]"]:last'); 
-      var last_qty = $('[name="podt_qty[]"]:last'); 
-      if(last_item.val() == '' || last_item.val() == null) {
+      var i_id = $('#i_name').val();
+      var item = $('#i_name').select2('data')[0];
+      var i_name = item.text;
+      var prev_price = item.prev_price;
+      var satuan = $('#i_satuan').val(); 
+      var satuan_label = $('#i_satuan option:selected').text(); 
+      var qty = $('#qty').val() 
+      if(i_id == '' || i_id == null) {
         $.toast({
           heading: 'Error',
           text: 'Nama item harus diisi',
@@ -91,7 +134,7 @@
           icon: 'error'
         });
       }
-      else if(last_qty.val() == '' ||last_qty.val() == null || last_qty.val() == 0){
+      else if(qty == '' ||qty == null || qty == 0){
         $.toast({
           heading: 'Error',
           text: 'Jumlah item tidak boleh kosong',
@@ -103,22 +146,47 @@
 
       }
       else {
+        var item_exists = $("[name='podt_item[]'][value='" + i_id + "']");
+        var is_exists = item_exists.length;
+        if(is_exists == 0) {
 
-        var podt_item = '<select class="form-control form-control-sm" name="podt_item[]"></select>';
-        var podt_qty = '<input type="number" class="text-right form-control form-control-sm" name="podt_qty[]">';
-        var podt_satuan = '<select class="form-control form-control-sm" name="podt_satuan[]"></select>';
-        var podt_prev_price = '<input type="text" class="form-control form-control-sm text-right" name="podt_prev_price[]" readonly>';
-        var stock = '<input type="text" class="text-right form-control form-control-sm" name="stock[]" readonly>';
-        var btn = '<div class="btn-group"><button title="Tambah Item" class="btn btn-primary btn-tambah" onclick="append_purchase_order_dt()" type="button"><i class="fa fa-plus"></i></button><button class="btn btn-danger" onclick="remove_purchase_order_dt(this)" type="button" title="Hapus Item"><i class="fa fa-trash-o"></i></button></div>';
+          var podt_item = "<input name='podt_item[]' value='" + i_id + "' type='hidden'>"  + i_name;
+          var podt_qty = "<input name='podt_qty[]' value='" + qty + "' type='number' class='form-control form-control-sm text-right'>" ;
+          var podt_satuan = "<input name='podt_satuan[]' value='" + satuan + "' type='hidden' class='form-control'>" + satuan_label;
+          var podt_prev_price = "<input name='podt_prev_price[]' value='" + prev_price + "' type='hidden'>Rp " + accounting.formatMoney(prev_price,"",0,'.',',');
+          var podt_price = "<input name='podt_price[]' value='Rp. " + accounting.formatMoney(item.i_sat_hrg1,"",0,'.',',') + "' type='text' class='form-control form-control-sm text-right'>";
+          var stock = item.stock;
+          var harga_total = item.i_sat_hrg1 * qty;
+          harga_total = 'Rp ' + accounting.formatMoney(harga_total,"",0,'.',',') + ',00';
+          var aksi = '<button type="button" class="btn btn-danger btn-hapus" onclick="remove_detail(this)"><i class="fa fa-trash-o"></i></button>';
 
-        table_purchase_order_dt.row.add([
-          podt_item, podt_qty, podt_satuan, podt_prev_price, stock, btn
-        ]).draw();
+          
+          table_purchase_order_dt.row.add([
+            podt_item, podt_qty, podt_satuan, podt_prev_price, podt_price, harga_total, stock, aksi
+          ]).draw();
+        }
+        else {
+          var tr = item_exists.parents('tr');
+          var qty_exists = tr.find("[name='podt_qty[]']");
+          var qty_exists_val = qty_exists.val();
+          qty_exists_val = qty_exists_val != '' ? parseInt(qty_exists_val) : 0;
+          var qty = $('#qty').val();
+          qty = qty != '' ? parseInt(qty) : 0;
+          var amount_qty = qty_exists_val + qty;
+          qty_exists.val(amount_qty);
+        }  
       }
+
+      $('#qty').val('');
+      $('#i_satuan').html('');
+      $('#i_name').select2('open'); 
+      $('#stock').val('');
   }
 
   function remove_purchase_order_dt(obj) {
     var tr = $(obj).parents('tr');
     table_purchase_order_dt.row(tr).remove().draw();
   }
+
+  
 </script>

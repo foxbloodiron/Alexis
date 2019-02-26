@@ -1,7 +1,6 @@
 @extends('main')
 
 @section('content')
-
 <article class="content">
 
   <div class="title-block text-primary">
@@ -30,7 +29,7 @@
                       </div>
                     </div>
                     <form id="form_purchase_order">
-                      
+                      <input type="hidden" name="po_id" value="{{ $purchase_order->po_id }}">
                       <div class="card-block">
                           <section>
                             <fieldset>
@@ -42,7 +41,7 @@
 
                                 <div class="col-md-3 col-sm-6 col-xs-12">
                                   <div class="form-group">
-                                    <input type="text" class="form-control form-control-sm" readonly="" name="" placeholder="( Auto )">
+                                    <input type="text" class="form-control form-control-sm" readonly="" name="" value="{{ $purchase_order->po_code }}">
                                   </div>
                                 </div>
 
@@ -52,8 +51,9 @@
 
                                 <div class="col-md-3 col-sm-6 col-xs-12">
                                   <div class="form-group">
-                                    <input type="hidden" value="{{ Auth::user()->id }}" name="po_officer">
-                                    <input type="text" class="form-control form-control-sm" readonly="" value="{{ Auth::user()->name }}">
+                                    <input type="hidden" name="po_officer" value="{{ $purchase_order->po_officer }}">
+
+                                    <input type="text" class="form-control form-control-sm" readonly="" value="{{ $purchase_order->name }}">
                                   </div>
                                 </div>
 
@@ -63,7 +63,7 @@
 
                                 <div class="col-md-3 col-sm-6 col-xs-12">
                                   <div class="form-group">
-                                    <input type="text" class="form-control form-control-sm datepicker" value="{{date('d-m-Y')}}" name="po_tanggal">
+                                    <input type="text" class="form-control form-control-sm datepicker" value="{{date('d-m-Y')}}" name="po_tanggal" value="{{ $purchase_order->po_tanggal_label }}" readonly>
                                   </div>
                                 </div>
                                 <div class="col-md-3 col-sm-6 col-xs-12">
@@ -72,7 +72,7 @@
 
                                 <div class="col-md-3 col-sm-6 col-xs-12">
                                   <div class="form-group">
-                                    <input type="text" class="form-control form-control-sm datepicker" value="" name="po_tanggal_kirim">
+                                    <input type="text" class="form-control form-control-sm datepicker" name="po_tanggal_kirim" value="{{ $purchase_order->po_tanggal_kirim_label }}" readonly>
                                   </div>
                                 </div>
 
@@ -82,11 +82,8 @@
 
                                 <div class="col-md-3 col-sm-6 col-xs-12">
                                   <div class="form-group">
-                                    <select class="form-control form-control-sm" name="po_method">
-                                      <option value="CASH">Tunai</option>
-                                      <option value="DEPOSIT">Deposit</option>
-                                      <option value="TEMPO">Tempo</option>
-                                    </select>
+                                    <input class="form-control form-control-sm" name="po_method" value="{{ $purchase_order->po_method }}" readonly>
+                                      
                                   </div>
                                 </div>
 
@@ -96,9 +93,9 @@
 
                                 <div class="col-md-3 col-sm-6 col-xs-12">
                                   <div class="form-group">
-                                    <select class="form-control form-control-sm" name="po_purchase_plan" id="po_purchase_plan">
-                                      <option value="">--Pilih--</option>
-                                    </select>
+                                    <input type="text" class="form-control form-control-sm" name="po_purchase_plan" value="{{ $purchase_order->pp_code }}" id="po_purchase_plan" readonly>
+                                      
+                                    
                                   </div>
                                 </div>
 
@@ -108,9 +105,9 @@
 
                                 <div class="col-md-3 col-sm-6 col-xs-12">
                                   <div class="form-group">
-                                    <select class="form-control form-control-sm" name="po_supplier" id="po_supplier">
-                                      <option value="">--Pilih--</option>
-                                    </select>
+                                    <input type="text" class="form-control form-control-sm" name="po_supplier" value="{{ $purchase_order->s_name }}" id="po_supplier" readonly>
+                                      
+                                    
                                   </div>
                                 </div>
 
@@ -144,7 +141,7 @@
 
                                   <div class="col-lg-12">
                                     <div class="form-group">
-                                      <input type="text" readonly="" class="text-right form-control form-control-sm" name="po_total_gross" id="po_total_gross">
+                                      <input type="text" readonly="" class="text-right form-control form-control-sm" name="po_total_gross" value="{{ $purchase_order->po_total_gross }}" id="po_total_gross">
                                     </div>
                                   </div>
                                   
@@ -154,7 +151,7 @@
                                   
                                   <div class="col-lg-12">
                                     <div class="form-group">
-                                      <input type="text" class="text-right form-control form-control-sm" name="po_disc_value" id="po_disc_value">
+                                      <input type="text" class="text-right form-control form-control-sm" name="po_disc_value" value="{{ $purchase_order->po_disc_value }}" id="po_disc_value">
                                     </div>
                                   </div>
 
@@ -164,7 +161,7 @@
                                   
                                   <div class="col-lg-12">
                                     <div class="form-group">
-                                      <input type="number" class="text-right form-control form-control-sm" name="po_disc_percent" id="po_disc_percent">
+                                      <input type="number" class="text-right form-control form-control-sm" name="po_disc_percent" value="{{ $purchase_order->po_disc_percent }}" id="po_disc_percent">
                                     </div>
                                   </div>
 
@@ -174,7 +171,7 @@
                                   
                                   <div class="col-lg-12">
                                     <div class="form-group">
-                                      <input type="number" class="text-right form-control form-control-sm" name="po_tax_percent" id="po_tax_percent">
+                                      <input type="number" class="text-right form-control form-control-sm" name="po_tax_percent" value="{{ $purchase_order->po_tax_percent }}" id="po_tax_percent">
                                     </div>
                                   </div>
 
@@ -184,7 +181,7 @@
                                   
                                   <div class="col-lg-12">
                                     <div class="form-group">
-                                      <input type="text" readonly="" class="text-right form-control form-control-sm" name="po_total_net" id="po_total_net">
+                                      <input type="text" readonly="" class="text-right form-control form-control-sm" name="po_total_net" value="{{ $purchase_order->po_total_net }}" id="po_total_net">
                                     </div>
                                   </div>
 
@@ -195,7 +192,7 @@
                       </div>
                     </form>
                     <div class="card-footer text-right">
-                      <button class="btn btn-primary" type="button" onclick="insert_purchase_order()">Simpan</button>
+                      <button class="btn btn-primary" type="button" onclick="update_purchase_order()">Simpan</button>
                       <a href="{{route('orderpembelian')}}" class="btn btn-secondary">Kembali</a>
                     </div>
                 </div>
@@ -217,5 +214,44 @@
 </script>
   @include('purchasing/orderpembelian/js/form_functions')
   @include('purchasing/orderpembelian/js/form_commander')
+  <script>
+    $(document).ready(function(){
+      // Set currency
+      var po_disc_value = $('[name="po_disc_value"]').val();
+      var po_disc_value = 'Rp ' + accounting.formatMoney(po_disc_value,"",0,'.',',')
+      $('[name="po_disc_value"]').val( po_disc_value );
+      var po_total_gross = $('[name="po_total_gross"]').val();
+      var po_total_gross = 'Rp ' + accounting.formatMoney(po_total_gross,"",0,'.',',')
+      $('[name="po_total_gross"]').val( po_total_gross );
+      var po_total_net = $('[name="po_total_net"]').val();
+      var po_total_net = 'Rp ' + accounting.formatMoney(po_total_net,"",0,'.',',')
+      $('[name="po_total_net"]').val( po_total_net );
+      var purchase_order_dt = {!! $purchase_order_dt !!}
+      if( purchase_order_dt.length > 0 ){
+          for(x in purchase_order_dt) {
+                unit = purchase_order_dt[x];
+                console.log(unit);
+                var podt_item = "<input name='podt_item[]' value='" + unit.i_id + "' type='hidden'>" + unit.i_name;
+                var podt_qty = "<input name='podt_qty[]' value='" + unit.podt_qty + "' type='number' class='form-control form-control-sm text-right'>" ;
+                var podt_satuan = "<input name='podt_satuan[]' value='" + unit.podt_satuan + "' type='hidden' class='form-control'>" + unit.s_name;
+                var podt_prev_price = "<input name='podt_prev_price[]' value='" + unit.podt_prev_price + "' type='hidden'>Rp " + accounting.formatMoney(unit.podt_prev_price,"",0,'.',',');
+                var podt_price = "<input name='podt_price[]' value='Rp. " + accounting.formatMoney(unit.podt_price,"",0,'.',',') + "' type='text' class='form-control form-control-sm text-right'>";
+                var stock = unit.stock;
+                var harga_total = unit.podt_price * unit.podt_qty;
+                harga_total = 'Rp ' + accounting.formatMoney(harga_total,"",0,'.',',') + ',00';
+                var aksi = '<button type="button" class="btn btn-danger btn-hapus" onclick="remove_detail(this)"><i class="fa fa-trash-o"></i></button>';
 
+                
+                table_purchase_order_dt.row.add([
+                  podt_item, podt_qty, podt_satuan, podt_prev_price, podt_price, harga_total, stock, aksi
+                ]);
+              }
+
+              table_purchase_order_dt.draw();
+      }
+    });
+  </script>
+<script>
+  
+</script>
 @endsection

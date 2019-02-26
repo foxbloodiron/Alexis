@@ -35,7 +35,7 @@ class RencanaPembelianController extends Controller
       $d_purchase_plan = d_purchase_plan::leftJoin('m_supplier', 'pp_supplier', '=', 's_id')->leftJoin('users', 'pp_officer', '=', 'id');
       $d_purchase_plan = $d_purchase_plan->where('pp_id', $id)->get();
       $d_purchase_plan_dt = d_purchase_plan_dt::leftJoin('m_item', 'ppdt_item', '=', 'i_id')->leftJoin('m_satuan', 'ppdt_satuan', '=', 's_id');
-      $d_purchase_plan_dt = $d_purchase_plan_dt->where('ppdt_purchase_plan', $id)->select('ppdt_item', 'ppdt_prev_price', 'ppdt_satuan', 'ppdt_qty', 's_id', 's_name', 'i_id', 'i_code', 'i_name', DB::raw("IFNULL((SELECT s_qty FROM d_stock WHERE s_item = m_item.i_id), 0) AS stock"))->get();
+      $d_purchase_plan_dt = $d_purchase_plan_dt->where('ppdt_purchase_plan', $id)->select('ppdt_item', 'ppdt_prev_price', 'ppdt_satuan', 'ppdt_qty', 's_id', 's_name', 'i_id', 'i_code','i_sat_hrg1','i_sat_hrg2','i_sat_hrg3', 'i_name', DB::raw("IFNULL((SELECT s_qty FROM d_stock WHERE s_item = m_item.i_id), 0) AS stock"))->get();
 
       $res = [
         "purchase_plan" => $d_purchase_plan,
@@ -150,7 +150,7 @@ class RencanaPembelianController extends Controller
         // membuat kode purchase plan
         $firstdate = date('Y-m-01', strtotime($pp_tanggal));
         $enddate = date('Y-m-31', strtotime($pp_tanggal));
-        $init2nd = d_purchase_plan::select( DB::raw('IFNULL(COUNT(pp_id) + 1, 1) AS order_number') )->whereBetween('pp_tanggal', [$firstdate, $enddate])->first();
+        $init2nd = d_purchase_plan::select( DB::raw('IFNULL(MAX(pp_id), 0) + 1 AS order_number') )->whereBetween('pp_tanggal', [$firstdate, $enddate])->first();
         $order_number = $init2nd->order_number; 
         $pp_code = DB::raw("(SELECT CONCAT('PP/', DATE_FORMAT('$pp_tanggal', '%m%y'), '/', LPAD($order_number, 4, '0')))");
         $grand_total = 0;

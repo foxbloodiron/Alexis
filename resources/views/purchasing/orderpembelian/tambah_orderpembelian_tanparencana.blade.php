@@ -9,7 +9,7 @@
       <p class="title-description">
         <i class="fa fa-home"></i>&nbsp;<a href="{{url('/home')}}">Home</a> 
         / <span>Purchasing</span> 
-        / <a href="{{route('orderpembelian')}}"><span>Order Pembelian</span></a>
+        / <a href="{{route('orderpembelian')}}#po_tanpa"><span>Order Pembelian</span></a>
         / <span class="text-primary font-weight-bold">Tambah Order Pembelian Tanpa Rencana</span>
        </p>
   </div>
@@ -26,195 +26,209 @@
                         <h3 class="title"> Tambah Order Pembelian Tanpa Rencana </h3>
                       </div>
                       <div class="header-block pull-right">
-                        <a href="{{route('orderpembelian')}}" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-left"></i></a>
+                        <a href="{{route('orderpembelian')}}#po_tanpa" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-left"></i></a>
                       </div>
                     </div>
                     <div class="card-block">
-                        <section>
-                          <fieldset>
-                            <div class="row">
+                        <form id="form_purchase_order">
+                          
+                          <section>
 
-                              <div class="col-md-3 col-sm-6 col-xs-12">
-                                <label>No Order Pembelian</label>
-                              </div>
+                            <fieldset>
+                              <div class="row">
 
-                              <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                  <input type="text" class="form-control form-control-sm" readonly="" name="" placeholder="( Auto )">
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                  <label>No Order Pembelian</label>
                                 </div>
-                              </div>
 
-                              <div class="col-md-3 col-sm-6 col-xs-12">
-                                <label>Staff</label>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                  <input type="hidden" name="{{ Auth::user()->id }}">
-                                  <input type="text" class="form-control form-control-sm" readonly="" name="" value="{{ Auth::user()->name }}">
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                  <div class="form-group">
+                                    <input type="text" class="form-control form-control-sm" readonly="" name="" placeholder="( Auto )">
+                                  </div>
                                 </div>
-                              </div>
 
-                              <div class="col-md-3 col-sm-6 col-xs-12">
-                                <label>Tanggal Order Pembelian</label>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                  <input type="text" class="form-control form-control-sm datepicker" value="{{date('d-m-Y')}}" name="po_tanggal" id="po_tanggal">
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                  <label>Staff</label>
                                 </div>
-                              </div>
 
-                              <div class="col-md-3 col-sm-6 col-xs-12">
-                                <label>Cara Bayar</label>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                  <select class="form-control form-control-sm" name="po_method">
-                                    <option value="tunai">Tunai</option>
-                                    <option value="deposit">Deposit</option>
-                                    <option value="tempo">Tempo</option>
-                                  </select>
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                  <div class="form-group">
+                                    <input type="hidden" name="po_officer" value="{{ Auth::user()->id }}">
+                                    <input type="text" class="form-control form-control-sm" readonly="" name="" value="{{ Auth::user()->name }}">
+                                  </div>
                                 </div>
-                              </div>
 
-                              <div class="col-md-3 col-sm-6 col-xs-12">
-                                <label>Suplier</label>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                  <select class="form-control form-control-sm" name="po_supplier">
-                                    <option value="">--Pilih--</option>
-                                  </select>
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                  <label>Tanggal Order Pembelian</label>
                                 </div>
-                              </div>
 
-                            </div>
-                          </fieldset>
-
-                          <fieldset class="mt-3">
-                            <div class="row">
-                              
-                              <div class="col-md-6 col-sm-3 col-12">
-                                <label>Barang</label>
-                                <div class="form-group">
-                                  <select class="form-control form-control-sm" id="i_name">
-                                    <option selected="" disabled="" value="">--Pilih--</option>
-                                    <option>Semen</option>
-                                    <option>Pasir</option>
-                                    <option>Cat</option>
-                                  </select>
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                  <div class="form-group">
+                                    <input type="text" class="form-control form-control-sm datepicker" value="{{date('d-m-Y')}}" name="po_tanggal" id="po_tanggal">
+                                  </div>
                                 </div>
-                              </div>
-                              <div class="col-md-2 col-sm-3 col-12">
-                                <label for="">Satuan</label>
-                                <div class="form-group">
-                                  <select class="form-control form-control-sm" id="i_satuan">
-                                    <option value="" selected="" disabled="">-Pilih-</option>
-                                  </select>
-                                </div>
-                              </div>
 
-                              <div class="col-md-2 col-sm-3 col-xs-12">
-                                <label>Qty</label>
-                                <div class="form-group form-group-sm">
-                                  <div class="input-group input-group-sm">
-                                    <input type="number" class="form-control form-control-sm" id="qty" min="0" id="qty">
-                                    <div class="input-group-append">
-                                      <button class="btn btn-primary btn-tambah" type="button" title="Tambah"><i class="fa fa-plus"></i></button>
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <label>Tanggal Kirim</label>
+                                  </div>
+
+                                  <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                      <input type="text" class="form-control form-control-sm datepicker" value="" name="po_tanggal_kirim">
+                                    </div>
+                                  </div>
+
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                  <label>Cara Bayar</label>
+                                </div>
+
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                  <div class="form-group">
+                                    <select class="form-control form-control-sm" name="po_method">
+                                      <option value="CASH">Tunai</option>
+                                      <option value="DEPOSIT">Deposit</option>
+                                      <option value="TEMPO">Tempo</option>
+                                    </select>
+                                  </div>
+                                </div>
+
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                  <label>Suplier</label>
+                                </div>
+
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                  <div class="form-group">
+                                    <select class="form-control form-control-sm" name="po_supplier" id="po_supplier">
+                                      <option value="">--Pilih--</option>
+                                    </select>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </fieldset>
+
+                            <fieldset class="mt-3">
+                              <div class="row">
+                                
+                                <div class="col-md-6 col-sm-3 col-12">
+                                  <label>Barang</label>
+                                  <div class="form-group">
+                                    <select class="form-control form-control-sm" id="i_name">
+                                      >
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="col-md-2 col-sm-3 col-12">
+                                  <label for="">Satuan</label>
+                                  <div class="form-group">
+                                    <select class="form-control form-control-sm" id="i_satuan">
+                                      <option value="" selected="" disabled="">-Pilih-</option>
+                                    </select>
+                                  </div>
+                                </div>
+
+                                <div class="col-md-2 col-sm-3 col-xs-12">
+                                  <label>Qty</label>
+                                  <div class="form-group form-group-sm">
+                                    <div class="input-group input-group-sm">
+                                      <input type="number" class="form-control form-control-sm text-right" id="qty" min="0" id="append_purchase_order_dt()">
+                                      <div class="input-group-append">
+                                        <button class="btn btn-primary btn-tambah" type="button" title="Tambah" onclick=""><i class="fa fa-plus"></i></button>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
-                              </div>
 
-                              <div class="col-md-2 col-sm-3 col-12">
-                                <label for="">Stok</label>
-                                <div class="form-group">
-                                  <input type="text" class="form-control form-control-sm" readonly="" name="">
+                                <div class="col-md-2 col-sm-3 col-12">
+                                  <label for="">Stok</label>
+                                  <div class="form-group">
+                                    <input type="text" class="form-control form-control-sm text-right" readonly="" id="stock">
+                                  </div>
                                 </div>
-                              </div>
 
+                              </div>
+                            </fieldset>
+
+                            <div class="table-responsive mt-3">
+                              <table class="table table-bordered table-hover table-striped" id="table_purchase_order_dt" cellspacing="0">
+                                  <thead class="bg-primary">
+                                    <tr>
+                                      <th>Kode | Barang</th>
+                                      <th width="10%">Qty</th>
+                                      <th width="10%">Satuan</th>
+                                      <th>Harga Prev</th>
+                                      <th>Harga Satuan</th>
+                                      <th>Total</th>
+                                      <th width="10%">Stok Gudang</th>
+                                      <th width="10%">Aksi</th>
+                                    </tr>
+                                  </thead>
+                                </table>
                             </div>
-                          </fieldset>
 
-                          <div class="table-responsive mt-3">
-                            <table class="table table-bordered table-hover table-striped" cellspacing="0" id="tabll_purchase_order_dt">
-                              <thead class="bg-primary">
-                                <tr align="center">
-                                  <th width="20%">Kode | Barang</th>
-                                  <th width="10%">Satuan</th>
-                                  <th width="10%">Qty</th>
-                                  <th width="10%">Stok Gudang</th>
-                                  <th width="1%">Aksi</th>
-                                </tr>
-                              </thead>
-                            </table>
-                          </div>
+                            <div class="row">
+                              <div class="col-md-4 offset-md-8 col-sm-6 offset-sm-6 col-xs-12">
+                                <div class="row">
 
-                          <div class="row">
-                            <div class="col-md-4 offset-md-8 col-sm-6 offset-sm-6 col-xs-12">
-                              <div class="row">
-
-                                <div class="col-lg-12">
-                                  <label>Total Harga</label>
-                                </div>
-
-                                <div class="col-lg-12">
-                                  <div class="form-group">
-                                    <input type="text" readonly="" class="form-control form-control-sm" name="">
+                                  <div class="col-lg-12">
+                                    <label>Total Harga</label>
                                   </div>
-                                </div>
-                                
-                                <div class="col-lg-12">
-                                  <label>Potongan Harga</label>
-                                </div>
-                                
-                                <div class="col-lg-12">
-                                  <div class="form-group">
-                                    <input type="text" readonly="" class="form-control form-control-sm" name="">
-                                  </div>
-                                </div>
 
-                                <div class="col-lg-12">
-                                  <label>Diskon</label>
-                                </div>
-                                
-                                <div class="col-lg-12">
-                                  <div class="form-group">
-                                    <input type="text" readonly="" class="form-control form-control-sm" name="">
+                                  <div class="col-lg-12">
+                                    <div class="form-group">
+                                      <input type="text" readonly="" class="form-control form-control-sm" name="po_total_gross" id="po_total_gross">
+                                    </div>
                                   </div>
-                                </div>
-
-                                <div class="col-lg-12">
-                                  <label>PPn</label>
-                                </div>
-                                
-                                <div class="col-lg-12">
-                                  <div class="form-group">
-                                    <input type="text" readonly="" class="form-control form-control-sm" name="">
+                                  
+                                  <div class="col-lg-12">
+                                    <label>Potongan Harga</label>
                                   </div>
-                                </div>
-
-                                <div class="col-lg-12">
-                                  <label>Total</label>
-                                </div>
-                                
-                                <div class="col-lg-12">
-                                  <div class="form-group">
-                                    <input type="text" readonly="" class="form-control form-control-sm" name="">
+                                  
+                                  <div class="col-lg-12">
+                                    <div class="form-group">
+                                      <input type="text"  class="form-control form-control-sm" name="po_disc_value" id="po_disc_value">
+                                    </div>
                                   </div>
-                                </div>
 
+                                  <div class="col-lg-12">
+                                    <label>Diskon(%)</label>
+                                  </div>
+                                  
+                                  <div class="col-lg-12">
+                                    <div class="form-group">
+                                      <input type="text"  class="form-control form-control-sm" name="po_disc_percent" id="po_disc_percent">
+                                    </div>
+                                  </div>
+
+                                  <div class="col-lg-12">
+                                    <label>PPn(%)</label>
+                                  </div>
+                                  
+                                  <div class="col-lg-12">
+                                    <div class="form-group">
+                                      <input type="text"  class="form-control form-control-sm" name="po_tax_percent" id="po_tax_percent">
+                                    </div>
+                                  </div>
+
+                                  <div class="col-lg-12">
+                                    <label>Total</label>
+                                  </div>
+                                  
+                                  <div class="col-lg-12">
+                                    <div class="form-group">
+                                      <input type="text" readonly="" class="form-control form-control-sm" name="po_total_net" id="po_total_net">
+                                    </div>
+                                  </div>
+
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </section>
+                          </section>
+                        </form>
                     </div>
                     <div class="card-footer text-right">
-                      <button class="btn btn-primary" type="button">Simpan</button>
-                      <a href="{{route('orderpembelian')}}" class="btn btn-secondary">Kembali</a>
+                      <button class="btn btn-primary" type="button" onclick="insert_purchase_order()">Simpan</button>
+                      <a href="{{route('orderpembelian')}}#po_tanpa" class="btn btn-secondary">Kembali</a>
                     </div>
                 </div>
 

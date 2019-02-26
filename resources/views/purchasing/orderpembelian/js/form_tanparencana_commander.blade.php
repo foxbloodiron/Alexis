@@ -1,72 +1,103 @@
 <script>
   $(document).ready(function(){
-    var addr_url = '{{ url("master/produk/find_m_item") }}';
-  addr_url+= '?i_type=BT';
-  $("#i_name").select2({
-          placeholder: "Pilih Barang",
-          ajax: {
-            url: addr_url,
-            dataType: 'json',
-            data: function (params) {
-              var i_supplier = $('#it_supplier').val();
-              return {
-                  keyword: $.trim(params)
-              };
-            },
-            results: function (res) {
-              
-              var unit;
-              if(res.data.length > 0) {
-                for(x = 0;x < res.data.length;x++) {
-                  
-                res.data[x]['id'] = res.data[x].i_id;
-                res.data[x]['text'] = res.data[x].i_name;
-              
+    // Format textbox mata uang
+    $('#po_disc_value').maskMoney({prefix:'Rp. ', thousands:'.', decimal:',', precision:0});
+    $('#po_disc_value, #po_tax_percent, #po_disc_percent').on('change keyup', function(){
+      count_grandtotal();
+    });
 
-                  
-                }
-              }
-
-                return {
-                    results: res.data
-                };
-            },
-            cache: true
-          }, 
-        });
-  $("#i_name").on('change', function(e){
-    var data = $(this).select2('data');
-    $('#stock').val( data.stock );
-    $('#qty').focus();
-    $(this).val('');
-  });
-
-  $('#qty').keypress(function(e){
-    if( e.keyCode == 13 || e.which == 13) {
-      e.preventDefault();
-      if( parseInt($(this).val()) == 0 || $(this).val() == '' ) {
-
-        iziToast.error({
-                      position: "center",
-                      title: '', 
-                      timeout: 1000,
-                      message: 'Qty tidak boleh kosong'
-              });
+    $('#i_name').select2({
+                  width : '100%',
+                  placeholder: "Pilih Barang",
+                  ajax: {
+                    url: '{{ url("/purchasing/rencanapembelian/find_m_item") }}',
+                    dataType: 'json',
+                    data: function (params) {
+                      return {
+                          keyword: $.trim(params.term)
+                      }
+                  },
+                  processResults: function (res) {
+                        for(x in res.data) {
+                          res.data[x].id = res.data[x].i_id; 
+                          res.data[x].text = res.data[x].i_code + ' | ' + res.data[x].i_name; 
+                        }
+                        return {
+                            results: res.data
+                        };
+                  },
+                  cache: true
+                 } 
+                });
+    $('#i_name').change(function(){
+      var data = $(this).select2('data')[0];
+      var option = '';
+      $('#i_satuan').html('');
+      for(x = 1;x <= 3;x++) {
+        option += '<option value="' + data["i_sat" + x] + '">' + data["i_sat" + x + "_label"] + '</option>';
       }
-      else {
-        
-        append_item();
-        // Mengosongkan qty dan barang
-        $(this).val('');
-        $("#i_name").select2('open');
+      $('#i_satuan').html(option);
+      $('#i_satuan').focus();
+      $('#stock').val( data.stock );
+    });
+
+    $('#i_satuan').change(function(){
+      $('#qty').focus();
+    });
+
+    $('#qty').keypress(function(e){
+      if( e.which == 13 ) {
+        append_purchase_order_dt();
       }
-    }
-  });
+    })
 
     table_purchase_order_dt = $('#table_purchase_order_dt').DataTable({
-      "createdRow": function( row, data, dataIndex ) {
+      "columnDefs" : [
+        {
+          'targets' : [3, 5, 6],
+          'className' : 'text-right'
+        },
+        {
+          'targets' : 7,
+          'className' : 'text-center' 
         }
+      ],
+      "createdRow": function( row, data, dataIndex ) {
+          var podt_price = $(row).find('[name="podt_price[]"]'); 
+          var podt_qty = $(row).find('[name="podt_qty[]"]'); 
+          podt_price.maskMoney({prefix:'Rp. ', thousands:'.', decimal:',', precision:0});
+          podt_price.on('keyup change', function(){
+            count_grandtotal();
+            var tr = $(this).parents('tr');
+            var podt_price = $(this).val();
+            podt_price = podt_price.replace(/\D/g, '');
+            podt_price = podt_qty != '' ? parseInt(podt_price) : 0;
+            var qty = tr.find("[name='podt_qty[]']").val();
+            qty = qty != '' ? parseInt(qty) : 0;
+            var subtotal = qty * podt_price;
+            subtotal = 'Rp ' + accounting.formatMoney(subtotal,"",0,'.',',');
+            tr.find('td:eq(5)').text(subtotal);
+          });
+          
+          podt_qty.on('keyup change', function(){
+            count_grandtotal();
+            var tr = $(this).parents('tr');
+            var podt_price = tr.find("[name='podt_price[]']").val();
+            podt_price = podt_price.replace(/\D/g, '');
+            podt_price = podt_qty != '' ? parseInt(podt_price) : 0;
+            var qty = $(this).val();
+            qty = qty != '' ? parseInt(qty) : 0;
+            var subtotal = qty * podt_price;
+            subtotal = 'Rp ' + accounting.formatMoney(subtotal,"",0,'.',',');
+            tr.find('td:eq(5)').text(subtotal);
+          });
+
+      }
     });
+
+    table_purchase_order_dt.on('draw', function(){
+        count_grandtotal();
+    })
 
     $('#po_supplier').select2({
       placeholder: "Pilih Supplier",
@@ -89,5 +120,7 @@
         }
      }, 
     });
+
+    
   });
 </script>

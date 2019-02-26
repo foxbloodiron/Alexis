@@ -21,12 +21,12 @@
                     <div class="col-md-6 col-sm-12">
                       <div class="form-group">
                         <div class="input-group input-group-sm input-daterange">
-                          <input type="text" class="form-control" name="">
+                          <input type="text" class="form-control" name="" id="tgl_awal_tanparencana">
                           <span class="input-group-addon">-</span>
-                          <input type="text" class="form-control" name="">
+                          <input type="text" class="form-control" name="" id="tgl_akhir_tanparencana">
                           <div class="input-group-append">
-                          	<button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
-                          	<button class="btn btn-secondary" type="button"><i class="fa fa-refresh"></i></button>
+                          	<button onclick="search_purchase_order_tanparencana()" class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
+                          	<button onclick="refresh_purchase_order_tanparencana()" class="btn btn-secondary" type="button"><i class="fa fa-refresh"></i></button>
                           </div>
                         </div>
 
@@ -39,10 +39,9 @@
             	
                 	<div class="table-responsive">
                 		
-                		<table class="table table-hover table-striped data-table" cellspacing="0">
+                		<table class="table table-hover table-striped" cellspacing="0" id="tabel_purchase_order_tanparencana">
                 			<thead class="bg-primary">
                 				<tr>
-                					<th>No</th>
                 					<th>Tgl Order</th>
                 					<th>No Order</th>
                 					<th>Staff</th>
@@ -51,6 +50,7 @@
                 					<th>Total</th>
                 					<th>Tgl Kirim</th>
                 					<th>Status</th>
+                                    <th>Ubah Status</th>
                 					<th>Aksi</th>
                 				</tr>
                 			</thead>

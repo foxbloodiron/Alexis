@@ -229,8 +229,8 @@
 
 	// mereset data
 	function resetData(){  
-	  $('[name="tgl_awal"]').val( moment().subtract(7, 'days').format('DD/MM/YYYY') );
-	  $('[name="tgl_akhir"]').val( moment().format('DD/MM/YYYY') );
+	  $('[name="tgl_awal"]').val( moment().subtract(7, 'days').format('DD-MM-YYYY') );
+	  $('[name="tgl_akhir"]').val( moment().format('DD-MM-YYYY') );
 	  var url_target = '{{ url("/purchasing/rencanapembelian/find_d_purchase_plan/?") }}tgl_awal=' + tgl_awal + '&tgl_akhir=' + tgl_akhir + '&_token={{ csrf_token() }}'; 
 	  tablex.ajax.url(url_target).load();
 	}
