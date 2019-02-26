@@ -53,10 +53,11 @@
 
                               <div class="col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
-                                  <select class="form-control form-control-sm select2" id="nota_order" name="nota_order">
+                                  <select class="form-control form-control-sm select2" id="nota_order" name="nota_order" onchange="showInfoPO()">
                                     <option value="">--Pilih--</option>
-                                    <option value="1">PO/20190123/1</option>
-
+                                    @foreach ($getNota as $nota)
+                                      <option value="{{ $nota->po_id }}">{{ $nota->po_code }}</option>
+                                    @endforeach
                                   </select>
                                 </div>
                               </div>
@@ -67,7 +68,7 @@
 
                               <div class="col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
-                                  <input type="text" class="form-control form-control-sm" readonly="">
+                                  <input type="text" class="form-control form-control-sm" readonly="" id="tgl_order">
                                 </div>
                               </div>
                               
@@ -87,7 +88,7 @@
 
                               <div class="col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
-                                  <input type="text" class="form-control form-control-sm" readonly="">
+                                  <input type="text" class="form-control form-control-sm" readonly="" id="supplier">
                                 </div>
                               </div>
 
@@ -97,7 +98,7 @@
 
                               <div class="col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
-                                  <input type="text" class="form-control form-control-sm" readonly="">
+                                  <input type="text" class="form-control form-control-sm" readonly="" id="method">
                                 </div>
                               </div>
 
@@ -260,12 +261,21 @@
         $(this).parents('tr').find('.muatan_bak').val('').attr('readonly', true);
       }
 
-
-
-
     });
 
   });
+
+  function showInfoPO(){
+
+    axios.get({{ route("getinfopo") }}).then((response) => {
+
+      $('#tgl_order').val(response.data.info.date);
+      $('#supplier').val(response.data.info.supplier);
+      $('#method').val(response.data.info.method);
+
+    })
+
+  }
 
 </script>
 @endsection

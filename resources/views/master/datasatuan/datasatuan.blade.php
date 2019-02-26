@@ -81,6 +81,7 @@
 @endsection
 @section('extra_script')
 <script type="text/javascript">
+	var table = $('#table_satuan').DataTable();
 	function hapus(a){
 		split = a.split(",");
 		a = split[0];

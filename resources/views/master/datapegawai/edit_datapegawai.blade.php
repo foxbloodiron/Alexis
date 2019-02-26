@@ -63,10 +63,15 @@
 
                             <div class="col-md-9 col-sm-6 col-xs-12">
                               <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" name="">
+                                <div class="input-group">
+                                  <input type="password" class="form-control form-control-sm" name="">
+                                  <div class="input-group-append">
+                                    <button class="btn-sm btn btn-primary" id="btn-show"><i class="fa fa-eye"></i></button>
+                                  </div>
+                                </div>
                               </div>
                             </div>
-
+                            
                             <div class="col-md-3 col-sm-6 col-xs-12">
                               <label>Status</label>
                             </div>
@@ -144,6 +149,18 @@
                               </div>
                             </div>
 
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <label>Jabatan</label>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                              <div class="form-group">
+                                <select class="form-control form-control-sm select2" name="">
+                                  <option value="">--Pilih--</option>
+                                </select>
+                              </div>
+                            </div>
+
                           </div>
 
                           
@@ -175,8 +192,20 @@
 				textColor: 'white',
 				loaderBg: '#55efc4',
 				icon: 'success'
-			})
-		})
+			});
+
+		});
+
+
+    $('#btn-show').click(function(){
+      var input = $(this).parents('.input-group').find('input');
+
+      input.attr('type', function(index, attr){
+        return attr === 'password' ? 'text' : 'password';
+      });
+
+      $(this).find('i').toggleClass('fa-eye fa-eye-slash');
+    });
   });
 </script>
 @endsection

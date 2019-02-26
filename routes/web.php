@@ -57,7 +57,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/master/datapegawai/datapegawai', 'MasterController@datapegawai')->name('datapegawai');
 	Route::get('/master/datapegawai/tambah_datapegawai', 'MasterController@tambah_datapegawai')->name('tambah_datapegawai');
 	Route::get('/master/datapegawai/edit_datapegawai', 'MasterController@edit_datapegawai')->name('edit_datapegawai');
-	
+
 
 	Route::get('/master/datasatuan/datasatuan', 'MasterController@datasatuan')->name('datasatuan');
 	Route::get('/master/datasatuan/tambah_datasatuan', 'MasterController@tambah_datasatuan')->name('tambah_datasatuan');
@@ -69,10 +69,16 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/master/datamesin/datamesin', 'MasterController@datamesin')->name('datamesin');
 	Route::get('/master/datamesin/tambah_datamesin', 'MasterController@tambah_datamesin')->name('tambah_datamesin');
 	Route::get('/master/datamesin/edit_datamesin', 'MasterController@edit_datamesin')->name('edit_datamesin');
-	Route::get('/master/datacustomer/index', 'MasterController@datacustomer')->name('datacustomer');
-	Route::get('/master/datacustomer/create', 'MasterController@tambah_datacustomer')->name('tambah_datacustomer');
-	Route::get('/master/datacustomer/edit', 'MasterController@edit_datacustomer')->name('edit_datacustomer');
-	Route::get('/master/datapegawai/index', 'MasterController@datapegawai')->name('datapegawai');
+
+	Route::get('/master/datacustomer/index', 'MasterCustomerController@index')->name('datacustomer');
+	Route::get('/master/datacustomer/getlist', 'MasterCustomerController@getlist')->name('getlist_datacustomer');
+	Route::get('/master/datacustomer/create', 'MasterCustomerController@create')->name('tambah_datacustomer');
+	Route::post('/master/datacustomer/save', 'MasterCustomerController@store')->name('save_datacustomer');
+  Route::get('/master/datacustomer/edit/', 'MasterCustomerController@edit')->name('edit_datacustomer');
+  Route::post('/master/datacustomer/update/', 'MasterCustomerController@update')->name('update_datacustomer');
+  Route::post('/master/datacustomer/disable/', 'MasterCustomerController@delete')->name('disable_datacustomer');
+
+  Route::get('/master/datapegawai/index', 'MasterController@datapegawai')->name('datapegawai');
 	Route::get('/master/datapegawai/create', 'MasterController@tambah_datapegawai')->name('tambah_datapegawai');
 	Route::get('/master/datapegawai/edit', 'MasterController@edit_datapegawai')->name('edit_datapegawai');
 	Route::get('/master/datasatuan/index', 'MasterController@datasatuan')->name('datasatuan');
@@ -83,11 +89,20 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/master/barangsuplier/edit_barang', 'MasterController@edit_barang')->name('edit_barang');
 	Route::get('/master/barangsuplier/tambah_suplier', 'MasterController@tambah_suplier')->name('tambah_suplier');
 	Route::get('/master/barangsuplier/edit_suplier', 'MasterController@edit_suplier')->name('edit_suplier');
-	Route::get('/master/ongkoskirim/index', 'MasterController@ongkoskirim')->name('ongkoskirim');
-	Route::get('/master/ongkoskirim/create', 'MasterController@tambah_ongkoskirim')->name('tambah_ongkoskirim');
+	Route::get('/master/upah/index', 'MasterController@upah')->name('upah');
+	Route::get('/master/upah/create', 'MasterController@tambah_upah')->name('tambah_upah');
+	Route::get('/master/datajabatan/index', 'MasterController@datajabatan')->name('datajabatan');
+	Route::get('/master/datajabatan/create', 'MasterController@tambah_datajabatan')->name('tambah_datajabatan');
+	Route::get('/master/datajabatan/edit', 'MasterController@edit_datajabatan')->name('edit_datajabatan');
 
-	Route::get('/master/datatunjangan/index', 'MasterController@datatunjangan')->name('datatunjangan');
-	Route::get('/master/datatunjangan/create', 'MasterController@tambah_datatunjangan')->name('tambah_datatunjangan');
+
+	Route::get('/master/datatunjangan/index', 'MasterTunjanganController@index')->name('datatunjangan');
+  Route::get('/master/datatunjangan/getlist', 'MasterTunjanganController@getlist')->name('getlist_datatunjangan');
+  Route::get('/master/datatunjangan/create', 'MasterTunjanganController@create')->name('tambah_datatunjangan');
+  Route::post('/master/datatunjangan/save', 'MasterTunjanganController@store')->name('save_datatunjangan');
+	Route::get('/master/datatunjangan/edit/{id}', 'MasterTunjanganController@edit')->name('edit_datatunjangan');
+	Route::post('/master/datatunjangan/update/{id}', 'MasterTunjanganController@update')->name('update_datatunjangan');
+	Route::post('/master/datatunjangan/disable/{id}', 'MasterTunjanganController@delete')->name('disable_datatunjangan');
 
 
 	// Purchasing
@@ -130,11 +145,16 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/stok/dataadonan/index', 'StokController@dataadonan')->name('dataadonan');
 	Route::get('/stok/dataadonan/create', 'StokController@tambah_dataadonan')->name('tambah_dataadonan');
 	Route::get('/stok/dataadonan/edit', 'StokController@edit_dataadonan')->name('edit_dataadonan');
+
 	Route::get('/stok/opnamebahanbaku/index', 'StokController@opnamebahanbaku')->name('opnamebahanbaku');
+
 	Route::get('/stok/pencatatanbarangmasuk/index', 'StokController@pencatatanbarangmasuk')->name('pencatatanbarangmasuk');
 	Route::get('/stok/pencatatanbarangmasuk/create', 'StokController@tambah_pencatatanbarangmasuk')->name('tambah_pencatatanbarangmasuk');
+	Route::get('/stok/pencatatanbarangmasuk/getinfopo', 'StokController@get_infopo')->name('getinfopo');
+
 	Route::get('/stok/penggunaanbahanbaku/index', 'StokController@penggunaanbahanbaku')->name('penggunaanbahanbaku');
 	Route::get('/stok/penggunaanbahanbaku/create', 'StokController@tambah_penggunaanbahanbaku')->name('tambah_penggunaanbahanbaku');
+	
 	Route::get('/stok/tipemenghitunghpp/index', 'StokController@tipemenghitunghpp')->name('tipemenghitunghpp');
 
 
@@ -148,7 +168,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/produksi/produksitanparencana/index', 'ProduksiController@produksitanparencana')->name('produksitanparencana');
 	Route::get('/produksi/produksitanparencana/create', 'ProduksiController@tambah_produksitanparencana')->name('tambah_produksitanparencana');
 	Route::get('/produksi/upahboronganproduksi/upahboronganproduksi', 'ProduksiController@upahboronganproduksi')->name('upahboronganproduksi');
-	Route::get('/produksi/upahboronganproduksi/proses_upahboronganproduksi', 'ProduksiController@proses_upahboronganproduksi')->name('proses_upahboronganproduksi');
+	Route::get('/produksi/upahboronganproduksi/tambah_upahboronganproduksi', 'ProduksiController@tambah_upahboronganproduksi')->name('tambah_upahboronganproduksi');
 	Route::get('/produksi/spk/spk', 'ProduksiController@spk')->name('spk_produksi');
 
 	// Customer
@@ -185,8 +205,10 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/biayadanbeban/sewalahan/sewalahan', 'BiayaController@sewalahan')->name('sewalahan');
 	Route::get('/biayadanbeban/upahborongan/upahborongan', 'BiayaController@upahborongan')->name('upahborongan');
 	Route::get('/biayadanbeban/upahborongan/tambah_upahborongan', 'BiayaController@tambah_upahborongan')->name('tambah_upahborongan');
-	Route::get('/biayadanbeban/upahbulanan/upahbulanan', 'BiayaController@upahbulanan')->name('upahbulanan');
-	Route::get('/biayadanbeban/upahharian/upahharian', 'BiayaController@upahharian')->name('upahharian');
+	Route::get('/biayadanbeban/upahbulanan/index', 'BiayaController@upahbulanan')->name('upahbulanan');
+	Route::get('/biayadanbeban/upahbulanan/create', 'BiayaController@tambah_upahbulanan')->name('tambah_upahbulanan');
+	Route::get('/biayadanbeban/upahharian/index', 'BiayaController@upahharian')->name('upahharian');
+	Route::get('/biayadanbeban/upahharian/create', 'BiayaController@tambah_upahharian')->name('tambah_upahharian');
 	Route::get('/biayadanbeban/pengeluarankecil/index', 'BiayaController@pengeluarankecil')->name('pengeluarankecil');
 	Route::get('/biayadanbeban/pengeluarankecil/create', 'BiayaController@tambah_pengeluarankecil')->name('tambah_pengeluarankecil');
 
@@ -202,10 +224,10 @@ Route::group(['middleware' => 'auth'], function(){
 	// Route::get('/danasosial/sumbangan/sumbangan', 'DanaController@sumbangan');
 
 	// Aset
-	Route::get('/aset/datagolongan/index', 'AsetController@datagolongan')->name('datagolongan');	
-	Route::get('/aset/datagolongan/create', 'AsetController@tambah_datagolongan')->name('tambah_datagolongan');	
-	Route::get('/aset/dataaset/index', 'AsetController@dataaset')->name('dataaset');	
-	Route::get('/aset/dataaset/create', 'AsetController@tambah_dataaset')->name('tambah_dataaset');	
+	Route::get('/aset/datagolongan/index', 'AsetController@datagolongan')->name('datagolongan');
+	Route::get('/aset/datagolongan/create', 'AsetController@tambah_datagolongan')->name('tambah_datagolongan');
+	Route::get('/aset/dataaset/index', 'AsetController@dataaset')->name('dataaset');
+	Route::get('/aset/dataaset/create', 'AsetController@tambah_dataaset')->name('tambah_dataaset');
 
 	// Keuangan
 	// Route::get('/keuangan/a_3bottomline/a_3bottomline', 'KeuanganController@a_3bottomline');

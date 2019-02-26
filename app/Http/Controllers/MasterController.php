@@ -196,13 +196,13 @@ class MasterController extends Controller
     {
         return view('master/barangsuplier/edit_suplier');
     }
-    public function ongkoskirim()
+    public function upah()
     {
-        return view('master.ongkoskirim.ongkoskirim');
+        return view('master.upah.upah');
     }
-    public function tambah_ongkoskirim()
+    public function tambah_upah()
     {
-        return view('master.ongkoskirim.tambah_ongkoskirim');
+        return view('master.upah.tambah_upah');
     }
 
     public function datatunjangan()
@@ -214,6 +214,21 @@ class MasterController extends Controller
     {
         return view('master.datatunjangan.tambah_datatunjangan');
     }
+
+    public function datajabatan()
+    {
+        return view('master.datajabatan.datajabatan');
+    }
+
+    public function tambah_datajabatan()
+    {
+        return view('master.datajabatan.tambah_datajabatan');
+    }    
+
+    public function edit_datajabatan()
+    {
+        return view('master.datajabatan.edit_datajabatan');
+    }    
 
 }
 

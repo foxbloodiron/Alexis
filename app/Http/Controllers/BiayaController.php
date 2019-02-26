@@ -46,9 +46,17 @@ class BiayaController extends Controller
     {
     	return view('biayadanbeban/upahbulanan/upahbulanan');
     }
+    public function tambah_upahbulanan()
+    {
+        return view('biayadanbeban/upahbulanan/tambah_upahbulanan');
+    }
     public function upahharian()
     {
     	return view('biayadanbeban/upahharian/upahharian');
+    }
+    public function tambah_upahharian()
+    {
+        return view('biayadanbeban/upahharian/tambah_upahharian');
     }
     public function pengeluarankecil()
     {

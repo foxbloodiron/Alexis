@@ -8,7 +8,7 @@
         <link rel="shortcut icon" href="{{asset('assets/img/games.ico')}}">
         <!-- Place favicon.ico in the root directory -->
         <link rel="stylesheet" href="{{asset('assets/css/vendor.css')}}">
-        {{-- <link rel="stylesheet" type="text/css" href="{{asset('assets/jquery-ui/jquery-ui.css')}}"> --}}
+        <link rel="stylesheet" type="text/css" href="{{asset('assets/jquery-ui/jquery-ui.css')}}">
         <link rel="stylesheet" href="{{asset('assets/datatables/datatables.min.css')}}">
         <link rel="stylesheet" href="{{asset('assets/datatables/Responsive-2.2.2/css/responsive.bootstrap4.css')}}">
         <link rel="stylesheet" href="{{asset('assets/datepicker/css/bootstrap-datepicker.min.css')}}">

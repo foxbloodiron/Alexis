@@ -195,11 +195,14 @@
                         <li class="{{Request::is('master/barangsuplier/*') ? 'active' : ''}}">
                             <a href="{{route('barangsuplier')}}">Item Barang Suplier</a>
                         </li>
-                        <li class="{{Request::is('master/ongkoskirim/*') ? 'active' : ''}}">
-                            <a href="{{route('ongkoskirim')}}">Data Ongkos Kirim</a>
+                        <li class="{{Request::is('master/upah/*') ? 'active' : ''}}">
+                            <a href="{{route('upah')}}">Data Upah</a>
                         </li>
                         <li class="{{Request::is('master/datatunjangan/*')}}">
                             <a href="{{route('datatunjangan')}}">Data Tunjangan</a>
+                        </li>
+                        <li class="{{Request::is('master/datajabatan/*') ? 'active' : ''}}">
+                            <a href="{{route('datajabatan')}}">Data Jabatan</a>
                         </li>
                     </ul>
                 </li>
@@ -258,7 +261,7 @@
                             <a href="{{route('penggunaanbahanbaku')}}">Penggunaan Bahan Baku </a>
                         </li>
                         <li class="{{Request::is('stok/opnamebahanbaku/*') ? 'active' : ''}}">
-                            <a href="{{route('opnamebahanbaku')}}">Opname Bahan Baku </a>
+                            <a href="{{route('opnamebahanbaku')}}">Opname Stock </a>
                         </li>
                     </ul>
                 </li>
@@ -352,38 +355,38 @@
                         <i class="fa arrow"></i>
                     </a>
                     <ul class="sidebar-nav">
-                        <li class="{{Request::is('biayadanbeban/upahborongan/*') ? 'active' : ''}}">
-                            <a href="{{url('biayadanbeban/upahborongan/upahborongan')}}"> Upah Borongan</a>
-                        </li>
+                        {{-- <li class="{{Request::is('biayadanbeban/upahborongan/*') ? 'active' : ''}}">
+                            <a href="{{route('upahborongan')}}"> Upah Borongan</a>
+                        </li> --}}
                         <li class="{{Request::is('biayadanbeban/upahharian/*') ? 'active' : ''}}">
-                            <a href="{{url('biayadanbeban/upahharian/upahharian')}}"> Upah Harian</a>
+                            <a href="{{route('upahharian')}}"> Upah Harian</a>
                         </li>
                         <li class="{{Request::is('biayadanbeban/upahbulanan/*') ? 'active' : ''}}">
-                            <a href="{{url('biayadanbeban/upahbulanan/upahbulanan')}}"> Upah Bulanan</a>
+                            <a href="{{route('upahbulanan')}}"> Upah Bulanan</a>
                         </li>
-                        <li class="{{Request::is('biayadanbeban/sewalahan/*') ? 'active' : ''}}">
-                            <a href="{{url('biayadanbeban/sewalahan/sewalahan')}}"> Sewa Lahan</a>
-                        </li>
+                        {{-- <li class="{{Request::is('biayadanbeban/sewalahan/*') ? 'active' : ''}}">
+                            <a href="{{route('sewalahan')}}"> Sewa Lahan</a>
+                        </li> --}}
                        {{--  <li class="{{Request::is('biayadanbeban/biayaoperasional/*') ? 'active' : ''}}">
-                            <a href="{{url('biayadanbeban/biayaoperasional/biayaoperasional')}}"> Biaya Operasional</a>
+                            <a href="{{route('biayaoperasional')}}"> Biaya Operasional</a>
                         </li>
                         <li class="{{Request::is('biayadanbeban/biayabahanbakar/*') ? 'active' : ''}}">
-                            <a href="{{url('biayadanbeban/biayabahanbakar/biayabahanbakar')}}"> Biaya Bahan Bakar</a>
+                            <a href="{{route('biayabahanbakar')}}"> Biaya Bahan Bakar</a>
                         </li>
                         <li class="{{Request::is('biayadanbeban/biayakonsumsi/*') ? 'active' : ''}}">
-                            <a href="{{url('biayadanbeban/biayakonsumsi/biayakonsumsi')}}"> Biaya Konsumsi</a>
+                            <a href="{{route('biayakonsumsi')}}"> Biaya Konsumsi</a>
                         </li>
                         <li class="{{Request::is('biayadanbeban/biayakesehatan/*') ? 'active' : ''}}">
-                            <a href="{{url('biayadanbeban/biayakesehatan/biayakesehatan')}}"> Biaya Kesehatan</a>
+                            <a href="{{route('biayakesehatan')}}"> Biaya Kesehatan</a>
                         </li>
                         <li class="{{Request::is('biayadanbeban/alattuliskantor/*') ? 'active' : ''}}">
-                            <a href="{{url('biayadanbeban/alattuliskantor/alattuliskantor')}}"> Alat Tulis Kantor</a>
+                            <a href="{{route('alattuliskantor')}}"> Alat Tulis Kantor</a>
                         </li> --}}
                         <li class="{{Request::is('biayadanbeban/pengeluarankecil/*') ? 'active' : ''}}">
                             <a href="{{route('pengeluarankecil')}}">Biaya Pengeluaran Kecil</a>
                         </li>
                         <li class="{{Request::is('biayadanbeban/maintenance/*') ? 'active' : ''}}">
-                            <a href="{{url('biayadanbeban/maintenance/maintenance')}}"> Maintenance</a>
+                            <a href="{{route('maintenance')}}"> Maintenance</a>
                         </li>
                         
                     </ul>

@@ -5,12 +5,12 @@
 <article class="content">
 
 	<div class="title-block text-primary">
-	    <h1 class="title"> Tambah Data Tunjangan </h1>
+	    <h1 class="title"> Edit Data Tunjangan </h1>
 	    <p class="title-description">
 	    	<i class="fa fa-home"></i>&nbsp;<a href="{{url('/home')}}">Home</a>
 	    	/ <span>Master</span>
 	    	/ <a href="{{route('datatunjangan')}}">Data Tunjangan</a>
-	    	/ <span class="text-primary font-weight-bold">Tambah Data Tunjangan</span>
+	    	/ <span class="text-primary font-weight-bold">Edit Data Tunjangan</span>
 	     </p>
 	</div>
 
@@ -23,14 +23,14 @@
 				<div class="card">
                     <div class="card-header bordered p-3">
                     	<div class="header-block">
-	                        <h3 class="title"> Tambah Data Tunjangan </h3>
+	                        <h3 class="title"> Edit Data Tunjangan </h3>
 	                    </div>
 	                    <div class="header-block pull-right">
 
                 			<a href="{{route('datatunjangan')}}" class="btn btn-secondary btn-sm" ><i class="fa fa-arrow-left"></i></a>
 	                    </div>
                     </div>
-										<form action="{{ route('save_datatunjangan') }}" method="post" id="myForm" autocomplete="off">
+										<form action="{{ route('update_datatunjangan', [$data['tunjangan']->tj_id]) }}" method="post" id="myForm" autocomplete="off">
 											<div class="card-block">
 												<section>
 													<div class="row">
@@ -39,7 +39,7 @@
 														</div>
 														<div class="col-md-9 col-md-8 col-12">
 															<div class="form-group">
-																<input type="text" class="form-control form-control-sm" name="tunjangan_name">
+																<input type="text" class="form-control form-control-sm" name="tunjangan_name" value="{{ $data['tunjangan']->tj_name }}">
 															</div>
 														</div>
 
@@ -49,7 +49,7 @@
 														</div>
 														<div class="col-md-9 col-md-8 col-12">
 															<div class="form-group">
-																<input type="text" class="form-control form-control-sm text-right input-rupiah" name="tunjangan_nominal">
+																<input type="text" class="form-control form-control-sm text-right input-rupiah" name="tunjangan_nominal" value="{{ $data['tunjangan']->tj_nominal }}">
 															</div>
 														</div>
 													</div>
@@ -99,16 +99,13 @@
         if(response.status == 'berhasil'){
           $.toast({
             heading: 'Success',
-            text: 'Data berhasil ditambahkan !',
+            text: 'Data berhasil disimpan !',
             bgColor: '#00b894',
             textColor: 'white',
             loaderBg: '#55efc4',
             icon: 'success',
             stack: false,
-            hideAfter: 1500,
-            afterHidden: function() {
-              window.location.href = "{{ route('datatunjangan') }}";
-            }
+            hideAfter: 1500
           });
         } else if (response.status == 'invalid') {
           $.toast({

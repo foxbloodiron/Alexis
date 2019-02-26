@@ -6,12 +6,12 @@
 <article class="content">
 
   <div class="title-block text-primary">
-      <h1 class="title"> Proses Upah Borongan Produksi </h1>
+      <h1 class="title"> Tambah Upah Borongan Produksi </h1>
       <p class="title-description">
         <i class="fa fa-home"></i>&nbsp;<a href="{{url('/home')}}">Home</a> 
         / <span>Produksi</span> 
         / <a href="{{route('upahboronganproduksi')}}"><span>Upah Borongan Produksi</span> </a>
-        / <span class="text-primary font-weight-bold">Proses Upah Borongan Produksi</span>
+        / <span class="text-primary font-weight-bold">Tambah Upah Borongan Produksi</span>
        </p>
   </div>
 
@@ -24,7 +24,7 @@
         <div class="card">
             <div class="card-header bordered p-2">
               <div class="header-block">
-                <h3 class="title"> Proses Upah Borongan Produksi </h3>
+                <h3 class="title"> Tambah Upah Borongan Produksi </h3>
               </div>
               <div class="header-block pull-right">
                 <a href="{{route('upahboronganproduksi')}}" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-left"></i></a>
@@ -33,58 +33,57 @@
             <div class="card-block">
                 <section>
 
-                  <div class="row">
-
-                    <div class="col-md-3 col-sm-4 col-12">
-                      <label>Pilih Periode Produksi</label>
-                    </div>
-
-                    <div class="col-md-9 col-sm-8 col-12">
-                      <div class="form-group">
-                        <div class="input-group input-daterange">
-                          <input type="text" class="form-control form-control-sm" name="" value="15-11-2018" id="date_start">
-                          <span class="input-group-addon">-</span>
-                          <input type="text" class="form-control form-control-sm" name="" value="" id="date_end">
-
+                  <fieldset class="mb-3">
+                    <div class="row">
+                      <div class="col-md-4 col-sm-5 col-xs-12">
+                        <div class="form-group top-totalprice">
+                          <label>Total Bonus</label>
+                          <input type="text" class="form-control text-center" readonly="" name="">
+                        </div>
+                      </div>
+                      <div class="col-md-8 col-sm-7 col-xs-12">
+                        <div class="form-group top-totalprice">
+                          <label>Total Upah</label>
+                          <input type="text" class="form-control text-right" readonly="" name="">
                         </div>
                       </div>
                     </div>
+                  </fieldset>
 
-                    <div class="col-md-3 col-sm-4 col-12">
-                      <label>Pilih Mandor</label>
-                    </div>
+                  <fieldset class="mb-3">
+                    <div class="row">
 
-                    <div class="col-md-9 col-sm-8 col-12">
-                      <div class="form-group">
-                        <select class="form-control form-control-sm select2">
-                          <option value="" disabled="" selected="">--Pilih--</option>
-                        </select>
+                      <div class="col-md-3 col-sm-4 col-12">
+                        <label>Pilih Periode Produksi</label>
                       </div>
-                    </div>
 
+                      <div class="col-md-9 col-sm-8 col-12">
+                        <div class="form-group">
+                          <div class="input-group input-daterange">
+                            <input type="text" class="form-control form-control-sm" name="" id="date_start">
+                            <span class="input-group-addon">-</span>
+                            <input type="text" class="form-control form-control-sm" name="" value="" id="date_end">
 
-                    <div class="col-md-3 col-sm-4 col-12">
-                      <label>Nama Barang</label>
-                    </div>
-
-                    <div class="col-md-9 col-sm-8 col-12">
-                      <div class="form-group">
-                        <input type="text" class="form-control form-control-sm" readonly="" value="Paving" name="">
+                          </div>
+                        </div>
                       </div>
+
+
+                      
                     </div>
-
-                    
-                  </div>
-
-                  <hr>
+                  </fieldset>
 
                   <div class="table-responsive">
                     <table class="table table-bordered table-striped table-hover" id="table_produksi" cellspacing="0">
                       <thead class="bg-primary">
                         <tr>
                           <th width="1%">No</th>
-                          <th>Tanggal</th>
+                          <th>Kode Produksi</th>
+                          <th width="25%">Nama Barang</th>
                           <th>Jumlah Produksi</th>
+                          <th width="10%">Reject</th>
+                          <th>Nett Produksi</th>
+                          <th width="15%">Upah</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -93,7 +92,6 @@
                     </table>
                   </div>
 
-                  <hr>
 
                   <div class="row">
 
@@ -117,10 +115,7 @@
 
                             <div class="col-md-8 col-sm-7 col-12">
                               <div class="form-group">
-                                <div class="input-group">
-                                  <span class="input-group-addon">2.5 %</span>
-                                  <input type="text" class="form-control form-control-sm" name="">
-                                </div>
+                                <input type="text" class="form-control form-control-sm" readonly="" name="">
                               </div>
                             </div>
 
@@ -135,12 +130,12 @@
                             </div>
                                 
                             <div class="col-md-4 col-sm-5 col-12">                            
-                              <label>Upah</label>
+                              <label>Total Upah</label>
                             </div>
 
                             <div class="col-md-8 col-sm-7 col-12">
                               <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" name="">
+                                <input type="text" class="form-control form-control-sm" readonly="" name="">
                               </div>
                             </div>
 
@@ -167,40 +162,7 @@
                       <tbody></tbody>
                     </table>
                   </div>
-
-                  <div class="row">
-
-                    <div class="offset-lg-7 col-lg-5 offset-md-6 col-md-6 col-sm-7 offset-sm-5 col-12">
-
-                      <fieldset>
-                        <div class="row">
-
-                            <div class="col-md-4 col-sm-5 col-12">
-                              <label>Total Bonus</label>
-                            </div>
-
-                            <div class="col-md-8 col-sm-7 col-12">
-                              <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" readonly="" name="">
-                              </div>
-                            </div>
-                                
-                            <div class="col-md-4 col-sm-5 col-12">                            
-                              <label>Total Upah</label>
-                            </div>
-
-                            <div class="col-md-8 col-sm-7 col-12">
-                              <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" readonly="" name="">
-                              </div>
-                            </div>
-
-                        </div>
-                      </fieldset>
-
-                    </div>
-                    
-                  </div>                  
+                  
 
 
 
@@ -245,80 +207,121 @@
       ]
     });
 
-
-    date_start = $('#date_start').datepicker({
-      onSelect: function(dateText, inst) {
-          $( "#date_end" ).datepicker("defaultViewDate", dateText );
-    }})
-    .on('changeDate', function(){
-      var ini   = $(this).datepicker('getDate');
-      var end  = $('#date_end').datepicker('getDate');
-
-
-      var date1_ms = ini.getTime();
-      var date2_ms = end.getTime();
-
-      var diff = date2_ms-date1_ms;
-
-        // get days
-      var days = diff/1000/60/60/24;
-
-
-
-      // console.log(days);
-      datatable_append_produksi(days,ini);
-
+    $('#date_start').datepicker().on('changeDate', function(){
+        datatable_append_produksi();
+      // console.log('start');
     });
 
-    date_end = $('#date_end').datepicker()
-    .on('changeDate', function(){
-      var ini  = $(this).datepicker('getDate');
-      var start  = $('#date_start').datepicker('getDate');
-
-
-      var date1_ms = start.getTime();
-      var date2_ms = ini.getTime();
-
-      var diff = date2_ms-date1_ms;
-
-        // get days
-      var days = diff/1000/60/60/24;
-
-
-
-      // console.log(days);
-      datatable_append_produksi(days,start);
+    $('#date_start').datepicker().on('changeDate', function(){
+        datatable_append_produksi();
+      // console.log('end');
     });
 
-
-    function datatable_append_produksi(angka,tgl_awal){
-
+    function datatable_append_produksi(){
       eueue.clear().draw();
-
-      var get_tanggal, tanggal, bulan, tahun, cov_date,parse_date;
-
-      for (var i = 0; i <= angka; i++) {
-        get_tanggal = tgl_awal.setDate(tgl_awal.getDate() + i);
-        console.log(get_tanggal);
-        parse_date  = new Date(get_tanggal);
-        tanggal   = parse_date.getDate();
-        bulan     = parse_date.getMonth();
-        tahun     = parse_date.getFullYear();
-        cov_date  = tanggal+'-'+bulan+'-'+tahun;
-
         eueue.row.add([
-          '#',
-          '<input type="hidden" value="'+ cov_date +'" name="">'+cov_date
-          ,
-          '<input type="number" class="form-control form-control-sm" name="">'
+          '1',
+          '<input type="text" readonly="" class="form-control form-control-sm" value="H/PTR/20190217/1">',
+          '<input type="text" readonly="" class="form-control form-control-sm" value="Paving Abu">',
+          '<input type="text" readonly="" class="form-control form-control-sm" value="500">',
+          '<div class="input-group">'+
+            '<span class="input-group-addon">2.5%</span>'+
+            '<input type="text" readonly="" class="form-control form-control-sm" value="10">'+
+          '</div>',
+          '<input type="text" readonly="" class="form-control form-control-sm" value="450">',
+          '<input type="text" readonly="" class="form-control form-control-sm text-right" value="1.000  ">',
+          '<input type="text" readonly="" class="form-control form-control-sm text-right" value="500.000">',
           ]).draw(false);
 
+        eueue.row.add([
+          '2',
+          '<input type="text" readonly="" class="form-control form-control-sm" value="H/PR/20190217/1">',
+          '<input type="text" readonly="" class="form-control form-control-sm" value="Paving Merah">',
+          '<input type="text" readonly="" class="form-control form-control-sm" value="500">',
+          '<div class="input-group">'+
+            '<span class="input-group-addon">10%</span>'+
+            '<input type="text" readonly="" class="form-control form-control-sm" value="50">'+
+          '</div>',
+          '<input type="text" readonly="" class="form-control form-control-sm" value="450">',
+          '<input type="text" readonly="" class="form-control form-control-sm text-right" value="1.000  ">',
+          '<input type="text" readonly="" class="form-control form-control-sm text-right" value="500.000">',
+          ]).draw(false);
 
         counter_strike__battlefield++;
-
       }
+    // date_start = $('#date_start').datepicker({
+    //   onSelect: function(dateText, inst) {
+    //       $( "#date_end" ).datepicker("defaultViewDate", dateText );
+    // }})
+    // .on('changeDate', function(){
+    //   var ini   = $(this).datepicker('getDate');
+    //   var end  = $('#date_end').datepicker('getDate');
 
-    }
+
+    //   var date1_ms = ini.getTime();
+    //   var date2_ms = end.getTime();
+
+    //   var diff = date2_ms-date1_ms;
+
+    //     // get days
+    //   var days = diff/1000/60/60/24;
+
+
+
+    //   // console.log(days);
+    //   datatable_append_produksi(days,ini);
+
+    // });
+
+    // date_end = $('#date_end').datepicker()
+    // .on('changeDate', function(){
+    //   var ini  = $(this).datepicker('getDate');
+    //   var start  = $('#date_start').datepicker('getDate');
+
+
+    //   var date1_ms = start.getTime();
+    //   var date2_ms = ini.getTime();
+
+    //   var diff = date2_ms-date1_ms;
+
+    //     // get days
+    //   var days = diff/1000/60/60/24;
+
+
+
+    //   // console.log(days);
+    //   datatable_append_produksi(days,start);
+    // });
+
+
+    // function datatable_append_produksi(angka,tgl_awal){
+
+    //   eueue.clear().draw();
+
+    //   var get_tanggal, tanggal, bulan, tahun, cov_date,parse_date;
+
+    //   for (var i = 0; i <= angka; i++) {
+    //     get_tanggal = tgl_awal.setDate(tgl_awal.getDate() + i);
+    //     console.log(get_tanggal);
+    //     parse_date  = new Date(get_tanggal);
+    //     tanggal   = parse_date.getDate();
+    //     bulan     = parse_date.getMonth();
+    //     tahun     = parse_date.getFullYear();
+    //     cov_date  = tanggal+'-'+bulan+'-'+tahun;
+
+    //     eueue.row.add([
+    //       '#',
+    //       '<input type="hidden" value="'+ cov_date +'" name="">'+cov_date
+    //       ,
+    //       '<input type="number" class="form-control form-control-sm" name="">'
+    //       ]).draw(false);
+
+
+    //     counter_strike__battlefield++;
+
+    //   }
+
+    // }
 
     $('#btn-tambah-tunjangan').click(function(){
       datatable_append_tunjangan();

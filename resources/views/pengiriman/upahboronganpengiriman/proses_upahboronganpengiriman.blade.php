@@ -95,7 +95,6 @@
                                             <th>Barang</th>
                                             <th width="10%">Qty</th>
                                             <th>Tanggal Pengiriman Selesai</th>
-                                            <th>Ongkos Kirim per Jumlah Barang</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -187,14 +186,12 @@
             eueue.row.add([
                 'Paving Abu',
                 '12',
-                '08-02-2019',
-                'Rp. 20.000,00/100'
+                '08-02-2019'
                 ]).draw();
             eueue.row.add([
                 'Paving Merah',
                 '12',
-                '09-02-2019',
-                'Rp. 20.000,00/100'
+                '09-02-2019'
                 ]).draw();
         }
     });

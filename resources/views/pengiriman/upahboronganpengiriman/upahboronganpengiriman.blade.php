@@ -135,7 +135,7 @@
 		            					<table class="table table-bordered table-hover table-striped" id="table-upah" cellspacing="0">
 		            						<thead class="bg-primary">
 		            							<tr>
-		            								<th>No</th>
+		            								<th width="1%">No</th>
 		            								<th>Nota</th>
 		            								<th>Status</th>
 		            								<th width="15%">Aksi</th>
@@ -143,10 +143,10 @@
 		            						</thead>
 		            						<tbody>
 		            							<tr>
-		            								<th>1</th>
+		            								<th align="center">1</th>
 		            								<td>PP/20181123/3</td>
 		            								<td><span class="badge badge-pill badge-secondary">Belum dibayar</span></td>
-		            								<td>
+		            								<td align="center">
 		            									<a class="btn btn-primary btn-sm" href="{{route('proses_upahboronganpengiriman')}}" title="Proses">Proses</a>
 		            								</td>
 		            							</tr>

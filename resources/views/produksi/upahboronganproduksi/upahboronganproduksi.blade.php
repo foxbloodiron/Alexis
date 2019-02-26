@@ -25,41 +25,45 @@
                     	<div class="header-block">
 	                        <h3 class="title"> Upah Borongan Produksi </h3>
 	                    </div>
+	                    <div class="header-block pull-right">
+	                        <a href="{{route('tambah_upahboronganproduksi')}}" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Data</a>
+	                    </div>
                     </div>
                     <div class="card-block">
                         <section>
                         	
                         	<div class="table-responsive">
-	                            <table class="table data-table table-hover" cellspacing="0">
+	                            <table class="table table-striped table-bordered table-hover" id="table_upahproduksi" cellspacing="0">
 	                                <thead class="bg-primary">
 	                                    <tr>
-	                                    	<th>No</th>
-							                <th>Kode Produksi</th>
+	                                    	<th width="1%">No</th>
+							                <th>Kode Upah</th>
 							                <th>Nama Item</th>
 							                <th>Jumlah Produksi</th>
 							                <th>Tanggal Produksi</th>
-							                <th>Status</th>
 							                <th>Aksi</th>
 							            </tr>
 	                                </thead>
 	                                <tbody>
 	                                	<tr>
-	                                		<td>1</td>
+	                                		<td align="center">1</td>
 	                                		<td>H/PTR/20181115/1</td>
 	                                		<td>Paving</td>
 	                                		<td>150</td>
 	                                		<td>15 Nov 2018</td>
-	                                		<td><span class="badge badge-info badge-pill">Menunggu diproses</span></td>
-	                                		<td align="center"><a class="btn btn-primary btn-sm" href="{{route('proses_upahboronganproduksi')}}">Proses</a></td>
+	                                		<td align="center">
+	                                			<button class="btn btn-info" type="button" title="Detail"><i class="fa fa-list"></i></button>
+	                                		</td>
 	                                	</tr>
 	                                	<tr>
-	                                		<td>2</td>
+	                                		<td align="center">2</td>
 	                                		<td>H/PR/20181113/1</td>
 	                                		<td>Paving Abu</td>
 	                                		<td>100</td>
 	                                		<td>13 Nov 2018</td>
-	                                		<td><span class="badge badge-success badge-pill">Sudah diproses</span></td>
-	                                		<td align="center">-</td>
+	                                		<td align="center">
+	                                			<button class="btn btn-info" type="button" title="Detail"><i class="fa fa-list"></i></button>
+	                                		</td>
 	                                	</tr>
 							        </tbody>
 	                            </table>
@@ -76,4 +80,11 @@
 
 </article>
 
+@endsection
+@section('extra_script')
+<script type="text/javascript">
+	$(document).ready(function(){
+		var table = $('#table_upahproduksi').DataTable();
+	})
+</script>
 @endsection

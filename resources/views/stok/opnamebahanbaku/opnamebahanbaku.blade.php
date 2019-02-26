@@ -7,11 +7,11 @@
 <article class="content">
 
 	<div class="title-block text-primary">
-	    <h1 class="title"> Opname Bahan Baku </h1>
+	    <h1 class="title"> Opname Stock </h1>
 	    <p class="title-description">
 	    	<i class="fa fa-home"></i>&nbsp;<a href="{{url('/home')}}">Home</a> 
 	    	/ <span>Stok</span> 
-	    	/ <span class="text-primary font-weight-bold">Opname Bahan Baku</span>
+	    	/ <span class="text-primary font-weight-bold">Opname Stock</span>
 	     </p>
 	</div>
 
@@ -19,10 +19,10 @@
 
 		<ul class="nav nav-pills">
             <li class="nav-item">
-                <a href="" class="nav-link active" data-target="#opname" aria-controls="opname" data-toggle="tab" role="tab">Opname Bahan Baku</a>
+                <a href="" class="nav-link active" data-target="#opname" aria-controls="opname" data-toggle="tab" role="tab">Opname Stock</a>
             </li>
             <li class="nav-item">
-                <a href="" class="nav-link" data-target="#list" aria-controls="list" data-toggle="tab" role="tab">List Opname Bahan Baku</a>
+                <a href="" class="nav-link" data-target="#list" aria-controls="list" data-toggle="tab" role="tab">List Opname Stock</a>
             </li>
         </ul>
 

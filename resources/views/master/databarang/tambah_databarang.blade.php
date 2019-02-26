@@ -57,7 +57,7 @@
                                   <option value="SP">Spare Part</option>
                                   <option value="BJ">Barang Jual</option>
                                   <option value="LL">Lain-lain</option>
-                                  <option value="BP">Bahan Produksi</option>
+                                  <option value="BP">Barang Produksi</option>
                                 </select>
                               </div>
                             </div>

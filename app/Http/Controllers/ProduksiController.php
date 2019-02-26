@@ -42,9 +42,9 @@ class ProduksiController extends Controller
     {
     	return view('produksi/upahboronganproduksi/upahboronganproduksi');
     }
-    public function proses_upahboronganproduksi()
+    public function tambah_upahboronganproduksi()
     {
-        return view('produksi/upahboronganproduksi/proses_upahboronganproduksi');
+        return view('produksi/upahboronganproduksi/tambah_upahboronganproduksi');
     }
     public function spk()
     {
