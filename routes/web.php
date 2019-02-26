@@ -122,8 +122,10 @@ Route::group(['middleware' => 'auth'], function(){
 
 	Route::get('/purchasing/orderpembelian/tambah_orderpembelian_tanparencana', 'Purchasing\OrderPembelianController@tambah_orderpembelian_tanparencana')->name('tambah_orderpembelian_tanparencana');
 
-	Route::get('/purchasing/returnpembelian/returnpembelian', 'PurchaseController@returnpembelian')->name('returnpembelian');
-	Route::get('/purchasing/returnpembelian/tambah_returnpembelian', 'PurchaseController@tambah_returnpembelian')->name('tambah_returnpembelian');
+	// Return pembelian
+	Route::get('/purchasing/returnpembelian/returnpembelian', 'Purchasing\ReturnPembelianController@returnpembelian')->name('returnpembelian');
+		Route::get('/purchasing/returnpembelian/tambah_returnpembelian', 'Purchasing\ReturnPembelianController@tambah_returnpembelian')->name('tambah_returnpembelian');
+	
 	Route::get('/purchasing/rencanabahanbaku/rencanabahanbaku', 'PurchaseController@rencanabahanbaku')->name('rencanabahanbaku');
 
 	// Stok

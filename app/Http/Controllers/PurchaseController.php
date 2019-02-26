@@ -28,14 +28,14 @@ class PurchaseController extends Controller
     // {
     // 	return view('purchasing/rencanapembelian/tambah_rencanapembelian');
     // }
-    public function returnpembelian()
-    {
-    	return view('purchasing/returnpembelian/returnpembelian');
-    }
-    public function tambah_returnpembelian()
-    {
-    	return view('purchasing/returnpembelian/tambah_returnpembelian');
-    }
+    // public function returnpembelian()
+    // {
+    // 	return view('purchasing/returnpembelian/returnpembelian');
+    // }
+    // public function tambah_returnpembelian()
+    // {
+    // 	return view('purchasing/returnpembelian/tambah_returnpembelian');
+    // }
     public function rencanabahanbaku()
     {
         return view('purchasing/rencanabahanbakuproduksi/rencanabahanbakuproduksi');
