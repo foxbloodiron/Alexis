@@ -43,7 +43,7 @@
 
                               <div class="col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
-                                  <input type="text" class="form-control form-control-sm" readonly="">
+                                  <input type="text" class="form-control form-control-sm" readonly>
                                 </div>
                               </div>
 
@@ -108,101 +108,8 @@
                             </div>
                           </fieldset>
 
-                          <div class="d-none" id="front-end-show">
-
-                            <fieldset class="mt-3">
-
-                              <h4><b>Pasir</b></h4> 
-                              <span class="badge badge-pill badge-secondary">3 Rit</span>
-                              <hr>
-
-                              <div class="table-responsive mt-3">
-                                
-                                <table class="table table-bordered table-striped table-hover data-table" id="table_barangmasuk" cellspacing="0">
-                                  <thead class="bg-primary">
-                                    <tr>
-                                      <th>Kode | Barang</th>
-                                      <th>Tanggal Datang</th>
-                                      <th>Jam Datang</th>
-                                      <th>Surat Jalan</th>
-                                      <th>Plat Nomor</th>
-                                      <th>Detail Kendaraan</th>
-                                      <th>Kubikasi Muatan Bak (m<sup>3</sup>)</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    @for($j=0;$j<3;$j++)
-                                      <tr>
-                                        <td>BRG/1</td>
-                                        <td><input type="text" class="form-control-sm form-control datepicker" name=""></td>
-                                        <td><input type="text" class="form-control-sm form-control input-jam" name=""></td>
-                                        <td><input type="text" class="form-control-sm form-control" name=""></td>
-                                        <td>
-                                          <select class="select2 form-control form-control-sm plat_no">
-                                            <option value="" selected="" disabled="">--Pilih--</option>
-                                            <option value="1">N 9626 UT</option>
-                                          </select>
-                                        </td>
-                                        <td align="center">
-                                          <button type="button" class="btn btn-info btn-xs btn-detail-muatan" disabled="" data-toggle="modal" data-target="#detail_muatan">Detail</button>
-                                        </td>
-                                        <td><input type="text" class="form-control-sm form-control muatan_bak" readonly="" name=""></td>
-
-                                      </tr>
-                                    @endfor
-                                  </tbody>
-                                </table>
-
-                              </div>
-                            </fieldset>
-
-
-                            <fieldset class="mt-3">
-
-                              <h4><b>Koral</b></h4> 
-                              <span class="badge badge-pill badge-secondary">5 Rit</span>
-                              <hr>
-
-                              <div class="table-responsive mt-3">
-                                
-                                <table class="table table-bordered table-striped table-hover data-table" id="table_barangmasuk" cellspacing="0">
-                                  <thead class="bg-primary">
-                                    <tr>
-                                      <th>Kode | Barang</th>
-                                      <th>Tanggal Datang</th>
-                                      <th>Jam Datang</th>
-                                      <th>Surat Jalan</th>
-                                      <th>Plat Nomor</th>
-                                      <th>Detail Kendaraan</th>
-                                      <th>Kubikasi Muatan Bak (m<sup>3</sup>)</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    @for($i=0;$i<5;$i++)
-                                      <tr>
-                                        <td>BRG/2</td>
-                                        <td><input type="text" class="form-control-sm form-control datepicker" name=""></td>
-                                        <td><input type="text" class="form-control-sm form-control input-jam" name=""></td>
-                                        <td><input type="text" class="form-control-sm form-control" name=""></td>
-                                        <td>
-                                          <select class="select2 form-control form-control-sm plat_no">
-                                            <option value="" selected="" disabled="">--Pilih--</option>
-                                            <option value="1">N 9626 UT</option>
-                                          </select>
-                                        </td>
-                                        <td align="center">
-                                          <button type="button" class="btn btn-info btn-xs btn-detail-muatan" disabled="" data-toggle="modal" data-target="#detail_muatan">Detail</button>
-                                        </td>
-                                        <td><input type="text" class="form-control-sm form-control muatan_bak" readonly="" name=""></td>
-
-                                      </tr>
-
-                                    @endfor
-                                  </tbody>
-                                </table>
-
-                              </div>
-                            </fieldset>
+                          <div class="d-none" id="front-end-show">                          
+                              
                           </div>
 
                         </section>
@@ -229,37 +136,124 @@
   
   $(document).ready(function(){
 
-    // var table = $('#table_barangmasuk').DataTable();
-    var tabel_muatan = $('#tabel_muatan').DataTable({
-                                          searching:false,
-                                          paging:false
-                                        });
-
     $('.btn-proses').click(function(){
       if($('#nota_order').val() === ''){
         $.toast({
           text:'Pilih Nota Terlebih Dahulu!',
           icon:'error'
-
         });
         $('#front-end-show').addClass('d-none');
       } else {
+        var id = $('#nota_order').val();
+        axios.get('{{ url("/stok/pencatatanbarangmasuk/getpbdt") }}'+'?id='+id).then((response) => {
+          var countTable = 1;
+          for(var i = 0; i < response.data.data.length; i++){
+
+            var optionNopol = '';
+            for(var o = 0; o < response.data.nopol.length; o++){
+              optionNopol += '<option value="'+response.data.nopol[o].k_id+'">'+response.data.nopol[o].k_nopol+'</option>';
+            }
+
+            var tableData = '';
+            if(response.data.data[i].podt_satuan == 3){
+              for(var j = 0; j < parseInt(response.data.data[i].podt_qty); j++){
+                tableData += '<tr>'+
+                  '<td>BRG/'+(j+1)+'</td>'+
+                  '<td><input type="text" class="form-control-sm form-control datepicker" name="tgl[]" id="tgl'+j+'"></td>'+
+                  '<td><input type="text" class="form-control-sm form-control input-jam" name="jam[]" id="jam'+j+'"></td>'+
+                  '<td><input type="text" class="form-control-sm form-control" name="surat[]" id="surat'+j+'"></td>'+
+                  '<td>'+
+                    '<select class="select2 form-control form-control-sm plat_no" name="nopol[]" id="nopol'+j+'">'+
+                      '<option value="" selected="" disabled="">--Pilih--</option>'+
+                      optionNopol+
+                    '</select>'+
+                  '</td>'+
+                  '<td align="center">'+
+                    '<button type="button" class="btn btn-info btn-xs btn-detail-muatan" disabled="" data-toggle="modal" data-target="#detail_muatan" id="detail'+j+'">Detail</button>'+
+                  '</td>'+
+                  '<td><input type="text" class="form-control-sm form-control muatan_bak" readonly="" name="muatan[]" id="muatan'+j+'"></td>'+
+                '</tr>';
+              }
+            }else{
+              tableData += '<tr>'+
+                '<td>BRG/1</td>'+
+                '<td><input type="text" class="form-control-sm form-control datepicker" name="tgl[]" id="tgl'+j+'"></td>'+
+                '<td><input type="text" class="form-control-sm form-control input-jam" name="jam[]" id="jam'+j+'"></td>'+
+                '<td><input type="text" class="form-control-sm form-control" name="surat[]" id="surat'+j+'"></td>'+
+                '<td>'+
+                  '<select class="select2 form-control form-control-sm plat_no" name="nopol[]" id="nopol'+j+'">'+
+                    '<option value="" selected="" disabled="">--Pilih--</option>'+
+                    optionNopol+
+                  '</select>'+
+                '</td>'+
+                '<td align="center">'+
+                  '<button type="button" class="btn btn-info btn-xs btn-detail-muatan" disabled="" data-toggle="modal" data-target="#detail_muatan" id="detail'+j+'">Detail</button>'+
+                '</td>'+
+                '<td><input type="text" class="form-control-sm form-control muatan_bak" readonly="" name="muatan[]" id="muatan'+j+'"></td>'+
+              '</tr>';
+            }
+            
+            $('#front-end-show').append(
+              '<fieldset class="mt-3">'+
+                '<h4><b>'+response.data.data[i].i_name+'</b></h4>'+
+                '<span class="badge badge-pill badge-secondary">3 Rit</span>'+
+                '<hr>'+
+                '<div class="table-responsive mt-3">'+
+                  '<table class="table table-bordered table-striped table-hover data-table" id="table_barang'+i+'" cellspacing="0">'+
+                    '<thead class="bg-primary">'+
+                      '<tr>'+
+                        '<th>Kode | Barang</th>'+
+                        '<th>Tanggal Datang</th>'+
+                        '<th>Jam Datang</th>'+
+                        '<th>Surat Jalan</th>'+
+                        '<th>Plat Nomor</th>'+
+                        '<th>Detail Kendaraan</th>'+
+                        '<th>Kubikasi Muatan Bak (m<sup>3</sup>)</th>'+
+                      '</tr>'+
+                    '</thead>'+
+                    '<tbody>'+
+                    tableData+
+                    '</tbody>'+
+                  '</table>'+
+                '</div>'+
+              '</fieldset>'
+            );
+
+            $( ".datepicker" ).datepicker({
+              language: "id",
+              format: 'dd/mm/yyyy',
+              prevText: '<i class="fa fa-chevron-left"></i>',
+              nextText: '<i class="fa fa-chevron-right"></i>',
+              autoclose: true,
+              todayHighlight: true
+            });
+
+            countTable++;
+          }
+
+          $('.data-table tbody').on('change', '.plat_no', function(){
+
+            var plat_no = $(this).val();
+            var btn_modal = $(this).parents('tr').find('.btn-detail-muatan');
+
+            if(plat_no != ''){
+              btn_modal.attr('disabled', false);
+              $(this).parents('tr').find('.muatan_bak').attr('readonly', false);
+            } else {
+              btn_modal.attr('disabled', true);
+              $(this).parents('tr').find('.muatan_bak').val('').attr('readonly', true);
+            }
+
+          });
+
+          $('.data-table').DataTable({
+            searching:false,
+            paging:false
+          });
+
+        });
+
         $('#front-end-show').removeClass('d-none');
-      }
-    });
-
-    $('.data-table tbody').on('change', '.plat_no', function(){
-
-      var plat_no = $(this).val();
-
-      var btn_modal = $(this).parents('tr').find('.btn-detail-muatan');
-
-      if(plat_no != ''){
-        btn_modal.attr('disabled', false);
-        $(this).parents('tr').find('.muatan_bak').attr('readonly', false);
-      } else {
-        btn_modal.attr('disabled', true);
-        $(this).parents('tr').find('.muatan_bak').val('').attr('readonly', true);
       }
 
     });
@@ -267,7 +261,6 @@
   });
 
   function showInfoPO(){
-
     var id = $('#nota_order').val();
     axios.get('{{ url("/stok/pencatatanbarangmasuk/getinfopo") }}'+'?id='+id).then((response) => {
 
@@ -276,7 +269,11 @@
       $('#method').val(response.data.info.method);
 
     })
+  }
 
+  function submit(){
+    var data = 'nota='+ 
+    axios.post('{{ url("/stok/pencatatanbarangmasuk/tambah") }}', )
   }
 
 </script>
