@@ -21,8 +21,8 @@ class d_purchase_order extends Model
 
     protected $table = 'd_purchase_order';
     protected $primaryKey = 'po_id';
-    const CREATED_AT = 'pp_insert';
-    const UPDATED_AT = 'pp_update';
+    const CREATED_AT = 'po_created';
+    const UPDATED_AT = 'po_updated';
 
 }
 	

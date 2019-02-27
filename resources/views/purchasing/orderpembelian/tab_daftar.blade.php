@@ -25,8 +25,8 @@
                           <span class="input-group-addon">-</span>
                           <input type="text" class="form-control" name=""  id="tgl_akhir">
                           <div class="input-group-append">
-                          	<button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
-                          	<button class="btn btn-secondary" type="button"><i class="fa fa-refresh"></i></button>
+                          	<button class="btn btn-primary" type="button" onclick="search_purchase_order()"><i class="fa fa-search"></i></button>
+                          	<button onclick="refresh_purchase_order()" class="btn btn-secondary" type="button"><i class="fa fa-refresh"></i></button>
                           </div>
                         </div>
 

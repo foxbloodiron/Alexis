@@ -17,12 +17,12 @@
                     <div class="col-md-6 col-sm-12">
                       <div class="form-group">
                         <div class="input-group input-group-sm input-daterange">
-                          <input type="text" class="form-control" name="">
+                          <input type="text" class="form-control" name="tgl_awal_history" id="tgl_awal_history">
                           <span class="input-group-addon">-</span>
-                          <input type="text" class="form-control" name="">
+                          <input type="text" class="form-control" name="tgl_akhir_history" id="tgl_akhir_history">
                           <div class="input-group-append">
-                          	<button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
-                          	<button class="btn btn-secondary" type="button"><i class="fa fa-refresh"></i></button>
+                          	<button class="btn btn-primary" type="button" onclick="search_purchase_order_history()"><i class="fa fa-search"></i></button>
+                          	<button class="btn btn-secondary" type="button" onclick="refresh_purchase_order_history()"><i class="fa fa-refresh"></i></button>
                           </div>
                         </div>
 
@@ -47,10 +47,9 @@
             	
                 	<div class="table-responsive">
                 		
-                		<table class="table table-hover table-striped data-table" cellspacing="0">
+                		<table class="table table-hover table-striped" cellspacing="0" id="tabel_history_purchase_order">
                 			<thead class="bg-primary">
                 				<tr>
-                					<th>No</th>
                 					<th>No Order</th>
                 					<th>Nama Barang</th>
                 					<th>Satuan</th>
@@ -60,26 +59,11 @@
                 					<th>Tgl Masuk</th>
                 					<th>Qty Masuk</th>
                 					<th>Status</th>
-                					<th>Aksi</th>
                 				</tr>
                 			</thead>
 
                 			<tbody>
-                				<tr>
-                					<td>1</td>
-                					<td>PO/201901/1</td>
-                					<td>Pasir</td>
-                					<td>Truk/Colt</td>
-                					<td>Delta</td>
-                					<td>03 Jan 2019</td>
-                					<td>1</td>
-                					<td>04 Jan 2019</td>
-                					<td>1</td>
-                					<td><span class="badge badge-pill badge-success">Diterima</span></td>
-                					<td>
-                						<button class="btn btn-info btn-sm" type="button" title="Detail"><i class="fa fa-list"></i></button>
-                					</td>
-                				</tr>
+                			
                 			</tbody>
                 		</table>
 

@@ -10,7 +10,7 @@
       </div>
       <div class="modal-body">
         
-        <label>Status : </label> <span class="badge badge-pill badge-success">Barang sudah diterima</span>
+        <label>Status : </label> <span class="badge badge-pill po_status_label">Barang sudah diterima</span>
         
         <fieldset>
           <div class="row">
@@ -19,7 +19,7 @@
             </div>
 
             <div class="col-md-3 col-sm-6 col-xs-12">
-              <label>PO/201901/1</label>
+              <label class="po_code">PO/201901/1</label>
             </div>
 
             <div class="col-md-3 col-sm-6 col-xs-12">
@@ -27,7 +27,7 @@
             </div>
 
             <div class="col-md-3 col-sm-6 col-xs-12">
-              <label>CASH</label>
+              <label class="po_method">CASH</label>
             </div>
 
             <div class="col-md-3 col-sm-6 col-xs-12">
@@ -35,7 +35,7 @@
             </div>
 
             <div class="col-md-3 col-sm-6 col-xs-12">
-              <label>2 Jan 2019</label>
+              <label class="po_tanggal_label">2 Jan 2019</label>
             </div>
 
             <div class="col-md-3 col-sm-6 col-xs-12">
@@ -43,7 +43,7 @@
             </div>
 
             <div class="col-md-3 col-sm-6 col-xs-12">
-              <label>3 Jan 2019</label>
+              <label class="po_tanggal_kirim_label">3 Jan 2019</label>
             </div>
 
             <div class="col-md-3 col-sm-6 col-xs-12">
@@ -51,14 +51,21 @@
             </div>
 
             <div class="col-md-3 col-sm-6 col-xs-12">
-              <label>Alpha</label>
+              <label class="s_name">Alpha</label>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <label class="font-weight-bold">Petugas</label>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <label class="name">Alpha</label>
             </div>
           </div>
         </fieldset>
         <hr>
 
         <div class="table-responsive">
-          <table class="table table-striped data-table table-hover" cellspacing="0">
+          <table class="table table-striped table-hover" cellspacing="0" id="tabel_detail">
             <thead class="bg-primary">
               <tr>
                 <th>Kode Barang</th>
@@ -72,37 +79,7 @@
               </tr>
             </thead>
             <tbody>
-              
-               <tr>
-                <td>Semen</td>
-                <td>BRG/0001</td>
-                <td>Karung</td>
-                <td>10</td>
-                <td>10</td>
-                <td>Rp. 10.000,00</td>
-                <td>Rp. 30.000,00</td>
-                <td>Rp. 300.000,00</td>
-              </tr>
-              <tr>
-                <td>Pasir</td>
-                <td>BRG/0002</td>
-                <td>Butir</td>
-                <td>10</td>
-                <td>10</td>
-                <td>Rp. 10.000,00</td>
-                <td>Rp. 30.000,00</td>
-                <td>Rp. 300.000,00</td>
-              </tr>
-              <tr>
-                <td>Cat</td>
-                <td>BRG/0003</td>
-                <td>Kaleng</td>
-                <td>10</td>
-                <td>10</td>
-                <td>Rp. 10.000,00</td>
-                <td>Rp. 30.000,00</td>
-                <td>Rp. 300.000,00</td>
-              </tr>
+             
             </tbody>
           </table>
         </div>
@@ -113,22 +90,27 @@
                 <div class="row">
                   <div class="col-lg-12">
                     <label>Total Harga :</label>
-                    <input type="text" readonly="" class="form-control form-control-sm" name="">
+                    <input type="text" readonly="" class="text-right po_total_gross form-control form-control-sm" name="" >
                   </div>
 
                   <div class="col-lg-12">
-                    <label>Total Diskon :</label>
-                    <input type="text" readonly="" class="form-control form-control-sm" name="">
+                    <label>Potongan Harga :</label>
+                    <input type="text" readonly="" class="text-right form-control form-control-sm po_disc_value" name="" >
                   </div>
 
                   <div class="col-lg-12">
-                    <label>PPN :</label>
-                    <input type="text" readonly="" class="form-control form-control-sm" name="">
+                    <label>Total Diskon(%):</label>
+                    <input type="text" readonly="" class="text-right po_disc_percent form-control form-control-sm" name="" >
+                  </div>
+
+                  <div class="col-lg-12">
+                    <label>PPN(%) :</label>
+                    <input type="text" readonly="" class="text-right po_tax_percent form-control form-control-sm" name="">
                   </div>
 
                   <div class="col-lg-12">
                     <label>Total :</label>
-                    <input type="text" readonly="" class="form-control form-control-sm" name="">
+                    <input type="text" readonly="" class="text-right po_total_net form-control form-control-sm" name="">
                   </div>
                 </div>
               </fieldset>

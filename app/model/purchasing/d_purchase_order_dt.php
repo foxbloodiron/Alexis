@@ -1,10 +1,9 @@
 <?php
 
-namespace Apodt\model\purchasing;
+namespace App\model\purchasing;
 
 use Illuminate\Database\Eloquent\Model;
 
-use Apodt\Lib\format;
 
 
 use DB;
@@ -16,8 +15,8 @@ use Session;
 class d_purchase_order_dt extends Model
 {  
     protected $table = 'd_purchase_order_dt';
-    const CREATED_AT = 'podtdt_insert';
-    const UPDATED_AT = 'podtdt_update';
+    const CREATED_AT = 'podt_insert';
+    const UPDATED_AT = 'podt_update';
     
 }
 	

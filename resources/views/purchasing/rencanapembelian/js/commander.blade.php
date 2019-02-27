@@ -18,16 +18,16 @@
   	});
 
     $('#tgl_awal').val(
-      moment().subtract(7, 'days').format('DD/MM/YYYY')
+      moment().subtract(7, 'days').format('DD-MM-YYYY')
     );
     $('#tgl_akhir').val(
-      moment().format('DD/MM/YYYY')
+      moment().format('DD-MM-YYYY')
     );
     $('#tgl_awal_history').val(
-      moment().subtract(7, 'days').format('DD/MM/YYYY')
+      moment().subtract(7, 'days').format('DD-MM-YYYY')
     );
     $('#tgl_akhir_history').val(
-      moment().format('DD/MM/YYYY')
+      moment().format('DD-MM-YYYY')
     );
     $('#tgl_akhir, #tgl_awal').datepicker({
       format : 'dd/mm/yyyy'
