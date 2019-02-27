@@ -11,7 +11,7 @@
       <div class="modal-body">
         
         <form id="form_update_status">
-          <input type="hidden" name="po_id">
+          <input type="hidden" name="pr_id">
           <fieldset>
             <div class="row">
               <div class="col-md-3 col-sm-6 col-xs-12">
@@ -19,7 +19,7 @@
               </div>
 
               <div class="col-md-6 col-sm-12 col-xs-12">
-                <select name="po_status" class="form-control form-control-sm">
+                <select name="pr_status" class="form-control form-control-sm">
                   <option value="AP">Setuju</option>
                   <option value="NA">Tidak Setuju</option>
                 </select>
@@ -32,7 +32,7 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" onclick="approve_purchase_order()">Simpan</button>
+        <button type="button" class="btn btn-primary" onclick="approve_purchase_return()">Simpan</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>

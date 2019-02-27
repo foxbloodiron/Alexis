@@ -1,7 +1,7 @@
 <script>
   function count_grandtotal() {
-    var qty = $('[name="podt_qty[]"]');
-      var price = $('[name="podt_price[]"]');
+    var qty = $('[name="prdt_qty[]"]');
+      var price = $('[name="prdt_price[]"]');
       var item_qty, item_price, total_gross = 0, total_net = 0;
 
       for(x = 0;x < qty.length;x++) {
@@ -13,38 +13,22 @@
         total_gross += ( item_qty * item_price );
       }
 
-      var disc_value = $('#po_disc_value').val();
-      var disc_percent = $('#po_disc_percent').val();
-      var tax_percent = $('#po_tax_percent').val();
-      disc_value = disc_value.replace(/\D/g, '');
-      disc_value = disc_value != '' ? parseInt(disc_value) : 0;
-      disc_percent = disc_percent != '' ? parseInt(disc_percent) : 0;
-      disc_percent = disc_percent / 100;
-      tax_percent = tax_percent != '' ? parseInt(tax_percent) : 0;
-      tax_percent = tax_percent / 100;
-
-      var result_disc = (total_gross - disc_value) * disc_percent;
-      var result_tax = result_disc * tax_percent;
-      total_net = total_gross - disc_value - result_disc + result_tax;  
-
-      $('#po_total_gross').val(
+      
+      $('#pr_pricetotal').val(
         'Rp. ' + accounting.formatMoney(total_gross,"",0,'.',',')
-      );
-      $('#po_total_net').val(
-        'Rp. ' + accounting.formatMoney(total_net,"",0,'.',',')
       );
   }
 
   function remove_detail(obj) {
     var tr = $(obj).parents('tr');
-    table_purchase_order_dt.row(tr).remove().draw();
+    table_purchase_return_dt.row(tr).remove().draw();
   }
 
 	// Function untuk meng-insert sales plan
-  function insert_purchase_order() {
-    var data = $('#form_purchase_order').serialize();
+  function insert_purchase_return() {
+    var data = $('#form_purchase_return').serialize();
     $.ajax({
-      url: "{{ url('/purchasing/orderpembelian/insert_d_purchase_order') }}",
+      url: "{{ url('/purchasing/returnpembelian/insert_d_purchase_return') }}",
       type: 'POST',
       data: data,
       dataType: 'json',
@@ -75,10 +59,10 @@
     });
   }
 
-  function update_purchase_order() {
-    var data = $('#form_purchase_order').serialize();
+  function update_purchase_return() {
+    var data = $('#form_purchase_return').serialize();
     $.ajax({
-      url: "{{ url('/purchasing/orderpembelian/update_d_purchase_order') }}",
+      url: "{{ url('/purchasing/returnpembelian/update_d_purchase_return') }}",
       type: 'POST',
       data: data,
       dataType: 'json',
@@ -92,7 +76,7 @@
           });
 
           setTimeout(function(){
-            location.href = '{{ route('orderpembelian') }}';
+            location.href = '{{ route('returnpembelian') }}';
           }, 3000);
         }
         else {

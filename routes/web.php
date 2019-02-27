@@ -140,8 +140,19 @@ Route::group(['middleware' => 'auth'], function(){
 	// Return pembelian
 	Route::get('/purchasing/returnpembelian/returnpembelian', 'Purchasing\ReturnPembelianController@returnpembelian')->name('returnpembelian');
 		Route::get('/purchasing/returnpembelian/tambah_returnpembelian', 'Purchasing\ReturnPembelianController@tambah_returnpembelian')->name('tambah_returnpembelian');
+	Route::get('/purchasing/returnpembelian/preview_returnpembelian/{id}', 'Purchasing\ReturnPembelianController@preview_returnpembelian')->name('preview_returnpembelian');
+	Route::get('/purchasing/returnpembelian/edit_returnpembelian/{id}', 'Purchasing\ReturnPembelianController@edit_returnpembelian')->name('edit_returnpembelian');
+	Route::get('/purchasing/returnpembelian/find_d_purchase_return', 'Purchasing\ReturnPembelianController@find_d_purchase_return')->middleware('auth');
+	Route::get('/purchasing/returnpembelian/delete_d_purchase_return/{id}', 'Purchasing\ReturnPembelianController@delete_d_purchase_return')->middleware('auth');
+	Route::get('/purchasing/returnpembelian/find_m_item', 'Purchasing\ReturnPembelianController@find_m_item')->middleware('auth');
+	Route::post('/purchasing/returnpembelian/insert_d_purchase_return', 'Purchasing\ReturnPembelianController@insert_d_purchase_return')->middleware('auth')->name('insert_d_purchase_return');
+	Route::post('/purchasing/returnpembelian/update_d_purchase_return', 'Purchasing\ReturnPembelianController@update_d_purchase_return')->middleware('auth')->name('update_d_purchase_return');
+	Route::get('/purchasing/returnpembelian/approve_d_purchase_return', 'Purchasing\ReturnPembelianController@approve_d_purchase_return')->middleware('auth')->name('approve_d_purchase_return');
+	Route::get('/purchasing/returnpembelian/find_m_supplier', 'Purchasing\ReturnPembelianController@find_m_supplier')->middleware('auth');
 	
+	// Rencana bahan baku
 	Route::get('/purchasing/rencanabahanbaku/rencanabahanbaku', 'PurchaseController@rencanabahanbaku')->name('rencanabahanbaku');
+
 
 	// Stok
 	Route::get('/stok/dataadonan/index', 'StokController@dataadonan')->name('dataadonan');

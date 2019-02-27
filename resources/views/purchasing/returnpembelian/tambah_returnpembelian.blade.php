@@ -32,190 +32,175 @@
                       </div>
                     </div>
                     <div class="card-block">
-                        <section>
+                        <form id="form_purchase_return">
+                          
+                          <section>
 
-                          <div class="row">
+                            <div class="row">
 
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                              <label>Metode Return</label>
-                            </div>
-
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                              <div class="form-group">
-                                <select class="form-control form-control-sm" id="metode_return">
-                                  <option value="">--Pilih--</option>
-                                  <option value="1">Tukar Barang</option>
-                                  <option value="2">Potong Nota</option>
-                                </select>
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <label>Metode Return</label>
                               </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                  <select class="form-control form-control-sm" name="pr_method" id="metode_return">
+                                    <option value="">--Pilih--</option>
+                                    <option value="TB">Tukar Barang</option>
+                                    <option value="PN">Potong Nota</option>
+                                  </select>
+                                </div>
+                              </div>
+
                             </div>
 
-                          </div>
+                            <div id="div_return" class="d-none">
+                              <fieldset>
+                                <div class="row">
 
-                          <div id="div_return" class="d-none">
-                            <fieldset>
-                              <div class="row">
-
-                                
-                                <div class="col-md-3 col-sm-6 col-xs-12">
-                                  <label>Nota Pembelian</label>
-                                </div>
-
-                                <div class="col-md-3 col-sm-6 col-xs-12">
-                                  <div class="form-group">
-                                    <select class="form-control form-control-sm select2">
-                                      <option value="">--Pilih--</option>
-                                    </select>
+                                  
+                                  <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <label>Nota Pembelian</label>
                                   </div>
-                                </div>
 
                                   <div class="col-md-3 col-sm-6 col-xs-12">
-                                    <label>Kode Return</label>
+                                    <div class="form-group">
+                                      <select class="form-control form-control-sm" id="pr_purchase_order" name="pr_purchase_order" >
+                                      </select>
+                                    </div>
                                   </div>
 
-                                <div class="col-md-3 col-sm-6 col-xs-12">
-                                  <div class="form-group">
-                                    <input type="text" class="form-control form-control-sm" readonly="" name="">
+                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                      <label>Kode Return</label>
+                                    </div>
+
+                                  <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                      <input type="text" class="form-control form-control-sm" readonly="" placeholder="( Auto )">
+                                    </div>
                                   </div>
-                                </div>
 
-                                <div class="col-md-3 col-sm-6 col-xs-12">
-                                  <label>Tanggal Return</label>
-                                </div>
-
-                                <div class="col-md-3 col-sm-6 col-xs-12">
-                                  <div class="form-group">
-                                    <input type="text" class="form-control form-control-sm datepicker" name="">
+                                  <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <label>Tanggal Return</label>
                                   </div>
-                                </div>
 
-                                <div class="col-md-3 col-sm-6 col-xs-12">
-                                  <label>Staff</label>
-                                </div>
-
-                                <div class="col-md-3 col-sm-6 col-xs-12">
-                                  <div class="form-group">
-                                    <input type="text" class="form-control form-control-sm" readonly="" name="">
+                                  <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                      <input type="text" class="form-control form-control-sm datepicker" name="pr_tanggal">
+                                    </div>
                                   </div>
-                                </div>
 
-                                <div class="col-md-3 col-sm-6 col-xs-12">
-                                  <label>Metode Bayar</label>
-                                </div>
-
-                                <div class="col-md-3 col-sm-6 col-xs-12">
-                                  <div class="form-group">
-                                    <input type="text" class="form-control form-control-sm" readonly="" name="">
+                                  <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <label>Staff</label>
                                   </div>
-                                </div>
 
-                                <div class="col-md-3 col-sm-6 col-xs-12">
-                                  <label>Nilai Total Pembelian</label>
-                                </div>
-
-                                <div class="col-md-3 col-sm-6 col-xs-12">
-                                  <div class="form-group">
-                                    <input type="text" class="form-control form-control-sm" readonly="" name="">
+                                  <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                      <input type="hidden" name="pr_officer" value="{{ Auth::user()->id }}">
+                                      <input type="text" class="form-control form-control-sm" readonly="" value="{{ Auth::user()->name }}">
+                                    </div>
                                   </div>
-                                </div>
 
-                                <div class="col-md-3 col-sm-6 col-xs-12">
-                                  <label>Nilai Total Diskon</label>
-                                </div>
-
-                                <div class="col-md-3 col-sm-6 col-xs-12">
-                                  <div class="form-group">
-                                    <input type="text" class="form-control form-control-sm" readonly="" name="">
+                                  <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <label>Metode Bayar</label>
                                   </div>
-                                </div>
 
-                                <div class="col-md-3 col-sm-6 col-xs-12">
-                                  <label>Nilai Pajak</label>
-                                </div>
-
-                                <div class="col-md-3 col-sm-6 col-xs-12">
-                                  <div class="form-group">
-                                    <input type="text" class="form-control form-control-sm" readonly="" name="">
+                                  <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                      <input type="text" class="form-control form-control-sm" readonly="" name="po_method" id="po_method">
+                                    </div>
                                   </div>
-                                </div>
 
-                                <div class="col-md-3 col-sm-6 col-xs-12">
-                                  <label>Nilai Total Pembelian</label>
-                                </div>
-
-                                <div class="col-md-3 col-sm-6 col-xs-12">
-                                  <div class="form-group">
-                                    <input type="text" class="form-control form-control-sm" readonly="" name="">
+                                  <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <label>Nilai Total Pembelian ( Gross )</label>
                                   </div>
-                                </div>
 
-                                <div class="col-md-3 col-sm-6 col-xs-12">
-                                  <label>Nilai Total Diskon</label>
-                                </div>
-
-                                <div class="col-md-3 col-sm-6 col-xs-12">
-                                  <div class="form-group">
-                                    <input type="text" class="form-control form-control-sm" readonly="" name="">
+                                  <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                      <input type="text" class="form-control form-control-sm" readonly="" name="po_total_gross" id="po_total_gross">
+                                    </div>
                                   </div>
-                                </div>
 
-                                <div class="col-md-3 col-sm-6 col-xs-12">
-                                  <label>Nilai Pajak</label>
-                                </div>
-
-                                <div class="col-md-3 col-sm-6 col-xs-12">
-                                  <div class="form-group">
-                                    <input type="text" class="form-control form-control-sm" readonly="" name="">
+                                  <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <label>Nilai Diskon(%)</label>
                                   </div>
-                                </div>
 
-                                <div class="col-md-3 col-sm-6 col-xs-12">
-                                  <label>Nilai Total Pembelian (Nett)</label>
-                                </div>
-
-                                <div class="col-md-3 col-sm-6 col-xs-12">
-                                  <div class="form-group">
-                                    <input type="text" class="form-control form-control-sm" readonly="" name="">
+                                  <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                      <input type="text" class="form-control form-control-sm" readonly="" name="" id="po_disc_percent">
+                                    </div>
                                   </div>
-                                </div>
 
-                                <div class="col-md-3 col-sm-6 col-xs-12 120mm d-none">
-                                  <label>Nilai Total Return</label>
-                                </div>
-
-                                <div class="col-md-3 col-sm-6 col-xs-12 120mm d-none">
-                                  <div class="form-group">
-                                    <input type="text" class="form-control form-control-sm" readonly="" name="">
+                                  <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <label>Nilai Potongan Harga</label>
                                   </div>
+
+                                  <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                      <input type="text" class="form-control form-control-sm" readonly="" name="po_disc_value" id="po_disc_value">
+                                    </div>
+                                  </div>
+
+                                  <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <label>Nilai Pajak(%) </label>
+                                  </div>
+
+                                  <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                      <input type="text" class="form-control form-control-sm" readonly="" name="po_tax_percent" id="po_tax_percent">
+                                    </div>
+                                  </div>
+
+                                  <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <label>Nilai Total Pembelian (Nett)</label>
+                                  </div>
+
+                                  <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                      <input type="text" class="form-control form-control-sm" readonly="" name="po_total_net" id="po_total_net">
+                                    </div>
+                                  </div>
+
+                                  <div class="col-md-3 col-sm-6 col-xs-12 ">
+                                    <label>Nilai Total Return</label>
+                                  </div>
+
+                                  <div class="col-md-3 col-sm-6 col-xs-12 ">
+                                    <div class="form-group">
+                                      <input type="text" class="form-control form-control-sm" readonly="" name="pr_pricetotal" id="pr_pricetotal">
+                                    </div>
+                                  </div>
+
                                 </div>
 
+                              </fieldset>
+
+                              <div class="table-responsive mt-3">
+                                <table class="table table-hover table-striped table-bordered" id="table_purchase_return_dt">
+                                  <thead class="bg-primary">
+                                    <tr>
+                                      <th>Kode | Barang</th>
+                                      <th>Qty Beli</th>
+                                      <th>Qty Return</th>
+                                      <th>Satuan</th>
+                                      <th>Harga</th>
+                                      <th>Total</th>
+                                      <th>Stok</th>
+                                      <th>Aksi</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    
+                                  </tbody>
+                                </table>
                               </div>
 
-                            </fieldset>
-
-                            <div class="table-responsive mt-3">
-                              <table class="table table-hover table-striped table-bordered">
-                                <thead class="bg-primary">
-                                  <tr>
-                                    <th>No</th>
-                                    <th>Kode | Barang</th>
-                                    <th>Qty</th>
-                                    <th>Satuan</th>
-                                    <th>Harga</th>
-                                    <th>Total</th>
-                                    <th>Stok</th>
-                                    <th>Aksi</th>
-                                  </tr>
-                                </thead>
-                                <tbody></tbody>
-                              </table>
                             </div>
-
-                          </div>
-                        </section>
+                          </section>
+                        </form>
                     </div>
                     <div class="card-footer text-right">
-                      <button class="btn btn-primary" type="button">Simpan</button>
+                      <button class="btn btn-primary" type="button" onclick="insert_purchase_return()">Simpan</button>
                       <a href="{{route('returnpembelian')}}" class="btn btn-secondary">Kembali</a>
                     </div>
                 </div>
@@ -233,10 +218,10 @@
 @section('extra_script')
 <script type="text/javascript">
   $('#metode_return').on('change', function(){
-    if($(this).val() === '1'){
+    if($(this).val() === 'TB'){
       $('#div_return').removeClass('d-none');
       $('.120mm').addClass('d-none');
-    } else if($(this).val() === '2'){
+    } else if($(this).val() === 'PN'){
       $('#div_return').removeClass('d-none');
       $('.120mm').removeClass('d-none');
     } else {
@@ -245,4 +230,6 @@
     }
   });
 </script>
+@include('purchasing/returnpembelian/js/form_functions')
+@include('purchasing/returnpembelian/js/form_commander')
 @endsection

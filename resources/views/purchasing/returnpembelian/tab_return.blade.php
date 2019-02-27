@@ -38,7 +38,7 @@
             	
 
                 	<div class="table-responsive">
-                        <table class="table data-table table-hover" cellspacing="0">
+                        <table class="table data-table table-hover" cellspacing="0" id="tabel_purchase_return">
                             <thead class="bg-primary">
                                 <tr>
 					                <th>No</th>
@@ -48,7 +48,8 @@
 					                <th>Metode</th>
 					                <th>Suplier</th>
 					                <th>Total Return</th>
-					                <th>Status</th>
+                                    <th>Status</th>
+					                <th>Ubah Status</th>
 					                <th>Aksi</th>
 					            </tr>
                             </thead>
