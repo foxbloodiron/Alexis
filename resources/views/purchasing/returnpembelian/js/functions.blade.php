@@ -137,7 +137,7 @@
 		screen.find('.pr_code').text( data.pr_code ); 
 		screen.find('.name').text( data.name ); 
 		screen.find('.s_name').text( data.s_name ); 
-		screen.find('.pr_status_label').text( data.pr_status_label ); 
+		screen.find('.pr_method_label').text( data.pr_method_label ); 
 		screen.find('.pr_status_label').text( data.pr_status_label ); 
 
 		var pricetotal = 'Rp ' + accounting.formatMoney(data.pr_pricetotal,"",0,'.',',');

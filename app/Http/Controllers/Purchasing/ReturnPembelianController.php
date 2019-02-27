@@ -13,6 +13,9 @@ use App\model\purchasing\d_purchase_plan;
 use App\model\purchasing\d_purchase_plan_dt;
 use App\model\master\m_item;
 use App\model\master\m_supplier;
+
+use App\Lib\mutation;
+
 use DB;
 use Response;
 
@@ -335,6 +338,51 @@ class ReturnPembelianController extends Controller
             'pr_status' => $pr_status,
             'pr_tanggal_approve' => date('Y-m-d')
           ]);
+
+          if($pr_status == 'AP') {
+            $purchase_return_dt = d_purchase_return_dt::leftJoin('d_purchase_return', 'prdt_purchase_return', '=', 'pr_id')->where('prdt_purchase_return', $pr_id)->get();
+            $pr_method = $purchase_return_dt[0]->pr_method;
+            if($pr_method == 'PN') {
+
+              foreach ($purchase_return_dt as $unit) {
+                mutation::mutasiTransaksiOne(
+                    $unit->pr_tanggal,
+                    $unit->prdt_item,
+                    $unit->prdt_qtyreturn,        
+                    '',
+                    '2',
+                    $unit->pr_code,
+                    "Pengurangan Stok Dari Return Pembelian"        
+                    
+                );
+              }
+            }
+            else if($pr_method == 'TB') {
+              
+              foreach ($purchase_return_dt as $unit) {
+                mutation::mutasiTransaksiOne(
+                    $unit->pr_tanggal,
+                    $unit->prdt_item,
+                    $unit->prdt_qtyreturn,        
+                    '',
+                    '2',
+                    $unit->pr_code,
+                    "Pengurangan Stok Dari Return Pembelian"        
+                    
+                );
+                mutation::mutasiMasuk(
+                    $unit->pr_tanggal,
+                    $unit->prdt_item,
+                    $unit->prdt_qtyreturn,        
+                    '',
+                    '3',
+                    $unit->pr_code,
+                    0,
+                    0                    
+                );
+              }
+            }
+          }
 
           DB::commit();
           return response()->json(['status' => 'sukses']);

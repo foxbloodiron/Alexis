@@ -35,7 +35,7 @@
             </div>
 
             <div class="col-md-3 col-sm-6 col-xs-12">
-              <label class="pr_method">CASH</label>
+              <label class="pr_method_label">CASH</label>
             </div>
 
             <div class="col-md-3 col-sm-6 col-xs-12">
