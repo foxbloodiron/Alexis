@@ -33,28 +33,17 @@
                         <section>
                         	
                         	<div class="table-responsive">
-	                            <table class="table table-striped table-hover table-bordered" cellspacing="0" id="table_jabatan">
-	                                <thead class="bg-primary">
+	                            <table class="table table-striped table-hover table-bordered" cellspacing="0" id="tbl_jabatan">
+	                                	<thead class="bg-primary">
 	                                    <tr>
-	                                    	<th width="1%">No</th>
-							                <th>Kode Jabatan</th>
-							                <th>Nama Jabatan</th>
-							                <th width="15%">Aksi</th>
-							            </tr>
-	                                </thead>
-	                                <tbody>
-	                                	<tr>
-	                                		<td>1</td>
-	                                		<td>J/0001</td>
-	                                		<td>Direktur</td>
-	                                		<td align="center">
-	                                			<div class="btn-group btn-group-sm">
-	                                				<button class="btn btn-warning btn-edit" type="button" title="Edit"><i class="fa fa-pencil"></i></button>
-	                                				<button class="btn btn-danger btn-disable" type="button" title="Disable"><i class="fa fa-times-circle"></i></button>
-	                                			</div>
-	                                		</td>
-	                                	</tr>
-							        </tbody>
+														<th>Kode</th>
+														<th>Nama</th>
+														<th>Action</th>
+							            		</tr>
+	                                	</thead>
+	                                	<tbody>
+
+							        			</tbody>
 	                            </table>
 	                        </div>
                         </section>
@@ -74,65 +63,115 @@
 <script type="text/javascript">
 
 	$(document).ready(function(){
-		var table = $('#table_jabatan').DataTable();
 
+		$('#tbl_jabatan').DataTable({
+	      processing: true,
+	      responsive:true,
+	      serverSide: true,
+	      ajax: {
+	        url: '{{ url("master/datajabatan/data-jabatan") }}',
+	      },
+	      columnDefs: [
+	        {
+	          targets: 0,
+	          className: 'center d_id'
+	        },
+	      ],
+	      "columns": [
+	        { "data": "c_code", "width":"10%" },
+	        { "data": "c_posisi", "width":"75%" },
+	        { "data": "action", "width":"15%" },
+	      ],
+	      "responsive": true,
+	      "pageLength": 10,
+	      "lengthMenu": [[10, 20, 50, - 1], [10, 20, 50, "All"]],
+	      "language": {
+	        "searchPlaceholder": "Cari Data",
+	        "emptyTable": "Tidak ada data",
+	        "sInfo": "Menampilkan _START_ - _END_ Dari _TOTAL_ Data",
+	        "sSearch": '<i class="fa fa-search"></i>',
+	        "sLengthMenu": "Menampilkan &nbsp; _MENU_ &nbsp; Data",
+	        "infoEmpty": "",
+	        "paginate": {
+	          "previous": "Sebelumnya",
+	          "next": "Selanjutnya",
+	        }
+	      }
+	   });
 
-		$('#table_jabatan tbody').on('click', '.btn-disable', function(){
-			var ini = $(this);
-			$.confirm({
-				animation: 'RotateY',
-				closeAnimation: 'scale',
-				animationBounce: 1.5,
-				icon: 'fa fa-exclamation-triangle',
-			    title: 'Disable',
-				content: 'Apa anda yakin mau menonaktifkan data ini?',
-				theme: 'disable',
-			    buttons: {
-			        info: {
-						btnClass: 'btn-blue',
-			        	text:'Ya',
-			        	action : function(){
-							$.toast({
-								heading: 'Information',
-								text: 'Data Berhasil di dinonaktifkan.',
-								bgColor: '#0984e3',
-								textColor: 'white',
-								loaderBg: '#fdcb6e',
-								icon: 'info'
-							})
-					        ini.parents('.btn-group').html('<button class="btn btn-danger btn-enable" type="button" title="Enable"><i class="fa fa-check-circle"></i></button>');
-				        }
-			        },
-			        cancel:{
-			        	text: 'Tidak',
-					    action: function () {
-    			            // tutup confirm
-    			        }
-    			    }
-			    }
-			});
-		});
-
-		$('#table_jabatan tbody').on('click', '.btn-enable', function(){
-			$.toast({
-				heading: 'Information',
-				text: 'Data Berhasil diaktifkan.',
-				bgColor: '#0984e3',
-				textColor: 'white',
-				loaderBg: '#fdcb6e',
-				icon: 'info'
-			})
-			$(this).parents('.btn-group').html('<button class="btn btn-warning btn-edit" type="button" title="Edit"><i class="fa fa-pencil"></i></button>'+
-	                                		'<button class="btn btn-danger btn-disable" type="button" title="Disable"><i class="fa fa-times-circle"></i></button>')
-		})
-
-        $('#table_jabatan tbody').on('click','.btn-edit', function(){
-			window.location.href='{{route('edit_datajabatan')}}'
-		})
-
-		// function table_hapus(a){
-		// 	table.row($(a).parents('tr')).remove().draw();
-		// }
 	});
+
+	function edit(a) 
+	{
+      var parent = $(a).parents('tr');
+      var id = $(parent).find('.d_id').text();
+      console.log(id);
+      $.ajax({
+        type: "PUT",
+        url: '{{ url("master/datajabatan/edit-jabatan") }}' + '/' + a,
+        data: { id },
+        success: function (data) {
+        },
+        complete: function (argument) {
+          window.location = (this.url)
+        },
+        error: function () {
+
+        },
+        async: false
+      });
+   }
+
+   function ubahStatusMan(id)
+   {
+   	$.confirm({
+         title: 'Ehem!',
+         content: 'Apakah anda yakin?',
+         type: 'red',
+         typeAnimated: true,
+         buttons: {
+           tryAgain: {
+               text: 'Ya',
+               btnClass: 'btn-red',
+               action: function(){
+                  $.ajax({
+                     url: baseUrl +'/master/datajabatanman/ubahstatus',
+                     type: "get",
+                     dataType: "JSON",
+                     data: {id:id},
+                     success: function(response)
+                     {
+                        if(response.status == "sukses")
+                        {
+                           $('#tbl_jabatan').DataTable().ajax.reload();
+                           $.toast({
+                              heading: '',
+                              text: 'Status berhasil di update',
+                              bgColor: '#00b894',
+                              textColor: 'white',
+                              loaderBg: '#55efc4',
+                              icon: 'success'
+                           });
+                        }
+                        else
+                        {
+                           $.toast({
+                               heading: '',
+                               text: 'Status gagal di update',
+                               showHideTransition: 'plain',
+                               icon: 'warning'
+                           })
+                        }
+                     }
+                     
+                  })
+               }
+           },
+           close: function () {
+           }
+         }
+      });
+   }
+
 </script>
 @endsection
