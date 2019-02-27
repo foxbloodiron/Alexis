@@ -53,6 +53,7 @@
 
                               <div class="col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
+                                  <input type="hidden" id="nota">
                                   <select class="form-control form-control-sm select2" id="nota_order" name="nota_order" onchange="showInfoPO()">
                                     <option value="">--Pilih--</option>
                                     @foreach ($getNota as $nota)
@@ -108,15 +109,17 @@
                             </div>
                           </fieldset>
 
-                          <div class="d-none" id="front-end-show">                          
+                          <form id="tables">
+                              <div class="d-none" id="front-end-show">                          
                               
-                          </div>
+                              </div>
+                          </form>
 
                         </section>
                     </div>
                     <div class="card-footer text-right">
                       <button class="btn btn-warning mr-5" type="button">Close</button>
-                      <button class="btn btn-primary" type="button">Simpan</button>
+                      <button class="btn btn-primary" type="button" onclick="submit()">Simpan</button>
                       <a href="{{route('pencatatanbarangmasuk')}}" class="btn btn-secondary">Kembali</a>
                     </div>
                 </div>
@@ -154,13 +157,17 @@
               optionNopol += '<option value="'+response.data.nopol[o].k_id+'">'+response.data.nopol[o].k_nopol+'</option>';
             }
 
+            var headerJumlah = '';
             var tableData = '';
             if(response.data.data[i].podt_satuan == 3){
               for(var j = 0; j < parseInt(response.data.data[i].podt_qty); j++){
                 tableData += '<tr>'+
+                  '<input type="hidden" name="detailid[]" value="'+response.data.data[i].podt_detailid+'">'+
+                  '<input type="hidden" name="idItem[]" value="'+response.data.data[i].podt_item+'">'+
+                  '<input type="hidden" name="satuan[]" value="'+response.data.data[i].podt_satuan+'">'+
                   '<td>BRG/'+(j+1)+'</td>'+
                   '<td><input type="text" class="form-control-sm form-control datepicker" name="tgl[]" id="tgl'+j+'"></td>'+
-                  '<td><input type="text" class="form-control-sm form-control input-jam" name="jam[]" id="jam'+j+'"></td>'+
+                  '<td><input type="text" class="form-control-sm form-control input-jam" name="jam[]" id="jam'+j+'""></td>'+
                   '<td><input type="text" class="form-control-sm form-control" name="surat[]" id="surat'+j+'"></td>'+
                   '<td>'+
                     '<select class="select2 form-control form-control-sm plat_no" name="nopol[]" id="nopol'+j+'">'+
@@ -174,8 +181,12 @@
                   '<td><input type="text" class="form-control-sm form-control muatan_bak" readonly="" name="muatan[]" id="muatan'+j+'"></td>'+
                 '</tr>';
               }
+              headerJumlah = '<th>Kubikasi Muatan Bak (m<sup>3</sup>)</th>';
             }else{
               tableData += '<tr>'+
+                '<input type="hidden" name="detailid[]" value="'+response.data.data[i].podt_detailid+'">'+
+                '<input type="hidden" name="idItem[]" value="'+response.data.data[i].podt_item+'">'+
+                '<input type="hidden" name="satuan[]" value="'+response.data.data[i].podt_satuan+'">'+
                 '<td>BRG/1</td>'+
                 '<td><input type="text" class="form-control-sm form-control datepicker" name="tgl[]" id="tgl'+j+'"></td>'+
                 '<td><input type="text" class="form-control-sm form-control input-jam" name="jam[]" id="jam'+j+'"></td>'+
@@ -191,12 +202,13 @@
                 '</td>'+
                 '<td><input type="text" class="form-control-sm form-control muatan_bak" readonly="" name="muatan[]" id="muatan'+j+'"></td>'+
               '</tr>';
+              headerJumlah = '<th>Jumlah Barang (per Satuan)</th>';
             }
             
             $('#front-end-show').append(
               '<fieldset class="mt-3">'+
                 '<h4><b>'+response.data.data[i].i_name+'</b></h4>'+
-                '<span class="badge badge-pill badge-secondary">3 Rit</span>'+
+                '<span class="badge badge-pill badge-secondary">'+response.data.data[i].podt_qty+' '+response.data.data[i].s_name+'</span>'+
                 '<hr>'+
                 '<div class="table-responsive mt-3">'+
                   '<table class="table table-bordered table-striped table-hover data-table" id="table_barang'+i+'" cellspacing="0">'+
@@ -208,7 +220,7 @@
                         '<th>Surat Jalan</th>'+
                         '<th>Plat Nomor</th>'+
                         '<th>Detail Kendaraan</th>'+
-                        '<th>Kubikasi Muatan Bak (m<sup>3</sup>)</th>'+
+                        headerJumlah+
                       '</tr>'+
                     '</thead>'+
                     '<tbody>'+
@@ -227,6 +239,8 @@
               autoclose: true,
               todayHighlight: true
             });
+
+            $('.input-jam').inputmask({"regex":"^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"});
 
             countTable++;
           }
@@ -267,13 +281,29 @@
       $('#tgl_order').val(response.data.info.date);
       $('#supplier').val(response.data.info.supplier);
       $('#method').val(response.data.info.method);
+      $('#nota').val(response.data.info.nota)
 
     })
   }
 
   function submit(){
-    var data = 'nota='+ 
-    axios.post('{{ url("/stok/pencatatanbarangmasuk/tambah") }}', )
+    var nota = $('#nota').val();
+    var data = 'nota='+ nota + '&' + $('#tables').serialize();
+    axios.post('{{ url("/stok/pencatatanbarangmasuk/create") }}', data).then((response) => {
+
+      if(response.data.status == 'sukses'){
+        $.toast({
+          text:'Penerimaan Barang Berhasil',
+          icon:'success'
+        });
+      }else{
+        $.toast({
+          text:'Penerimaan Barang Gagal',
+          icon:'error'
+        });
+      }
+
+    })
   }
 
 </script>
