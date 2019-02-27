@@ -43,10 +43,26 @@ class StokController extends Controller
             'info' => $getInfo
         ]);
     }
+    public function getpbdt(Request $request){
+        $getDT = DB::table('d_purchase_order')
+            ->join('d_purchase_order_dt', 'podt_purchase_order', '=', 'po_id')
+            ->join('m_item', 'i_id', '=', 'podt_item')
+            ->where('po_id', $request->id)
+            ->get();
+        $getNopol = DB::table('m_kendaraan')
+            ->select('k_id', 'k_nopol')->get();
+
+        return json_encode([
+            'data' => $getDT,
+            'nopol' => $getNopol
+        ]);
+    }
     public function tambah_pencatatanbarangmasuk()
     {
+        $getPlat = DB::table('m_kendaraan')->where('k_flag', 'SUPPLIER')->select('k_id', 'k_nopol')->get();
         $getNota = DB::table('d_purchase_order')->where('po_status', 'AP')->select('po_id','po_code')->get();
-        return view('stok/pencatatanbarangmasuk/tambah_pencatatanbarangmasuk')->with(compact('getNota'));
+        
+        return view('stok/pencatatanbarangmasuk/tambah_pencatatanbarangmasuk')->with(compact('getNota', 'getPlat'));
     }
 
     // Penggunaan Bahan Baku
