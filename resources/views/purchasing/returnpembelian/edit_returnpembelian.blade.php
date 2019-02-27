@@ -33,7 +33,7 @@
                     </div>
                     <div class="card-block">
                         <form id="form_purchase_return">
-                          
+                          <input type="hidden" name="pr_id" value="{{ $purchase_return->pr_id }}">
                           <section>
 
                             <div class="row">
@@ -44,17 +44,17 @@
 
                               <div class="col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
-                                  <select class="form-control form-control-sm" name="pr_method" id="metode_return">
-                                    <option value="">--Pilih--</option>
-                                    <option value="TB">Tukar Barang</option>
-                                    <option value="PN">Potong Nota</option>
-                                  </select>
+                                  <input type="text" class="form-control form-control-sm" name="pr_method" value="{{ $purchase_return->pr_method }}" id="metode_return" readonly>
+                                    
+                                    
+                                    
+                                  
                                 </div>
                               </div>
 
                             </div>
 
-                            <div id="div_return" class="d-none">
+                            <div id="div_return">
                               <fieldset>
                                 <div class="row">
 
@@ -65,8 +65,8 @@
 
                                   <div class="col-md-3 col-sm-6 col-xs-12">
                                     <div class="form-group">
-                                      <select class="form-control form-control-sm" id="pr_purchase_order" name="pr_purchase_order" >
-                                      </select>
+                                      <input readonly type="text" class="form-control form-control-sm" id="pr_purchase_order" name="pr_purchase_order" value="{{ $purchase_return->po_code }}" >
+                                      
                                     </div>
                                   </div>
 
@@ -86,7 +86,7 @@
 
                                   <div class="col-md-3 col-sm-6 col-xs-12">
                                     <div class="form-group">
-                                      <input type="text" class="form-control form-control-sm datepicker" name="pr_tanggal" value="{{ date('d-m-Y') }}">
+                                      <input type="text" class="form-control form-control-sm datepicker" name="pr_tanggal" value="{{ $purchase_return->pr_tanggal_label }}" readonly="">
                                     </div>
                                   </div>
 
@@ -96,8 +96,8 @@
 
                                   <div class="col-md-3 col-sm-6 col-xs-12">
                                     <div class="form-group">
-                                      <input type="hidden" name="pr_officer" value="{{ Auth::user()->id }}">
-                                      <input type="text" class="form-control form-control-sm" readonly="" value="{{ Auth::user()->name }}">
+                                      
+                                      <input type="text" class="form-control form-control-sm" readonly="" value="{{ $purchase_return->name }}">
                                     </div>
                                   </div>
 
@@ -107,7 +107,7 @@
 
                                   <div class="col-md-3 col-sm-6 col-xs-12">
                                     <div class="form-group">
-                                      <input type="text" class="form-control form-control-sm" readonly="" name="po_method" id="po_method">
+                                      <input type="text" class="form-control form-control-sm" readonly="" name="po_method" value="{{ $purchase_return->po_method }}" id="po_method">
                                     </div>
                                   </div>
 
@@ -117,7 +117,7 @@
 
                                   <div class="col-md-3 col-sm-6 col-xs-12">
                                     <div class="form-group">
-                                      <input type="text" class="form-control form-control-sm" readonly="" name="po_total_gross" id="po_total_gross">
+                                      <input type="text" class="form-control form-control-sm" readonly="" name="po_total_gross" value="{{ $purchase_return->po_total_gross }}" id="po_total_gross">
                                     </div>
                                   </div>
 
@@ -127,7 +127,7 @@
 
                                   <div class="col-md-3 col-sm-6 col-xs-12">
                                     <div class="form-group">
-                                      <input type="text" class="form-control form-control-sm" readonly="" name="" id="po_disc_percent">
+                                      <input type="text" class="form-control form-control-sm" readonly="" name="" id="po_disc_percent" value="{{ $purchase_return->po_disc_percent }}">
                                     </div>
                                   </div>
 
@@ -137,7 +137,7 @@
 
                                   <div class="col-md-3 col-sm-6 col-xs-12">
                                     <div class="form-group">
-                                      <input type="text" class="form-control form-control-sm" readonly="" name="po_disc_value" id="po_disc_value">
+                                      <input type="text" class="form-control form-control-sm" readonly="" name="po_disc_value" value="{{ $purchase_return->po_disc_value }}" id="po_disc_value">
                                     </div>
                                   </div>
 
@@ -147,7 +147,7 @@
 
                                   <div class="col-md-3 col-sm-6 col-xs-12">
                                     <div class="form-group">
-                                      <input type="text" class="form-control form-control-sm" readonly="" name="po_tax_percent" id="po_tax_percent">
+                                      <input type="text" class="form-control form-control-sm" readonly="" name="po_tax_percent" value="{{ $purchase_return->po_tax_percent }}" id="po_tax_percent">
                                     </div>
                                   </div>
 
@@ -157,7 +157,7 @@
 
                                   <div class="col-md-3 col-sm-6 col-xs-12">
                                     <div class="form-group">
-                                      <input type="text" class="form-control form-control-sm" readonly="" name="po_total_net" id="po_total_net">
+                                      <input type="text" class="form-control form-control-sm" readonly="" name="po_total_net" value="{{ $purchase_return->po_total_net }}" id="po_total_net">
                                     </div>
                                   </div>
 
@@ -167,7 +167,7 @@
 
                                   <div class="col-md-3 col-sm-6 col-xs-12 ">
                                     <div class="form-group">
-                                      <input type="text" class="form-control form-control-sm" readonly="" name="pr_pricetotal" id="pr_pricetotal">
+                                      <input type="text" class="form-control form-control-sm" readonly="" name="pr_pricetotal" value="{{ $purchase_return->pr_pricetotal }}" id="pr_pricetotal">
                                     </div>
                                   </div>
 
@@ -200,7 +200,7 @@
                         </form>
                     </div>
                     <div class="card-footer text-right">
-                      <button class="btn btn-primary" type="button" onclick="insert_purchase_return()">Simpan</button>
+                      <button class="btn btn-primary" type="button" onclick="update_purchase_return()">Simpan</button>
                       <a href="{{route('returnpembelian')}}" class="btn btn-secondary">Kembali</a>
                     </div>
                 </div>
@@ -232,4 +232,41 @@
 </script>
 @include('purchasing/returnpembelian/js/form_functions')
 @include('purchasing/returnpembelian/js/form_commander')
+<script>  
+    $(document).ready(function(){
+              var po_disc_value = $('[name="po_disc_value"]').val();
+      var po_disc_value = 'Rp ' + accounting.formatMoney(po_disc_value,"",0,'.',',')
+      $('[name="po_disc_value"]').val( po_disc_value );
+      var po_total_gross = $('[name="po_total_gross"]').val();
+      var po_total_gross = 'Rp ' + accounting.formatMoney(po_total_gross,"",0,'.',',')
+      $('[name="po_total_gross"]').val( po_total_gross );
+      var po_total_net = $('[name="po_total_net"]').val();
+      var po_total_net = 'Rp ' + accounting.formatMoney(po_total_net,"",0,'.',',')
+      $('[name="po_total_net"]').val( po_total_net );
+
+        var purchase_order_dt = {!! $purchase_return_dt !!};
+          if(purchase_order_dt.length > 0) {
+            for(x in purchase_order_dt) {
+              unit = purchase_order_dt[x];
+              console.log(unit);
+              var prdt_item = "<input name='prdt_item[]' value='" + unit.i_id + "' type='hidden'>" + unit.i_code + ' | ' + unit.i_name;
+              var prdt_qtybeli = "<input name='prdt_qtybeli[]' value='" + unit.prdt_qtybeli + "' type='hidden'>" + unit.prdt_qtybeli;
+              var prdt_qtyreturn = "<input name='prdt_qtyreturn[]' value='" + unit.prdt_qtyreturn + "' type='number' class='form-control form-control-sm text-right'>" ;
+              var prdt_satuan = "<input name='prdt_satuan[]' value='" + unit.prdt_satuan + "' type='hidden' class='form-control'>" + unit.s_name;
+              var prdt_price = "<input name='prdt_price[]' value='Rp. " + accounting.formatMoney(unit.prdt_price,"",0,'.',',') + "' type='text' class='form-control form-control-sm text-right'>";
+              var stock = unit.stock;
+              var harga_total = unit.prdt_price * unit.prdt_qtyreturn;
+              harga_total = 'Rp ' + accounting.formatMoney(harga_total,"",0,'.',',') + ',00';
+              var aksi = '<button type="button" class="btn btn-danger btn-hapus" onclick="remove_detail(this)"><i class="fa fa-trash-o"></i></button>';
+
+              
+              table_purchase_return_dt.row.add([
+                prdt_item, prdt_qtybeli, prdt_qtyreturn, prdt_satuan, prdt_price, harga_total, stock, aksi
+              ]);
+            }
+
+            table_purchase_return_dt.draw();
+          }
+    });
+</script>
 @endsection
