@@ -224,6 +224,7 @@
 
 @endsection
 @section('extra_script')
+<script src="{{asset('modul_keuangan/js/vendor/axios_0_18_0/axios.js')}}"></script>
 <script type="text/javascript">
   
   $(document).ready(function(){
@@ -267,7 +268,8 @@
 
   function showInfoPO(){
 
-    axios.get({{ route("getinfopo") }}).then((response) => {
+    var id = $('#nota_order').val();
+    axios.get('{{ url("/stok/pencatatanbarangmasuk/getinfopo") }}'+'?id='+id).then((response) => {
 
       $('#tgl_order').val(response.data.info.date);
       $('#supplier').val(response.data.info.supplier);

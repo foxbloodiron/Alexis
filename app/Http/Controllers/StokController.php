@@ -32,6 +32,17 @@ class StokController extends Controller
     {
     	return view('stok/pencatatanbarangmasuk/pencatatanbarangmasuk');
     }
+    public function getinfopo(Request $request){
+        $getInfo = DB::table('d_purchase_order')
+            ->join('m_supplier', 's_id', '=', 'po_supplier')
+            ->where('po_id', $request->id)
+            ->select(DB::raw('date_format(po_tanggal, "%d-%m-%Y") as date'), 's_name as supplier', 'po_method as method')
+            ->first();
+
+        return json_encode([
+            'info' => $getInfo
+        ]);
+    }
     public function tambah_pencatatanbarangmasuk()
     {
         $getNota = DB::table('d_purchase_order')->where('po_status', 'AP')->select('po_id','po_code')->get();
