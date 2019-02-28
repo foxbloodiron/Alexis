@@ -274,10 +274,7 @@ a.anchor-link:hover{
 	position: absolute;
 	width: 110%;
 	height:100%;
-    margin-left: -5%;
-	margin-right: -5%;
-	margin-top: -5%;
-    margin-bottom: -5%;
+    margin:0px -5% 0px -5% ;
     
 	z-index:-1;
     min-height: 1080px;

@@ -143,12 +143,16 @@
 
     // Collapse Navbar
     var navbarCollapse = function() {
-        var height = $('body').height() / 2;
-        if ($(window).scrollTop() > height) {
+        var scrollHeight = $(document).height();
+        var scrollPosition = $(window).height() + $(window).scrollTop();
+        if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
+            // when scroll to bottom of the page
           $('footer').addClass("footer");
         } else {
           $('footer').removeClass("footer");
         }
+        // console.log(scrollHeight );
+        // console.log(scrollPosition );
     };
 
     $(window).scroll(navbarCollapse);
