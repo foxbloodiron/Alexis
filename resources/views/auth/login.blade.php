@@ -58,11 +58,21 @@
                         <div class="form-group">
                             <h5 class="form-label">Username</h5>
                             <input type="text" class="form-control" name="email" id="email">
+                            @if ($errors->has('email'))
+                                <span class="text-danger">
+                                    <strong>{{ $errors->first('email') }}</strong>
+                                </span>
+                            @endif
                         </div>
 
                         <div class="form-group">
                             <h5 class="form-label">Password</h5>
                             <input type="password" class="form-control" name="password" id="password">
+                            @if ($errors->has('password'))
+                                <span class="text-danger">
+                                    <strong>{{ $errors->first('password') }}</strong>
+                                </span>
+                            @endif
                         </div>
                         <label for="remember" class="text-primary ">
                             <input class="checkbox" id="remember" name="remember" type="checkbox">
