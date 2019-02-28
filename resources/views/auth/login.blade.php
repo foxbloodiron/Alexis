@@ -96,7 +96,7 @@
     <script src="{{asset('assets/login-mirip-discrottt/js/parallax-mousehover/parallax.js')}}"></script>
 
 <script type="text/javascript">
-  $(document).ready(function(){
+  $(window).ready(function(){
 
     setTimeout(function(){
       $('.content').addClass('animated fadeInLeft');
