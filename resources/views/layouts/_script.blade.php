@@ -27,6 +27,20 @@
 <script src="{{asset('assets/js/vue.js')}}"></script>
 
 <script src="{{asset('assets/inputmask/min/jquery.inputmask.bundle.min.js')}}"></script>
+{{-- Loading --}}
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    setTimeout(function(){
+      $('.content').addClass('animated fadeInLeft');
+
+      $('.background-loading').fadeOut('slow');
+    },1000);
+  });
+</script>
+{{-- End Loading --}}
 <script type="text/javascript">
   var getstorage;
   $('#sidebar-collapse-btn, #sidebar-overlay').click(function(){
