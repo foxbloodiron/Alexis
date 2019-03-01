@@ -38,12 +38,13 @@
 
       $('.background-loading').fadeOut('slow');
     },500);
+    
   });
 
   $(document).on('click', '.color-item', function(){
     $('.content').removeClass('animated fadeInLeft');
     $('.background-loading').css('display', 'block');
-    console.log('click');
+    // console.log('click');
     setTimeout(function(){
       $('.content').addClass('animated fadeInLeft');
 
