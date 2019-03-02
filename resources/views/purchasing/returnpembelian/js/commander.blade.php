@@ -48,20 +48,18 @@
 
     tabel_purchase_return = $("#tabel_purchase_return").DataTable({
       "processing" : true,
-      "serverside" : true,
+      "serverSide" : true,
       ajax: {
         "url": "{{ url('purchasing/returnpembelian/find_d_purchase_return') }}",
         
         data: function(){
             var tgl_awal = $('#tgl_awal').val();
             var tgl_akhir = $('#tgl_akhir').val();
-            var outp = {
-              "_token": "{{ csrf_token() }}",
-              'tgl_awal' : tgl_awal,
-              'tgl_akhir' : tgl_akhir
-            }
+            data["_token"] = "{{ csrf_token() }}";
+            data['tgl_awal'] = tgl_awal;
+            data['tgl_akhir'] = tgl_akhir;
 
-            return outp;
+            return data;
         },
       },
       columns: [
@@ -136,20 +134,18 @@
 
     tabel_revisi_purchase_order = $("#tabel_revisi_purchase_order").DataTable({
       "processing" : true,
-      "serverside" : true,
+      "serverSide" : true,
       ajax: {
         "url": "{{ url('purchasing/returnpembelian/find_d_purchase_order') }}",
         
         data: function(){
             var tgl_awal = $('#tgl_awal_revisi').val();
             var tgl_akhir = $('#tgl_akhir_revisi').val();
-            var outp = {
-              "_token": "{{ csrf_token() }}",
-              'tgl_awal' : tgl_awal,
-              'tgl_akhir' : tgl_akhir
-            }
+            data["_token"] = "{{ csrf_token() }}";
+            data['tgl_awal'] = tgl_awal;
+            data['tgl_akhir'] = tgl_akhir;
 
-            return outp;
+            return data;
         },
       },
       columns: [

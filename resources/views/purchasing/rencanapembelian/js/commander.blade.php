@@ -35,23 +35,22 @@
 
     tabel_purchase_plan = $("#tabel_purchase_plan").DataTable({
       "processing" : true,
-      "serverside" : true,
+      "serverSide" : true,
       ajax: {
         "url": "{{ url('purchasing/rencanapembelian/find_d_purchase_plan') }}",
         
-        data: function() {
+        data: function(data) {
           var tgl_awal = $('#tgl_awal').val();
           var tgl_akhir = $('#tgl_akhir').val();
           var pp_status = $('#pp_status').val();
 
-          var outp = {
-            'tgl_awal' : tgl_awal,
-            'tgl_akhir' : tgl_akhir,
-            'pp_status' : pp_status,
-            "_token": "{{ csrf_token() }}",
-          };
+          
+          data['tgl_awal'] = tgl_awal;
+          data['tgl_akhir'] = tgl_akhir;
+          data['pp_status'] = pp_status;
+          data["_token"] = "{{ csrf_token() }}";
 
-          return outp;
+          return data;
         },
       },
       columns: [
@@ -114,12 +113,19 @@
 
     tabel_history_purchase_plan = $("#tabel_history_purchase_plan").DataTable({
       "processing" : true,
-      "serverside" : true,
+      "serverSide" : true,
       ajax: {
         "url": "{{ url('purchasing/rencanapembelian/find_d_purchase_plan') }}",
         
-        data: {
-          "_token": "{{ csrf_token() }}",
+        data: function(data) {
+          var tgl_awal = $('#tgl_awal_history').val();
+          var tgl_akhir = $('#tgl_akhir_history').val();
+
+          data["tgl_awal"] = tgl_awal;
+          data["tgl_akhir"] = tgl_akhir;
+          data["_token"] = "{{ csrf_token() }}";
+
+          return data;
         },
       },
       columns: [

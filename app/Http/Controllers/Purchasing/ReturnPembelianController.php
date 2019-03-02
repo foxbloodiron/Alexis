@@ -181,11 +181,31 @@ class ReturnPembelianController extends Controller
         $rows = $rows->where('pr_status', $pr_status);
        }
 
+        // Filter untuk datatable
+       $search = $req->search;
+       $search = $search != null ? $search['value'] : '';
+       $start = $req->start;
+       $start = $start != null ? $start : 0;
+       $length = $req->length;
+       $length = $length != null ? $length : 10;
+       if($search != '') {
+        $rows = $rows->where('pr_code', 'LIKE', DB::raw("'%$search%'"))->orWhere('s_name', 'LIKE', DB::raw("'%$search%'"))->orWhere('name', 'LIKE', DB::raw("'%$search%'"));
+       }
+       $rows = $rows->skip($start)->take($length);
 
        $rows = $rows->select('pr_id','pr_status', 'pr_pricetotal', DB::raw('CONCAT("Rp ", FORMAT(pr_pricetotal, 0)) AS pr_pricetotal_label'), 'pr_officer', 'pr_code', 'pr_supplier', 's_name', 'name', DB::raw("DATE_FORMAT(pr_tanggal, '%d-%m-%Y') AS pr_tanggal_label"), DB::raw("CASE pr_status WHEN 'WT' THEN 'Waiting' WHEN 'AP' THEN 'Disetujui' WHEN 'NA' THEN 'Tidak Disetujui' END AS pr_status_label"), DB::raw("CASE pr_method WHEN 'TB' THEN 'Tukar Barang' WHEN 'PN' THEN 'Potong Nota' END AS pr_method_label"), 'pr_method')->get();
        
 
-       $res = array('data' => $rows);
+       $draw = $req->draw;
+       $draw = $draw != null ? $draw : 1;
+       $recordsTotal = d_purchase_return::count('pr_id');
+       $recordsFiltered = count($rows);
+       $res = [
+          'data' => $rows,
+          'recordsTotal' => $recordsTotal,
+          'recordsFiltered' => $recordsFiltered,
+          'draw' => $draw,
+       ];
        return response()->json($res);
     }
 
