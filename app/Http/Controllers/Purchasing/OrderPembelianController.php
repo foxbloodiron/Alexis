@@ -158,7 +158,7 @@ class OrderPembelianController extends Controller
        
        $draw = $req->draw;
        $draw = $draw != null ? $draw : 1;
-       $recordsTotal = d_purchase_order::count('po_id');
+       $recordsTotal = $use_purchase_plan == 'no' ? d_purchase_order::where('po_purchase_plan', 0)->count('po_id') : d_purchase_order::where([['po_purchase_plan', '!=', 0]])->count('po_id');
        $recordsFiltered = count($rows);
        $res = [
           'data' => $rows,

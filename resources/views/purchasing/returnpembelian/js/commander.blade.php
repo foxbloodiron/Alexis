@@ -52,7 +52,7 @@
       ajax: {
         "url": "{{ url('purchasing/returnpembelian/find_d_purchase_return') }}",
         
-        data: function(){
+        data: function(data){
             var tgl_awal = $('#tgl_awal').val();
             var tgl_akhir = $('#tgl_akhir').val();
             data["_token"] = "{{ csrf_token() }}";
@@ -138,7 +138,7 @@
       ajax: {
         "url": "{{ url('purchasing/returnpembelian/find_d_purchase_order') }}",
         
-        data: function(){
+        data: function(data){
             var tgl_awal = $('#tgl_awal_revisi').val();
             var tgl_akhir = $('#tgl_akhir_revisi').val();
             data["_token"] = "{{ csrf_token() }}";
