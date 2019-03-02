@@ -185,6 +185,67 @@
 	    })
 	}
 
+	function open_form_detail_revisi_po(obj) {
+		var tr = $(obj).parents('tr');
+		var data = tabel_revisi_purchase_order.row(tr).data();
+		var id = data.po_id;
+		$('#pr_id').val(id);
+        var screen = $('#modal_detail_revisi_po');
+        screen.find('.po_tanggal_label').text( data.po_tanggal_label ); 
+		screen.find('.po_code').text( data.po_code ); 
+		screen.find('.name').text( data.name ); 
+		screen.find('.s_name').text( data.s_name ); 
+		screen.find('.po_method_label').text( data.po_method_label ); 
+		screen.find('.po_status_label').text( data.po_status_label ); 
+
+		var pricetotal = 'Rp ' + accounting.formatMoney(data.pr_pricetotal,"",0,'.',',');
+		screen.find('.pr_pricetotal').val( pricetotal ); 
+		var status_class = '';
+		if(data.pr_status == 'WT') {
+			status_class = 'badge-primary';
+		}
+		else if(data.pr_status == 'AP') {
+			status_class = 'badge-success';
+		}
+		else if(data.pr_status == 'NA') {
+			status_class = 'badge-danger';
+		}
+		screen.find('.pr_status_label').addClass(status_class);
+		tabel_detail.clear().draw();
+		$.ajax({
+	       type: "get",
+	       url: '{{ url("/purchasing/returnpembelian/preview_orderpembelian") }}/' + id,
+	       success: function(response){
+	       		var unit;
+	       		var purchase_order = response.purchase_order;
+	       		var screen = $('#modal_detail_return');
+
+	       		if(response.purchase_order_dt.length > 0) {
+	       			for(x in response.purchase_order_dt) {
+	       				unit = response.purchase_order_dt[x];
+	       				i_code = "<input class='form-control text-right form-control-sm' type='hidden' name='prdt_item[]' value='" + unit.prdt_item + "'>" + unit.i_code;
+	       				i_name = unit.i_name;
+	       				qtybeli = unit.podt_qty;
+	       				qtyreturn = unit.amount_qtyreturn;
+	       				qtysisa = unit.qtysisa;
+	       				s_name = unit.s_name;
+	       				stock = unit.stock;
+	       				price = unit.podt_price;
+	       				prev_price = unit.podt_prev_price;
+	       				subtotal = price * qtysisa;
+
+	       				price = 'Rp ' + accounting.formatMoney(price,"",0,'.',',') 
+	       				prev_price = 'Rp ' + accounting.formatMoney(prev_price,"",0,'.',',') 
+	       				subtotal = 'Rp ' + accounting.formatMoney(subtotal,"",0,'.',',') 
+	       				tabel_detail_revisi_po.row.add([i_code, i_name, s_name, qtybeli, qtyreturn, qtysisa, stock, prev_price, price, subtotal])
+	       			}
+
+	       			tabel_detail_revisi_po.draw()
+	       		}
+	       }      
+	    })
+	}
+
 	function hapus(obj) {
 	  var tr = $(obj).parents('tr');
 	  var table = tr.parents('table');
@@ -246,6 +307,11 @@
 		tabel_purchase_return.ajax.reload(); 
 	}
 
+	function search_revisi_purchase_order() {
+		
+		tabel_revisi_purchase_order.ajax.reload(); 
+	}
+
 	function refresh_purchase_return() {
 		$('#tgl_awal').val(
 	      moment().subtract(7, 'days').format('DD-MM-YYYY')
@@ -256,19 +322,14 @@
 		search_purchase_return(); 
 	}
 
-	function search_purchase_return_tanparencana() {
-		
-		tabel_purchase_return_tanparencana.ajax.reload(); 
-	}
-
-	function refresh_purchase_return_tanparencana() {
-		$('#tgl_awal_tanparencana').val(
+	function refresh_revisi_purchase_order() {
+		$('#tgl_awal_revisi').val(
 	      moment().subtract(7, 'days').format('DD-MM-YYYY')
 	    );
-	    $('#tgl_akhir_tanparencana').val(
+	    $('#tgl_akhir_revisi').val(
 	      moment().format('DD-MM-YYYY')
 	    );
-		search_purchase_return_tanparencana(); 
+		search_revisi_purchase_order(); 
 	}
 
 	function search_purchase_return_history() {

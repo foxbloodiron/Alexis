@@ -79,6 +79,61 @@ class ReturnPembelianController extends Controller
       return response()->json($res);
     }
 
+    function find_d_purchase_order(Request $req) {
+
+       $data = array();
+       $rows = d_purchase_order::leftJoin('m_supplier', 'po_supplier', '=', 's_id')->leftJoin('users', 'po_officer', '=', 'id')->join('d_purchase_return', 'po_id', '=', 'pr_purchase_order');
+
+       // Filter berdasarkan tanggal dan keyword
+       $po_status = $req->po_status;
+       $po_status = $po_status != null ? $po_status : '';
+       $keyword = $req->keyword;
+       $keyword = $keyword != null ? $keyword : '';
+       $tgl_awal = $req->tgl_awal;
+       $tgl_awal = $tgl_awal != null ? $tgl_awal : '';
+       $tgl_akhir = $req->tgl_akhir;
+       $tgl_akhir = $tgl_akhir != null ? $tgl_akhir : '';
+       if($tgl_awal != '' && $tgl_akhir != '') {
+        $tgl_awal = preg_replace('/(\d+)[-\/](\d+)[-\/](\d+)/', '$3-$2-$1', $tgl_awal);
+        $tgl_akhir = preg_replace('/(\d+)[-\/](\d+)[-\/](\d+)/', '$3-$2-$1', $tgl_akhir);
+        $rows = $rows->whereBetween('po_tanggal', array($tgl_awal, $tgl_akhir));
+       }
+
+       if($keyword != '') {
+        $rows = $rows->where('po_code', 'LIKE', DB::raw("'%$keyword%'"));
+
+       }
+       if($po_status != '') {
+        $rows = $rows->where('po_status', $po_status);
+       }
+
+       $rows = $rows->select('po_id','po_status', 'po_total_net', DB::raw("CONCAT('Rp ', FORMAT(po_total_net, 0)) AS po_total_net_label"), 'po_method', 'po_officer', 'po_code', 'po_supplier', 's_name', 'name', DB::raw("DATE_FORMAT(po_tanggal_kirim, '%d-%m-%Y') AS po_tanggal_kirim_label"), DB::raw("DATE_FORMAT(po_tanggal, '%d-%m-%Y') AS po_tanggal_label"), DB::raw("CASE po_status WHEN 'WT' THEN 'Waiting' WHEN 'AP' THEN 'Disetujui' WHEN 'NA' THEN 'Tidak Disetujui' END AS po_status_label"))->groupBy('po_id')->get();
+       
+
+       $res = array('data' => $rows);
+       return response()->json($res);
+    }
+
+    public function preview_orderpembelian($id)
+    {
+      $d_purchase_order = d_purchase_order::leftJoin('m_supplier', 'po_supplier', '=', 's_id')->leftJoin('users', 'po_officer', '=', 'id');
+      $d_purchase_order = $d_purchase_order->where('po_id', $id)->first();
+      $d_purchase_order_dt = d_purchase_order_dt::leftJoin('m_item', 'podt_item', '=', 'i_id')->leftJoin('m_satuan', 'podt_satuan', '=', 's_id');
+      $d_purchase_order_dt = $d_purchase_order_dt->leftJoin('d_purchase_order', 'po_id', '=', 'podt_purchase_order')->leftJoin('d_purchase_return', 'pr_purchase_order', '=', 'po_id')->leftJoin('d_purchase_return_dt', 'prdt_purchase_return', '=', 'pr_id');
+
+      $d_purchase_order_dt = $d_purchase_order_dt->groupBy('podt_item');
+
+      $d_purchase_order_dt = $d_purchase_order_dt->where('podt_purchase_order', $id)->select('podt_item', 'podt_prev_price','podt_price', 'podt_satuan', 'podt_qty', 's_id', 's_name', 'i_id', 'i_code', 'i_name', DB::raw("IFNULL((SELECT s_qty FROM d_stock WHERE s_item = m_item.i_id), 0) AS stock"), DB::raw("SUM(prdt_qtyreturn) AS amount_qtyreturn"), DB::raw("podt_qty - SUM(prdt_qtyreturn) AS qtysisa"))->get();
+
+      $res = [
+        "purchase_order" => $d_purchase_order,
+        "purchase_order_dt" => $d_purchase_order_dt
+      ];
+
+
+      return response()->json($res);
+    }
+
     function find_d_purchase_return_dt(Request $req) {
        $tgl_awal = $req->tgl_awal;
        $tgl_awal = $tgl_awal != null ? $tgl_awal : '';

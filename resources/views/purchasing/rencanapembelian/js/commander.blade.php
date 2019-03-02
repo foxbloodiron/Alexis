@@ -39,8 +39,19 @@
       ajax: {
         "url": "{{ url('purchasing/rencanapembelian/find_d_purchase_plan') }}",
         
-        data: {
-          "_token": "{{ csrf_token() }}",
+        data: function() {
+          var tgl_awal = $('#tgl_awal').val();
+          var tgl_akhir = $('#tgl_akhir').val();
+          var pp_status = $('#pp_status').val();
+
+          var outp = {
+            'tgl_awal' : tgl_awal,
+            'tgl_akhir' : tgl_akhir,
+            'pp_status' : pp_status,
+            "_token": "{{ csrf_token() }}",
+          };
+
+          return outp;
         },
       },
       columns: [
@@ -59,7 +70,7 @@
         else if(res.pp_status == 'AP') {
           classbadge = 'badge-primary';
         }
-        else if(res.pp_status == 'NAP') {
+        else if(res.pp_status == 'NA') {
           classbadge = 'badge-danger';
         }
 				var outp = '<span class="badge ' + classbadge + '">' + res.pp_status_label + '</span>';
@@ -95,6 +106,10 @@
         targets : [5, 6],
         className : 'text-center'
       }]
+    });
+
+    $('#pp_status').change(function(){
+      search_purchase_plan();
     });
 
     tabel_history_purchase_plan = $("#tabel_history_purchase_plan").DataTable({

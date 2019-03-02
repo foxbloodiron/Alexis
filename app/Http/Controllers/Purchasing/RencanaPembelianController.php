@@ -99,7 +99,7 @@ class RencanaPembelianController extends Controller
         $rows = $rows->where('pp_status', $pp_status);
        }
 
-       $rows = $rows->select('pp_id','pp_status', 'pp_officer', 'pp_code', 'pp_supplier','pp_status_po', 's_name', 'name', DB::raw("DATE_FORMAT(pp_tanggal_approve, '%d-%m-%Y') AS pp_tanggal_approve_label"), DB::raw("DATE_FORMAT(pp_tanggal, '%d-%m-%Y') AS pp_tanggal_label"), DB::raw("CASE pp_status WHEN 'WT' THEN 'Waiting' WHEN 'AP' THEN 'Disetujui' WHEN 'NAP' THEN 'Tidak Disetujui' END AS pp_status_label"), DB::raw("CASE pp_status_po WHEN 'NA' THEN 'Belum Aktif' WHEN 'A' THEN 'PO Aktif' WHEN 'NAP' THEN 'Tidak Disetujui' END AS pp_status_po_label"))->get();
+       $rows = $rows->select('pp_id','pp_status', 'pp_officer', 'pp_code', 'pp_supplier','pp_status_po', 's_name', 'name', DB::raw("DATE_FORMAT(pp_tanggal_approve, '%d-%m-%Y') AS pp_tanggal_approve_label"), DB::raw("DATE_FORMAT(pp_tanggal, '%d-%m-%Y') AS pp_tanggal_label"), DB::raw("CASE pp_status WHEN 'WT' THEN 'Waiting' WHEN 'AP' THEN 'Disetujui' WHEN 'NA' THEN 'Tidak Disetujui' END AS pp_status_label"), DB::raw("CASE pp_status_po WHEN 'NA' THEN 'Belum Aktif' WHEN 'A' THEN 'PO Aktif' WHEN 'NAP' THEN 'Tidak Disetujui' END AS pp_status_po_label"))->get();
        
 
        $res = array('data' => $rows);

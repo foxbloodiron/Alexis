@@ -16,11 +16,26 @@
   		]
   	});
 
+    tabel_detail_revisi_po = $('#tabel_detail_revisi_po').DataTable({
+      'columnDefs' : [
+          {
+            targets : [3, 4, 5, 6, 7, 8, 9],
+            className : 'text-right'
+          }
+      ]
+    });
+
     // Set tanggal di pencarian
     $('#tgl_awal').val(
       moment().subtract(7, 'days').format('DD-MM-YYYY')
     );
     $('#tgl_akhir').val(
+      moment().format('DD-MM-YYYY')
+    );
+    $('#tgl_awal_revisi').val(
+      moment().subtract(7, 'days').format('DD-MM-YYYY')
+    );
+    $('#tgl_akhir_revisi').val(
       moment().format('DD-MM-YYYY')
     );
     $('#tgl_awal').datepicker({
@@ -116,6 +131,73 @@
           targets : 5,
           className : 'text-right'
         }
+      ]
+    });
+
+    tabel_revisi_purchase_order = $("#tabel_revisi_purchase_order").DataTable({
+      "processing" : true,
+      "serverside" : true,
+      ajax: {
+        "url": "{{ url('purchasing/returnpembelian/find_d_purchase_order') }}",
+        
+        data: function(){
+            var tgl_awal = $('#tgl_awal_revisi').val();
+            var tgl_akhir = $('#tgl_akhir_revisi').val();
+            var outp = {
+              "_token": "{{ csrf_token() }}",
+              'tgl_awal' : tgl_awal,
+              'tgl_akhir' : tgl_akhir
+            }
+
+            return outp;
+        },
+      },
+      columns: [
+        { data : 'po_tanggal_label' },
+        { data : 'po_code' },
+        { data : 'name' },
+        { data : 's_name' },
+        { 
+          data : null,
+          render : function(res) {
+            var outp = "<span class='badge badge-primary'>" + res.po_method + "</span>";
+
+            return outp;
+          } 
+        },
+        { data : 'po_total_net_label' },
+        { data : 'po_tanggal_kirim_label' },
+        { 
+          data : null,
+          render : function(res) {
+              var outp = '<span class="badge badge-pill badge-warning">Revisi</span>';
+              return outp;
+          } 
+        },
+       
+        { 
+          data : null,
+          render : function(res) {
+            is_disabled = 'disabled';
+            if(res.po_status == 'WT') { 
+              is_disabled = '';
+            }
+            console.log(res);
+            var btn = '<div class="btn-group btn-group-sm"><button onclick="open_form_detail_revisi_po(this) "type="button" class="btn btn-info order_detail" title="Detail" data-toggle="modal" data-target="#modal_detail_revisi_po"><i class="fa fa-list"></i></button></div>';
+
+            return btn;
+          } 
+        }
+      ],
+      columnDefs : [
+        {
+          targets : [ 4, 7, 8],
+          className : 'text-center'
+        },
+        {
+          targets : 5,
+          className : 'text-right'
+        },
       ]
     });
 
