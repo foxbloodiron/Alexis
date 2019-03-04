@@ -46,19 +46,41 @@ class StokController extends Controller
         ]);
     }
     public function getpbdt(Request $request){
+
+        if(isset($request->opsi)){
+            $getOpsi = DB::table('d_purchase_order_dt')
+                ->join('m_item', 'i_id', '=', 'podt_item')
+                ->where('podt_purchase_order', $request->id)
+                ->select('podt_item', 'i_name')->get();
+            
+            return json_encode([
+                'opsi' => $getOpsi
+            ]);
+        }
+
+        // dd($request);
         $getDT = DB::table('d_purchase_order')
             ->join('d_purchase_order_dt', 'podt_purchase_order', '=', 'po_id')
             ->join('m_satuan', 's_id', '=', 'podt_satuan')
             ->join('m_item', 'i_id', '=', 'podt_item')
             ->where('po_id', $request->id)
+            ->whereIn('podt_item', $request->idItem)
             ->get();
 
         $getNopol = DB::table('m_kendaraan')
             ->select('k_id', 'k_nopol')->get();
+        
+        $getSisa = DB::table('d_penerimaan_barang')
+            ->join('d_penerimaan_barang_dt', 'pbdt_penerimaan_barang', '=', 'pb_id')
+            ->where('pb_ref', $getDT[0]->po_code)
+            ->select('pbdt_item', DB::raw('SUM(pbdt_qty_received) as qty_received'))
+            ->groupBy('pbdt_item')
+            ->get();
 
         return json_encode([
             'data' => $getDT,
-            'nopol' => $getNopol
+            'nopol' => $getNopol,
+            'qty' => $getSisa
         ]);
     }
     public function genNota($date)
@@ -71,10 +93,9 @@ class StokController extends Controller
         if ($cek == null) {
             $temp = 1;
         } else {
-            $temp = ($cek->pb_nota + 1);
+            $temp = ($cek->pb_code + 1);
         }
         $kode = sprintf("%04s", $temp);
-
         $tempKode = 'PB/' . $cekNota . '/' . $kode;
         return $tempKode;
     }
@@ -96,6 +117,7 @@ class StokController extends Controller
                 $tanggal = $pecahTgl[2].'-'.$pecahTgl[1].'-'.$pecahTgl[0];
                 $waktu = $request->jam[0];
                 $insertTime = Carbon::now('Asia/Jakarta')->format('Y-m-d H:i:s');
+                // dd($dateNota);
 
                 DB::table('d_penerimaan_barang')->insert([
                     'pb_id' => $maxId,
@@ -109,23 +131,34 @@ class StokController extends Controller
                     'pb_insert_by' => Auth::user()->id,
                     'pb_update_by' => Auth::user()->id
                 ]);
-
+                
                 // Insert Penerimaan Data DT
                 $arayPBDT = array();
                 $countDT = 1;
                 for($i = 0; $i < count($request->tgl); $i++){
-                    $getQty = DB::table('d_purchase_order')
-                        ->join('d_purchase_order_dt', 'podt_purchase_order', '=', 'po_id')
-                        ->where('po_code', $request->nota)
-                        ->where('podt_item', $request->idItem[$i])
-                        ->select('podt_qty')
-                        ->first();
-                    
-                    $sisa = $getQty->podt_qty - $request->muatan[$i];
+                    $ceksisapbdt = DB::table('d_penerimaan_barang_dt')->where('pbdt_item', $request->idItem[$i])->count();
+                    $sisa = 0;
+                    if($ceksisapbdt == 0){
+                        $getQty = DB::table('d_purchase_order')
+                            ->join('d_purchase_order_dt', 'podt_purchase_order', '=', 'po_id')
+                            ->where('po_code', $request->nota)
+                            ->where('podt_item', $request->idItem[$i])
+                            ->select('podt_qty')
+                            ->first();                    
+                        $sisa = $getQty->podt_qty - $request->muatan[$i];
+                    }else{
+                        $realSisa = DB::table('d_penerimaan_barang')
+                            ->join('d_penerimaan_barang_dt', 'pbdt_penerimaan_barang', '=', 'pb_id')
+                            ->where('pb_ref', $request->nota)
+                            ->where('pbdt_item', $request->idItem[$i])  
+                            ->select('pbdt_qty_remains')
+                            ->orderBy('pbdt_penerimaan_barang', 'desc')->first();
+                        $sisa = $realSisa->pbdt_qty_remains - $request->muatan[$i];
+                    }
 
                     if($request->muatan[$i] != null && $request->tgl[$i] != null && $request->jam[$i] != null && $request->surat[$i] != null){
                         $aray = ([
-                            'pbdt_id' => $maxId,
+                            'pbdt_penerimaan_barang' => $maxId,
                             'pbdt_detailid' => $countDT,
                             'pbdt_item' => $request->idItem[$i],
                             'pbdt_qty_received' => $request->muatan[$i],
